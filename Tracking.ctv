@@ -3,83 +3,96 @@
 
   <name>Tracking</name>
   <topic>Processing and analysis of tracking data</topic>
-  <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone and Michael Sumner</maintainer>
+  <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone
+    and Michael Sumner</maintainer>
   <version>2018-10-21</version>
+  <url>https://CRAN.R-project.org/view=TrackingData</url>
   
   <info>
+    
     <p>
       This CRAN Task View (CTV) contains a list of packages useful for the processing and analysis of tracking data. 
     </p>
     <p>
-      Movement of an organism is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path.
-The packages listed here, henceforth called tracking packages, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from biologging (or tracking) devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an animal's trajectory via dead-reckoning, thus transforming those data into an $(x,y,t)$ format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo et al. (2019)</a>.
+      Movement of an organism is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called tracking packages, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from biologging (or tracking) devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an animal's trajectory via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>.
     </p>
     <p>
-    The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they are actively maintained and if they pass the check test (R CMD check). We consider that a package hosted on GitHub is actively maintained if a "commit" (i.e. a contribution) has been made in the last year, and for other packages (if they are not also on GitHub), that the most recent version of the package is no older than one year. At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the ones that do not comply with these criteria. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by <a href="mailto:rocio.joo@ufl.edu">email</a> or open an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">Github repository</a>.
+      The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they are actively maintained and if they pass the check test (<code>R CMD check</code>). We consider that a package hosted on GitHub is actively maintained if a "commit" (i.e. a contribution) has been made in the last year, and for other packages (if they are not also on GitHub), that the most recent version of the package is no older than one year. At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the ones that do not comply with these criteria. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by <a href="mailto:rocio.joo@ufl.edu">email</a> or open an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository</a>.
     </p>
+    <!-- MB: Shall we make an effort to contact developers before removing them? Some packages may not be active, but still actively maintained because they are very mature. -->
     <p>
       Besides these packages, many other packages contain functions for data processing and analysis that could be used for tracking data or second/third degree variables obtained from tracking data, in particular some described in other CRAN Task Views like <view>SpatioTemporal</view>, <view>Spatial</view> and <view>TimeSeries</view>. 
     </p>
     <p>
-      This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo et al. (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
+      This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
     </p>
-   
-    <p>
-    <strong>Pre-processing</strong>
-    </p>
+    <!-- Shall we add the figure with the actual structure (pre/post/analysis)? That would be nice. -->
+    
+    <h3>Pre-processing</h3>
     
     <p>
-    Pre-processing is required when raw biologging data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS, others on radio telemetry, and others use accelerometry and magnetometry data.
+      Pre-processing is required when raw biologging data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS, others on radio telemetry, and others use accelerometry and magnetometry data.
     </p>
-    <ul>    
-    
-      <li><b>GLS data pre-processing:</b> Several methodologies have been developed to reduce errors in geographic locations generated from the light data, which is reflected by the large number of packages for pre-processing GLS data. We classified these methods in three categories: threshold, template-fitting and twilight-free.
-      <ul>   
+    <!-- MB: Define GLS -->
+
+    <ul>
       
-        <li><b>Threshold methods:</b> Threshold levels of solar irradiance, which are arbritrarily chosen, are used to identify the timing of sunrise and sunset. The packages that use threshold methods are <pkg>GeoLight</pkg> and <a href="https://github.com/benjamin-merkel/probGLS">probGLS</a>.
+      <li>
+        <strong>GLS data pre-processing:</strong> Several methodologies have been developed to reduce errors in geographic locations generated from the light data, which is reflected by the large number of packages for pre-processing GLS data. We classified these methods in three categories: threshold, template-fitting and twilight-free.
+      </li>
+      
+      <ul>
         
+        <li>
+          <strong>Threshold methods:</strong> Threshold levels of solar irradiance, which are arbritrarily chosen, are used to identify the timing of sunrise and sunset. The packages that use threshold methods are <pkg>GeoLight</pkg> and <github>benjamin-merkel/probGLS</github>.
         </li>
-        
-        <li><b>Template-fitting methods:</b> The observed light irradiance levels for each twilight are modeled as a function of theoretical light levels (i.e. the template). Then, parameters from the model (e.g. a slope in a linear regression) are used to estimate the locations. The formulation of the model and the parameters used for location estimation vary from method to method. The packages that use template-fitting methods are <pkg>FLightR</pkg>, <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">trackit</a> <pkg>trackit</pkg> and <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">trackit</a> and <pkg>tripEstimation</pkg>         </li>
-        
-        <li><b>Twilight-free methods:</b> This package implements location estimation without depending on the identificatin of twilight events: <a href="https://github.com/ABindoff/TwilightFree">TwilightFree</a>.        
+        <!-- MB: Use the <github> tag for those packages -->
+        <li>
+          <strong>Template-fitting methods:</strong> The observed light irradiance levels for each twilight are modeled as a function of theoretical light levels (i.e. the template). Then, parameters from the model (e.g. a slope in a linear regression) are used to estimate the locations. The formulation of the model and the parameters used for location estimation vary from method to method. The packages that use template-fitting methods are <pkg>FLightR</pkg>, <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">trackit</a> <pkg>trackit</pkg> and <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">trackit</a> and <pkg>tripEstimation</pkg>
+        </li>
+        <!-- MB: And also trackit? Check what's going on here… -->
+        <li>
+          <strong>Twilight-free methods:</strong> This package implements location estimation without depending on the identificatin of twilight events: <github>ABindoff/TwilightFree</github>.        
         </li>
         
       </ul>
       
-    <li><b>Radio tagging data pre-processing:</b> Radio tagging involves the attachment of a radio transmitter to an animal. <a href="https://github.com/barryrowlingson/telemetr">telemetr</a> implements several triangulation methods as well as a maximum likelihood procedure to estimate locations from bearing data (triangulation information).
-    </li>
-    
-    <li><b>Dead-reckoning using accelerometry and magnetometry data:</b> The combined use of magnetometer and accelerometer data, especially as provided by modern inertial measurement units, which solve the problem of temporal synchronization among different sensors, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique.  <pkg>animalTrack</pkg> and <pkg>TrackReconstruction</pkg> implement DR to obtain tracks, though use different methods. 
-    </li>
-    
+      <li>
+        <strong>Radio tagging data pre-processing:</strong> Radio tagging involves the attachment of a radio transmitter to an animal. <github>barryrowlingson/telemetr</github> implements several triangulation methods as well as a maximum likelihood procedure to estimate locations from bearing data (triangulation information).
+      </li>
+      <li>
+        <strong>Dead-reckoning using accelerometry and magnetometry data:</strong> The combined use of magnetometer and accelerometer data, especially as provided by modern inertial measurement units, which solves the problem of temporal synchronization among different sensors, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique.  <pkg>animalTrack</pkg> and <pkg>TrackReconstruction</pkg> implement DR to obtain tracks, based on different methods.
+      </li>
+      <!-- MB: Very convoluted sentence. Please rephrase. -->
+      
     </ul>
 
-    <p>
-    <strong>Post-processing</strong>
-    </p>  
+    <h3>Post-processing</h3>
   
     <p>
-    Post-processing of tracking data comprises data cleaning (e.g. identification of outliers or errors), compressing (i.e. reducing data resolution which is sometimes called resampling) and computation of metrics based on tracking data, which are useful for posterior analyses.
+      Post-processing of tracking data comprises data cleaning (e.g. identification of outliers or errors), compressing (i.e. reducing data resolution which is sometimes called resampling) and computation of metrics based on tracking data, which are useful for posterior analyses.
     </p>
+
     <ul>    
     
-    <li><b>Data cleaning:</b> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <a href="http://tlocoh.r-forge.r-project.org/">T-LoCoH</a>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. They can be used for any tracking data and also contain functions to remove duplicates or records with unrealistically high speeds.
-    </li>
-    
-    <li><b>Data compression:</b> Rediscretization or getting data to equal step lengths can be achieved with <pkg>adehabitatLT</pkg>, <pkg>trajectories</pkg> or <pkg>trajr</pkg>. Regular time-step interpolation can be performed using <pkg>adehabitatLT</pkg>, <pkg>amt</pkg> or <pkg>trajectories</pkg>. Other compression methods include Douglas-Peucker (<pkg>TrajDataMining</pkg> and <pkg>trajectories</pkg>), opening window (<pkg>TrajDataMining</pkg>) or Savitzky-Golay (<pkg>trajr</pkg>). <pkg>rsMove</pkg> provides functions to explore and transform tracking data for a posterior linkage with remote sensing data.
-    </li>
-    
-    <li><b>Computation of metrics:</b> Some packages automatically derive second or third order movement variables (e.g. distance and angles between consecutive fixes) when transforming the tracking data into the package's data class. These packages are <pkg>adehabitatLT</pkg>, <pkg>momentuHMM</pkg>, <pkg>moveHMM</pkg>, <pkg>rhr</pkg> and <pkg>trajectories</pkg>. <pkg>bcpa</pkg> has a function to compute speeds, step lengths, orientations and other attributes from a track. <pkg>amt</pkg>, <pkg>move</pkg>, <pkg>segclust2d</pkg>, <pkg>trajr</pkg> and <pkg>trip</pkg> also contain functions for computing those metrics, but the user needs to specify which ones they need to compute. <a href="https://github.com/animalnexus/feedr">feedr</a> and <pkg>VTrack</pkg> are specifically for RFID and acoustic telemetry data, respectively, and compute statistics from those data.
-    </li>
-    
-    
-    
-    
+      <li>
+        <strong>Data cleaning:</strong> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <a href="http://tlocoh.r-forge.r-project.org/">T-LoCoH</a>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. They can be used for any tracking data and also contain functions to remove duplicates or records with unrealistically high speeds.
+      </li>
+      <!-- MB: There is a <rforge> tag, which really does not work well with case, and does not go to the actual home page on rforge, e.g. <rforge>tlocoh</rforge> -->
+      <li>
+        <strong>Data compression:</strong> Rediscretization or getting data to equal step lengths can be achieved with <pkg>adehabitatLT</pkg>, <pkg>trajectories</pkg> or <pkg>trajr</pkg>. Regular time-step interpolation can be performed using <pkg>adehabitatLT</pkg>, <pkg>amt</pkg> or <pkg>trajectories</pkg>. Other compression methods include Douglas-Peucker (<pkg>TrajDataMining</pkg> and <pkg>trajectories</pkg>), opening window (<pkg>TrajDataMining</pkg>) or Savitzky-Golay (<pkg>trajr</pkg>). <pkg>rsMove</pkg> provides functions to explore and transform tracking data for a posterior linkage with remote sensing data.
+      </li>
+      <li>
+        <strong>Computation of metrics:</strong> Some packages automatically derive second or third order movement variables (e.g. distance and angles between consecutive fixes) when transforming the tracking data into the package's data class. These packages are <pkg>adehabitatLT</pkg>, <pkg>momentuHMM</pkg>, <pkg>moveHMM</pkg>, <pkg>rhr</pkg> and <pkg>trajectories</pkg>. <pkg>bcpa</pkg> has a function to compute speeds, step lengths, orientations and other attributes from a track. <pkg>amt</pkg>, <pkg>move</pkg>, <pkg>segclust2d</pkg>, <pkg>trajr</pkg> and <pkg>trip</pkg> also contain functions for computing those metrics, but the user needs to specify which ones they need to compute. <github>animalnexus/feedr</github> and <pkg>VTrack</pkg> are specifically for RFID and acoustic telemetry data, respectively, and compute statistics from those data.
+      </li>
+      <!-- MB: Define RFID -->
+      
+    </ul>
     
   </info>
 
   <packagelist>
+    <!-- MB: I wonder if this can be automated… Also, how would you defined 'core' packages? -->
     <pkg>actuar</pkg>
     <pkg>AmericanCallOpt</pkg>
     <pkg>backtest</pkg>
@@ -238,6 +251,7 @@ The packages listed here, henceforth called tracking packages, are those explici
   </packagelist>
 
   <links>
+    <!-- MB: This would be interesting to discuss as well… -->
     <view>Econometrics</view>
     <view>ExtremeValue</view>
     <view>Multivariate</view>
