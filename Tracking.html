@@ -41,8 +41,8 @@
         </a>.
       </p>
       <p>
-        The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they are actively maintained and if they pass the check test (
-<tt>R CMD check</tt>). We consider that a package hosted on GitHub is actively maintained if a &quot;commit&quot; (i.e. a contribution) has been made in the last year, and for other packages (if they are not also on GitHub), that the most recent version of the package is no older than one year. At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the ones that do not comply with these criteria. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
+        The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (
+<tt>R CMD check</tt>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
         <a href="mailto:rocio.joo@ufl.edu">
           email
         </a>
@@ -72,7 +72,7 @@
         Pre-processing
       </h3>
       <p>
-        Pre-processing is required when raw biologging data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS, others on radio telemetry, and others use accelerometry and magnetometry data.
+        Pre-processing is required when raw biologging data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS (global location sensor), others on radio telemetry, and others use accelerometry and magnetometry data.
       </p>
       <ul>
         <li>
@@ -86,10 +86,10 @@
             <strong>
               Threshold methods:
             </strong>
-            Threshold levels of solar irradiance, which are arbritrarily chosen, are used to identify the timing of sunrise and sunset. The packages that use threshold methods are
+            Threshold levels of solar irradiance, which are arbritrarily chosen, are used to identify the timing of sunrise and sunset. The package that uses threshold methods are
 <a href="../packages/GeoLight/index.html">GeoLight</a>
             and
-<a href="https://github.com/benjamin-merkel/probGLS/"><span class="GitHub">probGLS</span></a>.
+<a href="https://github.com/SWotherspoon/SGAT/"><span class="GitHub">SGAT</span></a>.
           </li>
           <li>
             <strong>
@@ -97,38 +97,16 @@
             </strong>
             The observed light irradiance levels for each twilight are modeled as a function of theoretical light levels (i.e. the template). Then, parameters from the model (e.g. a slope in a linear regression) are used to estimate the locations. The formulation of the model and the parameters used for location estimation vary from method to method. The packages that use template-fitting methods are
 <a href="../packages/FLightR/index.html">FLightR</a>,
-            <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">
-              trackit
-            </a>
-<a href="../packages/trackit/index.html">trackit</a>
-            and
-            <a href="https://github.com/positioning/kalmanfilter/tree/master/trackit">
-              trackit
-            </a>
-            and
 <a href="../packages/tripEstimation/index.html">tripEstimation</a>
-          </li>
-          <li>
-            <strong>
-              Twilight-free methods:
-            </strong>
-            This package implements location estimation without depending on the identificatin of twilight events:
-<a href="https://github.com/ABindoff/TwilightFree/"><span class="GitHub">TwilightFree</span></a>.
+            and
+<a href="https://github.com/SWotherspoon/SGAT/"><span class="GitHub">SGAT</span></a>.
           </li>
         </ul>
         <li>
           <strong>
-            Radio tagging data pre-processing:
-          </strong>
-          Radio tagging involves the attachment of a radio transmitter to an animal.
-<a href="https://github.com/barryrowlingson/telemetr/"><span class="GitHub">telemetr</span></a>
-          implements several triangulation methods as well as a maximum likelihood procedure to estimate locations from bearing data (triangulation information).
-        </li>
-        <li>
-          <strong>
             Dead-reckoning using accelerometry and magnetometry data:
           </strong>
-          The combined use of magnetometer and accelerometer data, especially as provided by modern inertial measurement units, which solves the problem of temporal synchronization among different sensors, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique.
+          The combined use of magnetometer and accelerometer data, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique.
 <a href="../packages/animalTrack/index.html">animalTrack</a>
           and
 <a href="../packages/TrackReconstruction/index.html">TrackReconstruction</a>
@@ -197,12 +175,56 @@
           and
 <a href="../packages/trip/index.html">trip</a>
           also contain functions for computing those metrics, but the user needs to specify which ones they need to compute.
-<a href="https://github.com/animalnexus/feedr/"><span class="GitHub">feedr</span></a>
-          and
 <a href="../packages/VTrack/index.html">VTrack</a>
-          are specifically for RFID and acoustic telemetry data, respectively, and compute statistics from those data.
+          is specifically for acoustic telemetry data, and compute statistics from those data.
         </li>
       </ul>
+      <h3>
+        Visualization
+      </h3>
+      <p>
+        The packages mainly developed for visualization purposes, and more specifically, animation of tracks, are
+<a href="../packages/anipaths/index.html">anipaths</a>
+        and
+<a href="../packages/moveVis/index.html">moveVis</a>.
+      </p>
+      <h3>
+        Track description
+      </h3>
+      <p>
+<a href="../packages/amt/index.html">amt</a>
+        and
+<a href="../packages/trajr/index.html">trajr</a>
+        compute summary metrics of tracks, such as total distance covered, straightness index and sinuosity.
+<a href="../packages/trackeR/index.html">trackeR</a>
+        was created to analyze running, cycling and swimming data from GPS-tracking devices for humans.
+<a href="../packages/trackeR/index.html">trackeR</a>
+        computes metrics summarizing movement effort during each track (or workout effort per session).
+      </p>
+      <h3>
+        Path reconstruction
+      </h3>
+      <p>
+        Whether it is for the purposes of correcting for sampling errors, or obtaining finer data resolutions or regular time steps, path reconstruction is a common goal in movement analysis. Packages available for path reconstruction are
+<a href="../packages/HMMoce/index.html">HMMoce</a>,
+<a href="https://github.com/calbertsen/argosTrack/"><span class="GitHub">argosTrack</span></a>,
+<a href="../packages/bsam/index.html">bsam</a>,
+<a href="../packages/BayesianAnimalTracker/index.html">BayesianAnimalTracker</a>,
+<a href="../packages/TrackReconstruction/index.html">TrackReconstruction</a>,
+<a href="../packages/crawl/index.html">crawl</a>,
+<a href="../packages/ctmcmove/index.html">ctmcmove</a>
+        and
+<a href="../packages/ctmm/index.html">ctmm</a>.
+      </p>
+      <h3>
+        Behavioral pattern identification
+      </h3>
+      <p>
+        Another common goal in movement ecology is to get a proxy of the individual's behavior through the observed movement patterns, based on either the locations themselves or second/third order variables such as distance, speed or turning angles. Covariates, mainly related to the environment, are frequently used for behavioral pattern identification.
+      </p>
+      <p>
+        We classify the methods in this section as: 1) non-sequential classification or clustering techniques, where each fix in the track is classified as a given type of behavior, independently of the classification of the preceding or following fixes (i.e. independently of the temporal sequence); 2) segmentation methods, which identify change in behavior in time series of movement patterns to cut them into several segments; and 3) hidden Markov models, centered upon a hidden state Markovian process (representing the sequence of non-observed behaviors) that conditions the observed movement patterns
+      </p>
     </div>
 
   <h3>CRAN packages:</h3>
