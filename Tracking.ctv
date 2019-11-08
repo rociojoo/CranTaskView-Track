@@ -189,8 +189,57 @@
   </info>
 
   <packagelist>
+    <pkg>acc</pkg>
+    <pkg>accelerometry</pkg>
+    <pkg>adehabitatHR</pkg>
+    <pkg>adehabitatHS</pkg>
     <pkg>adehabitatLT</pkg>
+    <pkg>amt</pkg>
+    <pkg>animalTrack</pkg>
+    <pkg>anipaths</pkg>
+    <pkg>argosfilter</pkg>
+    <pkg>BayesianAnimalTracker</pkg>
+    <pkg>BBMM</pkg>
+    <pkg>bcpa</pkg>
+    <pkg>bsam</pkg>
+    <pkg>caribou</pkg>
+    <pkg>crawl</pkg>
+    <pkg>ctmcmove</pkg>
+    <pkg>ctmm</pkg>
+    <pkg>diveMove</pkg>
+    <pkg>EMbC</pkg>
+    <pkg>FLightR</pkg>
+    <pkg>GeoLight</pkg>
+    <pkg>GGIR</pkg>
+    <pkg>HMMoce</pkg>
+    <pkg>m2b</pkg>
+    <pkg>marcher</pkg>
+    <pkg>mkde</pkg>
+    <pkg>momementuHMM</pkg>
     <pkg>move</pkg>
+    <pkg>moveHMM</pkg>
+    <pkg>moveVis</pkg>
+    <pkg>moveWindSpeed</pkg>
+    <pkg>nparACT</pkg>
+    <pkg>pawacc</pkg>
+    <pkg>PhysicalActivity</pkg>
+    <pkg>recurse</pkg>
+    <pkg>rpostgisLT</pkg>
+    <pkg>rsMove</pkg>
+    <pkg>SDLfilter</pkg>
+    <pkg>segclust2d</pkg>
+    <pkg>SimilarityMeasures</pkg>
+    <pkg>SiMRiv</pkg>
+    <pkg>smam</pkg>
+    <pkg>trackdem</pkg>
+    <pkg>trackeR</pkg>
+    <pkg>TrackReconstruction</pkg>
+    <pkg>TrajDataMining</pkg>
+    <pkg>trajectories</pkg>
+    <pkg>trajr</pkg>
+    <pkg>trip</pkg>
+    <pkg>VTrack</pkg>
+    <pkg>WildlifeDI</pkg>
   </packagelist>
 
   <links>
