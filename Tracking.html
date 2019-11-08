@@ -7,12 +7,12 @@
   <meta name="citation_title" content="CRAN Task View: Processing and analysis of tracking data" />
   <meta name="citation_author" content="Rocío Joo, Matthew E. Boone
     and Michael Sumner" />
-  <meta name="citation_publication_date" content="2018-10-21" />
+  <meta name="citation_publication_date" content="2019-11-08" />
   <meta name="citation_public_url" content="https://CRAN.R-project.org/view=TrackingData" />
   <meta name="DC.title" content="CRAN Task View: Processing and analysis of tracking data" />
   <meta name="DC.creator" content="Rocío Joo, Matthew E. Boone
     and Michael Sumner" />
-  <meta name="DC.issued" content="2018-10-21" />
+  <meta name="DC.issued" content="2019-11-08" />
   <meta name="DC.identifier" content="https://CRAN.R-project.org/view=TrackingData" />
 </head>
 
@@ -22,7 +22,7 @@
     <tr><td valign="top"><b>Maintainer:</b></td><td>Rocío Joo, Matthew E. Boone
     and Michael Sumner</td></tr>
     <tr><td valign="top"><b>Contact:</b></td><td>&#x72;&#x6f;&#x63;&#x69;&#x6f;&#x2e;&#x6a;&#x6f;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x75;&#x66;&#x6c;&#x2e;&#x65;&#x64;&#x75;</td></tr>
-    <tr><td valign="top"><b>Version:</b></td><td>2018-10-21</td></tr>
+    <tr><td valign="top"><b>Version:</b></td><td>2019-11-08</td></tr>
     <tr><td valign="top"><b>URL:</b></td><td><a href="https://CRAN.R-project.org/view=TrackingData">https://CRAN.R-project.org/view=TrackingData</a></td></tr>
   </table>
 
@@ -43,8 +43,8 @@
         </a>.
       </p>
       <p>
-        The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (
-<tt>R CMD check</tt>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
+        The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. These are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (
+<tt>R CMD check</tt>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
         <a href="mailto:rocio.joo@ufl.edu">
           email
         </a>
@@ -54,7 +54,7 @@
         </a>.
       </p>
       <p>
-        Besides these packages, many other packages contain functions for data processing and analysis that could be used for tracking data or second/third degree variables obtained from tracking data, in particular some described in other CRAN Task Views like
+        Besides these packages, many other packages contain functions for data processing and analysis that could eventually be used for tracking data or second/third degree variables obtained from tracking data; we encourage users to check other CRAN Task Views like
 <a href="SpatioTemporal.html">SpatioTemporal</a>,
 <a href="Spatial.html">Spatial</a>
         and
@@ -137,7 +137,7 @@
           </a>,
 <a href="../packages/TrajDataMining/index.html">TrajDataMining</a>
           and
-<a href="../packages/trip/index.html">trip</a>. They can be used for any tracking data and also contain functions to remove duplicates or records with unrealistically high speeds.
+<a href="../packages/trip/index.html">trip</a>.
         </li>
         <li>
           <strong>
@@ -225,213 +225,197 @@
         Another common goal in movement ecology is to get a proxy of the individual's behavior through the observed movement patterns, based on either the locations themselves or second/third order variables such as distance, speed or turning angles. Covariates, mainly related to the environment, are frequently used for behavioral pattern identification.
       </p>
       <p>
-        We classify the methods in this section as: 1) non-sequential classification or clustering techniques, where each fix in the track is classified as a given type of behavior, independently of the classification of the preceding or following fixes (i.e. independently of the temporal sequence); 2) segmentation methods, which identify change in behavior in time series of movement patterns to cut them into several segments; and 3) hidden Markov models, centered upon a hidden state Markovian process (representing the sequence of non-observed behaviors) that conditions the observed movement patterns
+        We classify the methods in this section as: 1) non-sequential classification or clustering techniques, 2) segmentation methods and 3) hidden Markov models.
       </p>
+      <ul>
+        <li>
+          <strong>
+            Non-sequential classification or clustering techniques:
+          </strong>
+          Here each fix in the track is classified as a given type of behavior, independently of the classification of the preceding or following fixes (i.e. independently of the temporal sequence). The packages implementing these techniques are
+<a href="../packages/EMbC/index.html">EMbC</a>
+          and
+<a href="../packages/m2b/index.html">m2b</a>.
+        </li>
+        <li>
+          <strong>
+            Segmentation methods:
+          </strong>
+          They identify change in behavior in time series of movement patterns to cut them into several segments. The packages implementing these techniques are
+<a href="../packages/adehabitatLT/index.html">adehabitatLT</a>,
+<a href="../packages/bcpa/index.html">bcpa</a>,
+<a href="../packages/segclust2d/index.html">segclust2d</a>
+          and
+<a href="../packages/marcher/index.html">marcher</a>.
+        </li>
+        <li>
+          <strong>
+            Hidden Markov models:
+          </strong>
+          They are centered upon a hidden state Markovian process (representing the sequence of non-observed behaviors) that conditions the observed movement patterns. The packages implementing these methods are
+<a href="../packages/bsam/index.html">bsam</a>,
+<a href="../packages/moveHMM/index.html">moveHMM</a>
+          and
+<a href="../packages/momentuHMM/index.html">momentuHMM</a>.
+        </li>
+      </ul>
+      <h3>
+        Space and habitat use characterization
+      </h3>
+      <p>
+        Multiple packages implement functions to help answer questions related to where animals spend their time and what role environmental conditions play in movement or space-use decisions, which are typically split into two categories: home range calculation and habitat selection.
+      </p>
+      <ul>
+        <li>
+          <strong>
+            Home ranges:
+          </strong>
+          Several packages allow the estimation of home ranges, such as
+<a href="../packages/adehabitatHR/index.html">adehabitatHR</a>,
+<a href="../packages/amt/index.html">amt</a>,
+<a href="../packages/BBMM/index.html">BBMM</a>,
+<a href="../packages/ctmm/index.html">ctmm</a>,
+<a href="../packages/mkde/index.html">mkde</a>
+          and
+<a href="../packages/move/index.html">move</a>. They provide a variety of methods, from simple Minimum convex polygons to more complex probabilistic Utilization distributions, potentially accounting for the temporal autocorrelation in tracking data.
+        </li>
+        <li>
+          <strong>
+            Habitat use:
+          </strong>
+          The role of habitat features on animal space use, or habitat selection, can be investigated wih
+<a href="../packages/adehabitatHR/index.html">adehabitatHR</a>,
+<a href="../packages/amt/index.html">amt</a>,
+<a href="../packages/BBMM/index.html">BBMM</a>,
+<a href="../packages/ctmm/index.html">ctmm</a>,
+<a href="../packages/mkde/index.html">mkde</a>
+          and
+<a href="../packages/move/index.html">move</a>. They provide a variety of methods, from simple Minimum convex polygons to more complex probabilistic Utilization distributions, potentially accounting for the temporal autocorrelation in tracking data.
+        </li>
+        <li>
+          <strong>
+            Non-conventional approaches for space use:
+          </strong>
+          Other non-conventional approaches for investigating space use from tracking data can be found in
+<a href="../packages/recurse/index.html">recurse</a>,
+<a href="../packages/rsMove/index.html">rsMove</a>
+          and
+<a href="../packages/VTrack/index.html">VTrack</a>.
+        </li>
+      </ul>
+      <h3>
+        Trajectory simulation
+      </h3>
+      <p>
+        The tracking packages implement trajectory simulation are mainly based on Hidden Markov models, correlated random walks, Brownian motions, Lévy walks or Ornstein-Uhlenbeck processes:
+<a href="../packages/adehabitatLT/index.html">adehabitatLT</a>,
+<a href="../packages/moveHMM/index.html">moveHMM</a>,
+<a href="../packages/momentuHMM/index.html">momentuHMM</a>,
+<a href="../packages/bsam/index.html">bsam</a>,
+<a href="../packages/craw/index.html">craw</a>,
+<a href="https://github.com/calbertsen/argosTrack/"><span class="GitHub">argosTrack</span></a>,
+<a href="../packages/ctmm/index.html">ctmm</a>,
+<a href="../packages/smam/index.html">smam</a>,
+<a href="../packages/SiMRiv/index.html">SiMRiv</a>
+        and
+<a href="../packages/trajr/index.html">trajr</a>.
+      </p>
+      <h3>
+        Other analyses of tracking data
+      </h3>
+      <ul>
+        <li>
+          <strong>
+            Interactions:
+          </strong>
+          Interactions between individuals can be assessed using metrics from
+<a href="../packages/wildlifeDI/index.html">wildlifeDI</a>
+          and
+<a href="../packages/TrajDataMining/index.html">TrajDataMining</a>.
+<a href="../packages/spatsoc/index.html">spatsoc</a>
+          groups relocations within a same time-period or a same spatial range, and allows computing distances between individuals in the group and identifying nearest neighbors.
+        </li>
+        <li>
+          <strong>
+            Movement similarity:
+          </strong>
+          Measures such as the longest common subsequence, Fréchet distance, edit distance and dynamic time warping could be computed with
+<a href="../packages/SimilarityMeasures/index.html">SimilarityMeasures</a>
+          or
+<a href="../packages/trajectories/index.html">trajectories</a>.
+        </li>
+        <li>
+          <strong>
+            Population size:
+          </strong>
+<a href="../packages/caribou/index.html">caribou</a>
+          was specifically created to estimate population size from Caribou tracking data, but can also be used for wildlife populations with similar home-range behavior.
+        </li>
+        <li>
+          <strong>
+            Inferring environmental conditions:
+          </strong>
+<a href="../packages/moveWindSpeed/index.html">moveWindSpeed</a>
+          uses tracking data to infer wind speed.
+        </li>
+        <li>
+          <strong>
+            Database management:
+          </strong>
+<a href="../packages/rpostgisLT/index.html">rpostgisLT</a>
+          handles database management for trajectory data by integrating R and the &quot;PostgreSQL/PostGIS&quot;&quot; database system.
+        </li>
+      </ul>
+      <h3>
+        Dealing with movement but not tracking data
+      </h3>
+      <ul>
+        <li>
+          <strong>
+            Analysis of biologging data:
+          </strong>
+          Packages to analyze time-depth recorder (TDR) and accelerometer data from animals are
+<a href="../packages/diveMove/index.html">diveMove</a>
+          and
+<a href="../packages/rbl/index.html">rbl</a>. They allow obtaining statistics of dive and swimming effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity:
+<a href="../packages/acc/index.html">acc</a>,
+<a href="../packages/accelerometry/index.html">accelerometry</a>,
+<a href="../packages/GGIR/index.html">GGIR</a>,
+<a href="../packages/nparACT/index.html">nparACT</a>,
+<a href="../packages/pawacc/index.html">pawacc</a>
+          and
+<a href="../packages/PhysicalActivity/index.html">PhysicalActivity</a>.
+        </li>
+        <li>
+          <strong>
+            Non-biologging video and images:
+          </strong>
+          When a camera can encompass an area large enough for an individual to move in, video and images can be used to record movement. Packages related to these data are
+          <a href="https://bioconductor.org/packages/release/bioc/html/SwimR.html">
+            SwimR
+          </a>
+          (for individuals moving in assay plates) and
+<a href="../packages/trackdem/index.html">trackdem</a>
+          (processing frame-by-frame images).
+        </li>
+      </ul>
     </div>
 
   <h3>CRAN packages:</h3>
   <ul>
-    <li><a href="../packages/actuar/index.html">actuar</a></li>
-    <li><a href="../packages/AmericanCallOpt/index.html">AmericanCallOpt</a></li>
-    <li><a href="../packages/backtest/index.html">backtest</a></li>
-    <li><a href="../packages/bayesGARCH/index.html">bayesGARCH</a></li>
-    <li><a href="../packages/BCC1997/index.html">BCC1997</a></li>
-    <li><a href="../packages/BenfordTests/index.html">BenfordTests</a></li>
-    <li><a href="../packages/betategarch/index.html">betategarch</a></li>
-    <li><a href="../packages/bizdays/index.html">bizdays</a></li>
-    <li><a href="../packages/BLModel/index.html">BLModel</a></li>
-    <li><a href="../packages/BurStFin/index.html">BurStFin</a></li>
-    <li><a href="../packages/BurStMisc/index.html">BurStMisc</a></li>
-    <li><a href="../packages/CADFtest/index.html">CADFtest</a></li>
-    <li><a href="../packages/car/index.html">car</a></li>
-    <li><a href="../packages/ccgarch/index.html">ccgarch</a></li>
-    <li><a href="../packages/ChainLadder/index.html">ChainLadder</a></li>
-    <li><a href="../packages/copula/index.html">copula</a></li>
-    <li><a href="../packages/CreditMetrics/index.html">CreditMetrics</a></li>
-    <li><a href="../packages/credule/index.html">credule</a></li>
-    <li><a href="../packages/crp.CSFP/index.html">crp.CSFP</a></li>
-    <li><a href="../packages/cvar/index.html">cvar</a></li>
-    <li><a href="../packages/data.table/index.html">data.table</a></li>
-    <li><a href="../packages/derivmkts/index.html">derivmkts</a></li>
-    <li><a href="../packages/dlm/index.html">dlm</a></li>
-    <li><a href="../packages/Dowd/index.html">Dowd</a></li>
-    <li><a href="../packages/dse/index.html">dse</a></li>
-    <li><a href="../packages/DtD/index.html">DtD</a></li>
-    <li><a href="../packages/dyn/index.html">dyn</a></li>
-    <li><a href="../packages/dynlm/index.html">dynlm</a></li>
-    <li><a href="../packages/ESG/index.html">ESG</a></li>
-    <li><a href="../packages/estudy2/index.html">estudy2</a></li>
-    <li><a href="../packages/factorstochvol/index.html">factorstochvol</a></li>
-    <li><a href="../packages/fame/index.html">fame</a></li>
-    <li><a href="../packages/fAssets/index.html">fAssets</a> (core)</li>
-    <li><a href="../packages/FatTailsR/index.html">FatTailsR</a></li>
-    <li><a href="../packages/fBasics/index.html">fBasics</a> (core)</li>
-    <li><a href="../packages/fBonds/index.html">fBonds</a> (core)</li>
-    <li><a href="../packages/fCopulae/index.html">fCopulae</a> (core)</li>
-    <li><a href="../packages/fExoticOptions/index.html">fExoticOptions</a> (core)</li>
-    <li><a href="../packages/fExtremes/index.html">fExtremes</a> (core)</li>
-    <li><a href="../packages/fgac/index.html">fgac</a></li>
-    <li><a href="../packages/fGarch/index.html">fGarch</a> (core)</li>
-    <li><a href="../packages/fImport/index.html">fImport</a> (core)</li>
-    <li><a href="../packages/financial/index.html">financial</a></li>
-    <li><a href="../packages/FinancialMath/index.html">FinancialMath</a></li>
-    <li><a href="../packages/FinAsym/index.html">FinAsym</a></li>
-    <li><a href="../packages/finreportr/index.html">finreportr</a></li>
-    <li><a href="../packages/fmdates/index.html">fmdates</a></li>
-    <li><a href="../packages/fMultivar/index.html">fMultivar</a> (core)</li>
-    <li><a href="../packages/fNonlinear/index.html">fNonlinear</a> (core)</li>
-    <li><a href="../packages/fOptions/index.html">fOptions</a> (core)</li>
-    <li><a href="../packages/forecast/index.html">forecast</a></li>
-    <li><a href="../packages/fPortfolio/index.html">fPortfolio</a> (core)</li>
-    <li><a href="../packages/fracdiff/index.html">fracdiff</a></li>
-    <li><a href="../packages/fractal/index.html">fractal</a></li>
-    <li><a href="../packages/FRAPO/index.html">FRAPO</a></li>
-    <li><a href="../packages/fRegression/index.html">fRegression</a> (core)</li>
-    <li><a href="../packages/frmqa/index.html">frmqa</a></li>
-    <li><a href="../packages/fTrading/index.html">fTrading</a> (core)</li>
-    <li><a href="../packages/GCPM/index.html">GCPM</a></li>
-    <li><a href="../packages/GetHFData/index.html">GetHFData</a></li>
-    <li><a href="../packages/gets/index.html">gets</a></li>
-    <li><a href="../packages/GetTDData/index.html">GetTDData</a></li>
-    <li><a href="../packages/GEVStableGarch/index.html">GEVStableGarch</a></li>
-    <li><a href="../packages/ghyp/index.html">ghyp</a></li>
-    <li><a href="../packages/gmm/index.html">gmm</a></li>
-    <li><a href="../packages/gogarch/index.html">gogarch</a></li>
-    <li><a href="../packages/GUIDE/index.html">GUIDE</a></li>
-    <li><a href="../packages/highfrequency/index.html">highfrequency</a></li>
-    <li><a href="../packages/IBrokers/index.html">IBrokers</a></li>
-    <li><a href="../packages/InfoTrad/index.html">InfoTrad</a></li>
-    <li><a href="../packages/lgarch/index.html">lgarch</a></li>
-    <li><a href="../packages/lifecontingencies/index.html">lifecontingencies</a></li>
-    <li><a href="../packages/lmtest/index.html">lmtest</a></li>
-    <li><a href="../packages/longmemo/index.html">longmemo</a></li>
-    <li><a href="../packages/LSMonteCarlo/index.html">LSMonteCarlo</a></li>
-    <li><a href="../packages/maRketSim/index.html">maRketSim</a></li>
-    <li><a href="../packages/markovchain/index.html">markovchain</a></li>
-    <li><a href="../packages/MarkowitzR/index.html">MarkowitzR</a></li>
-    <li><a href="../packages/matchingMarkets/index.html">matchingMarkets</a></li>
-    <li><a href="../packages/MB: I wonder if this can be automated… Also, how would you defined 'core' packages?/index.html">MB: I wonder if this can be automated… Also, how would you defined 'core' packages?</a></li>
-    <li><a href="../packages/MSBVAR/index.html">MSBVAR</a></li>
-    <li><a href="../packages/MSGARCH/index.html">MSGARCH</a></li>
-    <li><a href="../packages/mvtnorm/index.html">mvtnorm</a></li>
-    <li><a href="../packages/NetworkRiskMeasures/index.html">NetworkRiskMeasures</a></li>
-    <li><a href="../packages/nlme/index.html">nlme</a></li>
-    <li><a href="../packages/NMOF/index.html">NMOF</a></li>
-    <li><a href="../packages/obAnalytics/index.html">obAnalytics</a></li>
-    <li><a href="../packages/OptHedging/index.html">OptHedging</a></li>
-    <li><a href="../packages/OptionPricing/index.html">OptionPricing</a></li>
-    <li><a href="../packages/pa/index.html">pa</a></li>
-    <li><a href="../packages/parma/index.html">parma</a></li>
-    <li><a href="../packages/pbo/index.html">pbo</a></li>
-    <li><a href="../packages/PerformanceAnalytics/index.html">PerformanceAnalytics</a> (core)</li>
-    <li><a href="../packages/pinbasic/index.html">pinbasic</a></li>
-    <li><a href="../packages/portfolio/index.html">portfolio</a></li>
-    <li><a href="../packages/PortfolioEffectHFT/index.html">PortfolioEffectHFT</a></li>
-    <li><a href="../packages/PortfolioOptim/index.html">PortfolioOptim</a></li>
-    <li><a href="../packages/portfolioSim/index.html">portfolioSim</a></li>
-    <li><a href="../packages/PortRisk/index.html">PortRisk</a></li>
-    <li><a href="../packages/quantmod/index.html">quantmod</a></li>
-    <li><a href="../packages/QuantTools/index.html">QuantTools</a></li>
-    <li><a href="../packages/ragtop/index.html">ragtop</a></li>
-    <li><a href="../packages/Rbitcoin/index.html">Rbitcoin</a></li>
-    <li><a href="../packages/Rblpapi/index.html">Rblpapi</a></li>
-    <li><a href="../packages/Rcmdr/index.html">Rcmdr</a></li>
-    <li><a href="../packages/RcppQuantuccia/index.html">RcppQuantuccia</a></li>
-    <li><a href="../packages/reinsureR/index.html">reinsureR</a></li>
-    <li><a href="../packages/restimizeapi/index.html">restimizeapi</a></li>
-    <li><a href="../packages/Risk/index.html">Risk</a></li>
-    <li><a href="../packages/RiskPortfolios/index.html">RiskPortfolios</a></li>
-    <li><a href="../packages/riskSimul/index.html">riskSimul</a></li>
-    <li><a href="../packages/RM2006/index.html">RM2006</a></li>
-    <li><a href="../packages/rmgarch/index.html">rmgarch</a></li>
-    <li><a href="../packages/RND/index.html">RND</a></li>
-    <li><a href="../packages/rpatrec/index.html">rpatrec</a></li>
-    <li><a href="../packages/rpgm/index.html">rpgm</a></li>
-    <li><a href="../packages/RQuantLib/index.html">RQuantLib</a></li>
-    <li><a href="../packages/rugarch/index.html">rugarch</a> (core)</li>
-    <li><a href="../packages/rwt/index.html">rwt</a></li>
-    <li><a href="../packages/sandwich/index.html">sandwich</a></li>
-    <li><a href="../packages/sde/index.html">sde</a></li>
-    <li><a href="../packages/SharpeR/index.html">SharpeR</a></li>
-    <li><a href="../packages/sharpeRratio/index.html">sharpeRratio</a></li>
-    <li><a href="../packages/Sim.DiffProc/index.html">Sim.DiffProc</a></li>
-    <li><a href="../packages/SmithWilsonYieldCurve/index.html">SmithWilsonYieldCurve</a></li>
-    <li><a href="../packages/stochvol/index.html">stochvol</a></li>
-    <li><a href="../packages/strucchange/index.html">strucchange</a></li>
-    <li><a href="../packages/TAQMNGR/index.html">TAQMNGR</a></li>
-    <li><a href="../packages/tawny/index.html">tawny</a></li>
-    <li><a href="../packages/termstrc/index.html">termstrc</a></li>
-    <li><a href="../packages/TFX/index.html">TFX</a></li>
-    <li><a href="../packages/tidyquant/index.html">tidyquant</a></li>
-    <li><a href="../packages/timeDate/index.html">timeDate</a> (core)</li>
-    <li><a href="../packages/timeSeries/index.html">timeSeries</a> (core)</li>
-    <li><a href="../packages/timsac/index.html">timsac</a></li>
-    <li><a href="../packages/tis/index.html">tis</a></li>
-    <li><a href="../packages/TSdbi/index.html">TSdbi</a></li>
-    <li><a href="../packages/tsDyn/index.html">tsDyn</a></li>
-    <li><a href="../packages/tseries/index.html">tseries</a> (core)</li>
-    <li><a href="../packages/tseriesChaos/index.html">tseriesChaos</a></li>
-    <li><a href="../packages/tsfa/index.html">tsfa</a></li>
-    <li><a href="../packages/TTR/index.html">TTR</a></li>
-    <li><a href="../packages/tvm/index.html">tvm</a></li>
-    <li><a href="../packages/urca/index.html">urca</a> (core)</li>
-    <li><a href="../packages/vars/index.html">vars</a></li>
-    <li><a href="../packages/VarSwapPrice/index.html">VarSwapPrice</a></li>
-    <li><a href="../packages/vrtest/index.html">vrtest</a></li>
-    <li><a href="../packages/wavelets/index.html">wavelets</a></li>
-    <li><a href="../packages/waveslim/index.html">waveslim</a></li>
-    <li><a href="../packages/wavethresh/index.html">wavethresh</a></li>
-    <li><a href="../packages/XBRL/index.html">XBRL</a></li>
-    <li><a href="../packages/xts/index.html">xts</a> (core)</li>
-    <li><a href="../packages/ycinterextra/index.html">ycinterextra</a></li>
-    <li><a href="../packages/YieldCurve/index.html">YieldCurve</a></li>
-    <li><a href="../packages/Zelig/index.html">Zelig</a></li>
-    <li><a href="../packages/zoo/index.html">zoo</a> (core)</li>
+    <li><a href="../packages/adehabitatLT/index.html">adehabitatLT</a></li>
+    <li><a href="../packages/move/index.html">move</a></li>
   </ul>
 
   <h3>Related links:</h3>
   <ul>
-    <li>CRAN Task View: <a href="Econometrics.html">Econometrics</a></li>
-    <li>CRAN Task View: <a href="ExtremeValue.html">ExtremeValue</a></li>
-    <li>CRAN Task View: <a href="Multivariate.html">Multivariate</a></li>
-    <li>CRAN Task View: <a href="Optimization.html">Optimization</a></li>
-    <li>CRAN Task View: <a href="Robust.html">Robust</a></li>
-    <li>CRAN Task View: <a href="SocialSciences.html">SocialSciences</a></li>
+    <li>CRAN Task View: <a href="SpatioTemporal.html">SpatioTemporal</a></li>
+    <li>CRAN Task View: <a href="Spatial.html">Spatial</a></li>
     <li>CRAN Task View: <a href="TimeSeries.html">TimeSeries</a></li>
-    <li><a href="http://www.rmetrics.org">
-  Rmetrics contains a wealth of R code for Finance
+    <li><a href="https://doi.org/dcnf">
+  Article at the base of this Task View
 </a></li>
-    <li><a href="http://www.quantlib.org">
-  Quantlib is a C++ library for quantitative finance
-</a></li>
-    <li><a href="http://www.bloomberglabs.com//">
-  Documentation for the Bloomberg API accessed by Rblpapi
-</a></li>
-    <li><a href="https://stat.ethz.ch/mailman/listinfo/R-SIG-Finance/">
-  Mailing list: R Special Interest Group Finance
-</a></li>
-    <li><a href="http://www.msci.com/">
-  MSCI indexes data
-</a></li>
-    <li><a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">
-  French/Fama data
-</a></li>
-    <li><a href="http://www.wilshire.com/Indexes/calculator/">
-  Wilshire indexes data
-</a></li>
-    <li><a href="http://orfe.princeton.edu/~rcarmona/maindownload.html">
-  Rene Carmona
-</a></li>
-    <li><a href="http://faculty.washington.edu/ezivot/splus.htm">
-  Eric Zivot
-</a></li>
-    <li><a href="http://christopherggreen.github.io/RuppertStatisticsFinance2004/">
-  R Code for Ruppert's 'Statistics and Finance'
-</a></li>
-    <li><a href="http://www.r-programming.org/papers">
-  Guy Yollin
-</a></li>
-    <li><a href="https://github.com/eddelbuettel/ctv-finance">
+    <li><a href="https://github.com/rociojoo/CranTaskView-Track">
   GitHub repository for this Task View
 </a></li>
   </ul>

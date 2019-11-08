@@ -5,7 +5,7 @@
   <topic>Processing and analysis of tracking data</topic>
   <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone
     and Michael Sumner</maintainer>
-  <version>2018-10-21</version>
+  <version>2019-11-08</version>
   <url>https://CRAN.R-project.org/view=TrackingData</url>
   
   <info>
@@ -18,15 +18,14 @@
       Movement of an organism is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called tracking packages, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from biologging (or tracking) devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an animal's trajectory via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>.
     </p>
     <p>
-      The packages included here are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (<code>R CMD check</code>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by <a href="mailto:rocio.joo@ufl.edu">email</a> or open an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository</a>.
+      The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. These are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (<code>R CMD check</code>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by <a href="mailto:rocio.joo@ufl.edu">email</a> or open an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository</a>.
     </p>
     <p>
-      Besides these packages, many other packages contain functions for data processing and analysis that could be used for tracking data or second/third degree variables obtained from tracking data, in particular some described in other CRAN Task Views like <view>SpatioTemporal</view>, <view>Spatial</view> and <view>TimeSeries</view>. 
+      Besides these packages, many other packages contain functions for data processing and analysis that could eventually be used for tracking data or second/third degree variables obtained from tracking data; we encourage users to check other CRAN Task Views like <view>SpatioTemporal</view>, <view>Spatial</view> and <view>TimeSeries</view>. 
     </p>
     <p>
       This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
     </p>
-    <!-- Shall we add the figure with the actual structure (pre/post/analysis)? That would be nice. -->
     
     <h3>Pre-processing</h3>
     
@@ -68,7 +67,7 @@
     <ul>    
     
       <li>
-        <strong>Data cleaning:</strong> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <a href="http://tlocoh.r-forge.r-project.org/">T-LoCoH</a>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. They can be used for any tracking data and also contain functions to remove duplicates or records with unrealistically high speeds.
+        <strong>Data cleaning:</strong> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <a href="http://tlocoh.r-forge.r-project.org/">T-LoCoH</a>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. 
       </li>
 
       <li>
@@ -105,196 +104,101 @@
     </p>
     
     <p>
-      We classify the methods in this section as: 1) non-sequential classification or clustering techniques, where each fix in the track is classified as a given type of behavior, independently of the classification of the preceding or following fixes (i.e. independently of the temporal sequence); 2) segmentation methods, which identify change in behavior in time series of movement patterns to cut them into several segments; and 3) hidden Markov models, centered upon a hidden state Markovian process (representing the sequence of non-observed behaviors) that conditions the observed movement patterns
+      We classify the methods in this section as: 1) non-sequential classification or clustering techniques, 2) segmentation methods and 3) hidden Markov models.
     </p>
     
+    
+    <ul>
+    
+    <li>
+        <strong>Non-sequential classification or clustering techniques:</strong> Here each fix in the track is classified as a given type of behavior, independently of the classification of the preceding or following fixes (i.e. independently of the temporal sequence). The packages implementing these techniques are <pkg>EMbC</pkg> and <pkg>m2b</pkg>.
+      </li>
+    
+    <li>
+        <strong>Segmentation methods:</strong> They identify change in behavior in time series of movement patterns to cut them into several segments. The packages implementing these techniques are <pkg>adehabitatLT</pkg>, <pkg>bcpa</pkg>, <pkg>segclust2d</pkg> and <pkg>marcher</pkg>.
+      </li>
+      
+    <li>
+        <strong>Hidden Markov models:</strong> They are centered upon a hidden state Markovian process (representing the sequence of non-observed behaviors) that conditions the observed movement patterns. The packages implementing these methods are <pkg>bsam</pkg>, <pkg>moveHMM</pkg> and <pkg>momentuHMM</pkg>.
+      </li>
+      
+      </ul>
+      
+    <h3>Space and habitat use characterization</h3>
+    
+    <p>
+      Multiple packages implement functions to help answer questions related to where animals spend their time and what role environmental conditions play in movement or space-use decisions, which are typically split into two categories: home range calculation and habitat selection.
+    </p>
+    
+    <ul>
+    
+      <li>
+        <strong>Home ranges:</strong> Several packages allow the estimation of home ranges, such as <pkg>adehabitatHR</pkg>, <pkg>amt</pkg>, <pkg>BBMM</pkg>, <pkg>ctmm</pkg>, <pkg>mkde</pkg> and <pkg>move</pkg>. They provide a variety of methods, from simple Minimum convex polygons to more complex probabilistic Utilization distributions, potentially accounting for the temporal autocorrelation in tracking data.
+      </li>
+    
+      <li>
+        <strong>Habitat use:</strong> The role of habitat features on animal space use, or habitat selection, can be investigated wih <pkg>adehabitatHR</pkg>, <pkg>amt</pkg>, <pkg>BBMM</pkg>, <pkg>ctmm</pkg>, <pkg>mkde</pkg> and <pkg>move</pkg>. They provide a variety of methods, from simple Minimum convex polygons to more complex probabilistic Utilization distributions, potentially accounting for the temporal autocorrelation in tracking data.
+      </li>
+      
+      <li>
+        <strong>Non-conventional approaches for space use:</strong> Other non-conventional approaches for investigating space use from tracking data can be found in <pkg>recurse</pkg>, <pkg>rsMove</pkg> and <pkg>VTrack</pkg>.
+      </li>
+      
+    </ul>
+    
+    <h3>Trajectory simulation</h3>
+    
+    <p> 
+      The tracking packages implement trajectory simulation are mainly based on Hidden Markov models, correlated random walks, Brownian motions, Lévy walks or Ornstein-Uhlenbeck processes: <pkg>adehabitatLT</pkg>, <pkg>moveHMM</pkg>, <pkg>momentuHMM</pkg>, <pkg>bsam</pkg>, <pkg>craw</pkg>, <github>calbertsen/argosTrack</github>, <pkg>ctmm</pkg>, <pkg>smam</pkg>, <pkg>SiMRiv</pkg> and <pkg>trajr</pkg>.
+    </p>
+    
+    <h3>Other analyses of tracking data</h3>
+    
+    <ul>
+    
+      <li> <strong>Interactions:</strong> Interactions between individuals can be assessed using metrics from <pkg>wildlifeDI</pkg> and <pkg>TrajDataMining</pkg>. <pkg>spatsoc</pkg> groups relocations within a same time-period or a same spatial range, and allows computing distances between individuals in the group and identifying nearest neighbors. 
+      </li>
+      
+      <li> <strong>Movement similarity:</strong> Measures such as the longest common subsequence, Fréchet distance, edit distance and dynamic time warping could be computed with <pkg>SimilarityMeasures</pkg> or <pkg>trajectories</pkg>.
+      </li>
+      
+      <li> <strong>Population size:</strong> <pkg>caribou</pkg> was specifically created to estimate population size from Caribou tracking data, but can also be used for wildlife populations with similar home-range behavior. 
+      </li>
+            
+      <li> <strong>Inferring environmental conditions:</strong> <pkg>moveWindSpeed</pkg> uses tracking data to infer wind speed. 
+      </li>
+      
+      <li> <strong>Database management:</strong> <pkg>rpostgisLT</pkg> handles database management for trajectory data by integrating R and the "PostgreSQL/PostGIS"" database system. 
+      </li>
+      
+    </ul>
+    
+    <h3>Dealing with movement but not tracking data</h3>
+    
+    <ul>
+    
+      <li> <strong>Analysis of biologging data:</strong> Packages to analyze time-depth recorder (TDR) and accelerometer data from animals are <pkg>diveMove</pkg> and <pkg>rbl</pkg>. They allow obtaining statistics of dive and swimming effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity: <pkg>acc</pkg>, <pkg>accelerometry</pkg>, <pkg>GGIR</pkg>, <pkg>nparACT</pkg>, <pkg>pawacc</pkg> and <pkg>PhysicalActivity</pkg>.
+      </li>
+      
+      <li> <strong>Non-biologging video and images:</strong> When a camera can encompass an area large enough for an individual to move in, video and images can be used to record movement. Packages related to these data are <a href="https://bioconductor.org/packages/release/bioc/html/SwimR.html">SwimR</a> (for individuals moving in assay plates) and <pkg>trackdem</pkg> (processing frame-by-frame images).
+      </li>
+      
+    </ul>
     
     
   </info>
 
   <packagelist>
-    <!-- MB: I wonder if this can be automated… Also, how would you defined 'core' packages? -->
-    <pkg>actuar</pkg>
-    <pkg>AmericanCallOpt</pkg>
-    <pkg>backtest</pkg>
-    <pkg>bayesGARCH</pkg>
-    <pkg>BCC1997</pkg>    
-    <pkg>BenfordTests</pkg>
-    <pkg>betategarch</pkg>
-    <pkg>bizdays</pkg>
-    <pkg>BLModel</pkg>
-    <pkg>BurStFin</pkg>
-    <pkg>BurStMisc</pkg>
-    <pkg>CADFtest</pkg>
-    <pkg>car</pkg>
-    <pkg>ccgarch</pkg>
-    <pkg>ChainLadder</pkg>
-    <pkg>copula</pkg>
-    <pkg>CreditMetrics</pkg>
-    <pkg>credule</pkg>
-    <pkg>crp.CSFP</pkg>
-    <pkg>cvar</pkg>    
-    <pkg>data.table</pkg>
-    <pkg>derivmkts</pkg>    
-    <pkg>dlm</pkg>
-    <pkg>Dowd</pkg>    
-    <pkg>dse</pkg>
-    <pkg>DtD</pkg>
-    <pkg>dyn</pkg>
-    <pkg>dynlm</pkg>
-    <pkg>ESG</pkg>
-    <pkg>estudy2</pkg>
-    <pkg>factorstochvol</pkg>    
-    <pkg>fame</pkg>
-    <pkg>FatTailsR</pkg>
-    <pkg>fgac</pkg>
-    <pkg>financial</pkg>
-    <pkg priority="core">fAssets</pkg>
-    <pkg priority="core">fBasics</pkg>
-    <pkg priority="core">fBonds</pkg>
-    <pkg priority="core">fCopulae</pkg>
-    <pkg priority="core">fExoticOptions</pkg>
-    <pkg priority="core">fExtremes</pkg>
-    <pkg priority="core">fGarch</pkg>
-    <pkg priority="core">fImport</pkg>
-    <pkg>FinancialMath</pkg>
-    <pkg>FinAsym</pkg>
-    <pkg>finreportr</pkg>
-    <pkg priority="core">fMultivar</pkg>
-    <pkg priority="core">fNonlinear</pkg>
-    <pkg priority="core">fOptions</pkg>
-    <pkg priority="core">fPortfolio</pkg>
-    <pkg priority="core">fRegression</pkg>
-    <pkg priority="core">fTrading</pkg>
-    <pkg>fmdates</pkg>
-    <pkg>forecast</pkg>
-    <pkg>fracdiff</pkg>
-    <pkg>fractal</pkg>
-    <pkg>FRAPO</pkg>
-    <pkg>frmqa</pkg>
-    <pkg>GCPM</pkg> 
-    <pkg>GetHFData</pkg>
-    <pkg>gets</pkg>
-    <pkg>GetTDData</pkg>
-    <pkg>GEVStableGarch</pkg>
-    <pkg>ghyp</pkg>
-    <pkg>gmm</pkg>
-    <pkg>gogarch</pkg>
-    <pkg>GUIDE</pkg>
-    <pkg>highfrequency</pkg>
-    <pkg>IBrokers</pkg>
-    <pkg>InfoTrad</pkg>
-    <pkg>lgarch</pkg>
-    <pkg>lifecontingencies</pkg>
-    <pkg>lmtest</pkg>
-    <pkg>LSMonteCarlo</pkg>
-    <pkg>longmemo</pkg>
-    <pkg>markovchain</pkg>
-    <pkg>maRketSim</pkg>
-    <pkg>MarkowitzR</pkg>
-    <pkg>matchingMarkets</pkg>
-    <pkg>MSBVAR</pkg>
-    <pkg>MSGARCH</pkg>
-    <pkg>mvtnorm</pkg>
-    <pkg>NetworkRiskMeasures</pkg>
-    <pkg>nlme</pkg>
-    <pkg>NMOF</pkg>
-    <pkg>obAnalytics</pkg>
-    <pkg>OptHedging</pkg>
-    <pkg>OptionPricing</pkg>
-    <pkg>pa</pkg>
-    <pkg>parma</pkg>
-    <pkg>pbo</pkg> 
-    <pkg priority="core">PerformanceAnalytics</pkg>
-    <pkg>pinbasic</pkg> 
-    <pkg>portfolio</pkg>
-    <pkg>PortfolioEffectHFT</pkg>
-    <pkg>PortfolioOptim</pkg>
-    <pkg>portfolioSim</pkg>
-    <pkg>PortRisk</pkg>
-    <pkg>quantmod</pkg>
-    <pkg>QuantTools</pkg>
-    <pkg>ragtop</pkg>
-    <pkg>Rbitcoin</pkg>
-    <pkg>Rblpapi</pkg>
-    <pkg>Rcmdr</pkg>
-    <pkg>RcppQuantuccia</pkg>
-    <pkg>reinsureR</pkg>    
-    <pkg>restimizeapi</pkg>
-    <pkg>Risk</pkg> 
-    <pkg>RiskPortfolios</pkg> 
-    <pkg>riskSimul</pkg>
-    <pkg>RM2006</pkg>
-    <pkg>rmgarch</pkg> 
-    <pkg>RND</pkg>
-    <pkg>rpatrec</pkg>    
-    <pkg>rpgm</pkg>    
-    <pkg>RQuantLib</pkg>
-    <pkg priority="core">rugarch</pkg> 
-    <pkg>rwt</pkg> 
-    <pkg>sandwich</pkg>
-    <pkg>sde</pkg>
-    <pkg>SharpeR</pkg>
-    <pkg>sharpeRratio</pkg>
-    <pkg>Sim.DiffProc</pkg>    
-    <pkg>SmithWilsonYieldCurve</pkg>
-    <pkg>stochvol</pkg>
-    <pkg>strucchange</pkg>
-    <pkg>TAQMNGR</pkg>
-    <pkg>timsac</pkg>
-    <pkg priority="core">tseries</pkg>
-    <pkg>termstrc</pkg>
-    <pkg>TFX</pkg>
-    <pkg>TSdbi</pkg>
-    <pkg>tsDyn</pkg>
-    <pkg>tseriesChaos</pkg>
-    <pkg>tsfa</pkg>
-    <pkg>TTR</pkg>
-    <pkg>tawny</pkg>
-    <pkg>tidyquant</pkg>    
-    <pkg priority="core">timeDate</pkg>
-    <pkg priority="core">timeSeries</pkg>
-    <pkg>tis</pkg> 
-    <pkg>tvm</pkg>
-    <pkg priority="core">urca</pkg>
-    <pkg>vars</pkg>
-    <pkg>vrtest</pkg>
-    <pkg>VarSwapPrice</pkg>
-    <pkg>wavelets</pkg>
-    <pkg>waveslim</pkg>
-    <pkg>wavethresh</pkg> 
-    <pkg>ycinterextra</pkg>
-    <pkg>YieldCurve</pkg>
-    <pkg>XBRL</pkg>
-    <pkg priority="core">xts</pkg> 
-    <pkg>Zelig</pkg>
-    <pkg priority="core">zoo</pkg>    
+    <pkg>adehabitatLT</pkg>
+    <pkg>move</pkg>
   </packagelist>
 
   <links>
-    <!-- MB: This would be interesting to discuss as well… -->
-    <view>Econometrics</view>
-    <view>ExtremeValue</view>
-    <view>Multivariate</view>
-    <view>Optimization</view>
-    <view>Robust</view>
-    <view>SocialSciences</view>
+    <view>SpatioTemporal</view>
+    <view>Spatial</view>
     <view>TimeSeries</view>
-    <a href="http://www.rmetrics.org">Rmetrics contains a wealth of R code for Finance</a>
-    <a href="http://www.quantlib.org">Quantlib is a C++ library for quantitative finance</a>
-    <a href="http://www.bloomberglabs.com//">Documentation for the Bloomberg API accessed by Rblpapi</a>
-    <a href="https://stat.ethz.ch/mailman/listinfo/R-SIG-Finance/">Mailing list: R Special Interest Group Finance</a>
-    <!-- <a href="http://www.russell.com/US/Indexes/US/index_values.asp">Russell indexes data</a> -->
-    <a href="http://www.msci.com/">MSCI indexes data</a>
-    <a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">French/Fama data</a>
-    <a href="http://www.wilshire.com/Indexes/calculator/">Wilshire indexes data</a>
-    <!-- <a href="http://www.barra.com/Research/DownloadMonthlyReturns.aspx">Barra indexes data</a> -->
-    <a href="http://orfe.princeton.edu/~rcarmona/maindownload.html">Rene Carmona</a>
-    <a href="http://faculty.washington.edu/ezivot/splus.htm">Eric Zivot</a>
-    <a href="http://christopherggreen.github.io/RuppertStatisticsFinance2004/">R Code for Ruppert's 'Statistics and Finance'</a>
-    <!-- <a href="http://www.decisionsynergy.com/showPackageDownload.html">FinancePack and FractalPack</a> -->
-    <a href="http://www.r-programming.org/papers">Guy Yollin</a>
-    <a href="https://github.com/eddelbuettel/ctv-finance">GitHub repository for this Task View</a>
+    <a href="https://doi.org/dcnf">Article at the base of this Task View</a>
+    <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository for this Task View</a>
   </links>
 
 </CRANTaskView>
