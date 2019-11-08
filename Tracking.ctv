@@ -67,7 +67,7 @@
     <ul>    
     
       <li>
-        <strong>Data cleaning:</strong> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <a href="http://tlocoh.r-forge.r-project.org/">T-LoCoH</a>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. 
+        <strong>Data cleaning:</strong> <pkg>argosfilter</pkg> and <pkg>SDLfilter</pkg> implement functions to filter implausible platform terminal transmitter (PTT) locations. <pkg>SDLfilter</pkg> is also adapted to GPS data. Other packages with functions for cleaning tracking data are <rforge>tlocoh</rforge>, <pkg>TrajDataMining</pkg> and <pkg>trip</pkg>. 
       </li>
 
       <li>
@@ -180,7 +180,7 @@
       <li> <strong>Analysis of biologging data:</strong> Packages to analyze time-depth recorder (TDR) and accelerometer data from animals are <pkg>diveMove</pkg> and <pkg>rbl</pkg>. They allow obtaining statistics of dive and swimming effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity: <pkg>acc</pkg>, <pkg>accelerometry</pkg>, <pkg>GGIR</pkg>, <pkg>nparACT</pkg>, <pkg>pawacc</pkg> and <pkg>PhysicalActivity</pkg>.
       </li>
       
-      <li> <strong>Non-biologging video and images:</strong> When a camera can encompass an area large enough for an individual to move in, video and images can be used to record movement. Packages related to these data are <a href="https://bioconductor.org/packages/release/bioc/html/SwimR.html">SwimR</a> (for individuals moving in assay plates) and <pkg>trackdem</pkg> (processing frame-by-frame images).
+      <li> <strong>Non-biologging video and images:</strong> When a camera can encompass an area large enough for an individual to move in, video and images can be used to record movement. Packages related to these data are <bioc>SwimR</bioc> (for individuals moving in assay plates) and <pkg>trackdem</pkg> (processing frame-by-frame images).
       </li>
       
     </ul>
