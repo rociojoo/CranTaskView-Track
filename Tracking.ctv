@@ -11,7 +11,7 @@
   <info>
     
     <p>
-      This CRAN Task View (CTV) contains a list of packages useful for the processing and analysis of tracking data. 
+      This CRAN Task View (CTV) contains a list of packages useful for the processing and analysis of tracking data. Besides the maintainers, the following people contributed to this task view: Mathieu Basille, Achim Zeileis. 
     </p>
      <img src="workflow.png" alt="Workflow" width="500" /> 
     <p>
