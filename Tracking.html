@@ -28,10 +28,8 @@
 
     <div>
       <p>
-        This CRAN Task View (CTV) contains a list of packages useful for the processing and analysis of tracking data.
+        This CRAN Task View (CTV) contains a list of packages useful for the processing and analysis of tracking data. Besides the maintainers, the following people contributed to the creation of this task view: Mathieu Basille, Achim Zeileis.
       </p>
-      <img src="workflow.png" alt="Workflow" width="500">
-      </img>
       <p>
         Movement of an organism is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called tracking packages, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from biologging (or tracking) devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an animal's trajectory via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in
         <a href="https://doi.org/dcnf">
@@ -43,12 +41,15 @@
         </a>.
       </p>
       <p>
-        The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. These are from CRAN or other repositories. The ones that are not from CRAN can only be included if they pass the check test (
-<tt>R CMD check</tt>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and removed the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
+        The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. The packages are mainly from CRAN and a few of them are from other repositories. The ones that are not from CRAN were only included if they passed the check test (
+<tt>R CMD check</tt>; more details
+        <a href="https://github.com/rociojoo/CranTaskView-Track/">
+          here
+        </a>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and remove the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
         <a href="mailto:rocio.joo@ufl.edu">
           email
         </a>
-        or open an issue on the
+        or opening an issue on the
         <a href="https://github.com/rociojoo/CranTaskView-Track">
           GitHub repository
         </a>.
@@ -70,6 +71,8 @@
           (2019)
         </a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
       </p>
+      <img src="workflow.png" alt="Workflow" width="500">
+      </img>
       <h3>
         Pre-processing
       </h3>
@@ -132,7 +135,6 @@
           implement functions to filter implausible platform terminal transmitter (PTT) locations.
 <a href="../packages/SDLfilter/index.html">SDLfilter</a>
           is also adapted to GPS data. Other packages with functions for cleaning tracking data are
-<a href="https://R-Forge.R-project.org/projects/tlocoh/"><span class="Rforge">tlocoh</span></a>,
 <a href="../packages/TrajDataMining/index.html">TrajDataMining</a>
           and
 <a href="../packages/trip/index.html">trip</a>.
