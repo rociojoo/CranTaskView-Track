@@ -16,7 +16,7 @@ if(is.null(data$errors)){data$errors <- NA}
 error_list <- list()
 
 for(i in seq_len(nrow(sub))){
-  for(i in c(7,17,19)){
+#  for(i in c(7,17,19)){
   # If packages has a github page, uses that to get download information
 if(sub$github[i] == 'Yes') { 
   branch <- sub$sub[i]
