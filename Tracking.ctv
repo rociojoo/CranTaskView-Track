@@ -74,7 +74,7 @@
         <strong>Data compression:</strong> Rediscretization or getting data to equal step lengths can be achieved with <pkg>adehabitatLT</pkg>, <pkg>trajectories</pkg> or <pkg>trajr</pkg>. Regular time-step interpolation can be performed using <pkg>adehabitatLT</pkg>, <pkg>amt</pkg> or <pkg>trajectories</pkg>. Other compression methods include Douglas-Peucker (<pkg>TrajDataMining</pkg> and <pkg>trajectories</pkg>), opening window (<pkg>TrajDataMining</pkg>) or Savitzky-Golay (<pkg>trajr</pkg>). <pkg>rsMove</pkg> provides functions to explore and transform tracking data for a posterior linkage with remote sensing data.
       </li>
       <li>
-        <strong>Computation of metrics:</strong> Some packages automatically derive second or third order movement variables (e.g. distance and angles between consecutive fixes) when transforming the tracking data into the package's data class. These packages are <pkg>adehabitatLT</pkg>, <pkg>momentuHMM</pkg>, <pkg>moveHMM</pkg>, <pkg>rhr</pkg> and <pkg>trajectories</pkg>. <pkg>bcpa</pkg> has a function to compute speeds, step lengths, orientations and other attributes from a track. <pkg>amt</pkg>, <pkg>move</pkg>, <pkg>segclust2d</pkg>, <pkg>trajr</pkg> and <pkg>trip</pkg> also contain functions for computing those metrics, but the user needs to specify which ones they need to compute. <pkg>VTrack</pkg> is specifically for acoustic telemetry data, and compute statistics from those data.
+        <strong>Computation of metrics:</strong> Some packages automatically derive second or third order movement variables (e.g. distance and angles between consecutive fixes) when transforming the tracking data into the package's data class. These packages are <pkg>adehabitatLT</pkg>, <pkg>momentuHMM</pkg>, <pkg>moveHMM</pkg> and <pkg>trajectories</pkg>. <pkg>bcpa</pkg> has a function to compute speeds, step lengths, orientations and other attributes from a track. <pkg>amt</pkg>, <pkg>move</pkg>, <pkg>segclust2d</pkg>, <pkg>trajr</pkg> and <pkg>trip</pkg> also contain functions for computing those metrics, but the user needs to specify which ones they need to compute. <pkg>VTrack</pkg> is specifically for acoustic telemetry data, and compute statistics from those data.
       </li>
       
     </ul>
@@ -94,7 +94,7 @@
     <h3>Path reconstruction</h3>
     
     <p>
-      Whether it is for the purposes of correcting for sampling errors, or obtaining finer data resolutions or regular time steps, path reconstruction is a common goal in movement analysis. Packages available for path reconstruction are <pkg>HMMoce</pkg>, <github>calbertsen/argosTrack</github>, <pkg>bsam</pkg>, <pkg>BayesianAnimalTracker</pkg>, <pkg>TrackReconstruction</pkg>, <pkg>crawl</pkg>, <pkg>ctmcmove</pkg> and <pkg>ctmm</pkg>. 
+      Whether it is for the purposes of correcting for sampling errors, or obtaining finer data resolutions or regular time steps, path reconstruction is a common goal in movement analysis. Packages available for path reconstruction are <github>calbertsen/argosTrack</github>, <pkg>bsam</pkg>, <pkg>BayesianAnimalTracker</pkg>, <pkg>TrackReconstruction</pkg>, <pkg>crawl</pkg>, <pkg>ctmcmove</pkg> and <pkg>ctmm</pkg>. 
     </p>
     
     <h3>Behavioral pattern identification</h3>
@@ -149,7 +149,7 @@
     <h3>Trajectory simulation</h3>
     
     <p> 
-      The tracking packages implement trajectory simulation are mainly based on Hidden Markov models, correlated random walks, Brownian motions, Lévy walks or Ornstein-Uhlenbeck processes: <pkg>adehabitatLT</pkg>, <pkg>moveHMM</pkg>, <pkg>momentuHMM</pkg>, <pkg>bsam</pkg>, <pkg>craw</pkg>, <github>calbertsen/argosTrack</github>, <pkg>ctmm</pkg>, <pkg>smam</pkg>, <pkg>SiMRiv</pkg> and <pkg>trajr</pkg>.
+      The tracking packages implement trajectory simulation are mainly based on Hidden Markov models, correlated random walks, Brownian motions, Lévy walks or Ornstein-Uhlenbeck processes: <pkg>adehabitatLT</pkg>, <pkg>moveHMM</pkg>, <pkg>momentuHMM</pkg>, <pkg>bsam</pkg>, <pkg>crawl</pkg>, <github>calbertsen/argosTrack</github>, <pkg>ctmm</pkg>, <pkg>smam</pkg>, <pkg>SiMRiv</pkg> and <pkg>trajr</pkg>.
     </p>
     
     <h3>Other analyses of tracking data</h3>
@@ -177,7 +177,7 @@
     
     <ul>
     
-      <li> <strong>Analysis of biologging data:</strong> Packages to analyze time-depth recorder (TDR) and accelerometer data from animals are <pkg>diveMove</pkg> and <pkg>rbl</pkg>. They allow obtaining statistics of dive and swimming effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity: <pkg>acc</pkg>, <pkg>accelerometry</pkg>, <pkg>GGIR</pkg>, <pkg>nparACT</pkg>, <pkg>pawacc</pkg> and <pkg>PhysicalActivity</pkg>.
+      <li> <strong>Analysis of biologging data:</strong> Packages to analyze time-depth recorder (TDR) and accelerometer data from animals is <pkg>diveMove</pkg>. It allows obtaining statistics of dive effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity: <pkg>acc</pkg>, <pkg>accelerometry</pkg>, <pkg>GGIR</pkg>, <pkg>nparACT</pkg>, <pkg>pawacc</pkg> and <pkg>PhysicalActivity</pkg>.
       </li>
       
       <li> <strong>Non-biologging video and images:</strong> When a camera can encompass an area large enough for an individual to move in, video and images can be used to record movement. Packages related to these data are <bioc>SwimR</bioc> (for individuals moving in assay plates) and <pkg>trackdem</pkg> (processing frame-by-frame images).
@@ -192,7 +192,6 @@
     <pkg>acc</pkg>
     <pkg>accelerometry</pkg>
     <pkg>adehabitatHR</pkg>
-    <pkg>adehabitatHS</pkg>
     <pkg>adehabitatLT</pkg>
     <pkg>amt</pkg>
     <pkg>animalTrack</pkg>
@@ -211,11 +210,10 @@
     <pkg>FLightR</pkg>
     <pkg>GeoLight</pkg>
     <pkg>GGIR</pkg>
-    <pkg>HMMoce</pkg>
     <pkg>m2b</pkg>
     <pkg>marcher</pkg>
     <pkg>mkde</pkg>
-    <pkg>momementuHMM</pkg>
+    <pkg>momentuHMM</pkg>
     <pkg>move</pkg>
     <pkg>moveHMM</pkg>
     <pkg>moveVis</pkg>
@@ -231,6 +229,7 @@
     <pkg>SimilarityMeasures</pkg>
     <pkg>SiMRiv</pkg>
     <pkg>smam</pkg>
+    <pkg>spatsoc</pkg>
     <pkg>trackdem</pkg>
     <pkg>trackeR</pkg>
     <pkg>TrackReconstruction</pkg>
@@ -238,8 +237,9 @@
     <pkg>trajectories</pkg>
     <pkg>trajr</pkg>
     <pkg>trip</pkg>
+    <pkg>tripEstimation</pkg>
     <pkg>VTrack</pkg>
-    <pkg>WildlifeDI</pkg>
+    <pkg>wildlifeDI</pkg>
   </packagelist>
 
   <links>
