@@ -1,11 +1,10 @@
-<!-- Hey Emacs, make this -*- mode: XML -*- -->
 <CRANTaskView>
 
   <name>Tracking</name>
   <topic>Processing and analysis of tracking data</topic>
-  <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone
-    and Michael Sumner</maintainer>
-  <version>2019-11-08</version>
+  <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone,
+  Michael Sumner and Mathieu Basille </maintainer>
+  <version>2019-11-27</version>
   <url>https://CRAN.R-project.org/view=TrackingData</url>
   
   <info>
@@ -17,16 +16,21 @@
     <p>
       Movement of an organism is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called tracking packages, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from biologging (or tracking) devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an animal's trajectory via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>.
     </p>
+    
     <p>
       The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. The packages are mainly from CRAN and a few of them are from other repositories. The ones that are not from CRAN were only included if they passed the check test (<code>R CMD check</code>; more details <a href="https://github.com/rociojoo/CranTaskView-Track/">here</a>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and remove the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by <a href="mailto:rocio.joo@ufl.edu">email</a> or opening an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository</a>.
     </p>
+    
     <p>
       Besides these packages, many other packages contain functions for data processing and analysis that could eventually be used for tracking data or second/third degree variables obtained from tracking data; we encourage users to check other CRAN Task Views like <view>SpatioTemporal</view>, <view>Spatial</view> and <view>TimeSeries</view>. 
     </p>
+    
     <p>
       This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
     </p>
-        <img src="workflow.png" alt="Workflow" width="500" /> 
+        
+        <img src="https://github.com/rociojoo/CranTaskView-Track/blob/master/workflow.png" alt="Workflow"/> 
+        
     <h3>Pre-processing</h3>
     
     <p>
