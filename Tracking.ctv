@@ -4,7 +4,7 @@
   <topic>Processing and analysis of tracking data</topic>
   <maintainer email="rocio.joo@ufl.edu">Rocío Joo, Matthew E. Boone,
   Michael Sumner and Mathieu Basille </maintainer>
-  <version>2019-11-27</version>
+  <version>2019-12-02</version>
   <url>https://CRAN.R-project.org/view=TrackingData</url>
   
   <info>
@@ -145,7 +145,7 @@
       </li>
       
       <li>
-        <strong>Non-conventional approaches for space use:</strong> Other non-conventional approaches for investigating space use from tracking data can be found in <pkg>recurse</pkg>, <pkg>rsMove</pkg> and <pkg>VTrack</pkg>.
+        <strong>Non-conventional approaches for space use:</strong> Other non-conventional approaches for investigating space use from tracking data can be found in <pkg>rsMove</pkg> and <pkg>VTrack</pkg>.
       </li>
       
     </ul>
@@ -225,7 +225,6 @@
     <pkg>nparACT</pkg>
     <pkg>pawacc</pkg>
     <pkg>PhysicalActivity</pkg>
-    <pkg>recurse</pkg>
     <pkg>rpostgisLT</pkg>
     <pkg>rsMove</pkg>
     <pkg>SDLfilter</pkg>
