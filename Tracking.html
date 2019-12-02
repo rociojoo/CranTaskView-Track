@@ -5,24 +5,24 @@
   <link rel="stylesheet" type="text/css" href="../CRAN_web.css" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta name="citation_title" content="CRAN Task View: Processing and analysis of tracking data" />
-  <meta name="citation_author" content="Rocío Joo, Matthew E. Boone
-    and Michael Sumner" />
-  <meta name="citation_publication_date" content="2019-11-08" />
+  <meta name="citation_author" content="Rocío Joo, Matthew E. Boone,
+  Michael Sumner and Mathieu Basille" />
+  <meta name="citation_publication_date" content="2019-11-27" />
   <meta name="citation_public_url" content="https://CRAN.R-project.org/view=TrackingData" />
   <meta name="DC.title" content="CRAN Task View: Processing and analysis of tracking data" />
-  <meta name="DC.creator" content="Rocío Joo, Matthew E. Boone
-    and Michael Sumner" />
-  <meta name="DC.issued" content="2019-11-08" />
+  <meta name="DC.creator" content="Rocío Joo, Matthew E. Boone,
+  Michael Sumner and Mathieu Basille" />
+  <meta name="DC.issued" content="2019-11-27" />
   <meta name="DC.identifier" content="https://CRAN.R-project.org/view=TrackingData" />
 </head>
 
 <body>
   <h2>CRAN Task View: Processing and analysis of tracking data</h2>
   <table summary="Tracking task view information">
-    <tr><td valign="top"><b>Maintainer:</b></td><td>Rocío Joo, Matthew E. Boone
-    and Michael Sumner</td></tr>
+    <tr><td valign="top"><b>Maintainer:</b></td><td>Rocío Joo, Matthew E. Boone,
+  Michael Sumner and Mathieu Basille</td></tr>
     <tr><td valign="top"><b>Contact:</b></td><td>&#x72;&#x6f;&#x63;&#x69;&#x6f;&#x2e;&#x6a;&#x6f;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x75;&#x66;&#x6c;&#x2e;&#x65;&#x64;&#x75;</td></tr>
-    <tr><td valign="top"><b>Version:</b></td><td>2019-11-08</td></tr>
+    <tr><td valign="top"><b>Version:</b></td><td>2019-11-27</td></tr>
     <tr><td valign="top"><b>URL:</b></td><td><a href="https://CRAN.R-project.org/view=TrackingData">https://CRAN.R-project.org/view=TrackingData</a></td></tr>
   </table>
 
@@ -45,7 +45,7 @@
 <tt>R CMD check</tt>; more details
         <a href="https://github.com/rociojoo/CranTaskView-Track/">
           here
-        </a>). At the beginning of each calendar year, we will make an assessment on the non-CRAN packages in the CTV and remove the one non-CRAN packages that do not pass the check test. We will also be including more packages. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
+        </a>). At the beginning and middle of each calendar year, we will update the CTV, making an assessment on the non-CRAN packages here and remove the non-CRAN packages that do not pass the check test. Bioconductor packages are automatically accepted here as they are required to pass by a similar scrutiny than CRAN packages. We are also open to include more packages every time we update the CTV. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by
         <a href="mailto:rocio.joo@ufl.edu">
           email
         </a>
@@ -164,8 +164,7 @@
           Some packages automatically derive second or third order movement variables (e.g. distance and angles between consecutive fixes) when transforming the tracking data into the package's data class. These packages are
 <a href="../packages/adehabitatLT/index.html">adehabitatLT</a>,
 <a href="../packages/momentuHMM/index.html">momentuHMM</a>,
-<a href="../packages/moveHMM/index.html">moveHMM</a>,
-<a href="../packages/rhr/index.html">rhr</a>
+<a href="../packages/moveHMM/index.html">moveHMM</a>
           and
 <a href="../packages/trajectories/index.html">trajectories</a>.
 <a href="../packages/bcpa/index.html">bcpa</a>
@@ -208,7 +207,6 @@
       </h3>
       <p>
         Whether it is for the purposes of correcting for sampling errors, or obtaining finer data resolutions or regular time steps, path reconstruction is a common goal in movement analysis. Packages available for path reconstruction are
-<a href="../packages/HMMoce/index.html">HMMoce</a>,
 <a href="https://github.com/calbertsen/argosTrack/"><span class="GitHub">argosTrack</span></a>,
 <a href="../packages/bsam/index.html">bsam</a>,
 <a href="../packages/BayesianAnimalTracker/index.html">BayesianAnimalTracker</a>,
@@ -312,7 +310,7 @@
 <a href="../packages/moveHMM/index.html">moveHMM</a>,
 <a href="../packages/momentuHMM/index.html">momentuHMM</a>,
 <a href="../packages/bsam/index.html">bsam</a>,
-<a href="../packages/craw/index.html">craw</a>,
+<a href="../packages/crawl/index.html">crawl</a>,
 <a href="https://github.com/calbertsen/argosTrack/"><span class="GitHub">argosTrack</span></a>,
 <a href="../packages/ctmm/index.html">ctmm</a>,
 <a href="../packages/smam/index.html">smam</a>,
@@ -374,10 +372,8 @@
           <strong>
             Analysis of biologging data:
           </strong>
-          Packages to analyze time-depth recorder (TDR) and accelerometer data from animals are
-<a href="../packages/diveMove/index.html">diveMove</a>
-          and
-<a href="../packages/rbl/index.html">rbl</a>. They allow obtaining statistics of dive and swimming effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity:
+          Packages to analyze time-depth recorder (TDR) and accelerometer data from animals is
+<a href="../packages/diveMove/index.html">diveMove</a>. It allows obtaining statistics of dive effort. Several packages focus on the analysis of human accelerometry data, mainly to describe periodicity and levels of activity:
 <a href="../packages/acc/index.html">acc</a>,
 <a href="../packages/accelerometry/index.html">accelerometry</a>,
 <a href="../packages/GGIR/index.html">GGIR</a>,
@@ -404,7 +400,6 @@
     <li><a href="../packages/acc/index.html">acc</a></li>
     <li><a href="../packages/accelerometry/index.html">accelerometry</a></li>
     <li><a href="../packages/adehabitatHR/index.html">adehabitatHR</a></li>
-    <li><a href="../packages/adehabitatHS/index.html">adehabitatHS</a></li>
     <li><a href="../packages/adehabitatLT/index.html">adehabitatLT</a></li>
     <li><a href="../packages/amt/index.html">amt</a></li>
     <li><a href="../packages/animalTrack/index.html">animalTrack</a></li>
@@ -423,11 +418,10 @@
     <li><a href="../packages/FLightR/index.html">FLightR</a></li>
     <li><a href="../packages/GeoLight/index.html">GeoLight</a></li>
     <li><a href="../packages/GGIR/index.html">GGIR</a></li>
-    <li><a href="../packages/HMMoce/index.html">HMMoce</a></li>
     <li><a href="../packages/m2b/index.html">m2b</a></li>
     <li><a href="../packages/marcher/index.html">marcher</a></li>
     <li><a href="../packages/mkde/index.html">mkde</a></li>
-    <li><a href="../packages/momementuHMM/index.html">momementuHMM</a></li>
+    <li><a href="../packages/momentuHMM/index.html">momentuHMM</a></li>
     <li><a href="../packages/move/index.html">move</a></li>
     <li><a href="../packages/moveHMM/index.html">moveHMM</a></li>
     <li><a href="../packages/moveVis/index.html">moveVis</a></li>
@@ -443,6 +437,7 @@
     <li><a href="../packages/SimilarityMeasures/index.html">SimilarityMeasures</a></li>
     <li><a href="../packages/SiMRiv/index.html">SiMRiv</a></li>
     <li><a href="../packages/smam/index.html">smam</a></li>
+    <li><a href="../packages/spatsoc/index.html">spatsoc</a></li>
     <li><a href="../packages/trackdem/index.html">trackdem</a></li>
     <li><a href="../packages/trackeR/index.html">trackeR</a></li>
     <li><a href="../packages/TrackReconstruction/index.html">TrackReconstruction</a></li>
@@ -450,8 +445,9 @@
     <li><a href="../packages/trajectories/index.html">trajectories</a></li>
     <li><a href="../packages/trajr/index.html">trajr</a></li>
     <li><a href="../packages/trip/index.html">trip</a></li>
+    <li><a href="../packages/tripEstimation/index.html">tripEstimation</a></li>
     <li><a href="../packages/VTrack/index.html">VTrack</a></li>
-    <li><a href="../packages/WildlifeDI/index.html">WildlifeDI</a></li>
+    <li><a href="../packages/wildlifeDI/index.html">wildlifeDI</a></li>
   </ul>
 
   <h3>Related links:</h3>
