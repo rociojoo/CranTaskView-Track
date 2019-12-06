@@ -197,7 +197,7 @@
     <pkg>acc</pkg> 
     <pkg>accelerometry</pkg>
     <pkg>adehabitatHR</pkg>
-    <pkg>adehabitatLT</pkg>
+    <pkg priority="core">adehabitatLT</pkg>
     <pkg>amt</pkg>
     <pkg>animalTrack</pkg>
     <pkg>anipaths</pkg>
@@ -219,7 +219,7 @@
     <pkg>marcher</pkg>
     <pkg>mkde</pkg>
     <pkg>momentuHMM</pkg>
-    <pkg>move</pkg>
+    <pkg priority="core">move</pkg>
     <pkg>moveHMM</pkg>
     <pkg>moveVis</pkg>
     <pkg>moveWindSpeed</pkg>
