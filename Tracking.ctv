@@ -29,7 +29,7 @@
       This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review:
     </p>
         
-        <img src="workflow.png"
+        <img src="workflow.png" width="500"
         /> 
         
     <h3>Pre-processing</h3>
