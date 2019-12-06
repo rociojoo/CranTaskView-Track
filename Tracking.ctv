@@ -194,7 +194,7 @@
   </info>
 
   <packagelist>
-    <pkg>acc</pkg>
+    <pkg>acc</pkg> 
     <pkg>accelerometry</pkg>
     <pkg>adehabitatHR</pkg>
     <pkg>adehabitatLT</pkg>
@@ -253,6 +253,7 @@
     <view>TimeSeries</view>
     <a href="https://doi.org/dcnf">Article at the base of this Task View</a>
     <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository for this Task View</a>
+    <a href="https://github.com/rociojoo/CranTaskView-Track/blob/master/table_releasedates.md">Release date of versions of the CRAN packages in this Task View</a>
   </links>
 
 </CRANTaskView>
