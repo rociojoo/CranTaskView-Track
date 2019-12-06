@@ -16,7 +16,8 @@ info_pkgs <- read.csv("checks/RmovementPackagesInformation_checked.csv")
 info_pkgs_cran <- info_pkgs[!is.na(info_pkgs$recent_publish_data), c("Package","recent_publish_data")]
 names(info_pkgs_cran) <- c("Package", "Published date")
 rownames(info_pkgs_cran) <- NULL
-x <-  kable(info_pkgs_cran, format = "markdown", caption = "Published date of the examined CRAN packages")
+x <-  kable(info_pkgs_cran, format = "latex", caption = "Published date of the examined CRAN packages")
+kable_as_image(kable_styling(x), filename = "Pkg-Date.png", file_format = "png")
 save_kable(kable_styling(x), file = "Pkg-Date.md", bs_theme = "simplex")
 
 ## Checking imports and suggest networks
