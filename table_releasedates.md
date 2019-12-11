@@ -11,7 +11,7 @@ Published date of the examined CRAN packages and number of mentions as dependenc
 |amt                   |2019-09-19     |        0|
 |animalTrack           |2013-09-23     |        0|
 |anipaths              |2019-02-26     |        0|
-|argosfilter           |2012-11-01     |        2|
+|argosfilter           |2012-11-01     |        3|
 |BayesianAnimalTracker |2014-12-07     |        0|
 |BBMM                  |2013-03-08     |        0|
 |bcpa                  |2014-11-02     |        2|
@@ -23,6 +23,7 @@ Published date of the examined CRAN packages and number of mentions as dependenc
 |diveMove              |2019-01-03     |        0|
 |EMbC                  |2019-09-04     |        0|
 |FLightR               |2019-06-14     |        0|
+|foieGras              |2019-10-07     |        0|
 |GeoLight              |2015-09-06     |        2|
 |GGIR                  |2019-12-04     |        0|
 |m2b                   |2017-05-03     |        0|
