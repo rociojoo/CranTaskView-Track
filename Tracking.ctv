@@ -219,7 +219,7 @@
     <pkg>mkde</pkg>
     <pkg>momentuHMM</pkg>
     <pkg priority="core">move</pkg>
-    <pkg priority="core">moveHMM</pkg>
+    <pkg>moveHMM</pkg>
     <pkg>moveVis</pkg>
     <pkg>moveWindSpeed</pkg>
     <pkg>nparACT</pkg>

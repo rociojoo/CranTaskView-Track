@@ -10,18 +10,12 @@ ctv2html(track, file = "Tracking.html")
 ## Check if everything's OK
 ctv::check_ctv_packages("Tracking.ctv")
 
-## Getting table with release dates
-library(kableExtra)
+## Checking imports and suggest networks
 info_pkgs <- read.csv("checks/RmovementPackagesInformation_checked.csv")
 info_pkgs_cran <- info_pkgs[!is.na(info_pkgs$recent_publish_data), c("Package","recent_publish_data")]
 names(info_pkgs_cran) <- c("Package", "Published date")
 rownames(info_pkgs_cran) <- NULL
-x <-  kable(info_pkgs_cran, format = "markdown", caption = "Published date of the examined CRAN packages")
-kable_styling(x)
-# kable_as_image(kable_styling(x), filename = "Pkg-Date", file_format = "png", density = 150)
-# save_kable(kable_styling(x), file = "Pkg-Date.md", bs_theme = "simplex")
 
-## Checking imports and suggest networks
 ## We only care about the sum of imports and suggest; not making a difference for 
 ## this analysis
 info_import_suggest <- info_pkgs[ !is.na(info_pkgs$recent_publish_data) | (!is.na(info_pkgs$cran_check) & info_pkgs$cran_check == TRUE) , c("Package", "imports", "suggests")]
@@ -66,3 +60,21 @@ maxstat_test(mentions ~ t, dist = "approx", data = df_freq)
 # alternative hypothesis: two.sided
 # sample estimates:
 #   “best” cutpoint: <= 2
+#   
+
+
+
+
+## Getting table with release dates
+library(kableExtra)
+
+df_mentions <- df_freq[,c("package","mentions")]
+df_date_mentions <- merge(info_pkgs_cran, df_mentions, by.x = "Package", by.y = "package", all.x = TRUE)
+df_date_mentions$mentions[is.na(df_date_mentions$mentions)] <- 0
+names(df_date_mentions) <- c("Package", "Published date", "Mentions")
+
+x <-  kable(df_date_mentions, format = "markdown", caption = "Published date of the examined CRAN packages and number of mentions as dependency, import or suggestion within our list of packages")
+kable_styling(x)
+# kable_as_image(kable_styling(x), filename = "Pkg-Date", file_format = "png", density = 150)
+# save_kable(kable_styling(x), file = "Pkg-Date.md", bs_theme = "simplex")
+
