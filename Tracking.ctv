@@ -14,13 +14,11 @@
     </p>
  
     <p>
-      Movement of an object is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called <strong>tracking packages</strong>, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from tracking devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an objects's trajectory—most likely an animal's trajectory—via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>.
+      Movement of an object is defined as a change in the geographic location of an individual in time, so movement data can be defined by a space and a time component. Tracking data are composed by at least 2-dimensional coordinates (x,y) and a time index (t), and can be seen as the geometric representation (the trajectory) of an individual's path. The packages listed here, henceforth called <strong>tracking packages</strong>, are those explicitly developed to either create, transform or analyze tracking data (i.e. (x,y,t)), allowing a full workflow from raw data from tracking devices to final analytical outcome. For instance, a package that would use accelerometer, gyroscope and magnetometer data to reconstruct an objects's trajectory—most likely an animal's trajectory—via dead-reckoning, thus transforming those data into an (x,y,t) format, would fit into the definition. However, a package analyzing accelerometry series to detect changes in behavior would not fit. See more on this in <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>. Regarding (x,y), ome packages may assume 2-D Euclidean (Cartesian) coordinates, and others may assume geographic (long/lat) coordinates. We encourage the users to verify how coordinates are processed in the packages.
     </p>
-    
-    <img src="workflow.png" width="500" /> 
-        
+         
     <p>
-      The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. The packages are mainly from CRAN and a few of them are from other repositories. The ones that are not from CRAN were only included if they passed the check test (<code>R CMD check</code>; more details <a href="https://github.com/rociojoo/CranTaskView-Track/tree/master/checks">here</a>). Core packages are defined as the group of tracking packages with the highest number of mentions (<code>Depends</code>, <code>Imports</code>, <code>Suggests</code>) from other tracking packages; the cutpoint is estimated using the <code>maxstat_test</code> function in the <code>coin</code> package. At the beginning and middle of each calendar year, we will update the CTV, making an assessment on the non-CRAN packages here and remove the non-CRAN packages that do not pass the check test. Bioconductor packages are automatically accepted here as they are required to pass by a similar scrutiny than CRAN packages. We are also open to include more packages every time we update the CTV. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by opening an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track">GitHub repository</a>.
+      The packages included here are mainly tracking packages though we include a subsection of other movement-related packages. The packages are mainly from CRAN and a few of them are from other repositories. The ones that are not from CRAN were only included if they passed the check test (<code>R CMD check</code>; more details <a href="https://github.com/rociojoo/CranTaskView-Track/tree/master/checks">here</a>). Core packages are defined as the group of tracking packages with the highest number of mentions (<code>Depends</code>, <code>Imports</code>, <code>Suggests</code>) from other tracking packages; the cutpoint is estimated using the <code>maxstat_test</code> function in the <code>coin</code> package. At the beginning and middle of each calendar year, we will update the CTV, making an assessment on the non-CRAN packages here and remove the non-CRAN packages that do not pass the check test. Bioconductor packages are automatically accepted here as they are required to pass by a similar scrutiny than CRAN packages. We are also open to include more packages every time we update the CTV. We welcome and encourage contributions to add packages at any time. You can contact the maintainers by opening an issue on the <a href="https://github.com/rociojoo/CranTaskView-Track/issues">GitHub repository</a>.
     </p>
     
     <p>
@@ -28,13 +26,17 @@
     </p>
     
     <p>
-      This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review.
+      This CTV was inspired on the review of tracking packages by <a href="https://doi.org/dcnf">Joo <em>et al.</em> (2019)</a>, as an attempt to continuously update the list of packages already described in the review. Therefore, the CTV takes a similar structure as the review. 
     </p>
-        
+    
+   
+    <img src="workflow.png" width="500" /> 
+
+      
     <h3>Pre-processing</h3>
     
     <p>
-      Pre-processing is required when raw biologging data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS (global location sensor), others on radio telemetry, and others use accelerometry and magnetometry data.
+      Pre-processing is required when raw data are not in a tracking data format. The methods used for pre-processing depend heavily on the type of biologging device used. Among the tracking packages, some of them are focused on GLS (global location sensor), others on radio telemetry, and others use accelerometry and magnetometry data.
     </p>
 
     <ul>
@@ -57,7 +59,7 @@
       </ul>
       
       <li>
-        <strong>Dead-reckoning using accelerometry and magnetometry data:</strong> The combined use of magnetometer and accelerometer data, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique.  <pkg>animalTrack</pkg> and <pkg>TrackReconstruction</pkg> implement DR to obtain tracks, based on different methods.
+        <strong>Dead-reckoning using accelerometry and magnetometry data:</strong> The combined use of magnetometer and accelerometer data, and optionally gyroscopes and speed sensors, allows to reconstruct sub-second fine scale movement paths using the dead-reckoning (DR) technique. <pkg>animalTrack</pkg> and <pkg>TrackReconstruction</pkg> implement DR to obtain tracks, based on different methods.
       </li>
       
     </ul>
@@ -131,7 +133,7 @@
     <h3>Space and habitat use characterization</h3>
     
     <p>
-      Multiple packages implement functions to help answer questions related to where animals spend their time and what role environmental conditions play in movement or space-use decisions, which are typically split into two categories: home range calculation and habitat selection.
+      Multiple packages implement functions to help answer questions related to where individuals spend their time and what role environmental conditions play in movement or space-use decisions, which are typically split into two categories: home range calculation and habitat selection.
     </p>
     
     <ul>

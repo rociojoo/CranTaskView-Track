@@ -1,14 +1,11 @@
 ---
 name: Add package
 about: Suggest the inclusion of a package in the CRAN Task View
-title: "[Add pkg] Change this title"
+title: "[Add pkg] Name of the package (change this title)"
 labels: use-case
 assignees: ''
 
 ---
-
-**Package:**
-What is the name of the package?
 
 **Is it on CRAN?**
 Yes/No. If not, please mention where its repository is (e.g. github, bioconductor, etc.). Please copy the link to its repository. 
