@@ -17,7 +17,7 @@ Yes/No.
 Yes/No/I don't know. 
 
 **Additional information:**  
-In order to be included in the CTV Tracking, we would appreciate more information to help us determine if the package fits in the Tracking CTV scope.  
+In order to be included in the CTV Tracking, we would appreciate more information to help us determine how the package fits into the Tracking CTV scope.  
 
 Briefly, can you describe the purpose of this package and how it fits into the Tracking CTV?  
 
