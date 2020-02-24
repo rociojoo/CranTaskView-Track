@@ -3,18 +3,17 @@
 library(lubridate)
 library(readr)
 data <-
-  read.csv(
-    '/home/matt/r_programs/CranTaskView-Track/checks/RmovementPackagesInformation_checked.csv'
-  )
-pkg_db <- tools::CRAN_package_db()
+  read.csv('checks/Movement_pkg_tbl.csv')
+data$source <- tolower(data$source)
 # working directory to download and run checks in.
 download_local <- '/home/matt/Downloads'
 test <- F
+pkg_db <- tools::CRAN_package_db()
 #######################################################
 # create columns if not exist
-# sub <- data[data$CRAN == 'No' & data$Bioconductor == 'No', ]
-sub <- data[data$CRAN == 'Yes', ]
-sub <- data[, ]
+
+sub <- data[, ] # unecessary now
+
 if (is.null(data$recent_commit)) {
   data$recent_commit <-
     NA
@@ -48,20 +47,22 @@ for (i in seq_len(nrow(sub))[]) {
   data$imports <- as.character(data$imports)
   data$suggests <- as.character(data$suggests)
   # Check if package even has a repository
-  if (sub$CRAN[i] != 'Yes' &
-      sub$github[i] != 'Yes' &
-      sub$Bioconductor[i] != 'Yes' &
+  if (sub$source[i] != 'cran' &
+      sub$source[i] != 'github' &
+      sub$source[i] != 'other' &
       nchar(as.character(sub$download_link[i])) == 0) {
     message(paste0(
-      sub$Package[i],
+      sub$package_name[i],
       ' does not have a selected repository, skipping...'
     ))
     next
   }
-  if (sub$CRAN[i] == 'Yes') {
-    sub_pkg <- pkg_db[pkg_db$Package == sub$Package[i],]
+  if (sub$source[i] == 'cran') {
+    sub_pkg <- pkg_db[pkg_db$Package == sub$package_name[i],]
     if (nrow(sub_pkg) == 0) {
-      warning(paste0(sub$Package[i], ' is not on CRAN'))
+      warning(paste0(sub$package_name[i], ' is not on CRAN'))
+      data$errors[i] <- TRUE
+      data$cran_check[i] <- FALSE
       next
     }
     
@@ -73,22 +74,23 @@ for (i in seq_len(nrow(sub))[]) {
       )
     string <- trimws(gsub('\n' , ' ', string), 'both')
     string <- gsub('\\(.*\\)|,$', '' , string)
-    data$imports[data$Package == sub$Package[i]] <-
+    data$imports[data$package_name == sub$package_name[i]] <-
       as.character(string)
     
     string <- ifelse(is.na(sub_pkg$Suggests), '', sub_pkg$Suggests)
     string <- trimws(gsub('\n' , ' ', string), 'both')
     string <- gsub('\\(.*\\)|,$', '' , string)
     
-    data$suggests[data$Package == sub$Package[i]] <-
+    data$suggests[data$package_name == sub$package_name[i]] <-
       ifelse(length(string) == 0, NA, as.character(string))
     #################
     # recent data
-    data$recent_publish_data[data$Package == sub$Package[i]] <-
+    data$recent_publish_data[data$package_name == sub$package_name[i]] <-
       sub_pkg$Published
+    data$cran_check[i] <- TRUE
     next
   }
-  if (sub$github[i] == 'Yes') {
+  if (sub$source[i] == 'github') {
     branch <- sub$sub[i]
     owner <- sub$owner[i]
     repo <- sub$repository[i]
@@ -109,19 +111,19 @@ for (i in seq_len(nrow(sub))[]) {
   }
   
   # if package is not from github we assume that we provide the download URL to the .tar.gz file.
-  if (sub$github[i] == 'No' &
+  if (sub$source[i] == 'other' &
       nchar(as.character(sub$download_link[i])) > 2) {
     download_file <- as.character(sub$download_link[i])
     working_folder <-
-      paste0(download_local, '/', sub$download_folder[i])
+      paste0(download_local, '/', sub$package_name[i])
     download_folder <-
-      paste0(download_local, "/", sub$download_folder_sub[i], ".tar.gz")
+      paste0(download_local, "/", sub$package_name[i], ".tar.gz")
     
   }
   
   if (!exists('download_file')) {
     message(paste0(
-      sub$Package[i],
+      sub$package_name[i],
       ' does not have a downloadable link, skipping...'
     ))
     next
@@ -182,7 +184,7 @@ for (i in seq_len(nrow(sub))[]) {
     )
     
     # For now we'll query the github API for last commit, though this isnt being used currently
-    if (sub$github[i] == 'Yes') {
+    if (sub$source[i] == 'github') {
       commit_list <-
         gh::gh(
           "/repos/:owner/:repo/commits",
@@ -193,7 +195,8 @@ for (i in seq_len(nrow(sub))[]) {
         )
       commit <-
         (now() - ymd_hms(commit_list[[1]]$commit$author$date)) < 365
-      data$recent_commit[data$Package == sub$Package[i]] <- commit
+      data$recent_commit[data$package_name == sub$package_name[i]] <-
+        commit
     }
     # log errors
     checks <- (length(ll$errors)  + length(ll$warnings)) == 0
@@ -202,41 +205,41 @@ for (i in seq_len(nrow(sub))[]) {
   }
   
   
-  data$cran_check[data$Package == sub$Package[i]] <- checks
-  data$warnings[data$Package == sub$Package[i]] <- warnings
-  data$errors[data$Package == sub$Package[i]] <- errors
+  data$cran_check[data$package_name == sub$package_name[i]] <-
+    checks
+  data$warnings[data$package_name == sub$package_name[i]] <-
+    warnings
+  data$errors[data$package_name == sub$package_name[i]] <- errors
   ##################
   # Create dependency tree
-  if(exists('build_file')){
-  test_folder <- paste0(download_local, '/test')
-  untar(tarfile = build_file, exdir = test_folder)
-  textz <-
-    readr::read_table(paste0(test_folder, '/', sub$Package[i], '/DESCRIPTION'),
-      col_names = F)
-  string <-
-    paste(textz$X1[grepl('Depends: |Imports: |LinkingTo: ', textz$X1)], collapse =
-        ', ')
-  string <- gsub('Depends: |Imports: |LinkingTo: ', '', string)
-  string <- trimws(gsub('\n' , ' ', string), 'both')
-  string <- gsub('\\(.*\\)|,$', '' , string)
-  
-  data$imports[data$Package == sub$Package[i]] <-
-    as.character(string)
-  
-  string <-
-    paste(textz$X1[grepl('Suggests: ', textz$X1)], collapse = ', ')
-  string <- gsub('Suggests: ', '', string)
-  string <- trimws(gsub('\n' , ' ', string), 'both')
-  string <- gsub('\\(.*\\)|,$', '' , string)
-  
-  data$suggests[data$Package == sub$Package[i]] <-
-    ifelse(nchar(string) == 0, NA, as.character(string))
+  if (exists('build_file')) {
+    test_folder <- paste0(download_local, '/test')
+    untar(tarfile = build_file, exdir = test_folder)
+    textz <-
+      readr::read_table(paste0(test_folder, '/', sub$package_name[i], '/DESCRIPTION'),
+        col_names = F)
+    string <-
+      paste(textz$X1[grepl('Depends: |Imports: |LinkingTo: ', textz$X1)], collapse =
+          ', ')
+    string <- gsub('Depends: |Imports: |LinkingTo: ', '', string)
+    string <- trimws(gsub('\n' , ' ', string), 'both')
+    string <- gsub('\\(.*\\)|,$', '' , string)
+    
+    data$imports[data$package_name == sub$package_name[i]] <-
+      as.character(string)
+    
+    string <-
+      paste(textz$X1[grepl('Suggests: ', textz$X1)], collapse = ', ')
+    string <- gsub('Suggests: ', '', string)
+    string <- trimws(gsub('\n' , ' ', string), 'both')
+    string <- gsub('\\(.*\\)|,$', '' , string)
+    
+    data$suggests[data$package_name == sub$package_name[i]] <-
+      ifelse(nchar(string) == 0, NA, as.character(string))
   }
   # clean house
   suppressWarnings(rm(download_file, build_file))
 }
-write.csv(
-  data,
-  '/home/matt/r_programs/CranTaskView-Track/checks/RmovementPackagesInformation_checked.csv',
-  row.names = F
-)
+write.csv(data,
+  'checks/Movement_pkg_tbl_checked.csv',
+  row.names = F)
