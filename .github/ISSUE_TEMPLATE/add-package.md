@@ -7,16 +7,18 @@ assignees: ''
 
 ---
 
-**Is it on CRAN?**
+**Is it on CRAN?**  
 Yes/No. If not, please mention where its repository is (e.g. github, bioconductor, etc.). Please copy the link to its repository. 
 
-**Are you the author of this package?**
+**Are you the author of this package?**  
 Yes/No. 
 
-**If you are the author, does it pass check tests?**
+**If you are the author, does it pass check CRAN tests?**  
 Yes/No/I don't know. 
 
-**Additional information (optional):**
-In terms of the workflow (see Figure in the CTV), where should the package fit? 
-Could you give a brief description or mention functions corresponding to different sections in the CTV?
-This will help us make this task easier and avoid overlooking important functionalities that are worth mentioning!
+**Additional information:**  
+In order to be included in the CTV Tracking, we would appreciate more information to help us determine if the package fits in the Tracking CTV scope.  
+
+Briefly, can you describe the purpose of this package and how it fits into the Tracking CTV?  
+
+In terms of the tracking workflow (see Figure in the CTV), where does the package fit? (Feel free to mention any particular functions and how they fit as well.)
