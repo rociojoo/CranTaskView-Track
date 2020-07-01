@@ -40,7 +40,10 @@ if (is.null(data$recent_publish_data)) {
 }
 # set up an error list to check later if installs failed because of dependencies the computer doesnt have aaaaaaa whhhhataaaaaaa whhhhataaaaaaa whhhhataaaaaaa whhhhat
 error_list <- list()
-
+# sub$download_link <- as.character(data$download_link)
+# sub$download_link[21] <- 'https://bioconductor.org/packages/release/bioc/src/contrib/SwimR_1.26.0.tar.gz'
+# sub$sub <- as.character(sub$sub)
+# sub$sub[80] <- 'vmstools'
 for (i in seq_len(nrow(sub))[]) {
   #  for(i in c(7,17,19)){
   # If packages has a github page, uses that to get download information

@@ -1,74 +1,80 @@
-package_name,source,download_link,owner,repository,sub,recent_commit,cran_check,warnings,errors,imports,suggests,recent_publish_data
-drtracker,github,,royfrancis,drtracker,,FALSE,FALSE,TRUE,FALSE,"R, Cairo, ggplot2, plyr, alphahull, fossil, KernSmooth, RANN, reshape2, SDMTools",NA,NA
-hab,github,,basille,hab,,FALSE,FALSE,TRUE,FALSE,"adehabitatLT, adehabitatHR, adehabitatMA","survival, tkrplot",NA
-movement,github,,SEEG-Oxford,movement,,TRUE,FALSE,TRUE,FALSE,"R , raster, rgdal, tools, sp, methods, gdistance, viridis",testthat,NA
-probGLS,github,,Benjamin-merkel,probGLS,,FALSE,FALSE,FALSE,TRUE,"R , GeoLight, geosphere, raster, ncdf4, stringr",NA,NA
-rbl,github,,SESman,rbl,,FALSE,FALSE,TRUE,TRUE,"R , data.table, RcppRoll, signal, sqldf, fields","knitr, sp, testthat, manipulate",NA
-rhr,github,,jmsigner,rhr,,TRUE,FALSE,TRUE,TRUE,"grid, maptools, raster, adehabitatHR, adehabitatLT, ggplot2, graphics, gridExtra","shiny , knitr, markdown, testthat, shinyBS",NA
-SGAT,github,,Swotherspoon,SGAT,,TRUE,TRUE,FALSE,FALSE,"R, stats, utils, MASS, maptools, raster, sp, coda","GeoLight, geosphere, rgdal",NA
-telemetr,github,,barryrowlingson,telemetr,,FALSE,FALSE,TRUE,FALSE,"R , lattice, sp, plyr",NA,NA
-argosTrack,github,,calbertsen,argosTrack,argosTrack,TRUE,TRUE,FALSE,FALSE,"R , RcppEigen","knitr, rmarkdown, inline",NA
-feedr,github,,animalnexus,feedr,,TRUE,FALSE,TRUE,TRUE,R ,"aniDom, asnipe, Dominance, knitr, lazyeval, Perc, rmarkdown",NA
-kftrack,github,,positioning,kalmanfilter,kftrack,FALSE,FALSE,TRUE,TRUE,R ,NA,NA
-lsmnsd,github,,BastilleRousseau,lsmnsd,,TRUE,FALSE,TRUE,TRUE,"R , R2jags",NA,NA
-migrateR,github,,dbspitz,migrateR,migrateR,TRUE,FALSE,TRUE,TRUE,"adehabitatLT, car, adehabitatLT, car",knitr,NA
-moveNT,github,,BastilleRousseau,moveNT,,TRUE,FALSE,TRUE,TRUE,"R , raster, sp, adehabitatLT, igraph, mclust, moveHMM, uuid",NA,NA
-pathtrackr,github,,aharmer,pathtrackr,,TRUE,FALSE,TRUE,FALSE,"ggplot2, plyr, pbapply, abind, cluster, gridExtra, jpeg","knitr, rmarkdown",NA
-trackit,github,,positioning,kalmanfilter,trackit,FALSE,FALSE,TRUE,TRUE,"R , MASS, date",NA,NA
-TwGeos,github,,slisovski,TwGeos,,TRUE,FALSE,TRUE,FALSE,"R, SGAT, grDevices, graphics, stats, utils, zoo, raster",NA,NA
-TwilightFree,github,,Abindoff,TwilightFree,,FALSE,FALSE,FALSE,TRUE,"SGAT, maptools, polyclip, viridisLite, raster, sp",NA,NA
-ukfsst,github,,positioning,kalmanfilter,ukfsst,FALSE,FALSE,TRUE,TRUE,"R , date, kftrack, ncdf4",NA,NA
-movementAnalysis,other,https://www.win.tue.nl/~kbuchin/proj/R/movementAnalysis/movementAnalysis_0.6.tar.gz,,,,NA,FALSE,FALSE,TRUE,"R , adehabitat, adehabitatLT, sp, maptools, lmomco",OpenCL ,NA
-SwimR,other,https://bioconductor.org/packages/release/bioc/src/contrib/SwimR_1.24.0.tar.gz,,,,NA,TRUE,FALSE,FALSE,"R , heatmap.plus (>=, methods",NA,NA
-tlocoh,other,http://download.r-forge.r-project.org/src/contrib/tlocoh_1.40.07.tar.gz,,,,NA,FALSE,FALSE,TRUE,NA,NA,NA
-acc,cran,,,,,NA,TRUE,NA,NA,"R , mhsmm zoo, PhysicalActivity, nleqslv, plyr, methods, DBI, RSQLite, circlize, ggplot2, R.utils, iterators, Rcpp",,2016-12-16
-animalTrack,cran,,,,,NA,TRUE,NA,NA,"R , rgl",,2013-09-23
-argosfilter,cran,,,,,NA,TRUE,NA,NA,,,2012-11-01
-BayesianAnimalTracker,cran,,,,,NA,TRUE,NA,NA,"R , TrackReconstruction",,2014-12-07
-BBMM,cran,,,,,NA,TRUE,NA,NA,,,2013-03-08
-bcpa,cran,,,,,NA,TRUE,NA,NA,"Rcpp , plyr  knitr, circular","knitr, circular",2014-11-02
-caribou,cran,,,,,NA,TRUE,NA,NA,,,2012-06-11
-m2b,cran,,,,,NA,TRUE,NA,NA,"R  geosphere, caTools, ggplot2, randomForest, e1071, caret, methods, graphics, stats, utils adehabitatLT, moveHMM, knitr, DiagrammeR, rmarkdown","adehabitatLT, moveHMM, knitr, DiagrammeR, rmarkdown",2017-05-03
-mkde,cran,,,,,NA,TRUE,NA,NA,"R , raster, sp",,2014-08-24
-pawacc,cran,,,,,NA,TRUE,NA,NA,"R  stats, utils, graphics, SparseM",,2017-02-20
-SimilarityMeasures,cran,,,,,NA,TRUE,NA,NA,,,2015-02-06
-smam,cran,,,,,NA,TRUE,NA,NA,"R  nloptr, Matrix, stats, Rcpp, RcppParallel, doParallel, foreach, parallel, doSNOW, methods, numDeriv, EnvStats R.rsp",R.rsp,2020-01-17
-TrackReconstruction,cran,,,,,NA,TRUE,NA,NA,"R, fields, RColorBrewer  lattice, onion, plotrix, rgl, scatterplot3d","lattice, onion, plotrix, rgl, scatterplot3d",2019-07-15
-accelerometry,cran,,,,,NA,TRUE,NA,NA,"R , dvmisc knitr, rmarkdown, pander","knitr, rmarkdown, pander",2018-08-24
-adehabitatHR,cran,,,,,NA,TRUE,NA,NA,"R , sp, methods, deldir, ade4, adehabitatMA, adehabitatLT graphics, grDevices, stats maptools, tkrplot, MASS, rgeos","maptools, tkrplot, MASS, rgeos",2020-02-03
-adehabitatHS,cran,,,,,NA,TRUE,NA,NA,"R , sp, methods, ade4, adehabitatMA, adehabitatHR graphics, grDevices, stats maptools, tkrplot, MASS, rgeos","maptools, tkrplot, MASS, rgeos",2020-01-13
-adehabitatLT,cran,,,,,NA,TRUE,NA,NA,"R , sp, methods, ade4, adehabitatMA, CircStats, stats graphics, grDevices, utils maptools, tkrplot, MASS","maptools, tkrplot, MASS",2020-01-19
-amt,cran,,,,,NA,TRUE,NA,NA,"R , utils, velox adehabitatLT, ggplot2, bcpa, devtools, moveHMM, move, sessioninfo, spacetime, testthat, trajectories, knitr, Rdpack, rmarkdown","adehabitatLT, ggplot2, bcpa, devtools, moveHMM, move, sessioninfo, spacetime, testthat, trajectories, knitr, Rdpack, rmarkdown",2019-09-19
-anipaths,cran,,,,,NA,TRUE,NA,NA,"R  animation, knitr, RColorBrewer, scales, sp, rgdal, mgcv, grDevices, ggmap ellipse, igraph","ellipse, igraph",2019-02-26
-bsam,cran,,,,,NA,TRUE,NA,NA,R ,,2017-07-01
-crawl,cran,,,,,NA,TRUE,NA,NA,"R , methods, shiny, dplyr, raster, gdistance, rmapshaper, sp, sf, magrittr, lubridate, tibble, purrr ggplot2, rgdal, argosfilter, tidyr, xts, broom, doParallel","ggplot2, rgdal, argosfilter, tidyr, xts, broom, doParallel",2018-09-14
-ctmcmove,cran,,,,,NA,TRUE,NA,NA,"R , raster, Matrix, fda, gdistance, sp  mgcv, dismo, crawl","mgcv, dismo, crawl",2018-04-20
-ctmm,cran,,,,,NA,TRUE,NA,NA,"R  data.table, digest, expm, fasttime, Gmedian, graphics, grDevices, gsl, manipulate, MASS, methods, numDeriv, pbivnorm, pracma, raster, rgdal, shape, sp, stats, utils bit64, fftw, knitr, move, parallel, suncalc","bit64, fftw, knitr, move, parallel, suncalc",2019-12-11
-diveMove,cran,,,,,NA,TRUE,NA,NA,"R , methods, stats4 KernSmooth, quantreg, uniReg, geosphere knitr, lattice, tcltk","knitr, lattice, tcltk",2019-01-03
-EMbC,cran,,,,,NA,TRUE,NA,NA,"Rcpp , sp, methods, RColorBrewer, mnormt, maptools move, rgl, knitr","move, rgl, knitr",2019-12-16
-FLightR,cran,,,,,NA,TRUE,NA,NA,"R  bit, ggsn, ggmap, ggplot2, CircStats, circular, GeoLight, fields, maptools, methods, mgcv, nlme, parallel, raster, RcppArmadillo, rgdal, rgeos, sp, truncnorm covr, testthat, knitr, rmarkdown","covr, testthat, knitr, rmarkdown",2019-06-14
-GeoLight,cran,,,,,NA,TRUE,NA,NA,"R , maps changepoint, fields, MASS, knitr",knitr,2015-09-06
-GGIR,cran,,,,,NA,TRUE,NA,NA,"stats, utils, R , foreach, doParallel, signal, zoo, bitops, matlab, GENEAread, tuneR testthat, covr, knitr, rmarkdown","testthat, covr, knitr, rmarkdown",2019-12-04
-HMMoce,cran,,,,,NA,FALSE,NA,TRUE,NA,NA,NA
-marcher,cran,,,,,NA,TRUE,NA,NA,"R  stats, Matrix, graphics, grDevices, plyr, mvtnorm, RColorBrewer, minpack.lm, zoo, numDeriv, magrittr, scales knitr, rmarkdown, lubridate","knitr, rmarkdown, lubridate",2017-04-12
-momentuHMM,cran,,,,,NA,TRUE,NA,NA,"R , webshot, ctmcmove, R.rsp","testthat, setRNG, knitr, splines, splines2 , webshot, ctmcmove, R.rsp",2019-12-18
-move,cran,,,,,NA,TRUE,NA,NA,"geosphere  httr, memoise, xml2, Rcpp adehabitatHR, adehabitatLT, circular, ggmap, mapproj, maptools, testthat","adehabitatHR, adehabitatLT, circular, ggmap, mapproj, maptools, testthat",2019-09-07
-moveHMM,cran,,,,,NA,TRUE,NA,NA,"CircStats Rcpp, boot, MASS, sp, geosphere, ggplot2, ggmap, numDeriv testthat, knitr","testthat, knitr",2019-05-19
-moveVis,cran,,,,,NA,TRUE,NA,NA,"R  raster, sp, sf, move, RStoolbox, geosphere, slippymath, lubridate, ggplot2, cowplot, gifski, magick, av, pbapply, curl, plyr, dplyr, zoo, magrittr, methods, grDevices parallel, mapview, leaflet, testthat","parallel, mapview, leaflet, testthat",2020-02-13
-moveWindSpeed,cran,,,,,NA,TRUE,NA,NA,"R , methods, move Rcpp testthat, knitr, rmarkdown","testthat, knitr, rmarkdown",2019-03-20
-nparACT,cran,,,,,NA,TRUE,NA,NA,"ggplot2, grid, stringr, zoo, tools",,2017-12-20
-PhysicalActivity,cran,,,,,NA,TRUE,NA,NA,"R   RSQLite, DBI","RSQLite, DBI",2018-05-18
-recurse,cran,,,,,NA,TRUE,NA,NA,"Rcpp  testthat, circular, prevR, scales, fields, methods, move, knitr, rmarkdown, sp, rgeos","testthat, circular, prevR, scales, fields, methods, move, knitr, rmarkdown, sp, rgeos",2019-12-04
-rpostgisLT,cran,,,,,NA,TRUE,NA,NA,"R  sp, lubridate, shiny, leaflet, htmltools, mapview, shinyWidgets, magrittr, sf knitr, raster, rmarkdown, testthat","knitr, raster, rmarkdown, testthat",2018-03-02
-rsMove,cran,,,,,NA,TRUE,NA,NA,"raster, sp, caret, ggplot2, grDevices, pryr, plyr, Rcpp, lubridate, RCurl knitr, rmarkdown, kableExtra, imager, devtools, lattice, rgdal, igraph, randomForest, e1071","knitr, rmarkdown, kableExtra, imager, devtools, lattice, rgdal, igraph, randomForest, e1071",2018-12-11
-SDLfilter,cran,,,,,NA,TRUE,NA,NA,"R , ggplot2 sp, raster, trip, data.table, geosphere, ggmap, gridExtra, ggsn, stats, maps",,2019-02-27
-segclust2d,cran,,,,,NA,TRUE,NA,NA,"R , htmltools, move, devtools","knitr, rmarkdown, testthat, dygraphs , htmltools, move, devtools",2019-02-27
-SiMRiv,cran,,,,,NA,TRUE,NA,NA,"R , raster methods, stats, sp, mco, parallel, rgdal adehabitatLT, moveHMM, rgeos, testthat","adehabitatLT, moveHMM, rgeos, testthat",2019-12-19
-trackdem,cran,,,,,NA,TRUE,NA,NA,"png, neuralnet, raster, Rcpp, MASS, grDevices, graphics, stats, shiny knitr, rmarkdown, testthat","knitr, rmarkdown, testthat",2020-01-21
-trackeR,cran,,,,,NA,TRUE,NA,NA,"R , zoo ggplot2, ggridges, xml2, RSQLite, jsonlite, raster, scam, foreach, fda, sp, leaflet, ggmap, gridExtra, gtable testthat, knitr, rmarkdown, covr","testthat, knitr, rmarkdown, covr",2019-05-15
-TrajDataMining,cran,,,,,NA,TRUE,NA,NA,"R  sp, trajectories, xts, spacetime, RPostgreSQL, geosphere, methods, rgdal testthat, knitr, rmarkdown, covr, ggplot2, rgeos, magrittr","testthat, knitr, rmarkdown, covr, ggplot2, rgeos, magrittr",2018-05-10
-trajectories,cran,,,,,NA,TRUE,NA,NA,"R , zoo rgdal, rgeos, OpenStreetMap, RCurl, rjson, adehabitatLT, xts, knitr, rgl, forecast, MASS, spatstat, taxidata","rgdal, rgeos, OpenStreetMap, RCurl, rjson, adehabitatLT, xts, knitr, rgl, forecast, MASS, spatstat, taxidata",2018-12-06
-trajr,cran,,,,,NA,TRUE,NA,NA,"signal, utils, stats, graphics, plotrix, grDevices knitr, rmarkdown, testthat, BH, readr, tcltk","knitr, rmarkdown, testthat, BH, readr, tcltk",2019-06-10
-trip,cran,,,,,NA,TRUE,NA,NA,"R  geodist, maptools, MASS, methods, raster, sp, spatstat, glue, viridis adehabitatLT, knitr, rgdal, testthat, covr, rmarkdown, lubridate, dplyr, maps, spelling","adehabitatLT, knitr, rgdal, testthat, covr, rmarkdown, lubridate, dplyr, maps, spelling",2019-04-15
-VTrack,cran,,,,,NA,TRUE,NA,NA,"R  plotKML, sp, spacetime, doParallel, XML, intervals, gstat, Hmisc, checkmate, gdistance, raster, plyr, lubridate testthat",testthat,2018-02-22
-wildlifeDI,cran,,,,,NA,TRUE,NA,NA,"R  sp, rgeos, adehabitatLT, stats, graphics knitr, adehabitatHR","knitr, adehabitatHR",2019-04-13
+"package_name","source","download_link","owner","repository","sub","date_added_to_list","skip","recent_commit","cran_check","warnings","errors","imports","suggests","recent_publish_data"
+"SGAT","github","","Swotherspoon","SGAT","","",NA,FALSE,TRUE,FALSE,FALSE,"R, stats, utils, MASS, maptools, raster, sp, coda","GeoLight, geosphere, rgdal",NA
+"argosTrack","github","","calbertsen","argosTrack","argosTrack","",NA,FALSE,TRUE,FALSE,FALSE,"R , RcppEigen","knitr, rmarkdown, inline",NA
+"SwimR","other","https://bioconductor.org/packages/release/bioc/src/contrib/SwimR_1.26.0.tar.gz","","","","",NA,NA,TRUE,FALSE,FALSE,"R , heatmap.plus (>=, methods",NA,NA
+"acc","cran","","","","","",NA,NA,TRUE,NA,NA,"R , mhsmm zoo, PhysicalActivity, nleqslv, plyr, methods, DBI, RSQLite, circlize, ggplot2, R.utils, iterators, Rcpp","","2016-12-16"
+"animalTrack","cran","","","","","",NA,NA,TRUE,NA,NA,"R , rgl","","2013-09-23"
+"argosfilter","cran","","","","","",NA,NA,TRUE,NA,NA,"","","2012-11-01"
+"BayesianAnimalTracker","cran","","","","","",NA,NA,TRUE,NA,NA,"R , TrackReconstruction","","2014-12-07"
+"BBMM","cran","","","","","",NA,NA,TRUE,NA,NA,"","","2013-03-08"
+"bcpa","cran","","","","","",NA,NA,TRUE,NA,NA,"Rcpp , plyr  knitr, circular","knitr, circular","2014-11-02"
+"caribou","cran","","","","","",NA,NA,TRUE,NA,NA,"","","2012-06-11"
+"m2b","cran","","","","","",NA,NA,TRUE,NA,NA,"R  geosphere, caTools, ggplot2, randomForest, e1071, caret, methods, graphics, stats, utils adehabitatLT, moveHMM, knitr, DiagrammeR, rmarkdown","adehabitatLT, moveHMM, knitr, DiagrammeR, rmarkdown","2017-05-03"
+"mkde","cran","","","","","",NA,NA,TRUE,NA,NA,"R , raster, sp","","2014-08-24"
+"pawacc","cran","","","","","",NA,NA,TRUE,NA,NA,"R  stats, utils, graphics, SparseM","","2017-02-20"
+"SimilarityMeasures","cran","","","","","",NA,NA,TRUE,NA,NA,"","","2015-02-06"
+"smam","cran","","","","","",NA,NA,TRUE,NA,NA,"R  nloptr, Matrix, stats, Rcpp, RcppParallel, doParallel, foreach, parallel, doSNOW, methods, numDeriv, EnvStats R.rsp","R.rsp","2020-01-17"
+"TrackReconstruction","cran","","","","","",NA,NA,TRUE,NA,NA,"R, fields, RColorBrewer  lattice, onion, plotrix, rgl, scatterplot3d","lattice, onion, plotrix, rgl, scatterplot3d","2019-07-15"
+"accelerometry","cran","","","","","",NA,NA,TRUE,NA,NA,"R , dvmisc knitr, rmarkdown, pander","knitr, rmarkdown, pander","2018-08-24"
+"adehabitatHR","cran","","","","","",NA,NA,TRUE,NA,NA,"R , sp, methods, deldir, ade4, adehabitatMA, adehabitatLT graphics, grDevices, stats maptools, tkrplot, MASS, rgeos","maptools, tkrplot, MASS, rgeos","2020-02-03"
+"adehabitatLT","cran","","","","","",NA,NA,TRUE,NA,NA,"R , sp, methods, ade4, adehabitatMA, CircStats, stats graphics, grDevices, utils maptools, tkrplot, MASS","maptools, tkrplot, MASS","2020-01-19"
+"amt","cran","","","","","",NA,NA,TRUE,NA,NA,"R  adehabitatLT, ggplot2, bcpa, devtools, moveHMM, move, sessioninfo, spacetime, trajectories, knitr, Rdpack, rmarkdown, tinytest","adehabitatLT, ggplot2, bcpa, devtools, moveHMM, move, sessioninfo, spacetime, trajectories, knitr, Rdpack, rmarkdown, tinytest","2020-06-14"
+"anipaths","cran","","","","","",NA,NA,TRUE,NA,NA,"R  animation, RColorBrewer, scales, sp, raster, mgcv, grDevices, ggmap ellipse, igraph, knitr","ellipse, igraph, knitr","2020-02-28"
+"bsam","cran","","","","","",NA,NA,TRUE,NA,NA,"R ","","2017-07-01"
+"crawl","cran","","","","","",NA,NA,TRUE,NA,NA,"R , methods, shiny, dplyr, raster, gdistance, rmapshaper, sp, sf, magrittr, lubridate, tibble, purrr ggplot2, rgdal, argosfilter, tidyr, xts, broom, doParallel","ggplot2, rgdal, argosfilter, tidyr, xts, broom, doParallel","2018-09-14"
+"ctmcmove","cran","","","","","",NA,NA,TRUE,NA,NA,"R , raster, Matrix, fda, gdistance, sp  mgcv, dismo, crawl","mgcv, dismo, crawl","2018-04-20"
+"ctmm","cran","","","","","",NA,NA,TRUE,NA,NA,"R  data.table, digest, expm, fasttime, Gmedian, graphics, grDevices, gsl, manipulate, MASS, methods, numDeriv, pbivnorm, pracma, raster, rgdal, shape, sp, stats, utils bit64, fftw, knitr, move, parallel, suncalc","bit64, fftw, knitr, move, parallel, suncalc","2020-05-07"
+"diveMove","cran","","","","","",NA,NA,TRUE,NA,NA,"R , methods, stats4 KernSmooth, quantreg, uniReg, geosphere knitr, lattice, tcltk","knitr, lattice, tcltk","2020-04-29"
+"EMbC","cran","","","","","",NA,NA,TRUE,NA,NA,"Rcpp , sp, methods, RColorBrewer, mnormt, maptools move, rgl, knitr","move, rgl, knitr","2019-12-16"
+"FLightR","cran","","","","","",NA,NA,TRUE,NA,NA,"R  bit, ggsn, ggmap, ggplot2, CircStats, circular, GeoLight, fields, maptools, methods, mgcv, nlme, parallel, raster, RcppArmadillo, rgdal, rgeos, sp, truncnorm covr, testthat, knitr, rmarkdown","covr, testthat, knitr, rmarkdown","2020-05-15"
+"GeoLight","cran","","","","","",NA,NA,TRUE,NA,NA,"R , maps changepoint, fields, MASS, knitr","knitr","2015-09-06"
+"GGIR","cran","","","","","",NA,NA,TRUE,NA,NA,"stats, utils, R , foreach, doParallel, signal, zoo, bitops, matlab, GENEAread, tuneR testthat, covr, knitr, rmarkdown","testthat, covr, knitr, rmarkdown","2020-05-01"
+"marcher","cran","","","","","",NA,NA,TRUE,NA,NA,"R  stats, Matrix, graphics, grDevices, plyr, mvtnorm, RColorBrewer, minpack.lm, zoo, numDeriv, magrittr, scales knitr, rmarkdown, lubridate","knitr, rmarkdown, lubridate","2017-04-12"
+"momentuHMM","cran","","","","","",NA,NA,TRUE,NA,NA,"R , R.rsp","testthat, setRNG, splines, splines2 , R.rsp","2020-03-06"
+"move","cran","","","","","",NA,NA,TRUE,NA,NA,"geosphere  httr, memoise, xml2, Rcpp adehabitatHR, adehabitatLT, markdown, rmarkdown, circular, ggmap, mapproj, maptools, testthat, knitr, ggplot2, leaflet, lubridate, ctmm, amt, bcpa, EMbC","adehabitatHR, adehabitatLT, markdown, rmarkdown, circular, ggmap, mapproj, maptools, testthat, knitr, ggplot2, leaflet, lubridate, ctmm, amt, bcpa, EMbC","2020-06-25"
+"moveHMM","cran","","","","","",NA,NA,TRUE,NA,NA,"CircStats Rcpp, boot, MASS, sp, geosphere, ggplot2, ggmap, numDeriv testthat, knitr","testthat, knitr","2019-05-19"
+"moveVis","cran","","","","","",NA,NA,TRUE,NA,NA,"R  move, raster, sf, lwgeom, slippymath, lubridate, curl, ggplot2, cowplot, magick, gifski, av, pbapply, magrittr, methods, stats parallel, mapview, leaflet, testthat","parallel, mapview, leaflet, testthat","2020-03-28"
+"moveWindSpeed","cran","","","","","",NA,NA,TRUE,NA,NA,"R , methods, move Rcpp testthat, knitr, rmarkdown","testthat, knitr, rmarkdown","2019-03-20"
+"nparACT","cran","","","","","",NA,NA,TRUE,NA,NA,"ggplot2, grid, stringr, zoo, tools","","2017-12-20"
+"PhysicalActivity","cran","","","","","",NA,NA,TRUE,NA,NA,"R   RSQLite, DBI","RSQLite, DBI","2018-05-18"
+"recurse","cran","","","","","",NA,NA,TRUE,NA,NA,"Rcpp  testthat, circular, prevR, scales, fields, methods, move, knitr, rmarkdown, sp, rgeos","testthat, circular, prevR, scales, fields, methods, move, knitr, rmarkdown, sp, rgeos","2019-12-04"
+"rpostgisLT","cran","","","","","",NA,NA,TRUE,NA,NA,"R  sp, lubridate, shiny, leaflet, htmltools, mapview, shinyWidgets, magrittr, sf knitr, raster, rmarkdown, testthat","knitr, raster, rmarkdown, testthat","2018-03-02"
+"rsMove","cran","","","","","",NA,NA,TRUE,NA,NA,"R  raster, sp, caret, ggplot2, grDevices, pryr, plyr, Rcpp, lubridate, RCurl knitr, rmarkdown, kableExtra, imager, devtools, lattice, rgdal, igraph, randomForest, e1071","knitr, rmarkdown, kableExtra, imager, devtools, lattice, rgdal, igraph, randomForest, e1071","2020-06-03"
+"SDLfilter","cran","","","","","",NA,NA,TRUE,NA,NA,"R , ggplot2 plotKML, sp, raster, trip, data.table, gridExtra, ggsn, stats, maps, pracma, plyr, ggmap, lubridate, dplyr","","2020-05-04"
+"segclust2d","cran","","","","","",NA,NA,TRUE,NA,NA,"R , htmltools, move, devtools","knitr, rmarkdown, testthat, dygraphs , htmltools, move, devtools","2019-02-27"
+"SiMRiv","cran","","","","","",NA,NA,TRUE,NA,NA,"R , raster methods, stats, sp, mco, parallel, rgdal adehabitatLT, moveHMM, rgeos, testthat","adehabitatLT, moveHMM, rgeos, testthat","2019-12-19"
+"trackdem","cran","","","","","",NA,NA,TRUE,NA,NA,"png, neuralnet, raster, Rcpp, MASS, grDevices, graphics, stats, shiny knitr, rmarkdown, testthat","knitr, rmarkdown, testthat","2020-02-27"
+"trackeR","cran","","","","","",NA,NA,TRUE,NA,NA,"R , zoo ggplot2, ggridges, xml2, RSQLite, jsonlite, raster, scam, foreach, fda, sp, leaflet, ggmap, gridExtra, gtable testthat, knitr, rmarkdown, covr","testthat, knitr, rmarkdown, covr","2019-05-15"
+"TrajDataMining","cran","","","","","",NA,NA,TRUE,NA,NA,"R  sp, trajectories, xts, spacetime, RPostgreSQL, geosphere, methods, rgdal testthat, knitr, rmarkdown, covr, ggplot2, rgeos, magrittr","testthat, knitr, rmarkdown, covr, ggplot2, rgeos, magrittr","2018-05-10"
+"trajectories","cran","","","","","",NA,NA,TRUE,NA,NA,"R , zoo rgdal, rgeos, OpenStreetMap, RCurl, rjson, adehabitatLT, xts, knitr, rgl, forecast, MASS, spatstat, taxidata","rgdal, rgeos, OpenStreetMap, RCurl, rjson, adehabitatLT, xts, knitr, rgl, forecast, MASS, spatstat, taxidata","2020-06-15"
+"trajr","cran","","","","","",NA,NA,TRUE,NA,NA,"signal, utils, stats, graphics, plotrix, grDevices knitr, rmarkdown, testthat, BH, readr, tcltk","knitr, rmarkdown, testthat, BH, readr, tcltk","2019-06-10"
+"trip","cran","","","","","",NA,NA,TRUE,NA,NA,"R  geodist, maptools, MASS, methods, raster, reproj, sp, spatstat, glue, viridis, traipse, crsmeta adehabitatLT, knitr, dplyr, testthat, covr, rmarkdown, lubridate, maps, spelling","adehabitatLT, knitr, dplyr, testthat, covr, rmarkdown, lubridate, maps, spelling","2020-06-15"
+"VTrack","cran","","","","","",NA,NA,TRUE,NA,NA,"R  plotKML, sp, spacetime, doParallel, XML, intervals, gstat, Hmisc, checkmate, gdistance, raster, plyr, lubridate testthat","testthat","2018-02-22"
+"wildlifeDI","cran","","","","","",NA,NA,TRUE,NA,NA,"R  sp, rgeos, adehabitatLT, stats, graphics knitr, adehabitatHR","knitr, adehabitatHR","2019-04-13"
+"rerddapXtracto","cran","","","","","2020-07-01",NA,NA,TRUE,NA,NA,"R, sf, sp, stats, utils cmocean, gganimate, knitr, mapdata, maptools, rgdal, rmarkdown","cmocean, gganimate, knitr, mapdata, maptools, rgdal, rmarkdown","2020-06-12"
+"overlap","cran","","","","","2020-07-01",NA,NA,TRUE,NA,NA,"maptools, sp","maptools, sp","2020-05-22"
+"foieGras","cran","","","","","",NA,NA,TRUE,NA,NA,"R , trip, assertthat testthat, covr, knitr, rmarkdown, rgeos","testthat, covr, knitr, rmarkdown, rgeos","2020-06-18"
+"tripEstimation","cran","","","","","",NA,NA,TRUE,NA,NA,"lattice, mgcv, rgdal, sp, zoo","","2016-01-31"
+"drtracker","github","","royfrancis","drtracker","","",NA,FALSE,FALSE,TRUE,FALSE,"R, Cairo, ggplot2, plyr, alphahull, fossil, KernSmooth, RANN, reshape2, SDMTools",NA,NA
+"hab","github","","basille","hab","","",NA,FALSE,FALSE,TRUE,FALSE,"adehabitatLT, adehabitatHR, adehabitatMA","survival, tkrplot",NA
+"movement","github","","SEEG-Oxford","movement","","",NA,TRUE,FALSE,TRUE,FALSE,"R , raster, rgdal, tools, sp, methods, gdistance, viridis","testthat",NA
+"probGLS","github","","Benjamin-merkel","probGLS","","",NA,FALSE,FALSE,FALSE,TRUE,"R , GeoLight, geosphere, raster, ncdf4, stringr",NA,NA
+"rbl","github","","SESman","rbl","","",NA,FALSE,FALSE,TRUE,TRUE,"R , data.table, RcppRoll, signal, sqldf, fields","knitr, sp, testthat, manipulate",NA
+"rhr","github","","jmsigner","rhr","","",NA,TRUE,FALSE,TRUE,TRUE,"grid, maptools, raster, adehabitatHR, adehabitatLT, ggplot2, graphics, gridExtra","shiny , knitr, markdown, testthat, shinyBS",NA
+"telemetr","github","","barryrowlingson","telemetr","","",NA,FALSE,FALSE,TRUE,FALSE,"R , lattice, sp, plyr",NA,NA
+"feedr","github","","animalnexus","feedr","","",NA,TRUE,FALSE,TRUE,TRUE,"R ","aniDom, asnipe, Dominance, knitr, lazyeval, Perc, rmarkdown",NA
+"kftrack","github","","positioning","kalmanfilter","kftrack","",NA,TRUE,FALSE,TRUE,TRUE,"R ",NA,NA
+"lsmnsd","github","","BastilleRousseau","lsmnsd","","",NA,FALSE,FALSE,TRUE,TRUE,"R , R2jags",NA,NA
+"migrateR","github","","dbspitz","migrateR","migrateR","",NA,TRUE,FALSE,TRUE,TRUE,"adehabitatLT, car, adehabitatLT, car","knitr",NA
+"moveNT","github","","BastilleRousseau","moveNT","","",NA,TRUE,FALSE,TRUE,TRUE,"R , raster, sp, adehabitatLT, igraph, mclust, moveHMM, uuid",NA,NA
+"pathtrackr","github","","aharmer","pathtrackr","","",NA,FALSE,FALSE,TRUE,FALSE,"ggplot2, plyr, pbapply, abind, cluster, gridExtra, jpeg","knitr, rmarkdown",NA
+"trackit","github","","positioning","kalmanfilter","trackit","",NA,TRUE,FALSE,TRUE,TRUE,"R , MASS, date",NA,NA
+"TwilightFree","github","","Abindoff","TwilightFree","","",NA,FALSE,FALSE,FALSE,TRUE,"SGAT, maptools, polyclip, viridisLite, raster, sp",NA,NA
+"ukfsst","github","","positioning","kalmanfilter","ukfsst","",NA,TRUE,FALSE,TRUE,TRUE,"R , date, kftrack, ncdf4",NA,NA
+"movementAnalysis","other","https://www.win.tue.nl/~kbuchin/proj/R/movementAnalysis/movementAnalysis_0.6.tar.gz","","","","",NA,NA,FALSE,FALSE,TRUE,"R , adehabitat, adehabitatLT, sp, maptools, lmomco","OpenCL ",NA
+"tlocoh","other","http://download.r-forge.r-project.org/src/contrib/tlocoh_1.40.07.tar.gz","","","","",NA,NA,FALSE,FALSE,TRUE,NA,NA,NA
+"HMMoce","cran","","","","","",NA,NA,FALSE,NA,TRUE,NA,NA,NA
+"ctmmweb","github","","Ctmm-initiative","ctmmweb","","2020-07-01",NA,TRUE,FALSE,TRUE,FALSE,"shiny , shinydashboard, shinyWidgets, DT, crayon",NA,NA
+"stmove","github","","dpseidel","stmove","","2020-07-01",NA,NA,FALSE,FALSE,TRUE,NA,NA,NA
+"Rhabit","github","","papayoun","Rhabit","","2020-07-01",NA,TRUE,FALSE,TRUE,TRUE,"R , abind, fields, formula.tools, ggplot2, nloptr, RandomFields","knitr, gridExtra, testthat, rmarkdown",NA
+"vmstools","github","","nielshintzen","vmstools","vmstools","2020-07-01",NA,FALSE,FALSE,TRUE,TRUE,"R , cluster, data.table, doBy, maps, mapdata, maptools","adehabitat, amap, animation, aspace, FactoMineR, lattice",NA
