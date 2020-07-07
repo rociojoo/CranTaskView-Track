@@ -1,0 +1,153 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/SwimR.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘SwimR/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘SwimR’ version ‘1.24.0’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘SwimR’ can be installed ... OK
+* checking installed package size ... NOTE
+  installed size is  5.1Mb
+  sub-directories of 1Mb or more:
+    extdata   4.2Mb
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking ‘build’ directory ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Package listed in more than one of Depends, Imports, Suggests, Enhances:
+  ‘methods’
+A package should be listed in only one of these fields.
+* checking top-level files ... NOTE
+Non-standard file/directory found at top level:
+  ‘SwimR’
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+'library' or 'require' calls to packages already attached by Depends:
+  ‘R2HTML’ ‘gplots’ ‘heatmap.plus’ ‘signal’
+  Please remove these calls from your code.
+Packages in Depends field not imported from:
+  ‘R2HTML’ ‘gplots’ ‘heatmap.plus’ ‘methods’ ‘signal’
+  These packages need to be imported from (in the NAMESPACE file)
+  for when this namespace is loaded but not attached.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+SwimR : remove.outliers: no visible global function definition for
+  ‘median’
+SwimR : remove.outliers: no visible global function definition for
+  ‘mad’
+SwimR: no visible global function definition for ‘read.table’
+SwimR: no visible global function definition for ‘write.table’
+SwimR: no visible global function definition for ‘sd’
+SwimR: no visible global function definition for ‘jpeg’
+SwimR: no visible global function definition for ‘par’
+SwimR: no visible global function definition for ‘plot’
+SwimR: no visible global function definition for ‘points’
+SwimR: no visible global function definition for ‘legend’
+SwimR: no visible global function definition for ‘dev.off’
+SwimR: no visible binding for global variable ‘sd’
+SwimR: no visible global function definition for ‘hist’
+SwimR: no visible global function definition for ‘rainbow’
+SwimR: no visible global function definition for ‘topo.colors’
+SwimR: no visible global function definition for ‘gray’
+SwimR: no visible global function definition for ‘colorpanel’
+SwimR: no visible global function definition for ‘heatmap.plus’
+SwimR: no visible global function definition for ‘HTMLInitFile’
+SwimR: no visible global function definition for ‘HTML’
+SwimR: no visible global function definition for ‘HTMLEndFile’
+SwimR: no visible global function definition for ‘browseURL’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘read.csv’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘fir1’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘as.Arma’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘filter’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘fft’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘hamming’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘jpeg’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘par’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘plot’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘lines’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘legend’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘dev.off’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘layout’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘grid’
+createFrequencyMatrix : FrequencyAnalysis: no visible global function
+  definition for ‘write.csv’
+createFrequencyMatrix: no visible global function definition for
+  ‘write.table’
+createFrequencyMatrix: no visible global function definition for
+  ‘HTMLInitFile’
+createFrequencyMatrix: no visible global function definition for ‘HTML’
+createFrequencyMatrix: no visible global function definition for
+  ‘HTMLEndFile’
+createFrequencyMatrix: no visible global function definition for
+  ‘browseURL’
+Undefined global functions or variables:
+  HTML HTMLEndFile HTMLInitFile as.Arma browseURL colorpanel dev.off
+  fft filter fir1 gray grid hamming heatmap.plus hist jpeg layout
+  legend lines mad median par plot points rainbow read.csv read.table
+  sd topo.colors write.csv write.table
+Consider adding
+  importFrom("grDevices", "dev.off", "gray", "jpeg", "rainbow",
+             "topo.colors")
+  importFrom("graphics", "grid", "hist", "layout", "legend", "lines",
+             "par", "plot", "points")
+  importFrom("stats", "fft", "filter", "mad", "median", "sd")
+  importFrom("utils", "browseURL", "read.csv", "read.table", "write.csv",
+             "write.table")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking sizes of PDF files under ‘inst/doc’ ... OK
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
+* checking examples ... OK
+Examples with CPU or elapsed time > 5s
+                       user system elapsed
+createFrequencyMatrix 5.671  0.004   5.682
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in ‘inst/doc’ ... OK
+* checking re-building of vignette outputs ... OK
+* DONE
+Status: 5 NOTEs

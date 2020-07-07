@@ -1,0 +1,18 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/TwilightFree.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘TwilightFree/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘TwilightFree’ version ‘0.1.1’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... ERROR
+Namespace dependencies not required:
+  'BAStag', 'lubridate', 'magrittr', 'mclust'
+
+See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’
+manual.
+* DONE
+Status: 1 ERROR

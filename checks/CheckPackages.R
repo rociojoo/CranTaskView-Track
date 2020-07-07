@@ -3,7 +3,7 @@
 library(lubridate)
 library(readr)
 data <-
-  read.csv('checks/Movement_pkg_tbl.csv')
+  read.csv('checks/Tracking_pkg_tbl.csv')
 data$source <- tolower(data$source)
 # working directory to download and run checks in.
 download_local <- '/home/matt/Downloads'
@@ -14,45 +14,27 @@ pkg_db <- tools::CRAN_package_db()
 
 sub <- data[, ] # unecessary now
 
-if (is.null(data$recent_commit)) {
-  data$recent_commit <-
-    NA
-}
-if (is.null(data$cran_check)) {
+  data$recent_commit <- NA
   data$cran_check <- NA
-}
-if (is.null(data$warnings)) {
   data$warnings <- NA
-}
-if (is.null(data$errors)) {
   data$errors <- NA
-}
-if (is.null(data$imports)) {
-  data$imports <- NA
-  data$imports <- as.character(data$imports)
-}
-if (is.null(data$suggests)) {
-  data$suggests <- NA
-  data$suggests <- as.character(data$suggests)
-}
-if (is.null(data$recent_publish_data)) {
+  data$vignette_error <- NA
+  data$imports <- NA_character_
+  data$suggests <- NA_character_
   data$recent_publish_data <- NA
-}
 # set up an error list to check later if installs failed because of dependencies the computer doesnt have aaaaaaa whhhhataaaaaaa whhhhataaaaaaa whhhhataaaaaaa whhhhat
 error_list <- list()
-# sub$download_link <- as.character(data$download_link)
-# sub$download_link[21] <- 'https://bioconductor.org/packages/release/bioc/src/contrib/SwimR_1.26.0.tar.gz'
-# sub$sub <- as.character(sub$sub)
-# sub$sub[80] <- 'vmstools'
+
+# sub$package_name
 for (i in seq_len(nrow(sub))[]) {
+  # i = 21
   #  for(i in c(7,17,19)){
   # If packages has a github page, uses that to get download information
   data$imports <- as.character(data$imports)
   data$suggests <- as.character(data$suggests)
+  if(!is.na(sub$skip[i]) & sub$skip[i]){next()}
   # Check if package even has a repository
-  if (sub$source[i] != 'cran' &
-      sub$source[i] != 'github' &
-      sub$source[i] != 'other' &
+  if ( !sub$source[i]%in%c('cran','github','bioc','rforge') &
       nchar(as.character(sub$download_link[i])) == 0) {
     message(paste0(
       sub$package_name[i],
@@ -113,7 +95,36 @@ for (i in seq_len(nrow(sub))[]) {
       paste0(download_local, '/', sub$repository[i], '.zip')
   }
   
-  # if package is not from github we assume that we provide the download URL to the .tar.gz file.
+  # For bioconductor sites, we trawl the website for the correct link, as versions may change rapidly
+  if (sub$source[i] == 'bioc' &
+      nchar(as.character(sub$download_link[i])) > 2){
+    # update the root bioconductor url as versions are released
+    bioconductor_url <- 'https://bioconductor.org/packages/3.11/bioc/'
+  url <-  sub$download_link[i]
+  url <- paste0(bioconductor_url,'html/',sub$package_name[i],'.html')
+  
+  page <- readLines(as.character(url))
+  page[grepl("<h3 id=\"archives\">Package Archives</h3>",page)]
+  sub_page <- page[]
+  phrase <- sub_page[grep('Source Package',sub_page)+1]
+  phrase
+  # '\" href=\"../src/contrib/SwimR_1.26.0.tar.gz\"'
+  match <- regexec('(?:href=\\"\\.\\.)(.*)(?:\\">)',phrase)
+  download_file <- paste0(bioconductor_url,regmatches(phrase,match)[[1]][2])
+    working_folder <-
+      paste0(download_local, '/', sub$package_name[i])
+    download_folder <-
+      paste0(download_local, "/", sub$package_name[i], ".tar.gz")
+  }
+  # rforge
+  if(sub$source[i] == 'rforge'){
+   out <- download.packages(sub$package_name[i],destdir = download_local,repos= "http://R-Forge.R-project.org")
+   download_folder <- out[2]
+   working_folder <-
+   paste0(download_local, '/', sub$package_name[i])
+   untar(tarfile = download_folder, exdir = download_local)
+    }
+    # if package is not from github we assume that we provide the download URL to the .tar.gz file.
   if (sub$source[i] == 'other' &
       nchar(as.character(sub$download_link[i])) > 2) {
     download_file <- as.character(sub$download_link[i])
@@ -123,7 +134,7 @@ for (i in seq_len(nrow(sub))[]) {
       paste0(download_local, "/", sub$package_name[i], ".tar.gz")
     
   }
-  
+  if(sub$source[i]!='rforge'){
   if (!exists('download_file')) {
     message(paste0(
       sub$package_name[i],
@@ -133,11 +144,14 @@ for (i in seq_len(nrow(sub))[]) {
   }
   # download and unzip folder so we can install dependencies
   download.file(url = download_file, destfile = download_folder)
+  
+  
   if (grepl('\\.zip', download_folder)) {
     unzip(zipfile = download_folder, exdir = download_local)
   }
   if (grepl('\\.tar\\.gz', download_folder)) {
     untar(tarfile = download_folder, exdir = working_folder)
+  }
   }
   # delete some folders that may exist that may interfere with building process. For now these are not
   # strictly 'wrong' but bad form. In some cases the packages pass cran after these are installed.
@@ -148,6 +162,7 @@ for (i in seq_len(nrow(sub))[]) {
     unlink(paste0(working_folder, '/build/vignette.rds'),
       recursive = T)
   }
+  
   # install all dependencies. We have to install suggestions as well, as one of the cran checks is that
   # suggested packages are installable. ALso sometimes these packages are used in the vignette
   here <- NA
@@ -177,6 +192,7 @@ for (i in seq_len(nrow(sub))[]) {
     checks <- FALSE
     warnings <- FALSE
     errors <- TRUE
+    vignette <- TRUE
   }
   
   if (there != 'vignette_error') {
@@ -205,6 +221,7 @@ for (i in seq_len(nrow(sub))[]) {
     checks <- (length(ll$errors)  + length(ll$warnings)) == 0
     warnings <- length(ll$warnings) > 0
     errors <- length(ll$errors) > 0
+    vignette <- FALSE
   }
   
   
@@ -213,6 +230,7 @@ for (i in seq_len(nrow(sub))[]) {
   data$warnings[data$package_name == sub$package_name[i]] <-
     warnings
   data$errors[data$package_name == sub$package_name[i]] <- errors
+  data$vignette_error[data$package_name == sub$package_name[i]] <- vignette
   ##################
   # Create dependency tree
   if (exists('build_file')) {
@@ -240,9 +258,14 @@ for (i in seq_len(nrow(sub))[]) {
     data$suggests[data$package_name == sub$package_name[i]] <-
       ifelse(nchar(string) == 0, NA, as.character(string))
   }
+  # Look for check log
+  temp_files <- list.files(paste0(tempdir(),'/',sub$package_name[i],'.Rcheck'), 'check.log', full.names=T)
+  file.copy(temp_files, paste0('checks/check_logs/',sub$package_name[i],'_check.log') )
   # clean house
-  suppressWarnings(rm(download_file, build_file))
+  suppressWarnings(rm(download_file, build_file,checks,warnings, errors,vignette,temp_files))
+  
 }
+data <- data[order(data$cran_check, decreasing = T),]
 write.csv(data,
-  'checks/Movement_pkg_tbl_checked.csv',
+  'checks/Tracking_pkg_tbl_checked.csv',
   row.names = F)

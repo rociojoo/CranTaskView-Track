@@ -1,0 +1,118 @@
+---
+title: "Cran Checks Readme"
+output: html_document
+---
+*This readme describes the protocols for checking packages to be included on the Tracking CranTaskView. It's written for the CranTaskView-Tracking Maintainers as well as developers who would like to understand our checking process.*
+
+In order to be added to the CranTaskView packages must pass `R CMD check`. This process is required by default for packages on cran, but may not be required for other repositories (like github). Therefore we check every potential package for its ability to pass R CMD checks. As each repository has its own standards for package storage and format, and in order to automate this process, we treat each repository slightly different in how we run a check.
+
+_**Please note: All checks are being run on Ubuntu 18.04 using RStudio as of 2020-07--07**_
+
+## Folder contents
+
+-Checks  
+--check_logs (all check logs from the last run)  
+--Check_Packages.R (R code used to run checks on packages)  
+--Tracking_tbl.csv (Table for candidate packages and their info)  
+--Tracking_tbl_checked.csv (Output table from Check_Packages.R)  
+--README.md  
+
+## Table requirements and column explanations
+
+All packages to be checked regularly are in the `Tracking_tbl.csv` table (hereafter refered to as the `Packages Table`. This table is a continuous list of packages to be considered and info for each package. This table is editable by the CranTaskView Maintainers and has different pieces of information required depending on the `source` of the package. These packages are run using `CheckPackages.R` and the output of the cheks is the Tracking_tbl_checked.csv (hereafter refered to as the `Checked Packages Table`). This table soley exist as an output for updating the CranTaskView and should not be edited as it gets overwritten during every run.
+
+Because packages on version controlled repositories like github change quickly and cran packages occasionally become archived if maintainers are unresponsive, we run checks on **ALL** packages everytime. This means packages may occasionally be taken off the list during one period and then placed back on the list later if the new version passes checks.
+
+The following is the required information for filling out the `Packages Table` and is only intended for the CranTaskView Maintainers:
+
+**package_name** - the correctly cased official package name as you would find on in the `Package:` section of the `DESCRIPTION` page.  
+**source** - the repository where the package is actively maintained and updated. We default to CRAN if available. The current options are : `cran`, `github`, `bioc` (bioconductor), `rforge`, and `other`. The use of `other` is a catch all with general requirements.   
+**download_link** - (If **source** = `other`). The url for the most up to date tar.gz. Please only use if the package does not exist on the 4 other repositories. _(note that the download links normally are refered to be the packages version name, because of this the link will need to be periodically checked to make sure its referencing the current version of the package)_  
+**owner**  - (If **source** = `github`). The owner (github username) of the repository.  
+**repository** - (If **source** = `github`). The repository name on github.  
+**sub** - (optional. And only if **source** = `github`). The sub folder name of the package. Some developers will insert their package into a subfolder of the repository with the same name as the repository (ex migrateR package is at github address `dbspitz/migrateR/migrateR`). Or the repository is not just for the package but instead the package exists within a sub folder of the repository. (ex. packages `trackit` and `ukfsst` are in separate sub folders at github address `positioning/kalmanfilter`). We do not currently have any protocols in place for where packages exist on non-master branches. If this is the case, please provide a detailed response for why it is not on master and we'll consider its addition.  
+
+**date_added_to_list** - The yyyy-mm-dd of when the entry was added to the table.  
+**skip** - T/F/NA. Whether to skip checks on the package. This is for packages which are still being debated whether they fill the requirements as a tracking package, and may be added to later. Checks are skipped and rows are filled with NA in the Checked Packages Table.
+**comments** - Any comments on the package, mainly related to why its being skipped or being reconsidered.  
+
+
+## Describing the checks required for each repository type. 
+
+For each package we wanted to make sure that the cran checks were performed in the same way regardless of the source. CRAN checks run from a tarball, despite not all repositories requiring a built tarball of the package. Because of this some of the required checks are that the tarball must be built correctly. Therfore if a tarball doesnt exist we have to make one from scratch.
+
+The general flow of checks is as follows:  
+
+1. Download package from source.  
+2. Make tarball if does not exist.  
+3. Unpack tarball
+4. Install dependences including suggests using `devtools::install_deps()`.  
+5. Build package and vignettes using `devtools::build(vignettes = TRUE)`.  
+6. Run CRAN checks on package using `devtools::check_built()`.
+
+The workflow is necessary in this order because for CRAN checks the package must be buildable and in the correct form, vignettes must be able to be built otherwise check_built fails, and vignettes often fail if the suggests are incorrect or can not be installed. 
+
+While the process is relatively straightforward, each repository has slightly different methods for checks. Below are specific details for checking packages from each repository.
+
+### Cran
+
+As CRAN checks are required to pass to be allowed on cran, we do not run checks on cran packages. We do check if the package is still active. To do this we cross reference the package name with the `tools::cran_package_DB()` table.  
+
+### Github
+
+We wanted to make a concentrated effort to allow github packages on the TaskView. However, github is generally not the endpoint for packages at the end of their project life cycle, but stead is a collaborative tool for the ongoing creating and sharing of software as it develops. This means that build quality and reliability of packages on github can not be gauranteed at any particular moment. 
+
+We understand that attempting to run cran checks on packages inwhich the developer never expected it to pass stringent cran checks nor be included on this list is a bit unfair. 
+
+However, we hope that their continual existance on the `Packages Table` and growing list of packages on the Tracking CranTaskView will push developers to take their packages to the final development stages. These steps towards quality can only benefit the community.
+
+If you're a developer/maintainer for one of the packages that has failed cran tests and are interested in making the necessary changes to be included on the package, you can head down to the `Check Log and Troubleshooting` section.  
+
+#### Github specific steps
+ 
+Github packages generally exist in an unzipped layout with usually no official tarball. Because it is never requires to run devtools::build() to install a github package, most github packages may unknowingly not have folders and files in correct places. 
+
+For github packages, we first download the github repository as a .zip and unzip files. Github packages will often have a couple of files and folders which would not strictly be in a standard tarball and must be deleted. This include deleting the inst/doc folder as well as the vignette.rds file if created. These files will lead to checks failing. We do not believe these files/folders should lead to a failed cran check status, as they would be deleted if a proper tarball was created, and the majority of users install github packages via devtools::install_github() or devtools::install_local().
+
+After the tarball is created the package is run through steps 3 - 6 as normal.
+
+### Bioconductor 
+
+Packages included in the Bioconductor suite are generally of high build quality, however, they require the use of the bioconductor package manager to install from the repository. This is bulky and unnecessary for the purpose of running cran checks. Luckily, every bioconductor package posts a link to the tarball on the packages webpage at bioconductor.com. These packages may change versions rapidly, making it unreliable to keep copying the new tarball link. To get around this we trawl the bioconductor web page for the specific package and grab the tarball link, then download it automatically. After this the tarball is run through steps 3 - 6 same as normal. In the future I expect to find a more elegant solution around this.
+
+### Rforge
+
+As r-forge has a dedicated repository, we use `download.packages(., repos = "http://R-Forge.R-project.org")` function. We then run through steps 3 - 6 as normal. 
+
+### Other
+
+The other category is a catch-all for packages that either do not exist in a repository or protocols have not yet been written to handle the specific repository. All we require is a download link to the built tarball. _**note that the download links normally are refered to by the {package name} + {version}, because of this the link will need to be periodically checked to make sure its referencing the current version of the package**_
+
+After downloading the tarball we run through steps 3 - 6 as normal.  
+
+## Check logs and Troubleshooting
+
+We want to be as inclusive as possible in what packages are showcased on the CranTaskView. We understand that in many cases developers who have not submitted to CRAN were not creating their packages specifically to pass these checks. Nor did most packages on the table get submitted by the developers themselves. Because of this we have attempted to be transparent about what tests need to be worked on to allow inclusion on the task view list.
+
+#### Checked Packages Table  
+
+The first step in troubleshooting what went wrong with a package is to check the `Checked Packages Table`. This table has columns relative to the type of error that lead to the failed check:  
+
+**cran_check** - TRUE/FALSE describes whether the package passed cran tests (cran packages are set TRUE by default). This is the final determining column if a package is included on the TaskView. All TRUE packages are sent to the CranTaskView, and all FALSES are saved and run at the next date.
+
+**warnings** - TRUE/FALSE describes whether the package received warnings on the cran tests. A build must pass with 0 warnings.
+
+**error** - TRUE/FALSE describes whether the package received warnings on the cran tests. A build must pass with 0 warnings. If a vignette did not build this is set automatically to TRUE as checks can not pass unless the vignette can also be built. 
+
+**vignette_error** - TRUE/FALSE describes whether there was an error while building the vignette. As this comes first in the process cran checks are not run on the package if there is a vignette error. In this scenario no check.log will be created either. If you would like to see these errors the best way is to run `devtools::build_vignette()` and check the error there.
+
+We understand that this may be problematic as `devtools::install_github` by default does not build vignettes. It can also be common practice to place a knitted pdf in the vignettes folder, however, a buildable vignette is still required for a cran check and any pdfs are deleted in the vignette folder during building. You may want to put these files elsewhere, as in extdoc. 
+
+#### Check logs
+
+As long as the package has built correctly (step 5), then a check log was created for the package. All check logs from the previous run are stored in the `check_logs` folder. These are standard outputs written during check_package() and we do not alter these in anyway. 
+
+Should you have any question on these logs and what errors may mean you can generally refer to the much maligned  [Writing R Extensions Manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) as well as [Hadley Wickhams ebook on packages](http://r-pkgs.had.co.nz/intro.html). 
+
+If something just isnt adding up, and you believe the code is incorrectly kicking out your package (entirely possible), please let us know with some extra details so we can look into it. 
+

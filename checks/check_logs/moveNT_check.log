@@ -1,0 +1,170 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/moveNT.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘moveNT/DESCRIPTION’ ... OK
+* this is package ‘moveNT’ version ‘0.0.0.9000’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... WARNING
+Found the following file with a non-portable file name:
+  R/fcts packages.R
+These are not fully portable file names.
+See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘moveNT’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... NOTE
+Non-standard files/directories found at top level:
+  ‘moveNT.pdf’ ‘vignette-moveNT.Rmd’ ‘vignette-moveNT.pdf’
+  ‘vignette-movescape.Rmd’ ‘vignette-movescape.pdf’ ‘vignette.Rmd’
+  ‘vignette.html’ ‘vignette.pdf’
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... WARNING
+'library' or 'require' call not declared from: ‘mclust’
+'library' or 'require' call to ‘raster’ which was already attached by Depends.
+  Please remove these calls from your code.
+'library' or 'require' call to ‘mclust’ in package code.
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+Packages in Depends field not imported from:
+  ‘adehabitatLT’ ‘raster’ ‘sp’
+  These packages need to be imported from (in the NAMESPACE file)
+  for when this namespace is loaded but not attached.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+adj2stack: no visible global function definition for ‘stack’
+adj2stack: no visible global function definition for ‘values’
+adj2stack: no visible global function definition for ‘setValues’
+adj2stack: no visible global function definition for ‘plot’
+clust_stack: no visible global function definition for ‘values’
+clust_stack: no visible global function definition for ‘values<-’
+clust_stack: no visible global function definition for ‘stack’
+clust_stack: no visible global function definition for ‘setValues’
+clust_stack: no visible global function definition for ‘mosaic’
+clustnet: no visible global function definition for ‘install.packages’
+clustnet: no visible global function definition for ‘values’
+clustnet: no visible global function definition for ‘values<-’
+clustnet: no visible global function definition for ‘plot’
+graphmet: no visible global function definition for ‘values’
+ind_clust: no visible global function definition for ‘install.packages’
+ind_clust: no visible global function definition for ‘Mclust’
+interpolation: no visible global function definition for
+  ‘txtProgressBar’
+interpolation: no visible global function definition for
+  ‘setTxtProgressBar’
+interpolation: no visible global function definition for ‘ld’
+interpolation: no visible global function definition for ‘na.omit’
+interpolation: no visible global function definition for ‘SpatialLines’
+interpolation : <anonymous>: no visible global function definition for
+  ‘Lines’
+interpolation: no visible global function definition for ‘extract’
+interpolation: no visible global function definition for ‘rasterize’
+interpolation: no visible global function definition for ‘stack’
+loop: no visible global function definition for ‘SpatialPoints’
+loop: no visible global function definition for ‘ld’
+loop: no visible global function definition for ‘coordinates’
+loop: no visible global function definition for ‘raster’
+loop: no visible global function definition for ‘rasterize’
+mosaic_network: no visible binding for global variable ‘mosaic’
+pop_clust: no visible global function definition for ‘Mclust’
+pop_overl : ff: no visible global function definition for ‘na.omit’
+pop_overl: no visible binding for global variable ‘mosaic’
+pop_stack : fct: no visible global function definition for ‘values<-’
+pop_stack : fct: no visible global function definition for ‘values’
+pop_stack: no visible binding for global variable ‘mosaic’
+pop_stack: no visible global function definition for ‘stack’
+quant: no visible global function definition for ‘quantile’
+sim_mov: no visible global function definition for ‘ld’
+sim_mov: no visible global function definition for ‘tail’
+sim_mov: no visible global function definition for ‘rnorm’
+sim_mov: no visible global function definition for ‘plot’
+table_cluster: no visible global function definition for ‘values’
+table_cluster: no visible global function definition for ‘na.omit’
+traj2adj: no visible global function definition for ‘coordinates’
+traj2adj: no visible global function definition for ‘raster’
+traj2adj: no visible global function definition for ‘crop’
+traj2adj: no visible global function definition for ‘values<-’
+traj2adj: no visible global function definition for ‘ncell’
+traj2adj: no visible global function definition for ‘rasterize’
+traj2adj: no visible global function definition for ‘extract’
+traj2adj: no visible global function definition for ‘values’
+Undefined global functions or variables:
+  Lines Mclust SpatialLines SpatialPoints coordinates crop extract
+  install.packages ld mosaic na.omit ncell plot quantile raster
+  rasterize rnorm setTxtProgressBar setValues stack tail txtProgressBar
+  values values<-
+Consider adding
+  importFrom("graphics", "plot")
+  importFrom("stats", "na.omit", "quantile", "rnorm")
+  importFrom("utils", "install.packages", "setTxtProgressBar", "stack",
+             "tail", "txtProgressBar")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'adj2stack'
+  ‘...’
+
+Undocumented arguments in documentation object 'clustnet'
+  ‘nclust’
+
+Undocumented arguments in documentation object 'dot'
+  ‘x’ ‘...’
+
+Undocumented arguments in documentation object 'pop_clust'
+  ‘ls’
+Documented arguments not in \usage in documentation object 'pop_clust':
+  ‘ls_ind’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... ERROR
+Running examples in ‘moveNT-Ex.R’ failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: adj2stack
+> ### Title: Calculation of network metrics
+> ### Aliases: adj2stack
+> ### Keywords: traj2adj
+> 
+> ### ** Examples
+> 
+> traj1<-sim_mov(type="OU", npatches=3, grph=T)
+Error in sim_mov(type = "OU", npatches = 3, grph = T) : 
+  T used instead of TRUE
+Execution halted
+* DONE
+Status: 1 ERROR, 3 WARNINGs, 2 NOTEs

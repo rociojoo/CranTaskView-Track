@@ -1,0 +1,3009 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/vmstools.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘vmstools/DESCRIPTION’ ... OK
+* this is package ‘vmstools’ version ‘0.75’
+* checking package namespace information ... OK
+* checking package dependencies ... NOTE
+Package suggested but not available for checking: ‘adehabitat’
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘vmstools’ can be installed ... WARNING
+Found the following significant warnings:
+  Note: possible error in 'savePlot(filename = file.path(general$output.path, ': unused argument (restoreConsole = TRUE) 
+See ‘/tmp/Rtmpr5qHpr/vmstools.Rcheck/00install.out’ for details.
+Information on the location(s) of code generating the ‘Note’s can be
+obtained by re-running with environment variable R_KEEP_PKG_SOURCE set
+to ‘yes’.
+* checking installed package size ... NOTE
+  installed size is 23.3Mb
+  sub-directories of 1Mb or more:
+    data  22.1Mb
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... WARNING
+'library' or 'require' calls not declared from:
+  ‘PBSmapping’ ‘cluster’ ‘data.table’ ‘doBy’ ‘mapdata’ ‘maps’
+  ‘maptools’ ‘sp’
+'library' or 'require' calls in package code:
+  ‘FactoMineR’ ‘MASS’ ‘PBSmapping’ ‘SOAR’ ‘ade4’ ‘adehabitat’ ‘amap’
+  ‘animation’ ‘aspace’ ‘cluster’ ‘data.table’ ‘doBy’ ‘lattice’
+  ‘mapdata’ ‘maps’ ‘maptools’ ‘mda’ ‘mixtools’ ‘segmented’ ‘shapefiles’
+  ‘sp’ ‘tcltk’
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+package 'methods' is used but not declared
+* checking S3 generic/method consistency ... NOTE
+Found the following apparent S3 methods exported but not registered:
+  c.listquote scale.poly
+See section ‘Registering S3 methods’ in the ‘Writing R Extensions’
+manual.
+* checking replacement functions ... OK
+* checking foreign function calls ... WARNING
+Foreign function calls to a different package:
+  .Call("Rgpc_polygon_clip", ..., PACKAGE = "gpclib")
+  .Call("Rgpc_polygon_to_tristrip", ..., PACKAGE = "gpclib")
+Undeclared package in foreign function calls:
+   ‘gpclib’
+See chapter ‘System and foreign language interfaces’ in the ‘Writing R
+Extensions’ manual.
+* checking R code for possible problems ... NOTE
+Found an obsolete/platform-specific call in the following functions:
+  ‘activityTacsat’ ‘getMetierClusters’ ‘getTableAfterPCA’ ‘indicators’
+  ‘mergeEflalo2Pings’ ‘plotTreeMap’ ‘segmentTacsatSpeed’
+  ‘selectMainSpecies’
+Found the deprecated function:
+  ‘plclust’
+Found the platform-specific devices:
+  ‘X11’ ‘windows’ ‘x11’
+dev.new() is the preferred way to open a new device, in the unlikely
+event one is needed.
+ICESarea: no visible global function definition for ‘as’
+ICESrectangle2CSquare: no visible global function definition for ‘data’
+ICESrectangle2CSquare: no visible binding for global variable
+  ‘ICESareas’
+ICESrectangle2CSquare : <anonymous>: no visible binding for global
+  variable ‘ICESareas’
+activityTacsat: no visible global function definition for ‘x11’
+activityTacsat: no visible binding for global variable ‘LE_GEAR’
+activityTacsat: no visible global function definition for ‘normalmixEM’
+activityTacsat: no visible global function definition for ‘na.omit’
+activityTacsat: no visible binding for global variable ‘VE_REF’
+activityTacsat: no visible global function definition for ‘dnorm’
+activityTacsatAnalyse: no visible global function definition for
+  ‘na.omit’
+activityTacsatAnalyse: no visible global function definition for ‘hist’
+activityTacsatAnalyse: no visible global function definition for ‘axis’
+calc_mcp : mcp.area : <anonymous>: no visible global function
+  definition for ‘mcp’
+calc_mcp : mcp.area : <anonymous>: no visible global function
+  definition for ‘as’
+calc_mcp: no visible global function definition for ‘mcp’
+calc_mcp: no visible global function definition for ‘write.table’
+calculateCI: no visible global function definition for ‘par’
+calculateCI: no visible global function definition for ‘lines’
+calculateCI: no visible global function definition for ‘as’
+calculateCI: no visible global function definition for ‘image’
+calculateCI: no visible global function definition for ‘heat.colors’
+calculateCI: no visible global function definition for ‘box’
+callNumberPeak: no visible global function definition for ‘tktoplevel’
+callNumberPeak: no visible global function definition for ‘tclVar’
+callNumberPeak: no visible global function definition for ‘tkframe’
+callNumberPeak: no visible global function definition for ‘tkpack’
+callNumberPeak: no visible global function definition for ‘tklabel’
+callNumberPeak: no visible global function definition for ‘tkentry’
+callNumberPeak: no visible global function definition for ‘tkbutton’
+callNumberPeak : <anonymous>: no visible global function definition for
+  ‘tkdestroy’
+callNumberPeak: no visible global function definition for
+  ‘tkwait.window’
+callNumberPeak: no visible global function definition for ‘tclvalue’
+callPeakValue: no visible global function definition for ‘tclVar’
+callPeakValue: no visible global function definition for ‘tktoplevel’
+callPeakValue: no visible global function definition for ‘tkwm.title’
+callPeakValue: no visible global function definition for ‘tkentry’
+callPeakValue: no visible global function definition for ‘tkgrid’
+callPeakValue: no visible global function definition for ‘tklabel’
+callPeakValue: no visible global function definition for ‘tkbutton’
+callPeakValue : <anonymous>: no visible global function definition for
+  ‘tclvalue<-’
+callPeakValue: no visible global function definition for ‘tkbind’
+callPeakValue: no visible global function definition for
+  ‘tkwait.variable’
+callPeakValue: no visible global function definition for ‘tclvalue’
+callPeakValue: no visible global function definition for ‘tkdestroy’
+clipObs2Tacsat: no visible binding for global variable ‘SI_LONG’
+clipObs2Tacsat: no visible binding for global variable ‘SI_LATI’
+clipObs2Tacsat: no visible binding for global variable ‘SI_DATIM’
+clipObs2Tacsat: no visible global function definition for ‘na.omit’
+compareToOrdination: no visible global function definition for ‘data’
+compareToOrdination: no visible binding for global variable
+  ‘correspLevel7to5’
+compareToOrdination: no visible binding for global variable
+  ‘correspMixedMetier’
+compareToOrdination: no visible global function definition for ‘png’
+compareToOrdination: no visible global function definition for
+  ‘barplot’
+compareToOrdination: no visible global function definition for
+  ‘dev.off’
+compareToOrdination: no visible global function definition for ‘par’
+compareToOrdination: no visible global function definition for ‘mtext’
+compareToOrdination: no visible global function definition for ‘title’
+compareToOrdination: no visible global function definition for
+  ‘rainbow’
+compareToOrdination : <anonymous>: no visible binding for global
+  variable ‘correspLevel7to5’
+compareToOrdination : <anonymous>: no visible binding for global
+  variable ‘correspMixedMetier’
+compareToOrdination: no visible global function definition for
+  ‘write.table’
+countPings: no visible global function definition for ‘as’
+countPings: no visible binding for global variable ‘SUM’
+createGrid: no visible global function definition for ‘as’
+diffInter: no visible global function definition for ‘sd’
+effort: no visible binding for global variable ‘FT_REF’
+effort: no visible global function definition for ‘data’
+effort: no visible binding for global variable ‘ICESareas’
+effort: no visible global function definition for ‘aggregate’
+estimateAggregation : funNB: no visible global function definition for
+  ‘dnbinom’
+estimateAggregation: no visible global function definition for ‘optim’
+estimatePropFishing: no visible global function definition for ‘data’
+estimatePropFishing: no visible binding for global variable ‘ICESareas’
+estimatePropFishing: no visible global function definition for
+  ‘aggregate’
+estimatePropFishing: no visible binding for global variable ‘SI_STATE’
+estimatePropFishing: no visible binding for global variable ‘FT_REF’
+extractTableMainSpecies: no visible global function definition for
+  ‘Store’
+getEflaloMetierLevel7: no visible global function definition for ‘data’
+getEflaloMetierLevel7: no visible binding for global variable
+  ‘correspLevel7to5’
+getEflaloMetierLevel7: no visible binding for global variable
+  ‘correspMixedMetier’
+getEflaloMetierLevel7: no visible global function definition for
+  ‘Store’
+getMetierClusters: no visible global function definition for ‘data’
+getMetierClusters: no visible binding for global variable
+  ‘correspLevel7to5’
+getMetierClusters: no visible global function definition for ‘hcluster’
+getMetierClusters: no visible global function definition for ‘cutree’
+getMetierClusters: no visible global function definition for ‘Store’
+getMetierClusters: no visible global function definition for ‘dist’
+getMetierClusters: no visible global function definition for ‘png’
+getMetierClusters: no visible global function definition for ‘par’
+getMetierClusters: no visible global function definition for ‘rainbow’
+getMetierClusters: no visible global function definition for ‘dev.off’
+getMetierClusters: no visible global function definition for ‘plclust’
+getMetierClusters: no visible global function definition for ‘title’
+getMetierClusters: no visible global function definition for
+  ‘rect.hclust’
+getMetierClusters: no visible global function definition for ‘barplot’
+getMetierClusters: no visible global function definition for ‘mtext’
+getMetierClusters : <anonymous>: no visible global function definition
+  for ‘quantile’
+getMetierClusters: no visible binding for global variable ‘sd’
+getMetierClusters: no visible global function definition for ‘text’
+getMetierClusters: no visible global function definition for ‘lda’
+getMetierClusters: no visible global function definition for ‘predict’
+getMetierClusters: no visible global function definition for ‘X11’
+getMetierClusters: no visible global function definition for ‘abline’
+getMetierClusters: no visible global function definition for ‘savePlot’
+getMetierClusters: no visible global function definition for
+  ‘colorRampPalette’
+getMetierClusters: no visible global function definition for
+  ‘levelplot’
+getMetierClusters : <anonymous>: no visible binding for global variable
+  ‘correspLevel7to5’
+getMetierClusters: no visible global function definition for
+  ‘write.table’
+getMetierClusters: no visible global function definition for ‘kmeans’
+getTableAfterPCA: no visible global function definition for ‘PCA’
+getTableAfterPCA: no visible global function definition for ‘X11’
+getTableAfterPCA: no visible global function definition for ‘plot.PCA’
+getTableAfterPCA: no visible global function definition for ‘savePlot’
+getTableAfterPCA: no visible global function definition for ‘dev.off’
+getTableAfterPCA: no visible global function definition for ‘png’
+getTableAfterPCA: no visible global function definition for ‘barplot’
+getTableAfterPCA: no visible global function definition for ‘par’
+getTableAfterPCA: no visible global function definition for ‘axis’
+getTableAfterPCA: no visible global function definition for ‘abline’
+getTableAfterPCA: no visible global function definition for ‘text’
+getTableAfterPCA: no visible global function definition for ‘mtext’
+getTableAfterPCA: no visible global function definition for ‘title’
+getTableAfterPCA: no visible global function definition for ‘Store’
+indicators: no visible global function definition for ‘complete.cases’
+indicators: no visible global function definition for ‘read.shapefile’
+indicators: no visible global function definition for ‘clipPolygons’
+indicators: no visible binding for global variable ‘europa’
+indicators: no visible binding for global variable ‘pointInOut’
+indicators: no visible global function definition for ‘x11’
+indicators: no visible global function definition for ‘write.csv’
+landingsMaps2GIFanim: no visible global function definition for
+  ‘im.convert’
+mapGrid: no visible global function definition for ‘par’
+mapGrid: no visible global function definition for ‘image’
+mapGrid: no visible global function definition for ‘abline’
+mapGrid: no visible global function definition for ‘box’
+mapGrid: no visible global function definition for ‘axis’
+mapGrid: no visible global function definition for ‘mtext’
+mapGrid: no visible global function definition for ‘colors’
+mapGrid: no visible global function definition for ‘points’
+mapGrid: no visible global function definition for ‘legend’
+matchAIS2Tacsat: no visible binding for global variable ‘VE_REF’
+matchAIS2Tacsat: no visible binding for global variable ‘jul’
+mcp.area : <anonymous>: no visible global function definition for ‘mcp’
+mcp.area : <anonymous>: no visible global function definition for ‘as’
+mergeEflalo2Pings: missing arguments not allowed in calls to ‘list’
+mergeEflalo2Pings: no visible global function definition for
+  ‘axis.POSIXct’
+mergeEflalo2Pings: no visible global function definition for ‘axis’
+mergeEflalo2Pings: no visible global function definition for ‘segments’
+mergeEflalo2Pings: no visible global function definition for ‘points’
+mergeEflalo2Pings: no visible global function definition for ‘text’
+mergeEflalo2Pings: no visible global function definition for ‘arrows’
+mergeEflalo2Pings: no visible global function definition for ‘savePlot’
+mergeEflalo2Pings: no visible global function definition for ‘dev.off’
+mergeEflalo2Pings: no visible binding for global variable ‘er’
+mergeEflalo2Pings: no visible binding for global variable ‘xx’
+mergeEflalo2Pings: no visible binding for global variable
+  ‘FT_REF_SQ_DAY’
+mergeEflalo2Pings: no visible binding for global variable ‘VE_REF’
+mergeEflalo2Pings: no visible binding for global variable ‘VE_FLT’
+mergeEflalo2Pings: no visible binding for global variable ‘VE_KW’
+mergeEflalo2Pings: no visible binding for global variable
+  ‘LE_MET_level6’
+mergeEflalo2Pings: no visible binding for global variable ‘LE_GEAR’
+mergeEflalo2Pings: no visible binding for global variable ‘FT_REF’
+mergeEflalo2Pings: no visible binding for global variable ‘FT_REF_SQ’
+mergeEflalo2Pings: no visible binding for global variable
+  ‘merged.this.vessel’
+nestedGrid: no visible global function definition for ‘as’
+overlapPolygons: no visible global function definition for ‘aggregate’
+pings2EffortMaps: no visible global function definition for ‘savePlot’
+pings2EffortMaps: no visible global function definition for ‘dev.off’
+pings2EffortMaps: no visible global function definition for ‘title’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘value’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘weight’
+pings2Fishframe : mergedTable2FishframeVE: no visible global function
+  definition for ‘data’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘ICESareas’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘c_square’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘ICES_area’
+pings2Fishframe : mergedTable2FishframeVE: no visible binding for
+  global variable ‘LE_MET_level6’
+pings2Fishframe : mergedTable2FishframeVE: no visible global function
+  definition for ‘write.table’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘ICESareas’
+pings2Fishframe : mergedTable2FishframeVSL: no visible global function
+  definition for ‘data’
+pings2Fishframe : mergedTable2FishframeVSL: no visible global function
+  definition for ‘reshape’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘species’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘ICES_area’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘c_square’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘LE_MET_level6’
+pings2Fishframe : mergedTable2FishframeVSL: no visible binding for
+  global variable ‘speciesLatinNames’
+pings2Fishframe : mergedTable2FishframeVSL: no visible global function
+  definition for ‘write.table’
+pings2Fishframe: no visible global function definition for
+  ‘write.table’
+pings2LandingsMaps: no visible global function definition for ‘title’
+pings2LandingsMaps: no visible global function definition for
+  ‘savePlot’
+pings2LandingsMaps: no visible global function definition for ‘dev.off’
+plotTools: no visible global function definition for ‘heat.colors’
+plotTools: no visible global function definition for ‘as’
+plotTools: no visible global function definition for ‘axis’
+plotTools: no visible global function definition for ‘box’
+plotTools: no visible global function definition for ‘polygon’
+plotTreeMap: no visible global function definition for ‘rainbow’
+plotTreeMap : simple.hook: no visible global function definition for
+  ‘rect’
+plotTreeMap: no visible global function definition for ‘as’
+plotTreeMap: no visible global function definition for ‘X11’
+plotTreeMap: no visible global function definition for ‘box’
+plotTreeMap: no visible global function definition for ‘abline’
+plotTreeMap: no visible global function definition for ‘grey’
+plotTreeMap: no visible global function definition for ‘legend’
+plot_mcp: no visible global function definition for ‘par’
+plot_mcp: no visible binding for global variable ‘r.MCP’
+plot_mcp: no visible global function definition for ‘title’
+plot_mcp: no visible global function definition for ‘points’
+plot_mcp: no visible global function definition for ‘dev.off’
+pointInHarbour: no visible global function definition for ‘write.table’
+predictAggDistri: no visible global function definition for ‘dnbinom’
+predictMetier: no visible binding for global variable ‘Step1’
+predictMetier: no visible binding for global variable ‘clust2007’
+predictMetier: no visible binding for global variable ‘datPred’
+predictMetier: no visible global function definition for ‘fda’
+predictMetier: no visible global function definition for ‘predict’
+raiseTacsat: no visible global function definition for ‘data’
+raiseTacsat: no visible binding for global variable ‘ICESareas’
+raiseTacsat: no visible global function definition for ‘aggregate’
+read.polyfile: no visible global function definition for ‘as’
+readEflalo: no visible global function definition for ‘read.table’
+readTacsat: no visible global function definition for ‘read.table’
+segmentTacsatSpeed: missing arguments not allowed in calls to ‘list’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘update’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘model.matrix’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘update.formula’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘formula’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘as.formula’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘model.offset’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘model.weights’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘lm.wfit’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘coef’
+segmentTacsatSpeed : segmented: no visible global function definition
+  for ‘vcov’
+segmentTacsatSpeed: no visible global function definition for ‘hist’
+segmentTacsatSpeed: no visible global function definition for
+  ‘quantile’
+segmentTacsatSpeed: no visible global function definition for ‘lm’
+segmentTacsatSpeed: no visible global function definition for ‘X11’
+segmentTacsatSpeed: no visible global function definition for ‘par’
+segmentTacsatSpeed: no visible global function definition for ‘abline’
+segmentTacsatSpeed: no visible global function definition for ‘text’
+segmentTacsatSpeed: no visible global function definition for ‘median’
+segmentTacsatSpeed: no visible global function definition for
+  ‘savePlot’
+segmentTacsatSpeed: no visible global function definition for ‘dev.cur’
+segmentTacsatSpeed: no visible global function definition for ‘dev.off’
+segmentTacsatSpeed: no visible global function definition for ‘boxplot’
+segmentTacsatSpeed: no visible global function definition for
+  ‘write.table’
+segmentedTacsatSpeed: no visible binding for global variable ‘VE_REF’
+segmentedTacsatSpeed: no visible binding for global variable ‘LE_GEAR’
+segmentedTacsatSpeed: no visible binding for global variable
+  ‘VE_REF_LE_GEAR’
+segmentedTacsatSpeed: no visible global function definition for ‘hist’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘segmented’
+segmentedTacsatSpeed: no visible global function definition for ‘lm’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘seg.control’
+segmentedTacsatSpeed: no visible global function definition for ‘runif’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘confint’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘write.csv’
+selectMainSpecies: no visible global function definition for ‘hcluster’
+selectMainSpecies: no visible global function definition for ‘Store’
+selectMainSpecies: no visible global function definition for ‘cutree’
+selectMainSpecies: no visible global function definition for ‘png’
+selectMainSpecies: no visible global function definition for ‘title’
+selectMainSpecies: no visible global function definition for
+  ‘rect.hclust’
+selectMainSpecies: no visible global function definition for ‘dev.off’
+selectMainSpecies: no visible global function definition for ‘median’
+selectMainSpecies: no visible global function definition for ‘X11’
+selectMainSpecies: no visible global function definition for ‘lines’
+selectMainSpecies: no visible global function definition for ‘segments’
+selectMainSpecies: no visible global function definition for ‘axis’
+selectMainSpecies: no visible global function definition for ‘box’
+selectMainSpecies: no visible global function definition for ‘legend’
+selectMainSpecies: no visible global function definition for ‘savePlot’
+selectMainSpecies: no visible global function definition for ‘par’
+selectMainSpecies: no visible global function definition for ‘abline’
+selectMainSpecies: no visible global function definition for ‘mtext’
+shortenEflalo: no visible binding for global variable ‘eflalo2’
+splitAmongPings: no visible binding for global variable ‘SI_STATE’
+splitAmongPings: no visible binding for global variable ‘FT_REF’
+splitAmongPings: no visible binding for global variable ‘VE_REF’
+splitAmongPings: no visible binding for global variable ‘ID.x’
+splitAmongPings: no visible binding for global variable ‘ID’
+splitAmongPings2: no visible binding for global variable ‘SI_STATE’
+splitAmongPings2: no visible binding for global variable ‘FT_REF’
+splitAmongPings2: no visible binding for global variable ‘VE_REF’
+splitAmongPings2: no visible binding for global variable ‘ID.x’
+splitAmongPings2: no visible binding for global variable ‘ID’
+surface : <anonymous> : <anonymous>: no visible binding for global
+  variable ‘ID’
+surface : <anonymous> : <anonymous>: no visible binding for global
+  variable ‘labptx’
+surface : <anonymous> : <anonymous>: no visible binding for global
+  variable ‘labpty’
+test.values: no visible global function definition for ‘var’
+vmsGridCreate: no visible global function definition for ‘as’
+vmsGridCreate: no visible global function definition for ‘savePlot’
+withinVar: no visible global function definition for ‘dist’
+write.polyfile: no visible global function definition for ‘is’
+write.polyfile: no visible global function definition for ‘as’
+[,gpc.poly-ANY-ANY-ANY: no visible global function definition for ‘new’
+append.poly,gpc.poly-gpc.poly: no visible global function definition
+  for ‘new’
+coerce,data.frame-gpc.poly: no visible global function definition for
+  ‘as’
+coerce,list-gpc.poly: no visible global function definition for ‘as’
+coerce,matrix-gpc.poly: no visible global function definition for ‘new’
+coerce,numeric-gpc.poly: no visible global function definition for
+  ‘new’
+coerce,numeric-gpc.poly.nohole: no visible global function definition
+  for ‘new’
+intersect,gpc.poly-gpc.poly: no visible global function definition for
+  ‘as’
+intersect,gpc.poly-gpc.poly: no visible global function definition for
+  ‘new’
+setdiff,gpc.poly-gpc.poly: no visible global function definition for
+  ‘as’
+setdiff,gpc.poly-gpc.poly: no visible global function definition for
+  ‘new’
+tristrip,gpc.poly: no visible global function definition for ‘as’
+union,gpc.poly-gpc.poly: no visible global function definition for ‘as’
+union,gpc.poly-gpc.poly: no visible global function definition for
+  ‘new’
+Undefined global functions or variables:
+  FT_REF FT_REF_SQ FT_REF_SQ_DAY ICES_area ICESareas ID ID.x LE_GEAR
+  LE_MET_level6 PCA SI_DATIM SI_LATI SI_LONG SI_STATE SUM Step1 Store
+  VE_FLT VE_KW VE_REF VE_REF_LE_GEAR X11 abline aggregate arrows as
+  as.formula axis axis.POSIXct barplot box boxplot c_square
+  clipPolygons clust2007 coef colorRampPalette colors complete.cases
+  confint correspLevel7to5 correspMixedMetier cutree datPred data
+  dev.cur dev.off dist dnbinom dnorm eflalo2 er europa fda formula grey
+  hcluster heat.colors hist im.convert image is jul kmeans labptx
+  labpty lda legend levelplot lines lm lm.wfit mcp median
+  merged.this.vessel model.matrix model.offset model.weights mtext
+  na.omit new normalmixEM optim par plclust plot.PCA png pointInOut
+  points polygon predict quantile r.MCP rainbow read.shapefile
+  read.table rect rect.hclust reshape runif savePlot sd seg.control
+  segmented segments species speciesLatinNames tclVar tclvalue
+  tclvalue<- text title tkbind tkbutton tkdestroy tkentry tkframe
+  tkgrid tklabel tkpack tktoplevel tkwait.variable tkwait.window
+  tkwm.title update update.formula value var vcov weight write.csv
+  write.table x11 xx
+Consider adding
+  importFrom("grDevices", "X11", "colorRampPalette", "colors", "dev.cur",
+             "dev.off", "grey", "heat.colors", "png", "rainbow",
+             "savePlot", "x11")
+  importFrom("graphics", "abline", "arrows", "axis", "axis.POSIXct",
+             "barplot", "box", "boxplot", "hist", "image", "legend",
+             "lines", "mtext", "par", "points", "polygon", "rect",
+             "segments", "text", "title")
+  importFrom("methods", "as", "is", "new")
+  importFrom("stats", "aggregate", "as.formula", "coef",
+             "complete.cases", "confint", "cutree", "dist", "dnbinom",
+             "dnorm", "formula", "kmeans", "lm", "lm.wfit", "median",
+             "model.matrix", "model.offset", "model.weights", "na.omit",
+             "optim", "plclust", "predict", "quantile", "rect.hclust",
+             "reshape", "runif", "sd", "update", "update.formula", "var",
+             "vcov")
+  importFrom("utils", "data", "read.table", "write.csv", "write.table")
+to your NAMESPACE file (and ensure that your DESCRIPTION Imports field
+contains 'methods').
+
+Found the following assignments to the global environment:
+File ‘vmstools/R/calc_mcp.r’:
+  assign("r.MCP", r.MCP, pos = 1)
+File ‘vmstools/R/segmentTacsatSpeed.r’:
+  assign("dati", dati, envir = .GlobalEnv)
+
+Found the following calls to data() loading into the global environment:
+File ‘vmstools/R/ICESrectangle2CSquare.r’:
+  data(ICESareas)
+File ‘vmstools/R/compareToOrdination.r’:
+  data(correspLevel7to5)
+  data(correspMixedMetier)
+File ‘vmstools/R/effort.r’:
+  data(ICESareas)
+File ‘vmstools/R/estimatePropFishing.r’:
+  data(ICESareas)
+File ‘vmstools/R/getEflaloMetierLevel7.r’:
+  data(correspLevel7to5)
+  data(correspMixedMetier)
+File ‘vmstools/R/getMetierClusters.r’:
+  data(correspLevel7to5)
+File ‘vmstools/R/mergeEflalo2Pings.r’:
+  data(eflalo)
+  data(tacsat)
+  data(euharbours)
+File ‘vmstools/R/pings2Fishframe.r’:
+  data(ICESareas)
+  data(ICESareas)
+  data(ICESareas)
+  data(speciesLatinNames)
+File ‘vmstools/R/raiseTacsat.r’:
+  data(ICESareas)
+See section ‘Good practice’ in ‘?data’.
+* checking Rd files ... WARNING
+prepare_Rd: eflaloHaul2Tacsat.Rd:21-22: Dropping empty section \details
+prepare_Rd: labellingHauls.Rd:17: Dropping empty section \references
+prepare_Rd: mcp.area.Rd:5-6: Dropping empty section \description
+checkRd: (5) mcp.area.Rd:0-27: Must have a \description
+* checking Rd metadata ... OK
+* checking Rd line widths ... NOTE
+Rd file 'effort.Rd':
+  \examples lines wider than 100 characters:
+     a3 <- effort(eflalo,by=c("VE_REF","SI_MONTH"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(a3$EFFORT)
+     a4 <- effort(eflalo,by=c("VE_REF","SI_QUARTER","LE_GEAR"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(a4$EFFORT)
+     a6 <- effort(eflalo,by=c("SI_DAY","LE_GEAR"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(a6$EFFORT)
+     b3 <- effort(tacsatp,by=c("VE_REF","SI_MONTH"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(b3$EFFORT)
+     b4 <- effort(tacsatp,by=c("VE_REF","SI_QUARTER","LE_GEAR"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(b4$EFFORT)
+     b5 <- effort(tacsatp,by=c("byRow"),unit="hours",weight=c(0.5,0.5),fill.na=TRUE); sum(b5$EFFORT,na.rm=T)
+
+Rd file 'mcp.area.Rd':
+  \usage lines wider than 90 characters:
+     mcp.area(xy, id, percent = seq(20, 100, by = 5), unin = c("m", "km"), unout = c("ha", "km2", "m2"), plotit = TRUE)
+
+Rd file 'nestedGrid.rd':
+  \usage lines wider than 90 characters:
+     nestedGrid(tacsat, resx, resy, maxstep = 10, n = 20, control = list(clm = NULL, FUN = NULL))
+
+Rd file 'overlapPolygons.Rd':
+  \examples lines wider than 100 characters:
+     pols2 <- cbind(s1=tacsat$SI_LONG[seq(2,nrow(tacsat),length.out=5)],s2=tacsat$SI_LATI[seq(2,nrow(tacsat),length.out=5)])
+                                       function(x){data.frame(SI_LONG=c(pols1[x,"s1"]-resx/2,rep(pols1[x,"s1"]+resx/2,2),pols1[x,"s1"]-resx/ ... [TRUNCATED]
+                                                              SI_LATI=c(rep(pols1[x,"s2"]-resy/2,2),rep(pols1[x,"s2"]+resy/2,2)))}))
+                                       function(x){data.frame(SI_LONG=c(pols2[x,"s1"]-resx/2,rep(pols2[x,"s1"]+resx/2,2),pols2[x,"s1"]-resx/ ... [TRUNCATED]
+                                                              SI_LATI=c(rep(pols2[x,"s2"]-resy/2,2),rep(pols2[x,"s2"]+resy/2,2)))}))
+
+Rd file 'pings2LandingsMaps.rd':
+  \usage lines wider than 90 characters:
+     pings2LandingsMaps(all.merged, sp="LE_KG_COD", output= file.path("C:","VMSanalysis", "FemernBelt"),
+               breaks0= c(0,100, 100*(2^1),100*(2^2),100*(2^3),100*(2^4),100*(2^5),100*(2^6), 100*(2^7),100*(2^8),100*(2^9), 10000000))
+
+Rd file 'raiseTacsat.Rd':
+  \usage lines wider than 90 characters:
+     raiseTacsat(tacsat, eflalo, by = c("LE_GEAR", "VE_REF", "SI_DAY", "LE_RECT", "SI_YEAR"), sortBy = TRUE)
+
+These lines will be truncated in the PDF manual.
+* checking Rd cross-references ... WARNING
+Missing link or links in documentation object 'diffInter.Rd':
+  ‘distanceVMS’
+
+Missing link or links in documentation object 'eflaloHaul2Tacsat.Rd':
+  ‘eflalo2Relational’
+
+Missing link or links in documentation object 'indicators.rd':
+  ‘mapGrids’
+
+Missing link or links in documentation object 'interpolateTacsat.rd':
+  ‘plotInterpolation’
+
+Missing link or links in documentation object 'maxRangeCI.Rd':
+  ‘plotCIinterpolation’ ‘plotInterpolation’
+
+Missing link or links in documentation object 'plotTools.Rd':
+  ‘Grid2KLM’ ‘landingsMap2GIFanim’
+
+See section 'Cross-references' in the 'Writing R Extensions' manual.
+
+* checking for missing documentation entries ... WARNING
+Undocumented code objects:
+  ‘append.poly’ ‘area.poly’ ‘callNumberPeak’ ‘estimateAggregation’
+  ‘estimateZeros’ ‘get.bbox’ ‘get.pts’ ‘matchAIS2Tacsat’ ‘nearest’
+  ‘predictAggDistri’ ‘read.polyfile’ ‘round2’ ‘scale.poly’
+  ‘splitAmongPings2’ ‘triangulate’ ‘tristrip’ ‘write.polyfile’
+Undocumented data sets:
+  ‘correspLevel7to5’ ‘correspMixedMetier’ ‘speciesLatinNames’
+Undocumented S4 classes:
+  ‘gpc.poly.nohole’ ‘gpc.poly’
+Undocumented S4 methods:
+  generic '[' and siglist 'gpc.poly,ANY,ANY,ANY'
+  generic 'append.poly' and siglist 'gpc.poly,gpc.poly'
+  generic 'area.poly' and siglist 'gpc.poly'
+  generic 'get.bbox' and siglist 'gpc.poly'
+  generic 'get.pts' and siglist 'gpc.poly'
+  generic 'intersect' and siglist 'gpc.poly,gpc.poly'
+  generic 'plot' and siglist 'gpc.poly,ANY'
+  generic 'scale.poly' and siglist 'gpc.poly'
+  generic 'setdiff' and siglist 'gpc.poly,gpc.poly'
+  generic 'show' and siglist 'gpc.poly'
+  generic 'triangulate' and siglist 'gpc.poly'
+  generic 'tristrip' and siglist 'gpc.poly'
+  generic 'union' and siglist 'gpc.poly,gpc.poly'
+All user-level objects in a package (including S4 classes and methods)
+should have documentation entries.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking for code/documentation mismatches ... WARNING
+Data with usage in documentation object 'euharbours' but not in code:
+  ‘euharbours’
+
+Codoc mismatches from documentation object 'activityTacsat':
+activityTacsat
+  Code: function(tacsat, units = "year", analyse.by = "LE_GEAR",
+                 storeScheme = NULL, plot = FALSE, level = "all")
+  Docs: function(tacsat, units = "year", analyse.by = "LE_GEAR",
+                 storeScheme = NULL, plot = FALSE, level = "all", sigma
+                 = 0.911, fixPeaks = FALSE)
+  Argument names in docs not in code:
+    sigma fixPeaks
+
+Codoc mismatches from documentation object 'calc_mcp':
+calc_mcp
+  Code: function(id = 1, points = NULL, filename = "MCP_Output.txt",
+                 verbose = FALSE, pct = 100)
+  Docs: function(id = 1, points = activities, filename =
+                 "MCP_Output.txt", verbose = FALSE, pct = 100)
+  Mismatches in argument default values:
+    Name: 'points' Code: NULL Docs: activities
+
+Codoc mismatches from documentation object 'countPings':
+countPings
+  Code: function(formula, tacsat, grid = NULL, by = NULL)
+  Docs: function(formula, tacsat, grid = NULL)
+  Argument names in code not in docs:
+    by
+
+Codoc mismatches from documentation object 'eflalo2Pings':
+eflalo2Pings
+  Code: function(eflalo, tacsat, pings, vars, eflaloCol, remainTacsat,
+                 by = NULL)
+  Docs: function(eflalo, tacsat, pings, vars, eflaloCol, remainTacsat)
+  Argument names in code not in docs:
+    by
+
+Codoc mismatches from documentation object 'findEndTacsat':
+findEndTacsat
+  Code: function(SI_DATIM, startVMS, interval, margin)
+  Docs: function(tacsat, startTacsat, interval, margin)
+  Argument names in code not in docs:
+    SI_DATIM startVMS
+  Argument names in docs not in code:
+    tacsat startTacsat
+  Mismatches in argument names:
+    Position: 1 Code: SI_DATIM Docs: tacsat
+    Position: 2 Code: startVMS Docs: startTacsat
+
+Codoc mismatches from documentation object 'lonLatRatio':
+lonLatRatio
+  Code: function(x1, lat)
+  Docs: function(lon, lat)
+  Argument names in code not in docs:
+    x1
+  Argument names in docs not in code:
+    lon
+  Mismatches in argument names:
+    Position: 1 Code: x1 Docs: lon
+
+Codoc mismatches from documentation object 'mapGrid':
+mapGrid
+  Code: function(sGDF, sPDF, we = "", ea = "", so = "", no = "",
+                 gridValName = "fishing", plotTitle = "", numCats = 5,
+                 paletteCats = "heat.colors", addLegend = TRUE, legendx
+                 = "bottomleft", legendncol = 1, legendtitle = "fishing
+                 activity", plotPoints = FALSE, colPoints = 1,
+                 legPoints = FALSE, colLand = "sienna", addICESgrid =
+                 FALSE, addScale = TRUE, outGridFile = "", outPlot =
+                 "", ...)
+  Docs: function(sGDF, sPDF, we = "", ea = "", so = "", no = "",
+                 gridValName = "fishing", plotTitle = "", numCats = 5,
+                 paletteCats = "heat.colors", addLegend = TRUE, legendx
+                 = "bottomleft", legendncol = 1, legendtitle = "fishing
+                 activity", plotPoints = FALSE, colPoints = 1,
+                 legPoints = FALSE, colland = "sienna", addICESgrid =
+                 FALSE, addScale = TRUE, outGridFile = "", outPlot =
+                 "", ...)
+  Argument names in code not in docs:
+    colLand
+  Argument names in docs not in code:
+    colland
+  Mismatches in argument names:
+    Position: 18 Code: colLand Docs: colland
+
+Codoc mismatches from documentation object 'mergeEflalo2Pings':
+mergeEflalo2Pings
+  Code: function(eflalo, tacsat, vessels = unique(eflalo$VE_REF),
+                 general = list(output.path = file.path("C:"),
+                 visual.check = TRUE, detectFishing = FALSE, speed =
+                 "segment", what.speed = "calculated", conserve.all =
+                 TRUE, ), ...)
+  Docs: function(eflalo, tacsat, general = list(output.path =
+                 file.path("C:"), visual.check = TRUE, detectFishing =
+                 FALSE, speed = "segment", what.speed = "calculated",
+                 conserve.all = TRUE, ), ...)
+  Argument names in code not in docs:
+    vessels
+  Mismatches in argument names:
+    Position: 3 Code: vessels Docs: general
+    Position: 4 Code: general Docs: ...
+
+Codoc mismatches from documentation object 'plotTools':
+plotTools
+  Code: function(x, level = "ICESrectangle", xlim, ylim, zlim = NULL,
+                 log = FALSE, gridcell = c(0.1, 0.05), color = NULL,
+                 control.tacsat = list(clm = NULL), control.eflalo =
+                 list(clm = NULL), returnRange = FALSE, las = 1)
+  Docs: function(x, level = "ICESrectangle", xlim, ylim, zlim = NULL,
+                 log = FALSE, gridcell = c(0.1, 0.05), color = NULL,
+                 control.tacsat = list(clm = NULL), control.eflalo =
+                 list(clm = NULL), returnRange = FALSE)
+  Argument names in code not in docs:
+    las
+
+Codoc mismatches from documentation object 'pointInHarbour':
+pointInHarbour
+  Code: function(lon, lat, harbours, rowSize = 30, returnNames = FALSE,
+                 saveHarbourList = TRUE)
+  Docs: function(lon, lat, harbour, rowSize = 30, returnNames = FALSE,
+                 saveHarbourList = TRUE)
+  Argument names in code not in docs:
+    harbours
+  Argument names in docs not in code:
+    harbour
+  Mismatches in argument names:
+    Position: 3 Code: harbours Docs: harbour
+
+Codoc mismatches from documentation object 'segmentTacsatSpeed':
+segmentTacsatSpeed
+  Code: function(tacsat, vessels = unique(tacsat$VE_REF),
+                 force.lower.bound = 0.5, gears.to.force = c("GNS",
+                 "GND", "GNC", "GNF", "GTR", "GTN", "GEN", "GN", "SDN",
+                 "SSC"), general = list(output.path = file.path("C:",
+                 "output"), visual.check = TRUE, a.year = 2009,
+                 what.speed = "calculated", ), ...)
+  Docs: function(tacsat, vessels, general)
+  Argument names in code not in docs:
+    force.lower.bound gears.to.force ...
+  Mismatches in argument names:
+    Position: 3 Code: force.lower.bound Docs: general
+  Mismatches in argument default values:
+    Name: 'vessels' Code: unique(tacsat$VE_REF) Docs: 
+    Name: 'general'
+    Code: list(output.path = file.path("C:", "output"), visual.check = TRUE, 
+          a.year = 2009, what.speed = "calculated", )
+    Docs: 
+
+Codoc mismatches from documentation object 'segmentedTacsatSpeed':
+segmentedTacsatSpeed
+  Code: function(tacsat, units = "year", analyse.by = "VE_REF", speed =
+                 "calculated", logfit = FALSE, CI = 0.95, saveDir =
+                 tempdir(), forceLowerBound = NULL)
+  Docs: function(tacsat, units = "year", analyse.by = "VE_REF", speed =
+                 "calculated", logfit = FALSE, CI = 0.95, saveDir =
+                 tempdir())
+  Argument names in code not in docs:
+    forceLowerBound
+
+Codoc mismatches from documentation object 'shortenEflalo':
+shortenEflalo
+  Code: function(data = eflalo2, which.species = c("ANE", "BIB", "BLL",
+                 "COD", "DAB", "HAD", "HER", "MAC", "NEP", "PLE",
+                 "SOL", "WHG"))
+  Docs: function(data = eflalo, which.species = c("SPEC"))
+  Mismatches in argument default values:
+    Name: 'data' Code: eflalo2 Docs: eflalo
+    Name: 'which.species'
+    Code: c("ANE", "BIB", "BLL", "COD", "DAB", "HAD", "HER", "MAC", "NEP", 
+          "PLE", "SOL", "WHG")
+    Docs: c("SPEC")
+
+Codoc mismatches from documentation object 'splitAmongPings':
+splitAmongPings
+  Code: function(tacsat, eflalo, variable = "all", level = "day",
+                 conserve = TRUE, by = NULL, returnAll = T)
+  Docs: function(tacsat, eflalo, variable = "all", level = "day",
+                 conserve = TRUE, by = NULL, returnAll = FALSE)
+  Mismatches in argument default values:
+    Name: 'returnAll' Code: T Docs: FALSE
+
+Data codoc mismatches from documentation object 'eflalo':
+Variables in data frame 'eflalo'
+  Code: FT_DCOU FT_DDAT FT_DHAR FT_DTIME FT_LCOU FT_LDAT FT_LHAR
+        FT_LTIME FT_REF LE_CDAT LE_DIV LE_EFF LE_EFF_VMS LE_ELAT
+        LE_ELON LE_ETIME LE_EURO_ANE LE_EURO_ANF LE_EURO_ARG
+        LE_EURO_BFT LE_EURO_BIB LE_EURO_BLL LE_EURO_BON LE_EURO_BRB
+        LE_EURO_BSS LE_EURO_CAT LE_EURO_CLB LE_EURO_COD LE_EURO_COE
+        LE_EURO_CRE LE_EURO_CSH LE_EURO_CTC LE_EURO_DAB LE_EURO_DEN
+        LE_EURO_DGS LE_EURO_ELE LE_EURO_ELP LE_EURO_FBM LE_EURO_FCP
+        LE_EURO_FLE LE_EURO_FPI LE_EURO_FPP LE_EURO_GAR LE_EURO_GUG
+        LE_EURO_GUR LE_EURO_GUU LE_EURO_HAD LE_EURO_HAL LE_EURO_HER
+        LE_EURO_HKE LE_EURO_JAX LE_EURO_JOD LE_EURO_LBE LE_EURO_LEM
+        LE_EURO_LEZ LE_EURO_LHT LE_EURO_LIN LE_EURO_LYY LE_EURO_MAC
+        LE_EURO_MAS LE_EURO_MUL LE_EURO_MUR LE_EURO_MZZ LE_EURO_NEP
+        LE_EURO_NOP LE_EURO_OCC LE_EURO_PIA LE_EURO_PIL LE_EURO_PLE
+        LE_EURO_POK LE_EURO_POL LE_EURO_POR LE_EURO_RAZ LE_EURO_RED
+        LE_EURO_SAA LE_EURO_SAL LE_EURO_SAN LE_EURO_SBR LE_EURO_SCE
+        LE_EURO_SME LE_EURO_SOL LE_EURO_SOS LE_EURO_SPR LE_EURO_SQU
+        LE_EURO_SRX LE_EURO_SWO LE_EURO_SYC LE_EURO_TSD LE_EURO_TUR
+        LE_EURO_WEX LE_EURO_WHB LE_EURO_WHE LE_EURO_WHG LE_EURO_WIT
+        LE_EURO_WRA LE_GEAR LE_ID LE_KG_ANE LE_KG_ANF LE_KG_ARG
+        LE_KG_BFT LE_KG_BIB LE_KG_BLL LE_KG_BON LE_KG_BRB LE_KG_BSS
+        LE_KG_CAT LE_KG_CLB LE_KG_COD LE_KG_COE LE_KG_CRE LE_KG_CSH
+        LE_KG_CTC LE_KG_DAB LE_KG_DEN LE_KG_DGS LE_KG_ELE LE_KG_ELP
+        LE_KG_FBM LE_KG_FCP LE_KG_FLE LE_KG_FPI LE_KG_FPP LE_KG_GAR
+        LE_KG_GUG LE_KG_GUR LE_KG_GUU LE_KG_HAD LE_KG_HAL LE_KG_HER
+        LE_KG_HKE LE_KG_JAX LE_KG_JOD LE_KG_LBE LE_KG_LEM LE_KG_LEZ
+        LE_KG_LHT LE_KG_LIN LE_KG_LYY LE_KG_MAC LE_KG_MAS LE_KG_MUL
+        LE_KG_MUR LE_KG_MZZ LE_KG_NEP LE_KG_NOP LE_KG_OCC LE_KG_PIA
+        LE_KG_PIL LE_KG_PLE LE_KG_POK LE_KG_POL LE_KG_POR LE_KG_RAZ
+        LE_KG_RED LE_KG_SAA LE_KG_SAL LE_KG_SAN LE_KG_SBR LE_KG_SCE
+        LE_KG_SME LE_KG_SOL LE_KG_SOS LE_KG_SPR LE_KG_SQU LE_KG_SRX
+        LE_KG_SWO LE_KG_SYC LE_KG_TSD LE_KG_TUR LE_KG_WEX LE_KG_WHB
+        LE_KG_WHE LE_KG_WHG LE_KG_WIT LE_KG_WRA LE_MET_level6 LE_MSZ
+        LE_RECT LE_SLAT LE_SLON LE_STIME LE_UNIT VE_COU VE_FLT VE_KW
+        VE_LEN VE_REF VE_TON
+  Docs: FT_DCOU FT_DDAT FT_DHAR FT_DTIME FT_LCOU FT_LDAT FT_LHAR
+        FT_LTIME FT_REF LE_CDAT LE_DIV LE_ELAT LE_ELON LE_ETIME
+        LE_EURO_SPEC LE_GEAR LE_ID LE_KG_SPEC LE_MET_level6 LE_MSZ
+        LE_RECT LE_SLAT LE_SLON LE_STIME VE_COU VE_FLT VE_KW VE_LEN
+        VE_REF VE_TON
+
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'activityTacsat'
+  ‘sigma’ ‘fixPeaks’
+
+Undocumented arguments in documentation object 'mergeEflalo2Pings'
+  ‘...’
+Documented arguments not in \usage in documentation object 'mergeEflalo2Pings':
+  ‘vessels’
+
+Documented arguments not in \usage in documentation object 'plotTools':
+  ‘las’
+
+Undocumented arguments in documentation object 'pointInHarbour'
+  ‘rowSize’
+
+Undocumented arguments in documentation object 'segmentTacsatSpeed'
+  ‘vessels’
+Documented arguments not in \usage in documentation object 'segmentTacsatSpeed':
+  ‘...’
+
+Documented arguments not in \usage in documentation object 'segmentedTacsatSpeed':
+  ‘forceLowerBound’
+
+Undocumented arguments in documentation object 'vmsGridCreate'
+  ‘colLand’
+Documented arguments not in \usage in documentation object 'vmsGridCreate':
+  ‘colland’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+S3 methods shown with full name in documentation object 'c.listquote':
+  ‘c.listquote’
+
+The \usage entries for S3 methods should use the \method markup and not
+their full name.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... WARNING
+Output for data("euharbours", package = "vmstools"):
+  --------------------------------------------------------------------------------
+  * This harbour list does cover many harbours in Europe, but for sure is NOT
+    a complete list. Please make sure the harbours of importance to you are added.
+  
+  * It is also suggested to contact the maintainer of this package to include your
+    harbours.
+  
+  * The harbour dataset is loaded as 'harbours'
+  
+  --------------------------------------------------------------------------------
+  Warning message:
+  In data(harbours) : data set ‘harbours’ not found
+* checking data for non-ASCII characters ... WARNING
+  Warning: found non-ASCII strings
+  'Coroat<e1>' in object 'correspLevel7to5'
+  'Gal<e1>pagos four-eyed blenny' in object 'correspLevel7to5'
+  'G<fc>nther's grenadier' in object 'correspLevel7to5'
+  'G<fc>nther's waspfish' in object 'correspLevel7to5'
+  'Hornaday<92>s paradise fish' in object 'correspLevel7to5'
+  'Ja<fa>' in object 'correspLevel7to5'
+  'Koch<92>s bottletail squid' in object 'correspLevel7to5'
+  'P<e1>tzcuaro chub' in object 'correspLevel7to5'
+  'Se<f1>orita' in object 'correspLevel7to5'
+  'S<f4>hachi' in object 'correspLevel7to5'
+  'Abad<e8>che du Cap' in object 'correspLevel7to5'
+  'Abad<e8>che noir' in object 'correspLevel7to5'
+  'Abad<e8>che ros<e9>' in object 'correspLevel7to5'
+  'Abad<e8>che rouge' in object 'correspLevel7to5'
+  'Abad<e8>ches nca' in object 'correspLevel7to5'
+  'Abad<e8>ches, brotules nca' in object 'correspLevel7to5'
+  'Achigan <e0> grande bouche' in object 'correspLevel7to5'
+  'Acm<e9>e r<e2>pe' in object 'correspLevel7to5'
+  'Acoupa du P<e9>rou' in object 'correspLevel7to5'
+  'Acoupa ray<e9>' in object 'correspLevel7to5'
+  'Acoupa rivi<e8>re' in object 'correspLevel7to5'
+  'Aigle de mer l<e9>opard' in object 'correspLevel7to5'
+  'Aiguillat <e0> nageoires blanches' in object 'correspLevel7to5'
+  'Aiguillat <e0> queue noire' in object 'correspLevel7to5'
+  'Aiguillat <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Aiguillat <e9>pinette' in object 'correspLevel7to5'
+  'Aiguillat r<e2>pe' in object 'correspLevel7to5'
+  'Aileron argent<e9>' in object 'correspLevel7to5'
+  'Albatros <e0> cape blanche' in object 'correspLevel7to5'
+  'Albatros <e0> nez jaune' in object 'correspLevel7to5'
+  'Albatros <e0> pieds noirs' in object 'correspLevel7to5'
+  'Albatros <e0> sourcils noirs' in object 'correspLevel7to5'
+  'Albatros <e0> t<ea>te grise' in object 'correspLevel7to5'
+  'Albatros de l'<ee>le Campbell' in object 'correspLevel7to5'
+  'Albatros de l'<ee>le d'Amsterdam' in object 'correspLevel7to5'
+  'Albatros de l'oc<e9>an indien' in object 'correspLevel7to5'
+  'Albulid<e9>s nca' in object 'correspLevel7to5'
+  'Al<e9>poc<e9>phale de Baird' in object 'correspLevel7to5'
+  'Algues g<e9>lidium' in object 'correspLevel7to5'
+  'Algues wakam<e9> nca' in object 'correspLevel7to5'
+  'Alligator am<e9>ricain' in object 'correspLevel7to5'
+  'Alose-<e9>caille fluviale' in object 'correspLevel7to5'
+  'Alose-<e9>caille indienne' in object 'correspLevel7to5'
+  'Alose <e0> gros yeux' in object 'correspLevel7to5'
+  'Alose <e0> museau court' in object 'correspLevel7to5'
+  'Alose am<e9>ricaine' in object 'correspLevel7to5'
+  'Alose d'<e9>t<e9> du Canada' in object 'correspLevel7to5'
+  'Alose tachet<e9>e' in object 'correspLevel7to5'
+  'Amande <e0> deux taches' in object 'correspLevel7to5'
+  'Amande <e9>criture' in object 'correspLevel7to5'
+  'Amande marbr<e9>e' in object 'correspLevel7to5'
+  'Amande p<e9>toncle' in object 'correspLevel7to5'
+  'Amande violac<e9>e' in object 'correspLevel7to5'
+  'Anatine tronqu<e9>e' in object 'correspLevel7to5'
+  'Anchois <e0> grandes <e9>cailles' in object 'correspLevel7to5'
+  'Anchois argent<e9>' in object 'correspLevel7to5'
+  'Anchois cara<ef>be' in object 'correspLevel7to5'
+  'Anchois du P<e9>rou' in object 'correspLevel7to5'
+  'Anchois joues tachet<e9>es' in object 'correspLevel7to5'
+  'Anchois mach<e8>te' in object 'correspLevel7to5'
+  'Anchois ou<ef>eux' in object 'correspLevel7to5'
+  'Anchois perl<e9>' in object 'correspLevel7to5'
+  'Anchois ray<e9>' in object 'correspLevel7to5'
+  'Andorr<e8>ve du Cap' in object 'correspLevel7to5'
+  'Andorr<e8>ves, poissons rubis nca' in object 'correspLevel7to5'
+  'Anemone dor<e9>e' in object 'correspLevel7to5'
+  'Ange de mer <e9>pineux' in object 'correspLevel7to5'
+  'Ange de mer n<e9>buleux' in object 'correspLevel7to5'
+  'Ange de mer ocell<e9>' in object 'correspLevel7to5'
+  'Anguille d'Am<e9>rique' in object 'correspLevel7to5'
+  'Anoli <e0> grandes <e9>cailles' in object 'correspLevel7to5'
+  'Anomie p<e9>ruvienne' in object 'correspLevel7to5'
+  'Apogonid<e9>s nca' in object 'correspLevel7to5'
+  'Araign<e9>e du Sud' in object 'correspLevel7to5'
+  'Araign<e9>e europ<e9>enne' in object 'correspLevel7to5'
+  'Araign<e9>e h<e9>riss<e9>e' in object 'correspLevel7to5'
+  'Araign<e9>e naine' in object 'correspLevel7to5'
+  'Araign<e9>e portuaire' in object 'correspLevel7to5'
+  'Arche auricul<e9>e' in object 'correspLevel7to5'
+  'Arche corn<e9>e' in object 'correspLevel7to5'
+  'Arche cr<e9>nel<e9>e' in object 'correspLevel7to5'
+  'Arche crois<e9>e' in object 'correspLevel7to5'
+  'Arche de No<e9>' in object 'correspLevel7to5'
+  'Arche du d<e9>luge' in object 'correspLevel7to5'
+  'Arche du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'Arche <e9>paisse d'Afrique' in object 'correspLevel7to5'
+  'Arche h<e9>lice' in object 'correspLevel7to5'
+  'Arche in<e9>quivalve' in object 'correspLevel7to5'
+  'Arche pied d'<e2>ne' in object 'correspLevel7to5'
+  'Arche rouill<e9>e' in object 'correspLevel7to5'
+  'Arche z<e8>bre' in object 'correspLevel7to5'
+  'Arnoglosse de M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Ast<e9>rid<e9>s nca' in object 'correspLevel7to5'
+  'Ath<e9>rine chilienne' in object 'correspLevel7to5'
+  'Ath<e9>rine d'Argentine' in object 'correspLevel7to5'
+  'Ath<e9>rinid<e9>s nca' in object 'correspLevel7to5'
+  'Bad<e8>che baillou' in object 'correspLevel7to5'
+  'Bad<e8>che balai' in object 'correspLevel7to5'
+  'Bad<e8>che blanche' in object 'correspLevel7to5'
+  'Bad<e8>che bonaci' in object 'correspLevel7to5'
+  'Bad<e8>che cr<e9>ole' in object 'correspLevel7to5'
+  'Bad<e8>che de roche' in object 'correspLevel7to5'
+  'Bad<e8>che galopin' in object 'correspLevel7to5'
+  'Bad<e8>che gueule jaune' in object 'correspLevel7to5'
+  'Bad<e8>che peigne' in object 'correspLevel7to5'
+  'Bad<e8>che rouge' in object 'correspLevel7to5'
+  'Bad<e8>che tigre' in object 'correspLevel7to5'
+  'Bad<e8>ches nca' in object 'correspLevel7to5'
+  'Balane g<e9>ante' in object 'correspLevel7to5'
+  'Baleine <e0> bec d'Hector' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Baird' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Blainville' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Bowdoin' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Gervais' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Gray' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Hubbs' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Layard' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Longman' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Nishiwaki' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Sowerby' in object 'correspLevel7to5'
+  'Baleine <e0> bec de Stejneger' in object 'correspLevel7to5'
+  'Baleine <e0> bec de True' in object 'correspLevel7to5'
+  'Baleine <e0> bec pygm<e9>e' in object 'correspLevel7to5'
+  'Baleine <e0> bosse' in object 'correspLevel7to5'
+  'Baleine pygm<e9>e' in object 'correspLevel7to5'
+  'Baleines mystic<e8>tes nca' in object 'correspLevel7to5'
+  'Baleines odontoc<e8>tes nca' in object 'correspLevel7to5'
+  'Baliste oliv<e2>tre' in object 'correspLevel7to5'
+  'Ballon <e0> bande argent<e9>e' in object 'correspLevel7to5'
+  'Banane l<e8>vre ronde' in object 'correspLevel7to5'
+  'Bar blanc d'Am<e9>rique' in object 'correspLevel7to5'
+  'Bar d'Am<e9>rique' in object 'correspLevel7to5'
+  'Bar d'Am<e9>rique, hybride' in object 'correspLevel7to5'
+  'Bar europ<e9>en' in object 'correspLevel7to5'
+  'Bar tachet<e9>' in object 'correspLevel7to5'
+  'Barbeau argent<e9>' in object 'correspLevel7to5'
+  'Barbue de rivi<e8>re' in object 'correspLevel7to5'
+  'Barbure <e0> doigts oranges' in object 'correspLevel7to5'
+  'Barbure <e0> dos sombre' in object 'correspLevel7to5'
+  'Barbure <e0> grande bouche' in object 'correspLevel7to5'
+  'Barbure <e0> huit doigts' in object 'correspLevel7to5'
+  'Barbure <e0> nageoires noires' in object 'correspLevel7to5'
+  'Barbure <e0> petite bouche' in object 'correspLevel7to5'
+  'Barbure <e0> petites <e9>cailles' in object 'correspLevel7to5'
+  'Barbure <e0> quatre doigts' in object 'correspLevel7to5'
+  'Barbure <e0> quatre doigts d'Asie' in object 'correspLevel7to5'
+  'Barbure <e0> sept doigts' in object 'correspLevel7to5'
+  'Barbure <e0> six doigts' in object 'correspLevel7to5'
+  'Barbure <e0> t<e2>che noire' in object 'correspLevel7to5'
+  'Barbure <e0> t<e2>che noire d'Arabie' in object 'correspLevel7to5'
+  'Barbure <e0> t<e2>che noire de Perse' in object 'correspLevel7to5'
+  'Barbure <e0> trois doigts' in object 'correspLevel7to5'
+  'Barbure de rivi<e8>re' in object 'correspLevel7to5'
+  'Barbure paradis <e0> doigts noirs' in object 'correspLevel7to5'
+  'Barbure paradis <e9>l<e9>gante' in object 'correspLevel7to5'
+  'Barbure ray<e9>' in object 'correspLevel7to5'
+  'Barbure t<e2>che noire d'Afrique' in object 'correspLevel7to5'
+  'Barracudine annel<e9>e' in object 'correspLevel7to5'
+  'Bato<ef>des nca' in object 'correspLevel7to5'
+  'Baudroie d'Am<e9>rique' in object 'correspLevel7to5'
+  'Baudroie p<ea>cheuse' in object 'correspLevel7to5'
+  'B<e9>casse de mer' in object 'correspLevel7to5'
+  'B<e9>casses nca' in object 'correspLevel7to5'
+  'B<e8>che-de-mer japonaise' in object 'correspLevel7to5'
+  'B<e8>ches-de-mer nca' in object 'correspLevel7to5'
+  'B<e9>cune de Forster' in object 'correspLevel7to5'
+  'B<e9>cune europ<e9>enne' in object 'correspLevel7to5'
+  'B<e9>cune guin<e9>enne' in object 'correspLevel7to5'
+  'B<e9>cune jello' in object 'correspLevel7to5'
+  'B<e9>cune obtuse' in object 'correspLevel7to5'
+  'B<e9>cunes nca' in object 'correspLevel7to5'
+  'B<e9>cunes, barracudas, nca' in object 'correspLevel7to5'
+  'B<e9>louga' in object 'correspLevel7to5'
+  'B<e9>luga' in object 'correspLevel7to5'
+  'B<e9>nitier allong<e9>' in object 'correspLevel7to5'
+  'B<e9>nitier crocus' in object 'correspLevel7to5'
+  'B<e9>nitier porcelaine' in object 'correspLevel7to5'
+  'B<e9>nitier tachet<e9>' in object 'correspLevel7to5'
+  'B<e9>radien d'Arnoux' in object 'correspLevel7to5'
+  'B<e9>ryx australien' in object 'correspLevel7to5'
+  'B<e9>ryx commun' in object 'correspLevel7to5'
+  'B<e9>ryx long' in object 'correspLevel7to5'
+  'B<e9>ryx nca' in object 'correspLevel7to5'
+  'B<e9>ryx, etc. nca' in object 'correspLevel7to5'
+  'Blanche <e9>l<e9>gante' in object 'correspLevel7to5'
+  'Bocasse aux yeux ray<e9>s' in object 'correspLevel7to5'
+  'Bocasse marbr<e9>e' in object 'correspLevel7to5'
+  'Bocassette d<e9>garnie' in object 'correspLevel7to5'
+  'Bocassette <e9>crivain' in object 'correspLevel7to5'
+  'Bocasson couronn<e9>' in object 'correspLevel7to5'
+  'Bocasson <e9>cailleux' in object 'correspLevel7to5'
+  'Bocasson <e9>meraude' in object 'correspLevel7to5'
+  'Bocasson ray<e9>' in object 'correspLevel7to5'
+  'Bonite <e0> dos ray<e9>' in object 'correspLevel7to5'
+  'Bonite <e0> dos tachet<e9>' in object 'correspLevel7to5'
+  'Bonite <e0> gros yeux' in object 'correspLevel7to5'
+  'Bossu blanc <e0> points noirs' in object 'correspLevel7to5'
+  'Bouc <e9>pineux' in object 'correspLevel7to5'
+  'Bouc m<e9>duse' in object 'correspLevel7to5'
+  'Bouc mon<e9>gasque' in object 'correspLevel7to5'
+  'Bouc nez <e9>mouss<e9>' in object 'correspLevel7to5'
+  'Bouc ray<e9>' in object 'correspLevel7to5'
+  'Bouc ray<e9> indien' in object 'correspLevel7to5'
+  'Bouc ti<e9>pines' in object 'correspLevel7to5'
+  'Boucot balafr<e9>' in object 'correspLevel7to5'
+  'Boucot cacahu<e8>te' in object 'correspLevel7to5'
+  'Boucot car<e8>ne' in object 'correspLevel7to5'
+  'Boucot <e9>chancr<e9>' in object 'correspLevel7to5'
+  'Boucot <e9>chancr<e9> intertidal' in object 'correspLevel7to5'
+  'Boucot m<e9>diterran<e9>en' in object 'correspLevel7to5'
+  'Boucot ocell<e9>' in object 'correspLevel7to5'
+  'Bouquet araign<e9>e' in object 'correspLevel7to5'
+  'Bouquet des <e9>tangs' in object 'correspLevel7to5'
+  'Bouquet des mar<e9>es' in object 'correspLevel7to5'
+  'Bouquet <e9>tier' in object 'correspLevel7to5'
+  'Bouquet g<e9>ant' in object 'correspLevel7to5'
+  'Bouquet h<e2>ve' in object 'correspLevel7to5'
+  'Bouquet hawa<ef>en' in object 'correspLevel7to5'
+  'Bouquet n<e9>ocal<e9>donien' in object 'correspLevel7to5'
+  'Bouquet noum<e9>a' in object 'correspLevel7to5'
+  'Bouquet ray<e9>' in object 'correspLevel7to5'
+  'Bouquet rizi<e8>re' in object 'correspLevel7to5'
+  'Bouquet saum<e2>tre' in object 'correspLevel7to5'
+  'Bouquet sib<e9>rien' in object 'correspLevel7to5'
+  'Bouquet Za<ef>re' in object 'correspLevel7to5'
+  'Bouquet z<e9>lateur cara<ef>be' in object 'correspLevel7to5'
+  'Bouquet z<e9>lateur indien' in object 'correspLevel7to5'
+  'Bregmac<e8>re de l'oc<e9>an Indien' in object 'correspLevel7to5'
+  'Br<e8>me d'eau douce' in object 'correspLevel7to5'
+  'Br<e8>me de P<e9>kin' in object 'correspLevel7to5'
+  'Br<e8>mes d'eau douce nca' in object 'correspLevel7to5'
+  'Bross<e9>s' in object 'correspLevel7to5'
+  'Brotule barb<e9>e' in object 'correspLevel7to5'
+  'Bucarde <e0> collier' in object 'correspLevel7to5'
+  'Bucarde <e0> cotes' in object 'correspLevel7to5'
+  'Bucarde <e0> ornieres' in object 'correspLevel7to5'
+  'Bucarde aiguillonn<e9>e' in object 'correspLevel7to5'
+  'Bucarde <e9>lanc<e9>e' in object 'correspLevel7to5'
+  'Bucarde <e9>pineuse' in object 'correspLevel7to5'
+  'Bucarde <e9>pineuse du Pacifique' in object 'correspLevel7to5'
+  'Bucarde lisse des Cara<ef>bes' in object 'correspLevel7to5'
+  'Bucarde lisse g<e9>ante' in object 'correspLevel7to5'
+  'Bucarde peu c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'Bucarde r<e9>guli<e8>re' in object 'correspLevel7to5'
+  'Bucarde rid<e9>e' in object 'correspLevel7to5'
+  'Bucarde tubercul<e9>e' in object 'correspLevel7to5'
+  'Buccin <e0> carreaux' in object 'correspLevel7to5'
+  'Cacahou<e8>te des Cara<ef>bes' in object 'correspLevel7to5'
+  'Cacahou<e8>te indo-pacifique' in object 'correspLevel7to5'
+  'Cachalot pygm<e9>e' in object 'correspLevel7to5'
+  'Caesio <e0> ceinture d'or' in object 'correspLevel7to5'
+  'Caesio <e0> croissant' in object 'correspLevel7to5'
+  'Caesio <e0> ventre rouge' in object 'correspLevel7to5'
+  'Cagna ray<e9>e' in object 'correspLevel7to5'
+  'Ca<ef>man <e0> lunettes' in object 'correspLevel7to5'
+  'Calicag<e8>re bleue' in object 'correspLevel7to5'
+  'Calicag<e8>re oeil bleu' in object 'correspLevel7to5'
+  'Calicag<e8>re verte' in object 'correspLevel7to5'
+  'Calicag<e8>res nca' in object 'correspLevel7to5'
+  'Calmar <e0> gros yeux' in object 'correspLevel7to5'
+  'Calmar <e0> nageoire denticul<e9>e' in object 'correspLevel7to5'
+  'Calmar cr<e9>ole' in object 'correspLevel7to5'
+  'Calmar doigtier de Guin<e9>e' in object 'correspLevel7to5'
+  'Calmar doigtier panam<e9>en' in object 'correspLevel7to5'
+  'Calmar <e9>p<e9>e' in object 'correspLevel7to5'
+  'Calmar fl<e8>che' in object 'correspLevel7to5'
+  'Calmar fl<e9>chette' in object 'correspLevel7to5'
+  'Calmar t<e9>po' in object 'correspLevel7to5'
+  'Calmars c<f4>tiers nca' in object 'correspLevel7to5'
+  'Calyptr<e9>e-chapeau chinois' in object 'correspLevel7to5'
+  'Capelan de M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Capucin <e0> bande jaune' in object 'correspLevel7to5'
+  'Carangid<e9>s nca' in object 'correspLevel7to5'
+  'Carangue a<ee>le bleue' in object 'correspLevel7to5'
+  'Carangue paillet<e9>e' in object 'correspLevel7to5'
+  'Carangue palom<e8>te' in object 'correspLevel7to5'
+  'Carangue t<ea>tue' in object 'correspLevel7to5'
+  'Cardeau d'<e9>t<e9>' in object 'correspLevel7to5'
+  'Cardine <e0> quatre taches' in object 'correspLevel7to5'
+  'Cardite cannel<e9>e' in object 'correspLevel7to5'
+  'Cardon <e9>pineux' in object 'correspLevel7to5'
+  'Carpe <e0> grosse t<ea>te' in object 'correspLevel7to5'
+  'Carpe argent<e9>e' in object 'correspLevel7to5'
+  'Casque <e0> damier' in object 'correspLevel7to5'
+  'Casque cannel<e9>' in object 'correspLevel7to5'
+  'Caulerpe prolif<e8>re' in object 'correspLevel7to5'
+  'C<e9>phalopodes nca' in object 'correspLevel7to5'
+  'C<e9>pole commune' in object 'correspLevel7to5'
+  'C<e9>ramium cilie' in object 'correspLevel7to5'
+  'C<e9>ramium commun' in object 'correspLevel7to5'
+  'C<e9>ramium du Pacifique' in object 'correspLevel7to5'
+  'C<e9>ratisole-gousse' in object 'correspLevel7to5'
+  'C<e9>rite-goumier' in object 'correspLevel7to5'
+  'C<e9>rite alucastre' in object 'correspLevel7to5'
+  'C<e9>rite rupestre' in object 'correspLevel7to5'
+  'C<e9>rithe aluco' in object 'correspLevel7to5'
+  'C<e9>rithe collier' in object 'correspLevel7to5'
+  'C<e9>rithe corail' in object 'correspLevel7to5'
+  'C<e9>rithe <e9>pineux' in object 'correspLevel7to5'
+  'C<e9>rithe fasci<e9>' in object 'correspLevel7to5'
+  'C<e9>rithe noduleux' in object 'correspLevel7to5'
+  'C<e9>rithe obelisque' in object 'correspLevel7to5'
+  'C<e9>rithe reche' in object 'correspLevel7to5'
+  'C<e9>rithe vautre' in object 'correspLevel7to5'
+  'Cernier de Nouvelle-Z<e9>lande' in object 'correspLevel7to5'
+  'C<e9>teau' in object 'correspLevel7to5'
+  'C<e9>teau ocell<e9>' in object 'correspLevel7to5'
+  'Chame r<e9>fl<e9>chie' in object 'correspLevel7to5'
+  'Characinid<e9>s nca' in object 'correspLevel7to5'
+  'Charlottin p<e9>trale' in object 'correspLevel7to5'
+  'Ch<e8>vres, disques nca' in object 'correspLevel7to5'
+  'Chevrette mauxia m<e9>ridionale' in object 'correspLevel7to5'
+  'Chien <e0> queue rude' in object 'correspLevel7to5'
+  'Chien <e0> taches noires' in object 'correspLevel7to5'
+  'Chien <e9>goine' in object 'correspLevel7to5'
+  'Chien marbr<e9>' in object 'correspLevel7to5'
+  'Chien poivr<e9>' in object 'correspLevel7to5'
+  'Chien r<e2>pe' in object 'correspLevel7to5'
+  'Chien tachet<e9>' in object 'correspLevel7to5'
+  'Chim<e8>re <e0> nez mou' in object 'correspLevel7to5'
+  'Chim<e8>re commune' in object 'correspLevel7to5'
+  'Chim<e8>re d'Am<e9>rique' in object 'correspLevel7to5'
+  'Chim<e8>res-couteau nca' in object 'correspLevel7to5'
+  'Chim<e8>res nca' in object 'correspLevel7to5'
+  'Chim<e8>res spatules' in object 'correspLevel7to5'
+  'Chim<e8>res, etc. nca' in object 'correspLevel7to5'
+  'Chinchard <e0> queue jaune' in object 'correspLevel7to5'
+  'Chinchard du Cun<e8>ne' in object 'correspLevel7to5'
+  'Chirurgien <e0> voile' in object 'correspLevel7to5'
+  'Chirurgien stri<e9>' in object 'correspLevel7to5'
+  'Chiton articul<e9>' in object 'correspLevel7to5'
+  'Cichlid<e9>s nca' in object 'correspLevel7to5'
+  'Cigale <e0> deux taches' in object 'correspLevel7to5'
+  'Cigale <e0> dos bleu' in object 'correspLevel7to5'
+  'Cigale <e0> tache rouge' in object 'correspLevel7to5'
+  'Cigale <e0> trois taches' in object 'correspLevel7to5'
+  'Cigale br<e9>silienne' in object 'correspLevel7to5'
+  'Cigale cal<e9>donienne' in object 'correspLevel7to5'
+  'Cigale capuchonn<e9>e' in object 'correspLevel7to5'
+  'Cigale chambr<e9>e' in object 'correspLevel7to5'
+  'Cigale <e9>cusson' in object 'correspLevel7to5'
+  'Cigale marbr<e9>e' in object 'correspLevel7to5'
+  'Cigale stri<e9>e' in object 'correspLevel7to5'
+  'Cigale velout<e9>e' in object 'correspLevel7to5'
+  'Circe divariqu<e9>e' in object 'correspLevel7to5'
+  'Circe mouchet<e9>e' in object 'correspLevel7to5'
+  'Civelles (juv<e9>niles d'anguilles)' in object 'correspLevel7to5'
+  'Cladoc<e8>res' in object 'correspLevel7to5'
+  'Clam sph<e9>rique' in object 'correspLevel7to5'
+  'Clovisse rid<e9>e' in object 'correspLevel7to5'
+  'Clup<e9>oid<e9>s diadromes nca' in object 'correspLevel7to5'
+  'Clup<e9>oid<e9>s nca' in object 'correspLevel7to5'
+  'Cocombre de mer g<e9>ant' in object 'correspLevel7to5'
+  'Cohana dor<e9>' in object 'correspLevel7to5'
+  'Colas <e0> bandes dor<e9>es' in object 'correspLevel7to5'
+  'Colas <e9>cailleux' in object 'correspLevel7to5'
+  'Colas oeil dor<e9>' in object 'correspLevel7to5'
+  'Colas orn<e9>' in object 'correspLevel7to5'
+  'Colombelle bigarr<e9>e' in object 'correspLevel7to5'
+  'Colombelle <e9>lanc<e9>e' in object 'correspLevel7to5'
+  'Com<e8>te coussut' in object 'correspLevel7to5'
+  'Com<e8>te fine' in object 'correspLevel7to5'
+  'Com<e8>te indienne' in object 'correspLevel7to5'
+  'Com<e8>te japonaise' in object 'correspLevel7to5'
+  'Com<e8>te maouane' in object 'correspLevel7to5'
+  'Com<e8>te maquereau' in object 'correspLevel7to5'
+  'Com<e8>te queue rouge' in object 'correspLevel7to5'
+  'Com<e8>te quiaquia' in object 'correspLevel7to5'
+  'Com<e8>te saumon' in object 'correspLevel7to5'
+  'Com<e8>te torpille' in object 'correspLevel7to5'
+  'Com<e8>tes nca' in object 'correspLevel7to5'
+  'Comp<e8>re bigar<e9>' in object 'correspLevel7to5'
+  'Comp<e8>re rouge' in object 'correspLevel7to5'
+  'Comp<e8>res de l'Atlantique nca' in object 'correspLevel7to5'
+  'Comp<e8>res nca' in object 'correspLevel7to5'
+  'C<f4>ne bouleau' in object 'correspLevel7to5'
+  'C<f4>ne couronn<e9>' in object 'correspLevel7to5'
+  'C<f4>ne de Surat' in object 'correspLevel7to5'
+  'Con<e9> essaim' in object 'correspLevel7to5'
+  'C<f4>ne flave' in object 'correspLevel7to5'
+  'C<f4>ne g<e9>n<e9>ral' in object 'correspLevel7to5'
+  'C<f4>ne imprim<e9>' in object 'correspLevel7to5'
+  'C<f4>ne l<e9>opard' in object 'correspLevel7to5'
+  'C<f4>ne livide' in object 'correspLevel7to5'
+  'C<f4>ne marbr<e9>' in object 'correspLevel7to5'
+  'C<f4>ne mosaique' in object 'correspLevel7to5'
+  'Con<e9> ouatalibi' in object 'correspLevel7to5'
+  'C<f4>ne petit-ch<ea>ne' in object 'correspLevel7to5'
+  'C<f4>ne ray<e9>' in object 'correspLevel7to5'
+  'C<f4>ne royale' in object 'correspLevel7to5'
+  'C<f4>ne souris' in object 'correspLevel7to5'
+  'C<f4>ne textile' in object 'correspLevel7to5'
+  'Congre d'Am<e9>rique' in object 'correspLevel7to5'
+  'Cop<e9>podes' in object 'correspLevel7to5'
+  'Coque de lagune color<e9>e' in object 'correspLevel7to5'
+  'Coque de lagune pliss<e9>e' in object 'correspLevel7to5'
+  'Coque lisse norv<e9>gienne' in object 'correspLevel7to5'
+  'Coque lisse sillonn<e9>e' in object 'correspLevel7to5'
+  'Coquille St-Jacques m<e9>diterr.' in object 'correspLevel7to5'
+  'Coquille St-Jacques satin<e9>e' in object 'correspLevel7to5'
+  'Coquilles d'hu<ee>tres perl. nca' in object 'correspLevel7to5'
+  'Corail <e9>toile lisse' in object 'correspLevel7to5'
+  'Coralline car<e9>n<e9>e' in object 'correspLevel7to5'
+  'Coraux pr<e9>cieux nca' in object 'correspLevel7to5'
+  'Corbis <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Cor<e9>gone blanc' in object 'correspLevel7to5'
+  'Cor<e9>gone de lac' in object 'correspLevel7to5'
+  'Cor<e9>gone lavaret' in object 'correspLevel7to5'
+  'Cor<e9>gones nca' in object 'correspLevel7to5'
+  'Cornet bor<e9>al' in object 'correspLevel7to5'
+  'Cornette <e0> taches bleues' in object 'correspLevel7to5'
+  'Cornette tachet<e9>e' in object 'correspLevel7to5'
+  'Coryph<e8>ne commune' in object 'correspLevel7to5'
+  'Coryph<e8>nes nca' in object 'correspLevel7to5'
+  'Couleuvreau tachet<e9>' in object 'correspLevel7to5'
+  'Courbine p<e9>lin' in object 'correspLevel7to5'
+  'Couteau <e0> points roses' in object 'correspLevel7to5'
+  'Couteau de Gor<e9>e' in object 'correspLevel7to5'
+  'Couteau de Guin<e9>e' in object 'correspLevel7to5'
+  'Crabe araign<e9>e du Panama' in object 'correspLevel7to5'
+  'Crabe araign<e9>e velours' in object 'correspLevel7to5'
+  'Crabe caillou guin<e9>en' in object 'correspLevel7to5'
+  'Crabe caillou mor<e9>' in object 'correspLevel7to5'
+  'Crabe de pal<e9>tuviers' in object 'correspLevel7to5'
+  'Crabe g<e9>ant' in object 'correspLevel7to5'
+  'Crabe l<e9>n<e9>e' in object 'correspLevel7to5'
+  'Crabe marbr<e9>' in object 'correspLevel7to5'
+  'Crabe royal des Cara<ef>bes' in object 'correspLevel7to5'
+  'Crabe royal dor<e9>' in object 'correspLevel7to5'
+  'Crabe royal gr<ea>le' in object 'correspLevel7to5'
+  'Crabe royal h<e9>risson' in object 'correspLevel7to5'
+  'Crabe royal sph<e9>rique' in object 'correspLevel7to5'
+  'Crabe tachet<e9>' in object 'correspLevel7to5'
+  'Crabe vert de la M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Crabes, <e9>trilles nca' in object 'correspLevel7to5'
+  'Crepidule <e9>pineuse' in object 'correspLevel7to5'
+  'Crevette <e0> flancs ray<e9>s' in object 'correspLevel7to5'
+  'Crevette <e0> front ray<e9>' in object 'correspLevel7to5'
+  'Crevette araign<e9>e' in object 'correspLevel7to5'
+  'Crevette araign<e9>e d'Afrique' in object 'correspLevel7to5'
+  'Crevette arm<e9>e' in object 'correspLevel7to5'
+  'Crevette arm<e9>e <e9>pineuse' in object 'correspLevel7to5'
+  'Crevette arm<e9>e panam<e9>enne' in object 'correspLevel7to5'
+  'Crevette arm<e9>e vicaire' in object 'correspLevel7to5'
+  'Crevette B<e9>ring' in object 'correspLevel7to5'
+  'Crevette cendr<e9>e' in object 'correspLevel7to5'
+  'Crevette chamois barbul<e9>e' in object 'correspLevel7to5'
+  'Crevette chamois cara<ef>be' in object 'correspLevel7to5'
+  'Crevette chamois des rizi<e8>res' in object 'correspLevel7to5'
+  'Crevette chamois m<e9>nestrel' in object 'correspLevel7to5'
+  'Crevette chamois m<e9>ridionale' in object 'correspLevel7to5'
+  'Crevette chamois ros<e9>e' in object 'correspLevel7to5'
+  'Crevette charni<e8>re' in object 'correspLevel7to5'
+  'Crevette cornue <e0> areoles' in object 'correspLevel7to5'
+  'Crevette cr<e2>ne' in object 'correspLevel7to5'
+  'Crevette des r<e9>cifs' in object 'correspLevel7to5'
+  'Crevette dor<e9>e' in object 'correspLevel7to5'
+  'Crevette <e9>douard' in object 'correspLevel7to5'
+  'Crevette <e9>l<e9>gante' in object 'correspLevel7to5'
+  'Crevette <e9>meraude' in object 'correspLevel7to5'
+  'Crevette emplum<e9>e' in object 'correspLevel7to5'
+  'Crevette <e9>pine' in object 'correspLevel7to5'
+  'Crevette <e9>sope' in object 'correspLevel7to5'
+  'Crevette <e9>tincelle' in object 'correspLevel7to5'
+  'Crevette fl<e8>che' in object 'correspLevel7to5'
+  'Crevette g<e9>ante tigr<e9>e' in object 'correspLevel7to5'
+  'Crevette gladiateur ray<e9>e' in object 'correspLevel7to5'
+  'Crevette guin<e9>enne' in object 'correspLevel7to5'
+  'Crevette long bec <e9>carlate' in object 'correspLevel7to5'
+  'Crevette long bec g<e9>ante' in object 'correspLevel7to5'
+  'Crevette manchot p<e9>ruvienne' in object 'correspLevel7to5'
+  'Crevette m<e9>galops' in object 'correspLevel7to5'
+  'Crevette mini<e8>re' in object 'correspLevel7to5'
+  'Crevette mouchet<e9>e' in object 'correspLevel7to5'
+  'Crevette naine ray<e9>e' in object 'correspLevel7to5'
+  'Crevette noisette quatre <e9>pine' in object 'correspLevel7to5'
+  'Crevette nylon arm<e9>e' in object 'correspLevel7to5'
+  'Crevette nylon balafr<e9>e' in object 'correspLevel7to5'
+  'Crevette nylon panam<e9>enne' in object 'correspLevel7to5'
+  'Crevette nylon trois <e9>pines' in object 'correspLevel7to5'
+  'Crevette oc<e9>anique' in object 'correspLevel7to5'
+  'Crevette p<e9>riscope' in object 'correspLevel7to5'
+  'Crevette pourpr<e9>e' in object 'correspLevel7to5'
+  'Crevette ray<e9>e guin<e9>enne' in object 'correspLevel7to5'
+  'Crevette royale <e0> taches rouge' in object 'correspLevel7to5'
+  'Crevette sorci<e8>re' in object 'correspLevel7to5'
+  'Crevette tigr<e9>e sombre' in object 'correspLevel7to5'
+  'Crevette tigr<e9>e verte' in object 'correspLevel7to5'
+  'Crevette z<e8>bre' in object 'correspLevel7to5'
+  'Crevettes crangonid<e9>s nca' in object 'correspLevel7to5'
+  'Crevettes oc<e9>an Pacifique nca' in object 'correspLevel7to5'
+  'Crevettes pal<e9>monides nca' in object 'correspLevel7to5'
+  'Crevettes p<e9>n<e9>id<e9>s nca' in object 'correspLevel7to5'
+  'Crevettes sculpt<e9>es nca' in object 'correspLevel7to5'
+  'Crevuche t<e9>lescope' in object 'correspLevel7to5'
+  'Crini<e8>re dress<e9>e' in object 'correspLevel7to5'
+  'Crini<e8>re flottante' in object 'correspLevel7to5'
+  'Crino<ef>des' in object 'correspLevel7to5'
+  'Crocodile de G<e9>orgie' in object 'correspLevel7to5'
+  'Crocodile de Nouvelle-Guin<e9>e' in object 'correspLevel7to5'
+  'Crustac<e9>s d'eau douce nca' in object 'correspLevel7to5'
+  'Crustac<e9>s marins nca' in object 'correspLevel7to5'
+  'Cynoglossid<e9>s' in object 'correspLevel7to5'
+  'Cyprinid<e9>s nca' in object 'correspLevel7to5'
+  'Cyr<e8>ne begali' in object 'correspLevel7to5'
+  'Cyr<e8>ne <e9>lanc<e9>e' in object 'correspLevel7to5'
+  'Cyr<e8>ne enfl<e9>e' in object 'correspLevel7to5'
+  'Cyr<e8>ne <e9>quilat<e9>rale' in object 'correspLevel7to5'
+  'Cyr<e8>ne <e9>rod<e9>e' in object 'correspLevel7to5'
+  'Cyr<e8>ne japonaise' in object 'correspLevel7to5'
+  'Cyr<e8>ne large' in object 'correspLevel7to5'
+  'Cyr<e8>ne violette' in object 'correspLevel7to5'
+  'Cystoseire dor<e9>e' in object 'correspLevel7to5'
+  'Cyth<e9>r<e9>e commune' in object 'correspLevel7to5'
+  'Cyth<e9>r<e9>e du Japon' in object 'correspLevel7to5'
+  'Cyth<e9>r<e9>e lyre' in object 'correspLevel7to5'
+  'Dard barr<e9>' in object 'correspLevel7to5'
+  'Dauphin <e0> bec blanc' in object 'correspLevel7to5'
+  'Dauphin <e0> bosse de l'Atlantiq.' in object 'correspLevel7to5'
+  'Dauphin <e0> bosse indo-pacifique' in object 'correspLevel7to5'
+  'Dauphin <e0> dos lisse bor<e9>al' in object 'correspLevel7to5'
+  'Dauphin <e0> flancs blancs Atlan.' in object 'correspLevel7to5'
+  'Dauphin <e0> flancs blancs Pacif.' in object 'correspLevel7to5'
+  'Dauphin apt<e8>re austral' in object 'correspLevel7to5'
+  'Dauphin crucig<e9>re' in object 'correspLevel7to5'
+  'Dauphin de Clym<e9>n<e9>' in object 'correspLevel7to5'
+  'Dauphin tachet<e9> de l'Atlantiq.' in object 'correspLevel7to5'
+  'Dauphin tachet<e9> pantropical' in object 'correspLevel7to5'
+  'Dauphins tachet<e9>s nca' in object 'correspLevel7to5'
+  'D<e9>capodes anomura nca' in object 'correspLevel7to5'
+  'D<e9>capodes natantia nca' in object 'correspLevel7to5'
+  'D<e9>lesseria rouge' in object 'correspLevel7to5'
+  'Demi-bec allong<e9>' in object 'correspLevel7to5'
+  'Demi-bec br<e9>silien' in object 'correspLevel7to5'
+  'Dent<e9> <e0> gros yeux' in object 'correspLevel7to5'
+  'Dent<e9> <e0> points bleus' in object 'correspLevel7to5'
+  'Dent<e9> <e0> tache rouge' in object 'correspLevel7to5'
+  'Dent<e9> angolais' in object 'correspLevel7to5'
+  'Dent<e9> charpentier' in object 'correspLevel7to5'
+  'Dent<e9> commun' in object 'correspLevel7to5'
+  'Dent<e9> congolais' in object 'correspLevel7to5'
+  'Dent<e9> du Cap' in object 'correspLevel7to5'
+  'Dent<e9> du Maroc' in object 'correspLevel7to5'
+  'Dent<e9> du Natal' in object 'correspLevel7to5'
+  'Dent<e9> macul<e9>' in object 'correspLevel7to5'
+  'Dent<e9> nufar' in object 'correspLevel7to5'
+  'Dent<e9>s nca' in object 'correspLevel7to5'
+  'Dent<e9>s polyst<e9>ganes nca' in object 'correspLevel7to5'
+  'Dent<e9>s, spares nca' in object 'correspLevel7to5'
+  'Diagramme <e0> grosses l<e8>vres' in object 'correspLevel7to5'
+  'Diagramme <e0> l<e8>vres rouges' in object 'correspLevel7to5'
+  'Diagramme m<e9>nestrel' in object 'correspLevel7to5'
+  'Diagramme mouchet<e9>' in object 'correspLevel7to5'
+  'Diagramme truit<e9>' in object 'correspLevel7to5'
+  'Distortie crois<e9>e' in object 'correspLevel7to5'
+  'Donace <e0> rostre' in object 'correspLevel7to5'
+  'Donace g<e9>ante' in object 'correspLevel7to5'
+  'Donacille corn<e9>e' in object 'correspLevel7to5'
+  'Durvill<e9>e antarctique' in object 'correspLevel7to5'
+  '<c9>crevisse <e0> pattes blanches' in object 'correspLevel7to5'
+  '<c9>crevisse <e0> pattes gr<ea>les' in object 'correspLevel7to5'
+  '<c9>crevisse <e0> pieds rouges' in object 'correspLevel7to5'
+  '<c9>crevisse am<e9>ricaine' in object 'correspLevel7to5'
+  '<c9>crevisse d'Australie' in object 'correspLevel7to5'
+  '<c9>crevisse rouge de marais' in object 'correspLevel7to5'
+  '<c9>crevisse signal' in object 'correspLevel7to5'
+  '<c9>crevisses euro-am<e9>ricain. nca' in object 'correspLevel7to5'
+  '<c9>glefin' in object 'correspLevel7to5'
+  '<c9>l<e9>done commune' in object 'correspLevel7to5'
+  '<c9>l<e9>done de Turquet' in object 'correspLevel7to5'
+  '<c9>l<e9>done musqu<e9>e' in object 'correspLevel7to5'
+  '<c9>l<e9>done noueux' in object 'correspLevel7to5'
+  '<c9>l<e9>done peigne' in object 'correspLevel7to5'
+  '<c9>l<e9>dones antarctiques' in object 'correspLevel7to5'
+  '<c9>l<e9>dones communes et musqu<e9>es' in object 'correspLevel7to5'
+  '<c9>l<e9>phant de mer austral' in object 'correspLevel7to5'
+  '<c9>l<e9>phant de mer bor<e9>al' in object 'correspLevel7to5'
+  '<c9>missole barbue' in object 'correspLevel7to5'
+  '<c9>missole blanche' in object 'correspLevel7to5'
+  '<c9>missole brune' in object 'correspLevel7to5'
+  '<c9>missole c<f4>ti<e8>re' in object 'correspLevel7to5'
+  '<c9>missole d'Arabie' in object 'correspLevel7to5'
+  '<c9>missole douce' in object 'correspLevel7to5'
+  '<c9>missole <e9>toil<e9>e' in object 'correspLevel7to5'
+  '<c9>missole fine' in object 'correspLevel7to5'
+  '<c9>missole gatuso' in object 'correspLevel7to5'
+  '<c9>missole gomm<e9>e' in object 'correspLevel7to5'
+  '<c9>missole grise' in object 'correspLevel7to5'
+  '<c9>missole grivel<e9>e' in object 'correspLevel7to5'
+  '<c9>missole lisse' in object 'correspLevel7to5'
+  '<c9>missole mamon' in object 'correspLevel7to5'
+  '<c9>missole moustachue' in object 'correspLevel7to5'
+  '<c9>missole palombe' in object 'correspLevel7to5'
+  '<c9>missole piruche' in object 'correspLevel7to5'
+  '<c9>missole pointil<e9>e' in object 'correspLevel7to5'
+  '<c9>missole ray<e9>e' in object 'correspLevel7to5'
+  '<c9>missole tachet<e9>e' in object 'correspLevel7to5'
+  '<c9>missole ti-yeux' in object 'correspLevel7to5'
+  '<c9>missole veuve' in object 'correspLevel7to5'
+  '<c9>missoles nca' in object 'correspLevel7to5'
+  '<c9>missoles,requins-h<e2> nca' in object 'correspLevel7to5'
+  'Empereur <e0> bandes oranges' in object 'correspLevel7to5'
+  'Empereur orn<e9>' in object 'correspLevel7to5'
+  'Empereur tatou<e9>' in object 'correspLevel7to5'
+  'Encornet-outre arm<e9>' in object 'correspLevel7to5'
+  'Encornet atlantobor<e9>al' in object 'correspLevel7to5'
+  'Encornet bor<e9>opacifique' in object 'correspLevel7to5'
+  'Encornet bras courts orn<e9>' in object 'correspLevel7to5'
+  'Encornet <e9>toile' in object 'correspLevel7to5'
+  'Encornet <e9>ventail' in object 'correspLevel7to5'
+  'Encornet g<e9>ant' in object 'correspLevel7to5'
+  'Encornet lumi<e8>re' in object 'correspLevel7to5'
+  'Encornet rouge <e0> pointe' in object 'correspLevel7to5'
+  'Encornet su<e7>oir' in object 'correspLevel7to5'
+  'Encornet vein<e9>' in object 'correspLevel7to5'
+  'Ent<e9>romorphe comprim<e9>e' in object 'correspLevel7to5'
+  'Ent<e9>romorphe creuse' in object 'correspLevel7to5'
+  'Ent<e9>romorphe laitue' in object 'correspLevel7to5'
+  'Ent<e9>romorphe prolif<e8>re' in object 'correspLevel7to5'
+  'Ent<e9>romorphe vert claire' in object 'correspLevel7to5'
+  '<c9>perlan <e0> petite bouche' in object 'correspLevel7to5'
+  '<c9>perlan arc-en-ciel' in object 'correspLevel7to5'
+  '<c9>perlan du Pacifique' in object 'correspLevel7to5'
+  '<c9>perlan europ<e9>en' in object 'correspLevel7to5'
+  '<c9>perlans nca' in object 'correspLevel7to5'
+  '<c9>pinoche <e0> trois <e9>pines' in object 'correspLevel7to5'
+  '<c9>pinoches' in object 'correspLevel7to5'
+  '<c9>ponge commune' in object 'correspLevel7to5'
+  '<c9>ponge fine grecque' in object 'correspLevel7to5'
+  '<c9>ponge mammelonn<e9>e' in object 'correspLevel7to5'
+  '<c9>ponges' in object 'correspLevel7to5'
+  '<c9>quille' in object 'correspLevel7to5'
+  'Escolier am<e9>ricain' in object 'correspLevel7to5'
+  'Escolier b<e9>cune' in object 'correspLevel7to5'
+  'Escolier <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Escolier ma<ee>tre' in object 'correspLevel7to5'
+  'Escolier ray<e9>' in object 'correspLevel7to5'
+  'Esturgeon barbillons frang<e9>s' in object 'correspLevel7to5'
+  'Esturgeon de Sib<e9>rie' in object 'correspLevel7to5'
+  'Esturgeon <e9>toil<e9>' in object 'correspLevel7to5'
+  'Ethuse cili<e9>e g<e9>ante' in object 'correspLevel7to5'
+  '<c9>tincelle' in object 'correspLevel7to5'
+  '<c9>toile de mer rouge' in object 'correspLevel7to5'
+  '<c9>trille arqu<e9>e' in object 'correspLevel7to5'
+  '<c9>trille ballante' in object 'correspLevel7to5'
+  '<c9>trille bleue' in object 'correspLevel7to5'
+  '<c9>trille commune' in object 'correspLevel7to5'
+  '<c9>trille de Xantus' in object 'correspLevel7to5'
+  '<c9>trille <e9>l<e9>gante' in object 'correspLevel7to5'
+  '<c9>trille lisse' in object 'correspLevel7to5'
+  '<c9>trille lisse du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  '<c9>trille menthe poivr<e9>e' in object 'correspLevel7to5'
+  '<c9>trille nageuse' in object 'correspLevel7to5'
+  '<c9>trille pattes bleues' in object 'correspLevel7to5'
+  '<c9>trille rugueuse' in object 'correspLevel7to5'
+  '<c9>trille tubercul<e9>e' in object 'correspLevel7to5'
+  '<c9>trilles nca' in object 'correspLevel7to5'
+  'Eucheuma <e9>pineuse' in object 'correspLevel7to5'
+  'Fausse donace bigarr<e9>e' in object 'correspLevel7to5'
+  'Fausse <e9>pinette' in object 'correspLevel7to5'
+  'Fausse lucine ondul<e9>e' in object 'correspLevel7to5'
+  'Faux fl<e9>tan du Japon' in object 'correspLevel7to5'
+  'Faux fl<e9>tan du Pacifique' in object 'correspLevel7to5'
+  'Fissurelle compress<e9>e' in object 'correspLevel7to5'
+  'Flet <e9>toil<e9>' in object 'correspLevel7to5'
+  'Fl<e9>tan de l'Atlantique' in object 'correspLevel7to5'
+  'Fl<e9>tan du Pacifique' in object 'correspLevel7to5'
+  'Fl<e9>tan noir' in object 'correspLevel7to5'
+  'Flion car<e8>ne' in object 'correspLevel7to5'
+  'Flion delto<ef>de' in object 'correspLevel7to5'
+  'Flion dent<e9>' in object 'correspLevel7to5'
+  'Flion des Cara<ef>bes' in object 'correspLevel7to5'
+  'Flion f<e8>ve' in object 'correspLevel7to5'
+  'Flion ponctu<e9>' in object 'correspLevel7to5'
+  'Flion rid<e9>' in object 'correspLevel7to5'
+  'Flion semistri<e9>' in object 'correspLevel7to5'
+  'Flion tann<e9>' in object 'correspLevel7to5'
+  'Flion tronqu<e9>' in object 'correspLevel7to5'
+  'Forgeron ail<e9>' in object 'correspLevel7to5'
+  'Forgeron tachet<e9>' in object 'correspLevel7to5'
+  'Friture ray<e9>e' in object 'correspLevel7to5'
+  'Fuseau z<e9>br<e9>' in object 'correspLevel7to5'
+  'Fusilier <e0> bandes vari<e9>es' in object 'correspLevel7to5'
+  'Fusilier <e0> deux bandes jaunes' in object 'correspLevel7to5'
+  'Fusilier <e0> une bande' in object 'correspLevel7to5'
+  'Fusilier <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Fusilier marbr<e9>' in object 'correspLevel7to5'
+  'Gadomur<e8>ne de Patagonie' in object 'correspLevel7to5'
+  'Gadomur<e8>ne marbr<e9>e' in object 'correspLevel7to5'
+  'Gadomur<e8>ne microc<e9>phale' in object 'correspLevel7to5'
+  'Gadomur<e8>ne petit oeil' in object 'correspLevel7to5'
+  'Gadomur<e8>nes nca' in object 'correspLevel7to5'
+  'Galat<e9>e <e0> longues pinces' in object 'correspLevel7to5'
+  'Galat<e9>e bleue' in object 'correspLevel7to5'
+  'Galat<e9>e du large' in object 'correspLevel7to5'
+  'Galat<e9>e gavroche' in object 'correspLevel7to5'
+  'Galat<e9>e naine' in object 'correspLevel7to5'
+  'Galat<e9>e orange' in object 'correspLevel7to5'
+  'Galat<e9>e p<e9>lagique' in object 'correspLevel7to5'
+  'Galat<e9>e radiante' in object 'correspLevel7to5'
+  'Galat<e9>e rouge' in object 'correspLevel7to5'
+  'Galat<e9>es' in object 'correspLevel7to5'
+  'Galette de mer fissur<e9>e' in object 'correspLevel7to5'
+  'Galette perfor<e9>e g<e9>ante' in object 'correspLevel7to5'
+  'Galin car<e9>n<e9>' in object 'correspLevel7to5'
+  'Gambon <e9>carlate' in object 'correspLevel7to5'
+  'Gambon ray<e9>' in object 'correspLevel7to5'
+  'Gambons,crevet. aristeid<e9>s nca' in object 'correspLevel7to5'
+  'G<e9>riocrabe rouge' in object 'correspLevel7to5'
+  'G<e9>rionid<e9>s nca' in object 'correspLevel7to5'
+  'G<e9>ryon de Atlantique sud-ouest' in object 'correspLevel7to5'
+  'G<e9>ryon de la M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'G<e9>ryon El Dorado' in object 'correspLevel7to5'
+  'G<e9>ryon ouest-africain' in object 'correspLevel7to5'
+  'G<e9>ryons nca' in object 'correspLevel7to5'
+  'Globic<e9>phale commun' in object 'correspLevel7to5'
+  'Globic<e9>phale tropical' in object 'correspLevel7to5'
+  'Gobie <e0> t<ea>te plate' in object 'correspLevel7to5'
+  'Goret <e0> trois bandes' in object 'correspLevel7to5'
+  'Gorette catalin<e8>te' in object 'correspLevel7to5'
+  'Gourami g<e9>ant' in object 'correspLevel7to5'
+  'Gracilaire <e9>pineuse' in object 'correspLevel7to5'
+  'Gracilaire lamin<e9>e' in object 'correspLevel7to5'
+  'Gracilaire voil<e9>e' in object 'correspLevel7to5'
+  'Grand p<e9>trel des neiges' in object 'correspLevel7to5'
+  'Grande-gueule <e0> long nez' in object 'correspLevel7to5'
+  'Grande-gueule <e9>pineuse' in object 'correspLevel7to5'
+  'Grande-gueule ocell<e9>e' in object 'correspLevel7to5'
+  'Grande tridacne gaufr<e9>e' in object 'correspLevel7to5'
+  'Grande zost<e8>re' in object 'correspLevel7to5'
+  'Gr<e9>mille' in object 'correspLevel7to5'
+  'Grenadier <e0> gros yeux' in object 'correspLevel7to5'
+  'Grenadier dent<e9>' in object 'correspLevel7to5'
+  'Grondeur argent<e9>' in object 'correspLevel7to5'
+  'Grondeur m<e9>tis' in object 'correspLevel7to5'
+  'Grondeur ray<e9>' in object 'correspLevel7to5'
+  'Gros dent<e9> rose' in object 'correspLevel7to5'
+  'Guin<e9>e-mach<e8>te' in object 'correspLevel7to5'
+  'Guin<e9>e d'Afrique occidentale' in object 'correspLevel7to5'
+  'Guin<e9>e du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'Gymnote ray<e9>' in object 'correspLevel7to5'
+  'Hareng <e0> bande bleue' in object 'correspLevel7to5'
+  'Harengule <e9>cailleux' in object 'correspLevel7to5'
+  'Harpe articul<e9>e' in object 'correspLevel7to5'
+  'Helcion velout<e9>' in object 'correspLevel7to5'
+  'H<e9>michromis ray<e9>' in object 'correspLevel7to5'
+  'Hinnite g<e9>ant' in object 'correspLevel7to5'
+  'Holbiche <e0> gorge tachet<e9>e' in object 'correspLevel7to5'
+  'Holbiche <e0> grande t<ea>te' in object 'correspLevel7to5'
+  'Holbiche <e0> joues noires' in object 'correspLevel7to5'
+  'Holbiche <e0> longues nageoires' in object 'correspLevel7to5'
+  'Holbiche <e0> taches noires' in object 'correspLevel7to5'
+  'Holbiche <e0> taches rouges' in object 'correspLevel7to5'
+  'Holbiche camp<e8>choise' in object 'correspLevel7to5'
+  'Holbiche fant<f4>me' in object 'correspLevel7to5'
+  'Holbiche mouchet<e9>e' in object 'correspLevel7to5'
+  'Holbiche n<e9>buleuse' in object 'correspLevel7to5'
+  'Holbiche p<e2>le' in object 'correspLevel7to5'
+  'Holbiche r<e2>pe' in object 'correspLevel7to5'
+  'Holbiche t<ea>tard' in object 'correspLevel7to5'
+  'Holbiche t<ea>te molle' in object 'correspLevel7to5'
+  'Holbiche tigr<e9>e' in object 'correspLevel7to5'
+  'Holothurie blanche <e0> mamelles' in object 'correspLevel7to5'
+  'Holothurie l<e9>opard' in object 'correspLevel7to5'
+  'Holothurie noire <e0> mamelles' in object 'correspLevel7to5'
+  'Holothurie trompe d'<e9>l<e9>phant' in object 'correspLevel7to5'
+  'Homard am<e9>ricain' in object 'correspLevel7to5'
+  'Homard europ<e9>en' in object 'correspLevel7to5'
+  'Hoplost<e8>te argent<e9>' in object 'correspLevel7to5'
+  'Hoplost<e8>te orange' in object 'correspLevel7to5'
+  'Houlette deguenill<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre-capuchon' in object 'correspLevel7to5'
+  'Hu<ee>tre crete-de-coq' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse am<e9>ricaine' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse chausson' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse d'Australie' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse de Cortez' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse des Cara<ef>bes' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse du Pacifique' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse gasar' in object 'correspLevel7to5'
+  'Hu<ee>tre creuse noire' in object 'correspLevel7to5'
+  'Hu<ee>tre des anges' in object 'correspLevel7to5'
+  'Hu<ee>tre feuille' in object 'correspLevel7to5'
+  'Hu<ee>tre iris<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre ondul<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre palm<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre perli<e8>re' in object 'correspLevel7to5'
+  'Hu<ee>tre perli<e8>re ail<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre perli<e8>re japonaise' in object 'correspLevel7to5'
+  'Hu<ee>tre perli<e8>re mexicaine' in object 'correspLevel7to5'
+  'Hu<ee>tre plate chilienne' in object 'correspLevel7to5'
+  'Hu<ee>tre plate de Guin<e9>e' in object 'correspLevel7to5'
+  'Hu<ee>tre plate europ<e9>enne' in object 'correspLevel7to5'
+  'Hu<ee>tre plate n<e9>o-z<e9>landaise' in object 'correspLevel7to5'
+  'Hu<ee>tre plate Olympie' in object 'correspLevel7to5'
+  'Hu<ee>tre plate yaquina' in object 'correspLevel7to5'
+  'Hu<ee>tre plicatule' in object 'correspLevel7to5'
+  'Hu<ee>tres creuses nca' in object 'correspLevel7to5'
+  'Hu<ee>tres plates et creuses nca' in object 'correspLevel7to5'
+  'Hu<ee>tres plates nca' in object 'correspLevel7to5'
+  'Hyperoodon bor<e9>al' in object 'correspLevel7to5'
+  'Ide m<e9>lanote' in object 'correspLevel7to5'
+  'Invert<e9>br<e9>s aquatiques nca' in object 'correspLevel7to5'
+  'Irid<e9>e' in object 'correspLevel7to5'
+  'Jambonneau h<e9>riss<e9>' in object 'correspLevel7to5'
+  'Jambonneau tubercul<e9>' in object 'correspLevel7to5'
+  'Jo<eb>l' in object 'correspLevel7to5'
+  'Krill <e0> gros yeux' in object 'correspLevel7to5'
+  'Krill <e9>pineux' in object 'correspLevel7to5'
+  'Krill norv<e9>gien' in object 'correspLevel7to5'
+  'Krill pygm<e9>e' in object 'correspLevel7to5'
+  'Kyphosus calicag<e8>res nca' in object 'correspLevel7to5'
+  'Lab<e9>o' in object 'correspLevel7to5'
+  'Lab<e9>o Roho' in object 'correspLevel7to5'
+  'Lab<e9>os nca' in object 'correspLevel7to5'
+  'Labre <e0> tache pectorale' in object 'correspLevel7to5'
+  'Laimargue de la M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Laitue chicor<e9>e' in object 'correspLevel7to5'
+  'Lamantin des Cara<ef>bes' in object 'correspLevel7to5'
+  'Laminaire digit<e9>e' in object 'correspLevel7to5'
+  'Lamproie de rivi<e8>re' in object 'correspLevel7to5'
+  'Lan<e7>on du Pacifique' in object 'correspLevel7to5'
+  'Lan<e7>ons nca' in object 'correspLevel7to5'
+  'Langouste barriol<e9>e' in object 'correspLevel7to5'
+  'Langouste bord<e9>e' in object 'correspLevel7to5'
+  'Langouste br<e9>silienne' in object 'correspLevel7to5'
+  'Langouste cara<ef>be' in object 'correspLevel7to5'
+  'Langouste d'Oc<e9>anie' in object 'correspLevel7to5'
+  'Langouste de vase car<e9>n<e9>e' in object 'correspLevel7to5'
+  'Langouste festonn<e9>e' in object 'correspLevel7to5'
+  'Langouste fouet band<e9>e' in object 'correspLevel7to5'
+  'Langouste fouet velout<e9>e' in object 'correspLevel7to5'
+  'Langouste orn<e9>e' in object 'correspLevel7to5'
+  'Langoustine <e0> bande rouge' in object 'correspLevel7to5'
+  'Langoustine <e0> dos stri<e9>' in object 'correspLevel7to5'
+  'Langoustine cuirass<e9>e' in object 'correspLevel7to5'
+  'Langoustine de N.lle-Z<e9>lande' in object 'correspLevel7to5'
+  'Langoustine des Cara<ef>bes' in object 'correspLevel7to5'
+  'Langoustine <e9>carlate' in object 'correspLevel7to5'
+  'Langoustine <e9>pineuse' in object 'correspLevel7to5'
+  'Langoustine ray<e9>e' in object 'correspLevel7to5'
+  'Langoustine sculpt<e9>e' in object 'correspLevel7to5'
+  'Langoustine sculpt<e9>e d'Okinawa' in object 'correspLevel7to5'
+  'Lanterne <e0> grandes <e9>cailles' in object 'correspLevel7to5'
+  'Lanterne de Mad<e8>re' in object 'correspLevel7to5'
+  'Laurencia renfl<e9>e' in object 'correspLevel7to5'
+  'L<e9>gine antarctique' in object 'correspLevel7to5'
+  'L<e9>gine australe' in object 'correspLevel7to5'
+  'L<e9>gines antarctiques nca' in object 'correspLevel7to5'
+  'L<e9>opard de mer' in object 'correspLevel7to5'
+  'L<e9>pisost<e9> osseux' in object 'correspLevel7to5'
+  'L<e9>pisost<e9> tachet<e9>' in object 'correspLevel7to5'
+  'L<e9>pisost<e9>s nca' in object 'correspLevel7to5'
+  'Leucine ponctu<e9>e' in object 'correspLevel7to5'
+  'Lieu de Norv<e8>ge' in object 'correspLevel7to5'
+  'Limande <e0> queue jaune' in object 'correspLevel7to5'
+  'Lime <e9>cailleuse' in object 'correspLevel7to5'
+  'Lime enfl<e9>e' in object 'correspLevel7to5'
+  'Lime g<e9>ante de Rathbun' in object 'correspLevel7to5'
+  'Lime r<ea>che' in object 'correspLevel7to5'
+  'Lion de mer d'Am<e9>rique du Sud' in object 'correspLevel7to5'
+  'Lion de mer de N.lle-Z<e9>lande' in object 'correspLevel7to5'
+  'Littorine couronn<e9>e' in object 'correspLevel7to5'
+  'Littorine gr<ea>l<e9>e' in object 'correspLevel7to5'
+  'Loche d'<e9>tang' in object 'correspLevel7to5'
+  'Loquette d'Am<e9>rique' in object 'correspLevel7to5'
+  'Lotte de rivi<e8>re' in object 'correspLevel7to5'
+  'Loup g<e9>latineux' in object 'correspLevel7to5'
+  'Loup tachet<e9>' in object 'correspLevel7to5'
+  'Lout<e8>ne abyssale' in object 'correspLevel7to5'
+  'Lout<e8>ne australe' in object 'correspLevel7to5'
+  'Lout<e8>ne battoir' in object 'correspLevel7to5'
+  'Lout<e8>ne bonnet' in object 'correspLevel7to5'
+  'Lout<e8>ne commune' in object 'correspLevel7to5'
+  'Lout<e8>ne longue' in object 'correspLevel7to5'
+  'Lout<e8>ne retourn<e9>e' in object 'correspLevel7to5'
+  'Lout<e8>ne vase' in object 'correspLevel7to5'
+  'Loutre de mer d'Am<e9>rique Nord' in object 'correspLevel7to5'
+  'Lucine bor<e9>ale' in object 'correspLevel7to5'
+  'Lucine rid<e9>e' in object 'correspLevel7to5'
+  'Lucine tigr<e9>e americaine' in object 'correspLevel7to5'
+  'Lutianid<e9>s nca' in object 'correspLevel7to5'
+  'Lutraire d<e9>prim<e9>e' in object 'correspLevel7to5'
+  'Lutraire <e9>troite' in object 'correspLevel7to5'
+  'M<e2>choiron banderille' in object 'correspLevel7to5'
+  'M<e2>choiron crucifix' in object 'correspLevel7to5'
+  'M<e2>choiron g<e9>ant' in object 'correspLevel7to5'
+  'M<e2>choiron grond<e9>' in object 'correspLevel7to5'
+  'M<e2>choiron jaune' in object 'correspLevel7to5'
+  'M<e2>choiron kukwari' in object 'correspLevel7to5'
+  'M<e2>choiron madamango' in object 'correspLevel7to5'
+  'M<e2>choiron petite-gueule' in object 'correspLevel7to5'
+  'M<e2>choiron tachet<e9>' in object 'correspLevel7to5'
+  'M<e2>choiron titan' in object 'correspLevel7to5'
+  'M<e2>choirons nca' in object 'correspLevel7to5'
+  'Macome am<e9>ricaine' in object 'correspLevel7to5'
+  'Mactre <e0> rostre' in object 'correspLevel7to5'
+  'Mactre ail<e9>e' in object 'correspLevel7to5'
+  'Mactre cun<e9>iforme' in object 'correspLevel7to5'
+  'Mactre tachet<e9>e' in object 'correspLevel7to5'
+  'Madr<e9>pores nca' in object 'correspLevel7to5'
+  'Ma<eb>rl commun' in object 'correspLevel7to5'
+  'Maigre argent<e9>' in object 'correspLevel7to5'
+  'Makaire <e0> rostre court' in object 'correspLevel7to5'
+  'Makaire b<e9>cune' in object 'correspLevel7to5'
+  'Makaire <e9>p<e9>e' in object 'correspLevel7to5'
+  'Mamila griff<e9>e' in object 'correspLevel7to5'
+  'Mammif<e8>res aquatiques nca' in object 'correspLevel7to5'
+  'Mante g<e9>ante' in object 'correspLevel7to5'
+  'Maquereau des <ee>les' in object 'correspLevel7to5'
+  'Maquereau tachet<e9>' in object 'correspLevel7to5'
+  'Marbr<e9>' in object 'correspLevel7to5'
+  'Marbr<e9> de la c<f4>te ouest' in object 'correspLevel7to5'
+  'Marbr<e9> du Cap' in object 'correspLevel7to5'
+  'Marbr<e9>s nca' in object 'correspLevel7to5'
+  'Marignan <e0> oeill<e8>res' in object 'correspLevel7to5'
+  'Marignan tachet<e9>' in object 'correspLevel7to5'
+  'Marlin de la M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Marlin ray<e9>' in object 'correspLevel7to5'
+  'Marsouin apt<e8>re' in object 'correspLevel7to5'
+  'Martesie stri<e9>e' in object 'correspLevel7to5'
+  'M<e9>duse commune' in object 'correspLevel7to5'
+  'M<e9>duses' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne coco' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne colossale' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne des Cara<ef>bes' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne muscade' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne noire' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne spiral<e9>e' in object 'correspLevel7to5'
+  'M<e9>long<e8>ne tern<e9>e' in object 'correspLevel7to5'
+  'Menhaden du Br<e9>sil' in object 'correspLevel7to5'
+  'Menhaden <e9>cailleux' in object 'correspLevel7to5'
+  'Merlan argent<e9>' in object 'correspLevel7to5'
+  'Merlu argent<e9>' in object 'correspLevel7to5'
+  'Merlu argent<e9> du large' in object 'correspLevel7to5'
+  'Merlu c<f4>tier du Cap' in object 'correspLevel7to5'
+  'Merlu du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'Merlu europ<e9>en' in object 'correspLevel7to5'
+  'Merluche <e0> longues nagerois' in object 'correspLevel7to5'
+  'Merluche <e9>cureuil' in object 'correspLevel7to5'
+  'M<e9>roe mauve' in object 'correspLevel7to5'
+  'M<e9>roe tronqu<e9>e' in object 'correspLevel7to5'
+  'M<e9>rou-loche cacatois' in object 'correspLevel7to5'
+  'M<e9>rou-loche vagabonde' in object 'correspLevel7to5'
+  'M<e9>rou <e0> bandes' in object 'correspLevel7to5'
+  'M<e9>rou <e0> bout rouge' in object 'correspLevel7to5'
+  'M<e9>rou <e0> points bleus' in object 'correspLevel7to5'
+  'M<e9>rou abeille' in object 'correspLevel7to5'
+  'M<e9>rou aile jaune' in object 'correspLevel7to5'
+  'M<e9>rou ar<e9>ol<e9>' in object 'correspLevel7to5'
+  'M<e9>rou bad<e8>che' in object 'correspLevel7to5'
+  'M<e9>rou bagnard' in object 'correspLevel7to5'
+  'M<e9>rou bande' in object 'correspLevel7to5'
+  'M<e9>rou blanc' in object 'correspLevel7to5'
+  'M<e9>rou bleu' in object 'correspLevel7to5'
+  'M<e9>rou bord blanc' in object 'correspLevel7to5'
+  'M<e9>rou bord rouge' in object 'correspLevel7to5'
+  'M<e9>rou bossu' in object 'correspLevel7to5'
+  'M<e9>rou bride' in object 'correspLevel7to5'
+  'M<e9>rou brouillard' in object 'correspLevel7to5'
+  'M<e9>rou cabrilla' in object 'correspLevel7to5'
+  'M<e9>rou camouflage' in object 'correspLevel7to5'
+  'M<e9>rou chat' in object 'correspLevel7to5'
+  'M<e9>rou com<e8>te' in object 'correspLevel7to5'
+  'M<e9>rou coq' in object 'correspLevel7to5'
+  'M<e9>rou couronn<e9>' in object 'correspLevel7to5'
+  'M<e9>rou cuir' in object 'correspLevel7to5'
+  'M<e9>rou d'Haifa' in object 'correspLevel7to5'
+  'M<e9>rou d'<ee>le' in object 'correspLevel7to5'
+  'M<e9>rou d'or' in object 'correspLevel7to5'
+  'M<e9>rou de Gor<e9>e' in object 'correspLevel7to5'
+  'M<e9>rou demi-deuil' in object 'correspLevel7to5'
+  'M<e9>rou demi-lune' in object 'correspLevel7to5'
+  'M<e9>rou du Niger' in object 'correspLevel7to5'
+  'M<e9>rou <e9>l<e9>gant' in object 'correspLevel7to5'
+  'M<e9>rou <e9>paulette' in object 'correspLevel7to5'
+  'M<e9>rou <e9>pineux' in object 'correspLevel7to5'
+  'M<e9>rou <e9>toile' in object 'correspLevel7to5'
+  'M<e9>rou faraud' in object 'correspLevel7to5'
+  'M<e9>rou g<e2>teau de cire' in object 'correspLevel7to5'
+  'M<e9>rou g<e9>ant' in object 'correspLevel7to5'
+  'M<e9>rou golfe' in object 'correspLevel7to5'
+  'M<e9>rou grandes <e9>cailles' in object 'correspLevel7to5'
+  'M<e9>rou gris' in object 'correspLevel7to5'
+  'M<e9>rou grivel<e9>' in object 'correspLevel7to5'
+  'M<e9>rou haute voile' in object 'correspLevel7to5'
+  'M<e9>rou hawaiien' in object 'correspLevel7to5'
+  'M<e9>rou huit raies' in object 'correspLevel7to5'
+  'M<e9>rou jaune' in object 'correspLevel7to5'
+  'M<e9>rou lanc<e9>ol<e9>' in object 'correspLevel7to5'
+  'M<e9>rou l<e9>opard' in object 'correspLevel7to5'
+  'M<e9>rou longues ailes' in object 'correspLevel7to5'
+  'M<e9>rou longues dents' in object 'correspLevel7to5'
+  'M<e9>rou malabar' in object 'correspLevel7to5'
+  'M<e9>rou Marquises' in object 'correspLevel7to5'
+  'M<e9>rou marron' in object 'correspLevel7to5'
+  'M<e9>rou m<e9>lif<e8>re' in object 'correspLevel7to5'
+  'M<e9>rou morse' in object 'correspLevel7to5'
+  'M<e9>rou neige' in object 'correspLevel7to5'
+  'M<e9>rou noir' in object 'correspLevel7to5'
+  'M<e9>rou ondul<e9>' in object 'correspLevel7to5'
+  'M<e9>rou oriflamme' in object 'correspLevel7to5'
+  'M<e9>rou oualioua' in object 'correspLevel7to5'
+  'M<e9>rou ovale' in object 'correspLevel7to5'
+  'M<e9>rou p<e2>le' in object 'correspLevel7to5'
+  'M<e9>rou patate' in object 'correspLevel7to5'
+  'M<e9>rou petites <e9>cailles' in object 'correspLevel7to5'
+  'M<e9>rou pintade' in object 'correspLevel7to5'
+  'M<e9>rou plate grise' in object 'correspLevel7to5'
+  'M<e9>rou pointill<e9>' in object 'correspLevel7to5'
+  'M<e9>rou points noirs' in object 'correspLevel7to5'
+  'M<e9>rou poule' in object 'correspLevel7to5'
+  'M<e9>rou queue carr<e9>e' in object 'correspLevel7to5'
+  'M<e9>rou ray<e9>' in object 'correspLevel7to5'
+  'M<e9>rou r<e9>seau' in object 'correspLevel7to5'
+  'M<e9>rou rocaille' in object 'correspLevel7to5'
+  'M<e9>rou rouge' in object 'correspLevel7to5'
+  'M<e9>rou rouge tachet<e9>' in object 'correspLevel7to5'
+  'M<e9>rou sell<e9>' in object 'correspLevel7to5'
+  'M<e9>rou six raies' in object 'correspLevel7to5'
+  'M<e9>rou summan' in object 'correspLevel7to5'
+  'M<e9>rou taches blanches' in object 'correspLevel7to5'
+  'M<e9>rou taches oranges' in object 'correspLevel7to5'
+  'M<e9>rou tapis' in object 'correspLevel7to5'
+  'M<e9>rou trois taches' in object 'correspLevel7to5'
+  'M<e9>rou troussequin' in object 'correspLevel7to5'
+  'M<e9>rou Varsovie' in object 'correspLevel7to5'
+  'M<e9>rou z<e9>br<e9>' in object 'correspLevel7to5'
+  'M<e9>rous nca' in object 'correspLevel7to5'
+  'Mesod<e8>me chilienne' in object 'correspLevel7to5'
+  'Mesod<e8>me glabre' in object 'correspLevel7to5'
+  'Migraine boucl<e9>e' in object 'correspLevel7to5'
+  'Migraine <e9>pineuse' in object 'correspLevel7to5'
+  'Migraine macul<e9>e' in object 'correspLevel7to5'
+  'Migraine ocell<e9>e' in object 'correspLevel7to5'
+  'Migraine ornement<e9>e' in object 'correspLevel7to5'
+  'Migraine pointill<e9>e' in object 'correspLevel7to5'
+  'Migraine tachet<e9>e' in object 'correspLevel7to5'
+  'Mitre-bois d'<e9>b<e8>ne' in object 'correspLevel7to5'
+  'Mitre br<fb>l<e9>e' in object 'correspLevel7to5'
+  'Mitre <e9>piscopale' in object 'correspLevel7to5'
+  'Mitre fronc<e9>e' in object 'correspLevel7to5'
+  'Mitre m<e9>lan<e9>sienne' in object 'correspLevel7to5'
+  'Mitre zon<e9>e' in object 'correspLevel7to5'
+  'Modiolaire arqu<e9>e' in object 'correspLevel7to5'
+  'Modiole <e0> bande jaune' in object 'correspLevel7to5'
+  'Modiole auricul<e9>e' in object 'correspLevel7to5'
+  'Modiole <e9>cailleuse' in object 'correspLevel7to5'
+  'Modiole sillonn<e9>e' in object 'correspLevel7to5'
+  'Monodonte articul<e9>e' in object 'correspLevel7to5'
+  'Montre radi<e9>e' in object 'correspLevel7to5'
+  'More t<ea>tard' in object 'correspLevel7to5'
+  'Mor<e9>nesoce bio-bio' in object 'correspLevel7to5'
+  'Morne bor<e9>ale' in object 'correspLevel7to5'
+  'Morue charbonni<e8>re' in object 'correspLevel7to5'
+  'Motelle <e0> cinq barbillons' in object 'correspLevel7to5'
+  'Motelle <e0> quatre barbillons' in object 'correspLevel7to5'
+  'Motelle de M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Moule cor<e9>enne' in object 'correspLevel7to5'
+  'Moule de Nouvelle-Z<e9>lande' in object 'correspLevel7to5'
+  'Moule de roche sudam<e9>ricaine' in object 'correspLevel7to5'
+  'Moule m<e9>diterran<e9>enne' in object 'correspLevel7to5'
+  'Moule piquet<e9>e' in object 'correspLevel7to5'
+  'Mui-mui <e0> <e9>pines' in object 'correspLevel7to5'
+  'Mui-mui ray<e9>' in object 'correspLevel7to5'
+  'Mulet <e0> grandes <e9>cailles' in object 'correspLevel7to5'
+  'Mulet <e0> grosse t<ea>te' in object 'correspLevel7to5'
+  'Mulet <e0> tache bleue' in object 'correspLevel7to5'
+  'Mulet dor<e9>' in object 'correspLevel7to5'
+  'Mulet lab<e9>on' in object 'correspLevel7to5'
+  'Mur<e8>nes' in object 'correspLevel7to5'
+  'Mur<e9>n<e9>soce-dague' in object 'correspLevel7to5'
+  'Mur<e9>n<e9>soce de Guin<e9>e' in object 'correspLevel7to5'
+  'Mur<e9>n<e9>soces nca' in object 'correspLevel7to5'
+  'Murex-droite <e9>pine' in object 'correspLevel7to5'
+  'Murex c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'Murex <e9>rinace' in object 'correspLevel7to5'
+  'Murex noire-<e9>pine' in object 'correspLevel7to5'
+  'Murex rare-<e9>pine' in object 'correspLevel7to5'
+  'Murex torr<e9>fi<e9>' in object 'correspLevel7to5'
+  'Must<e8>le arctique <e0> trois barb.' in object 'correspLevel7to5'
+  'Mye tronqu<e9>e' in object 'correspLevel7to5'
+  'Napol<e9>on' in object 'correspLevel7to5'
+  'Nason <e0> <e9>perons bleus' in object 'correspLevel7to5'
+  'Nasse br<fb>l<e9>e' in object 'correspLevel7to5'
+  'Nasse canalicul<e9>e' in object 'correspLevel7to5'
+  'Nasse couronn<e9>e' in object 'correspLevel7to5'
+  'Nasse <e9>paisse' in object 'correspLevel7to5'
+  'Nasse fasci<e9>e' in object 'correspLevel7to5'
+  'Nasse n<e9>ritoide' in object 'correspLevel7to5'
+  'Nasse ray<e9>e' in object 'correspLevel7to5'
+  'Nasse r<e9>ticul<e9>e' in object 'correspLevel7to5'
+  'Natice <e0> belles bandes' in object 'correspLevel7to5'
+  'Natice <e0> collet' in object 'correspLevel7to5'
+  'Natice <e0> lignes' in object 'correspLevel7to5'
+  'Natice ch<e2>tain' in object 'correspLevel7to5'
+  'Natice <e9>toil<e9>e' in object 'correspLevel7to5'
+  'Natice flamm<e9>e' in object 'correspLevel7to5'
+  'Natice lancin<e9>e' in object 'correspLevel7to5'
+  'Natice lign<e9>e' in object 'correspLevel7to5'
+  'Natice marbr<e9>e' in object 'correspLevel7to5'
+  'Natice patte-d'<e9>l<e9>phant' in object 'correspLevel7to5'
+  'Natice tigr<e9>e' in object 'correspLevel7to5'
+  'Nautile flamm<e9>' in object 'correspLevel7to5'
+  'N<e9>rite <e0> spire plate' in object 'correspLevel7to5'
+  'N<e9>rite br<fb>l<e9>e' in object 'correspLevel7to5'
+  'N<e9>rite cam<e9>l<e9>on' in object 'correspLevel7to5'
+  'N<e9>rite c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'N<e9>rite dent saignante' in object 'correspLevel7to5'
+  'N<e9>rite du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'N<e9>rite <e9>b<e8>ne' in object 'correspLevel7to5'
+  'N<e9>rite <e9>cailleuse' in object 'correspLevel7to5'
+  'N<e9>rite lustr<e9>e' in object 'correspLevel7to5'
+  'N<e9>rite pliss<e9>e' in object 'correspLevel7to5'
+  'N<e9>rite tourelle' in object 'correspLevel7to5'
+  'Nori fronc<e9>' in object 'correspLevel7to5'
+  'Nototh<e9>nia queue longue' in object 'correspLevel7to5'
+  'Oc<e9>anite <e0> ventre noir' in object 'correspLevel7to5'
+  'Oc<e9>anite de Wilson' in object 'correspLevel7to5'
+  'Oc<e9>anite fr<e9>gate' in object 'correspLevel7to5'
+  'Ocypode p<e9>nicill<e9>e' in object 'correspLevel7to5'
+  'Olive <e0> bouche rouge' in object 'correspLevel7to5'
+  'Olive <e9>criture' in object 'correspLevel7to5'
+  'Olive <e9>piscopale' in object 'correspLevel7to5'
+  'Olive marbr<e9>e' in object 'correspLevel7to5'
+  'Olive mouchet<e9>e' in object 'correspLevel7to5'
+  'Olive r<e9>ticul<e9>e' in object 'correspLevel7to5'
+  'Ombrine c<f4>ti<e8>re' in object 'correspLevel7to5'
+  'Oreille d'<e9>l<e9>phant' in object 'correspLevel7to5'
+  'Or<e9>os nca' in object 'correspLevel7to5'
+  'Ormeau <e0> l<e8>vres noires' in object 'correspLevel7to5'
+  'Ormeau g<e9>ant' in object 'correspLevel7to5'
+  'Ormeau oreille-d'<e2>ne' in object 'correspLevel7to5'
+  'Orphie car<e9>n<e9>e' in object 'correspLevel7to5'
+  'Orque pygm<e9>e' in object 'correspLevel7to5'
+  'Ostrege miell<e9>e' in object 'correspLevel7to5'
+  'Ostrege sillonn<e9>e' in object 'correspLevel7to5'
+  'Otarie d'Am<e9>rique du Sud' in object 'correspLevel7to5'
+  'Otarie de Nouvelle-Z<e9>lande' in object 'correspLevel7to5'
+  'Otolithe s<e9>n<e9>galais' in object 'correspLevel7to5'
+  'Oursins, b<e8>ches-de-mer' in object 'correspLevel7to5'
+  'Ovarque couronn<e9>e' in object 'correspLevel7to5'
+  'Pageot <e0> tache rouge' in object 'correspLevel7to5'
+  'Pagre <e0> nageoires jaunes' in object 'correspLevel7to5'
+  'Pagre <e0> points bleus' in object 'correspLevel7to5'
+  'Pagre ray<e9>' in object 'correspLevel7to5'
+  'Pagre t<ea>te noire' in object 'correspLevel7to5'
+  'Pailona <e0> long nez' in object 'correspLevel7to5'
+  'Pailona sans <e9>pine' in object 'correspLevel7to5'
+  'Palourde bigarr<e9>e' in object 'correspLevel7to5'
+  'Palourde crois<e9>e d'Europe' in object 'correspLevel7to5'
+  'Palourde <e9>criture' in object 'correspLevel7to5'
+  'Palourde enfl<e9>e' in object 'correspLevel7to5'
+  'Palourde ondul<e9>e' in object 'correspLevel7to5'
+  'Panop<e9>e d'Aldovrandi' in object 'correspLevel7to5'
+  'Panop<e9>e du Pacifique' in object 'correspLevel7to5'
+  'Panop<e9>e quadrill<e9>e' in object 'correspLevel7to5'
+  'Parfum d'Ant<e9>e' in object 'correspLevel7to5'
+  'Pastenague am<e9>ricaine' in object 'correspLevel7to5'
+  'Patelle <e0> rayons' in object 'correspLevel7to5'
+  'Patelle de la M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Patelle fonc<e9>e' in object 'correspLevel7to5'
+  'Patelle g<e9>ante' in object 'correspLevel7to5'
+  'Patelle ponctu<e9>e' in object 'correspLevel7to5'
+  'Patelle stri<e9>e' in object 'correspLevel7to5'
+  'Patelle sucr<e9>e' in object 'correspLevel7to5'
+  'P<ea>che-madame argent<e9>' in object 'correspLevel7to5'
+  'P<ea>che-madame camus' in object 'correspLevel7to5'
+  'P<ea>che-madame mouchet<e9>' in object 'correspLevel7to5'
+  'P<ea>che-madame peren' in object 'correspLevel7to5'
+  'P<ea>che-madame sable' in object 'correspLevel7to5'
+  'P<ea>che-madame trompette' in object 'correspLevel7to5'
+  'Pecten d'Am<e9>rique' in object 'correspLevel7to5'
+  'Pecten de Nouvelle-Z<e9>lande' in object 'correspLevel7to5'
+  'Pecten g<e9>ant du Pacifique' in object 'correspLevel7to5'
+  'Peigne s<e9>nateur' in object 'correspLevel7to5'
+  'P<e8>lerin' in object 'correspLevel7to5'
+  'P<e9>liau chanos' in object 'correspLevel7to5'
+  'P<e9>ponoc<e9>phale' in object 'correspLevel7to5'
+  'Perche europ<e9>enne' in object 'correspLevel7to5'
+  'Percomorphes d<e9>mersaux nca' in object 'correspLevel7to5'
+  'Percomorphes p<e9>lagiques nca' in object 'correspLevel7to5'
+  'Perpeire <e0> grandes <e9>cailles' in object 'correspLevel7to5'
+  'Perroquet <e0> six bandes' in object 'correspLevel7to5'
+  'Petit corail <e9>toile' in object 'correspLevel7to5'
+  'Petit diable de Guin<e9>e' in object 'correspLevel7to5'
+  'Petit s<e9>baste' in object 'correspLevel7to5'
+  'Petite cigale des Cara<ef>bes' in object 'correspLevel7to5'
+  'P<e9>toncle' in object 'correspLevel7to5'
+  'P<e9>toncle-gibeci<e8>re' in object 'correspLevel7to5'
+  'P<e9>toncle de Singapour' in object 'correspLevel7to5'
+  'P<e9>toncle du Japon' in object 'correspLevel7to5'
+  'P<e9>toncle <e9>cailleux' in object 'correspLevel7to5'
+  'P<e9>toncle <e9>tendard' in object 'correspLevel7to5'
+  'P<e9>toncle <e9>ventail' in object 'correspLevel7to5'
+  'P<e9>toncle glabre' in object 'correspLevel7to5'
+  'P<e9>toncle l<e9>opard' in object 'correspLevel7to5'
+  'P<e9>toncle manteau' in object 'correspLevel7to5'
+  'P<e9>toncle mantelet' in object 'correspLevel7to5'
+  'P<e9>toncle multistrie' in object 'correspLevel7to5'
+  'P<e9>toncle onde' in object 'correspLevel7to5'
+  'P<e9>toncle patte de lion' in object 'correspLevel7to5'
+  'P<e9>toncle patte de lion du Pac.' in object 'correspLevel7to5'
+  'P<e9>toncle prot<e9>e' in object 'correspLevel7to5'
+  'P<e9>toncle r<e2>p<e9>' in object 'correspLevel7to5'
+  'P<e9>toncle s<e9>nateur' in object 'correspLevel7to5'
+  'P<e9>toncle volant' in object 'correspLevel7to5'
+  'P<e9>trel <e0> col blanc' in object 'correspLevel7to5'
+  'P<e9>trel <e0> lunettes' in object 'correspLevel7to5'
+  'P<e9>trel de Hall' in object 'correspLevel7to5'
+  'P<e9>trel des neiges' in object 'correspLevel7to5'
+  'P<e9>trel g<e9>ant' in object 'correspLevel7to5'
+  'P<e9>trel macul<e9>' in object 'correspLevel7to5'
+  'P<e9>trels des neiges nca' in object 'correspLevel7to5'
+  'Pholade dilat<e9>e' in object 'correspLevel7to5'
+  'Pholade talon<e9>e' in object 'correspLevel7to5'
+  'Pholade tronqu<e9>e' in object 'correspLevel7to5'
+  'Phoque <e0> crete' in object 'correspLevel7to5'
+  'Phoque <e0> rubans' in object 'correspLevel7to5'
+  'Phoque annel<e9> ou marbr<e9>' in object 'correspLevel7to5'
+  'Phoque moine de M<e9>diterran<e9>e' in object 'correspLevel7to5'
+  'Phoque moine des Cara<ef>bes' in object 'correspLevel7to5'
+  'Phycis br<e9>silien' in object 'correspLevel7to5'
+  'Phycis tachet<e9>' in object 'correspLevel7to5'
+  'Pied de p<e9>lican' in object 'correspLevel7to5'
+  'Pierre vermicul<e9>e' in object 'correspLevel7to5'
+  'Pieuvre palm<e9>e' in object 'correspLevel7to5'
+  'Pilchard sudam<e9>ricain' in object 'correspLevel7to5'
+  'Pillard <e9>pineux nca' in object 'correspLevel7to5'
+  'Pinge br<e9>silien' in object 'correspLevel7to5'
+  'Pintadine <e0> l<e8>vre noire' in object 'correspLevel7to5'
+  'Pintadine radi<e9>e' in object 'correspLevel7to5'
+  'Pintadine tachet<e9>e' in object 'correspLevel7to5'
+  'Pitar cr<ea>t<e9>' in object 'correspLevel7to5'
+  'Pitar orn<e9>' in object 'correspLevel7to5'
+  'Plat<ea>te br<e9>silien' in object 'correspLevel7to5'
+  'Platyc<e9>phale <e9>p<e9>e' in object 'correspLevel7to5'
+  'Platyc<e9>phale indien' in object 'correspLevel7to5'
+  'Platyc<e9>phalid<e9>s nca' in object 'correspLevel7to5'
+  'Pleurotome <e0> car<e8>ne blanche' in object 'correspLevel7to5'
+  'Pleurotome marbr<e9>' in object 'correspLevel7to5'
+  'Pleurotome tubercul<e9>' in object 'correspLevel7to5'
+  'Plie <e0> points noirs' in object 'correspLevel7to5'
+  'Plumet de Ner<e9>e' in object 'correspLevel7to5'
+  'Pocheteau de Norv<e8>ge' in object 'correspLevel7to5'
+  'Poisson-guitare <e0> lunaires' in object 'correspLevel7to5'
+  'Poisson-sabre b<e9>cune' in object 'correspLevel7to5'
+  'Poisson ch<e8>vre robuste' in object 'correspLevel7to5'
+  'Poisson paille <e0> pois' in object 'correspLevel7to5'
+  'Poisson rouge(=Cyprin dor<e9>)' in object 'correspLevel7to5'
+  'Poisson t<ea>te de serpent' in object 'correspLevel7to5'
+  'Poissons p<e9>lagiques nca' in object 'correspLevel7to5'
+  'Poissons t<e9>l<e9>ost<e9>ens nca' in object 'correspLevel7to5'
+  'Poissons t<ea>te de serpent nca' in object 'correspLevel7to5'
+  'Pompaneau argent<e9>' in object 'correspLevel7to5'
+  'Pompaneau ch<e9>vron' in object 'correspLevel7to5'
+  'Pompaneau <e9>clatant' in object 'correspLevel7to5'
+  'Pompaneau n<e9>-b<e9>' in object 'correspLevel7to5'
+  'Pompaneau tachet<e9>' in object 'correspLevel7to5'
+  'Porc-<e9>pic ballon' in object 'correspLevel7to5'
+  'Porc-<e9>pic boubou' in object 'correspLevel7to5'
+  'Posidonie m<e9>diterran<e9>enne' in object 'correspLevel7to5'
+  'Poulpe <e0> longs bras' in object 'correspLevel7to5'
+  'Poulpe <e0> quatre cornes' in object 'correspLevel7to5'
+  'Poulpe <e0> quatre yeux' in object 'correspLevel7to5'
+  'Poulpe <e0> rayures bleues' in object 'correspLevel7to5'
+  'Poulpe g<e9>ant' in object 'correspLevel7to5'
+  'Poulpe pygm<e9>' in object 'correspLevel7to5'
+  'Poulpe s<e9>ganliou' in object 'correspLevel7to5'
+  'Poulpe tachet<e9>' in object 'correspLevel7to5'
+  'Poulpe t<e9>huelche' in object 'correspLevel7to5'
+  'Poulpe z<e8>bre' in object 'correspLevel7to5'
+  'Praire c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'Prochilode ray<e9>' in object 'correspLevel7to5'
+  'Prochilode r<e9>ticul<e9>' in object 'correspLevel7to5'
+  'Protopt<e8>res d'Afrique' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re commun' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re g<e9>ant' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re millepattes' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re orange' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re rugueux' in object 'correspLevel7to5'
+  'Pt<e9>roc<e8>re scorpion' in object 'correspLevel7to5'
+  'Puffinure de G<e9>orgie du Sud' in object 'correspLevel7to5'
+  'Ragui<e9> sabre' in object 'correspLevel7to5'
+  'Raie-papillon <e9>pineuse' in object 'correspLevel7to5'
+  'Raie <e0> queue courte' in object 'correspLevel7to5'
+  'Raie <e0> queue <e9>pineuse' in object 'correspLevel7to5'
+  'Raie boucl<e9>e' in object 'correspLevel7to5'
+  'Raie <e9>toil<e9>e' in object 'correspLevel7to5'
+  'Raie <e9>toil<e9>e antarctique' in object 'correspLevel7to5'
+  'Raie h<e9>risson' in object 'correspLevel7to5'
+  'Raie lisse am<e9>ricaine' in object 'correspLevel7to5'
+  'Raie m<ea>l<e9>e' in object 'correspLevel7to5'
+  'Raie radi<e9>e' in object 'correspLevel7to5'
+  'Raie tachet<e9>e' in object 'correspLevel7to5'
+  'Rajid<e9>s nca' in object 'correspLevel7to5'
+  'Rascasse <e9>pineuse' in object 'correspLevel7to5'
+  'R<e9>galecs nca' in object 'correspLevel7to5'
+  'R<e9>mora commun' in object 'correspLevel7to5'
+  'R<e9>moras nca' in object 'correspLevel7to5'
+  'Renard <e0> gros yeux' in object 'correspLevel7to5'
+  'Renard p<e9>lagique' in object 'correspLevel7to5'
+  'Requin-chabot <e0> taches bleues' in object 'correspLevel7to5'
+  'Requin-chabot <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Requin-chabot <e9>paulette' in object 'correspLevel7to5'
+  'Requin-chabot grivel<e9>' in object 'correspLevel7to5'
+  'Requin-chabot marqu<e9>terie' in object 'correspLevel7to5'
+  'Requin-chabot ocell<e9>' in object 'correspLevel7to5'
+  'Requin-h<e2>' in object 'correspLevel7to5'
+  'Requin-h<e2> <e0> gros yeux' in object 'correspLevel7to5'
+  'Requin-h<e2> aile blanche' in object 'correspLevel7to5'
+  'Requin-h<e2> dochizame' in object 'correspLevel7to5'
+  'Requin-h<e2> <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Requin-h<e2> long nez' in object 'correspLevel7to5'
+  'Requin-h<e2> voile' in object 'correspLevel7to5'
+  'Requin-marteau <e0> petits yeux' in object 'correspLevel7to5'
+  'Requin-marteau <e9>cope' in object 'correspLevel7to5'
+  'Requin-tapis tachet<e9>' in object 'correspLevel7to5'
+  'Requin <e0> joues blanches' in object 'correspLevel7to5'
+  'Requin <e0> longue dorsale' in object 'correspLevel7to5'
+  'Requin <e0> museau pointu' in object 'correspLevel7to5'
+  'Requin <e0> nez rude' in object 'correspLevel7to5'
+  'Requin <e0> petits dents' in object 'correspLevel7to5'
+  'Requin <e0> queue noire' in object 'correspLevel7to5'
+  'Requin <e0> queue tachet<e9>e' in object 'correspLevel7to5'
+  'Requin <e0> tache noir' in object 'correspLevel7to5'
+  'Requin aiguille br<e9>silien' in object 'correspLevel7to5'
+  'Requin aiguille r<e9>chine' in object 'correspLevel7to5'
+  'Requin b<e9>cune' in object 'correspLevel7to5'
+  'Requin bord<e9>' in object 'correspLevel7to5'
+  'Requin carpette <e0> collarette' in object 'correspLevel7to5'
+  'Requin carpette <e0> collier' in object 'correspLevel7to5'
+  'Requin carpette <e0> moustache' in object 'correspLevel7to5'
+  'Requin chat <e0> rubans' in object 'correspLevel7to5'
+  'Requin chat pygm<e9>e' in object 'correspLevel7to5'
+  'Requin de r<e9>cif' in object 'correspLevel7to5'
+  'Requin dormeur <e0> cr<ea>te' in object 'correspLevel7to5'
+  'Requin dormeur z<e9>br<e9>' in object 'correspLevel7to5'
+  'Requin <e9>p<e9>e' in object 'correspLevel7to5'
+  'Requin f<e9>roce' in object 'correspLevel7to5'
+  'Requin l<e9>zard' in object 'correspLevel7to5'
+  'Requin nourrice <e0> queue courte' in object 'correspLevel7to5'
+  'Requin oc<e9>anique' in object 'correspLevel7to5'
+  'Requin scie <e0> long nez' in object 'correspLevel7to5'
+  'Requin scie <e0> nez court' in object 'correspLevel7to5'
+  'Requin scie d'Am<e9>rique' in object 'correspLevel7to5'
+  'Requin z<e8>bre' in object 'correspLevel7to5'
+  'Rite <e0> trois taches' in object 'correspLevel7to5'
+  'Rombou l<e9>opard' in object 'correspLevel7to5'
+  'Rondeau br<e8>me' in object 'correspLevel7to5'
+  'Rotelle c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'Rouffe imp<e9>rial' in object 'correspLevel7to5'
+  'Rouffe ray<e9>' in object 'correspLevel7to5'
+  'Rouget du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'Rouqui<e9>' in object 'correspLevel7to5'
+  'Roussette <e0> taches brunes' in object 'correspLevel7to5'
+  'Roussette <e0> taches jaunes' in object 'correspLevel7to5'
+  'Roussette cloqu<e9>e' in object 'correspLevel7to5'
+  'Roussette de Mad<e8>re' in object 'correspLevel7to5'
+  'Roussette panth<e8>re' in object 'correspLevel7to5'
+  'Roussette ruban<e9>e' in object 'correspLevel7to5'
+  'Roussette vip<e9>rine' in object 'correspLevel7to5'
+  'Sabre argent<e9>' in object 'correspLevel7to5'
+  'Sagre <e0> menton lisse' in object 'correspLevel7to5'
+  'Sagre <e0> nageoires frang<e9>es' in object 'correspLevel7to5'
+  'Sagre <e9>pineux' in object 'correspLevel7to5'
+  'Sagre porte-feu <e0> queue courte' in object 'correspLevel7to5'
+  'Sagre ruban<e9>' in object 'correspLevel7to5'
+  'Saint Pierre argent<e9>' in object 'correspLevel7to5'
+  'Salicoque balafr<e9>e' in object 'correspLevel7to5'
+  'Salicoque colibr<ed>' in object 'correspLevel7to5'
+  'Salicoque des vases c<f4>ti<e8>res' in object 'correspLevel7to5'
+  'Salicoque voil<e9>e' in object 'correspLevel7to5'
+  'Salicoques, sol<e9>noc<e8>res nca' in object 'correspLevel7to5'
+  'Salmonoid<e9>s nca' in object 'correspLevel7to5'
+  'Sandre am<e9>ricain' in object 'correspLevel7to5'
+  'Sar <e0> grosses l<e8>vres' in object 'correspLevel7to5'
+  'Sar <e0> museau pointu' in object 'correspLevel7to5'
+  'Sar <e0> t<ea>te noire' in object 'correspLevel7to5'
+  'Sardinelle de Br<e9>sil' in object 'correspLevel7to5'
+  'Sardinelle dor<e9>e' in object 'correspLevel7to5'
+  'Sardinelle tachet<e9>e' in object 'correspLevel7to5'
+  'Sargue dor<e9>' in object 'correspLevel7to5'
+  'Saumon argent<e9>' in object 'correspLevel7to5'
+  'Saumon<e9>e l<e9>opard' in object 'correspLevel7to5'
+  'Saut<e9> des plages' in object 'correspLevel7to5'
+  'Saut<e9> Wellington' in object 'correspLevel7to5'
+  'Sciaenid<e9>s nca' in object 'correspLevel7to5'
+  'Scl<e9>ropage d'Asie' in object 'correspLevel7to5'
+  'Scopelid<e9>' in object 'correspLevel7to5'
+  'S<e9>baste <e0> queue jaune' in object 'correspLevel7to5'
+  'S<e9>baste bocace' in object 'correspLevel7to5'
+  'S<e9>baste ch<e8>vre' in object 'correspLevel7to5'
+  'S<e9>baste citron' in object 'correspLevel7to5'
+  'S<e9>baste dor<e9>' in object 'correspLevel7to5'
+  'S<e9>baste du Cap' in object 'correspLevel7to5'
+  'S<e9>baste du Nord' in object 'correspLevel7to5'
+  'S<e9>baste du Pacifique' in object 'correspLevel7to5'
+  'S<e9>baste piment' in object 'correspLevel7to5'
+  'S<e9>baste rocote' in object 'correspLevel7to5'
+  'S<e9>baste rose' in object 'correspLevel7to5'
+  'S<e9>bastes ch<e8>vres nca' in object 'correspLevel7to5'
+  'S<e9>bastes de l'Atlantique nca' in object 'correspLevel7to5'
+  'Seiche araign<e9>e' in object 'correspLevel7to5'
+  'Seiche de Guin<e9>e' in object 'correspLevel7to5'
+  'Seiche dor<e9>e' in object 'correspLevel7to5'
+  'Seiche <e9>l<e9>gante' in object 'correspLevel7to5'
+  'Seiche g<e9>ante africaine' in object 'correspLevel7to5'
+  'Seiche g<e9>ante australienne' in object 'correspLevel7to5'
+  'Seiche hame<e7>on' in object 'correspLevel7to5'
+  'Seiche r<e9>ticul<e9>e' in object 'correspLevel7to5'
+  'Seiche ros<e9>e' in object 'correspLevel7to5'
+  'Seiches, s<e9>pioles nca' in object 'correspLevel7to5'
+  'S<e9>lar <e0> bande dor<e9>e' in object 'correspLevel7to5'
+  'S<e9>lar aile noire' in object 'correspLevel7to5'
+  'S<e9>lar coulisou' in object 'correspLevel7to5'
+  'S<e9>lar harengule' in object 'correspLevel7to5'
+  'S<e9>lar oeil de boeuf' in object 'correspLevel7to5'
+  'S<e9>lar queue jaune' in object 'correspLevel7to5'
+  'S<e9>lar subari' in object 'correspLevel7to5'
+  'S<e9>m<e8>le chilienne' in object 'correspLevel7to5'
+  'S<e9>m<e8>le <e9>corce' in object 'correspLevel7to5'
+  'S<e9>pia inerme' in object 'correspLevel7to5'
+  'S<e9>pia inerme japonaise' in object 'correspLevel7to5'
+  'S<e9>pia orn<e9>e' in object 'correspLevel7to5'
+  'S<e9>piole <e0> gros yeux' in object 'correspLevel7to5'
+  'S<e9>piole analogue' in object 'correspLevel7to5'
+  'S<e9>piole australe' in object 'correspLevel7to5'
+  'S<e9>piole bobie' in object 'correspLevel7to5'
+  'S<e9>piole bouledogue' in object 'correspLevel7to5'
+  'S<e9>piole calamarette' in object 'correspLevel7to5'
+  'S<e9>piole colibri' in object 'correspLevel7to5'
+  'S<e9>piole commune' in object 'correspLevel7to5'
+  'S<e9>piole cracheuse' in object 'correspLevel7to5'
+  'S<e9>piole de Carol' in object 'correspLevel7to5'
+  'S<e9>piole de la Tortue' in object 'correspLevel7to5'
+  'S<e9>piole de Steenstrup' in object 'correspLevel7to5'
+  'S<e9>piole diff<e9>rente' in object 'correspLevel7to5'
+  'S<e9>piole dor<e9>e' in object 'correspLevel7to5'
+  'S<e9>piole du Pacifique bor<e9>al' in object 'correspLevel7to5'
+  'S<e9>piole du Tasmanie' in object 'correspLevel7to5'
+  'S<e9>piole <e9>l<e9>gante' in object 'correspLevel7to5'
+  'S<e9>piole grandes oreilles' in object 'correspLevel7to5'
+  'S<e9>piole interm<e9>diaire' in object 'correspLevel7to5'
+  'S<e9>piole japonaise' in object 'correspLevel7to5'
+  'S<e9>piole languette' in object 'correspLevel7to5'
+  'S<e9>piole leucopt<e8>re' in object 'correspLevel7to5'
+  'S<e9>piole melon' in object 'correspLevel7to5'
+  'S<e9>piole mignonne' in object 'correspLevel7to5'
+  'S<e9>piole mimika' in object 'correspLevel7to5'
+  'S<e9>piole myst<e9>rieuse' in object 'correspLevel7to5'
+  'S<e9>piole naine' in object 'correspLevel7to5'
+  'S<e9>piole papillon' in object 'correspLevel7to5'
+  'S<e9>piole robuste' in object 'correspLevel7to5'
+  'S<e9>piolette de Koch' in object 'correspLevel7to5'
+  'S<e9>piolette du sud' in object 'correspLevel7to5'
+  'S<e9>riole amourez' in object 'correspLevel7to5'
+  'S<e9>riole babiane' in object 'correspLevel7to5'
+  'S<e9>riole bijou' in object 'correspLevel7to5'
+  'S<e9>riole chicard' in object 'correspLevel7to5'
+  'S<e9>riole couronn<e9>e' in object 'correspLevel7to5'
+  'S<e9>riole du Japon' in object 'correspLevel7to5'
+  'S<e9>riole guaim<e8>que' in object 'correspLevel7to5'
+  'S<e9>riole guin<e9>enne' in object 'correspLevel7to5'
+  'S<e9>riole limon' in object 'correspLevel7to5'
+  'S<e9>riolelle argentine' in object 'correspLevel7to5'
+  'S<e9>riolelle palm<e9>e' in object 'correspLevel7to5'
+  'S<e9>riolelles nca' in object 'correspLevel7to5'
+  'S<e9>rioles nca' in object 'correspLevel7to5'
+  'Serpenton des rizi<e8>res' in object 'correspLevel7to5'
+  'Serran-ch<e8>vre' in object 'correspLevel7to5'
+  'Serranid<e9>s nca' in object 'correspLevel7to5'
+  'Sicyonie hupp<e9>e' in object 'correspLevel7to5'
+  'Sicyopt<e8>re <e0> bec de li<e8>vre' in object 'correspLevel7to5'
+  'Sillaginid<e9>s' in object 'correspLevel7to5'
+  'Siphonaire g<e9>ante' in object 'correspLevel7to5'
+  'Siphonaire lacini<e9>e' in object 'correspLevel7to5'
+  'Solarium g<e9>ant' in object 'correspLevel7to5'
+  'Sole-langue s<e9>n<e9>galaise' in object 'correspLevel7to5'
+  'Sole du S<e9>n<e9>gal' in object 'correspLevel7to5'
+  'Sole <e9>gyptienne' in object 'correspLevel7to5'
+  'Solecurte r<e9>tr<e9>cie' in object 'correspLevel7to5'
+  'Solemye m<e9>diterran<e9>enne' in object 'correspLevel7to5'
+  'Solenoc<e8>re d'Afrique' in object 'correspLevel7to5'
+  'Spare <e0> selle blanche' in object 'correspLevel7to5'
+  'Spare dor<e9>' in object 'correspLevel7to5'
+  'Spare <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Spatule d'Am<e9>rique' in object 'correspLevel7to5'
+  'Spisule <e9>paisse' in object 'correspLevel7to5'
+  'Spondyle dor<e9>' in object 'correspLevel7to5'
+  'Spondyle <e9>pineux' in object 'correspLevel7to5'
+  'Spondyle pied-d'<e2>ne' in object 'correspLevel7to5'
+  'Sprat des <ee>les Falkland' in object 'correspLevel7to5'
+  'Spratelle de Guin<e9>e' in object 'correspLevel7to5'
+  'Squale-chagrin bilim<e9>l<e9>' in object 'correspLevel7to5'
+  'Squale-chagrin mosa<ef>que' in object 'correspLevel7to5'
+  'Squale-grogneur <e0> queue <e9>chan.' in object 'correspLevel7to5'
+  'Squale <e0> queue claire' in object 'correspLevel7to5'
+  'Squale boucl<e9>' in object 'correspLevel7to5'
+  'Squale boucl<e9> du Pacifique' in object 'correspLevel7to5'
+  'Squale pygm<e9>e' in object 'correspLevel7to5'
+  'Squalelet f<e9>roce' in object 'correspLevel7to5'
+  'Squales et <e9>missoles nca' in object 'correspLevel7to5'
+  'Squille l<e9>zard g<e9>ante' in object 'correspLevel7to5'
+  'Squille l<e9>zard reine' in object 'correspLevel7to5'
+  'Squille ocell<e9>e' in object 'correspLevel7to5'
+  'Squille panam<e9>enne' in object 'correspLevel7to5'
+  'Squille ray<e9>e' in object 'correspLevel7to5'
+  'Squille sorci<e8>re' in object 'correspLevel7to5'
+  'Squille trois <e9>pines' in object 'correspLevel7to5'
+  'St<e9>no' in object 'correspLevel7to5'
+  'Stromat<e9> argent<e9>' in object 'correspLevel7to5'
+  'Stromat<e9> du Japon' in object 'correspLevel7to5'
+  'Stromat<e9> <e9>toil<e9>' in object 'correspLevel7to5'
+  'Stromat<e9> fossette' in object 'correspLevel7to5'
+  'Stromat<e9> lune' in object 'correspLevel7to5'
+  'Stromat<e9>s du Golfe, etc. nca' in object 'correspLevel7to5'
+  'Stromat<e9>s, ailerons nca' in object 'correspLevel7to5'
+  'Strombe <e0> cr<ea>te' in object 'correspLevel7to5'
+  'Strombe cr<ea>te de coq' in object 'correspLevel7to5'
+  'Strombe margin<e9>' in object 'correspLevel7to5'
+  'Strombe pliss<e9>' in object 'correspLevel7to5'
+  'Strombe ros<e9>' in object 'correspLevel7to5'
+  'Strombe tachet<e9>' in object 'correspLevel7to5'
+  'Tacaud norv<e9>gien' in object 'correspLevel7to5'
+  'Tambour <e0> gros yeux' in object 'correspLevel7to5'
+  'Tambour br<e9>silien' in object 'correspLevel7to5'
+  'Tambour ray<e9>' in object 'correspLevel7to5'
+  'Tarpon argent<e9>' in object 'correspLevel7to5'
+  'Tasmac<e8>te' in object 'correspLevel7to5'
+  'Telline foliac<e9>e' in object 'correspLevel7to5'
+  'Telline jaun<e2>tre' in object 'correspLevel7to5'
+  'Telline lac<e9>r<e9>e' in object 'correspLevel7to5'
+  'Telline r<e2>pe' in object 'correspLevel7to5'
+  'Telline sillonn<e9>e' in object 'correspLevel7to5'
+  'Telline verg<e9>e' in object 'correspLevel7to5'
+  'T<e9>raglin' in object 'correspLevel7to5'
+  'T<e9>r<e9>belle' in object 'correspLevel7to5'
+  'T<e9>r<e8>bre ch<e2>taigne' in object 'correspLevel7to5'
+  'T<e9>r<e8>bre <e9>pissoire' in object 'correspLevel7to5'
+  'T<e9>r<e8>bre mouchet<e9>e' in object 'correspLevel7to5'
+  'T<e9>r<e8>bre subul<e9>e' in object 'correspLevel7to5'
+  'T<ea>te casqu<e9>e p<e9>lagique' in object 'correspLevel7to5'
+  'T<ea>te de serpent d'Indon<e9>sie' in object 'correspLevel7to5'
+  'T<ea>te de serpent stri<e9>' in object 'correspLevel7to5'
+  'T<ea>te de serpent tachet<e9>e' in object 'correspLevel7to5'
+  'T<ea>tes casqu<e9>es p<e9>lagiques nca' in object 'correspLevel7to5'
+  'Thazard-b<e2>tard' in object 'correspLevel7to5'
+  'Thazard barr<e9>' in object 'correspLevel7to5'
+  'Thazard cor<e9>en' in object 'correspLevel7to5'
+  'Thazard n<e9>buleux' in object 'correspLevel7to5'
+  'Thazard ponctu<e9> indo-pacifique' in object 'correspLevel7to5'
+  'Thazard ray<e9> indo-pacifique' in object 'correspLevel7to5'
+  'Thazard tigr<e9>' in object 'correspLevel7to5'
+  'Thon <e0> nageoires noires' in object 'correspLevel7to5'
+  'Thon <e9>l<e9>gant' in object 'correspLevel7to5'
+  'Thon ob<e8>se(=Patudo)' in object 'correspLevel7to5'
+  'Thonid<e9>s nca' in object 'correspLevel7to5'
+  'Thracie velout<e9>e' in object 'correspLevel7to5'
+  'Tile oeil dor<e9>' in object 'correspLevel7to5'
+  'Tombourou <e0> taches blanches' in object 'correspLevel7to5'
+  'Tonne canalicul<e9>e' in object 'correspLevel7to5'
+  'Tonne cannel<e9>e' in object 'correspLevel7to5'
+  'Tonne c<f4>tel<e9>e' in object 'correspLevel7to5'
+  'Tonne fasci<e9>e' in object 'correspLevel7to5'
+  'Tonne huil<e9>e' in object 'correspLevel7to5'
+  'Tonne tachet<e9>e' in object 'correspLevel7to5'
+  'Torpille marbr<e9>e' in object 'correspLevel7to5'
+  'Torpille ocell<e9>e' in object 'correspLevel7to5'
+  'Torpilles, raies <e9>lectriq. nca' in object 'correspLevel7to5'
+  'Tortues diamant<e9>es' in object 'correspLevel7to5'
+  'Tourteau dent<e9>' in object 'correspLevel7to5'
+  'Tourteau po<ef>nclos' in object 'correspLevel7to5'
+  'Trachypt<e8>re atlantique' in object 'correspLevel7to5'
+  'Trachypt<e8>res, poissons-rubans' in object 'correspLevel7to5'
+  'Tr<e9>pang <e0> canaux blancs' in object 'correspLevel7to5'
+  'Tr<e9>pang rose' in object 'correspLevel7to5'
+  'Tridacne g<e9>ante' in object 'correspLevel7to5'
+  'Triton bossel<e9>' in object 'correspLevel7to5'
+  'Triton cutac<e9>' in object 'correspLevel7to5'
+  'Triton <e9>maill<e9>' in object 'correspLevel7to5'
+  'Triton fronc<e9>' in object 'correspLevel7to5'
+  'Triton tachet<e9>' in object 'correspLevel7to5'
+  'Troque blanch<e2>tre' in object 'correspLevel7to5'
+  'Troque fen<ea>tre' in object 'correspLevel7to5'
+  'Troque granul<e9>' in object 'correspLevel7to5'
+  'Troque margin<e9>' in object 'correspLevel7to5'
+  'Troque pygm<e9>e' in object 'correspLevel7to5'
+  'Troque ray<e9>' in object 'correspLevel7to5'
+  'Troque tachet<e9>' in object 'correspLevel7to5'
+  'Truite dor<e9>e' in object 'correspLevel7to5'
+  'Turban canalicul<e9>' in object 'correspLevel7to5'
+  'Turban des <e9>boulis' in object 'correspLevel7to5'
+  'Turban <e9>cailleux' in object 'correspLevel7to5'
+  'Turban imbriqu<e9>' in object 'correspLevel7to5'
+  'Turban incis<e9>' in object 'correspLevel7to5'
+  'Turban ondul<e9>' in object 'correspLevel7to5'
+  'Turbinelle des Cara<ef>bes' in object 'correspLevel7to5'
+  'Turbinelle <e9>pineuse' in object 'correspLevel7to5'
+  'Turbo couronn<e9>' in object 'correspLevel7to5'
+  'Turbo <e9>pais' in object 'correspLevel7to5'
+  'Turbo <e9>peronn<e9>' in object 'correspLevel7to5'
+  'Turbot <e9>pineux' in object 'correspLevel7to5'
+  'Turbot <e9>pineux-indien' in object 'correspLevel7to5'
+  'Turbot <e9>pineux tachet<e9>' in object 'correspLevel7to5'
+  'Turbots <e9>pineux nca' in object 'correspLevel7to5'
+  'Turritelle double car<e8>ne' in object 'correspLevel7to5'
+  'Uranoscope g<e9>ant' in object 'correspLevel7to5'
+  'Varech vein<e9>' in object 'correspLevel7to5'
+  'V<e9>nus blanche' in object 'correspLevel7to5'
+  'V<e9>nus bomb<e9>e' in object 'correspLevel7to5'
+  'V<e9>nus californienne' in object 'correspLevel7to5'
+  'V<e9>nus chambri<e8>re' in object 'correspLevel7to5'
+  'V<e9>nus colombienne' in object 'correspLevel7to5'
+  'V<e9>nus de Kellett' in object 'correspLevel7to5'
+  'V<e9>nus <e9>cailleuse' in object 'correspLevel7to5'
+  'V<e9>nus <e9>quilat<e9>rale' in object 'correspLevel7to5'
+  'V<e9>nus fertile' in object 'correspLevel7to5'
+  'V<e9>nus fine' in object 'correspLevel7to5'
+  'V<e9>nus japonaise' in object 'correspLevel7to5'
+  'V<e9>nus lisse du Pacifique' in object 'correspLevel7to5'
+  'V<e9>nus marbr<e9>e' in object 'correspLevel7to5'
+  'V<e9>nus naine' in object 'correspLevel7to5'
+  'V<e9>nus orn<e9>e' in object 'correspLevel7to5'
+  'V<e9>nus r<e2>pe' in object 'correspLevel7to5'
+  'V<e9>nus sillonn<e9>e' in object 'correspLevel7to5'
+  'V<e9>nus sinueuse' in object 'correspLevel7to5'
+  'V<e9>nus stri<e9>e' in object 'correspLevel7to5'
+  'V<e9>nus tiare' in object 'correspLevel7to5'
+  'V<e9>nus triple' in object 'correspLevel7to5'
+  'Vieille dor<e9>e' in object 'correspLevel7to5'
+  'Vieille <e9>toiles bleues' in object 'correspLevel7to5'
+  'Violet p<e9>doncule' in object 'correspLevel7to5'
+  'Violon cr<e9>puscule' in object 'correspLevel7to5'
+  'Virli <e0> clapet' in object 'correspLevel7to5'
+  'Virli <e9>quatorien' in object 'correspLevel7to5'
+  'Virli l<e9>opard' in object 'correspLevel7to5'
+  'Virli tachet<e9>' in object 'correspLevel7to5'
+  'Vivaneau <e0> bande brune' in object 'correspLevel7to5'
+  'Vivaneau <e0> cinq bandes' in object 'correspLevel7to5'
+  'Vivaneau <e0> raies bleues' in object 'correspLevel7to5'
+  'Vivaneau <e0> raies jaunes' in object 'correspLevel7to5'
+  'Vivaneau camp<e8>che' in object 'correspLevel7to5'
+  'Vivaneau de Gor<e9>e' in object 'correspLevel7to5'
+  'Vivaneau dor<e9>' in object 'correspLevel7to5'
+  'Vivaneau <e9>glefin' in object 'correspLevel7to5'
+  'Vivaneau p<e2>le' in object 'correspLevel7to5'
+  'Vivaneau rouill<e9>' in object 'correspLevel7to5'
+  'Vivaneau stri<e9>' in object 'correspLevel7to5'
+  'Vivanette sell<e9>e' in object 'correspLevel7to5'
+  'Volute angul<e9>e' in object 'correspLevel7to5'
+  'Volute diad<e8>me' in object 'correspLevel7to5'
+  'Volute marbr<e9>e' in object 'correspLevel7to5'
+  'Volute trompe d'<e9>l<e9>phant' in object 'correspLevel7to5'
+  'Wakam<e9>' in object 'correspLevel7to5'
+  'Zost<e8>re naine' in object 'correspLevel7to5'
+  '<c5>BENR<c5>' in object 'harbours'
+  'Aber Wrac h (Land<e9>da)' in object 'harbours'
+  '<c6>R<d8>SK<d8>BING' in object 'harbours'
+  'AGER<d8>' in object 'harbours'
+  'AGERS<d8>' in object 'harbours'
+  '<c5>LB<c6>K' in object 'harbours'
+  '<c5>LBORG' in object 'harbours'
+  'ALCAL<c1>' in object 'harbours'
+  'ALR<d8>' in object 'harbours'
+  '<c5>LSG<c5>RDE' in object 'harbours'
+  'APPEN<c6>S' in object 'harbours'
+  'Ar<e8>s' in object 'harbours'
+  '<c5>RGAB' in object 'harbours'
+  '<c5>RHUS' in object 'harbours'
+  '<c5>R<d8>' in object 'harbours'
+  '<c5>R<d8>SUND' in object 'harbours'
+  'ARRESKOV S<d8>' in object 'harbours'
+  'ARRES<d8>' in object 'harbours'
+  'Ars-en-R<e9>' in object 'harbours'
+  '<c5>RSDALE' in object 'harbours'
+  'AS<c5>' in object 'harbours'
+  'ASK<d8>' in object 'harbours'
+  'ASN<c6>S' in object 'harbours'
+  'AVERNAK<d8>' in object 'harbours'
+  'Bagg<f6>' in object 'harbours'
+  'B<c5>G<d8>' in object 'harbours'
+  'BALLEN (SAMS<d8>)' in object 'harbours'
+  'BA<d1>UGUES' in object 'harbours'
+  'B<c5>RING' in object 'harbours'
+  'BASN<c6>S' in object 'harbours'
+  'BASTRUP S<d8>' in object 'harbours'
+  'BAVELSE S<d8>' in object 'harbours'
+  'Belle-<ce>le-en-Mer (ens. de communes)' in object 'harbours'
+  'B<e9>nodet' in object 'harbours'
+  'Berg<f6>' in object 'harbours'
+  'Berni<e8>res-sur-Mer' in object 'harbours'
+  'Bestr<e9>e (Plogoff)' in object 'harbours'
+  'BIRKS<d8>' in object 'harbours'
+  'BJERREG<c5>RD' in object 'harbours'
+  'BJ<d8>RN<d8>' in object 'harbours'
+  'BL<c5>VAND' in object 'harbours'
+  'B<d8>GESKOVEN' in object 'harbours'
+  'BOG<d8>' in object 'harbours'
+  'B<d8>JDEN' in object 'harbours'
+  'B<d8>LSHAVN' in object 'harbours'
+  'B<d8>NNERUP' in object 'harbours'
+  'BOVENSE MOSE (<d8>STFYN)' in object 'harbours'
+  'B<d8>VLING HAVN = B<d8>VLINGBJERG' in object 'harbours'
+  'B<d8>VLINGBJERG' in object 'harbours'
+  'Boyardville (Saint-Georges-d Ol<e9>ron)' in object 'harbours'
+  'BREGN<d8>R' in object 'harbours'
+  'Br<e9>hec (plusieurs communes)' in object 'harbours'
+  'Br<e9>zellec (Plogoff)' in object 'harbours'
+  'Brigneau (Mo<eb>lan-sur-Mer)' in object 'harbours'
+  'Bugu<e9>l<e8>s (Penv<e9>nan)' in object 'harbours'
+  'BURES<d8>' in object 'harbours'
+  'Calvi / L <ce>le-Rousse' in object 'harbours'
+  'CAMARI<d1>AS' in object 'harbours'
+  'Camo<eb>l' in object 'harbours'
+  'Cap-Ferret (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Carg<e8>se' in object 'harbours'
+  'Cari<f1>o' in object 'harbours'
+  'CARREIRA-AGUI<d1>O' in object 'harbours'
+  'CHRISTIANS<d8>' in object 'harbours'
+  'Claouey (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Cl<e9>der' in object 'harbours'
+  'Collioure / Argel<e8>s-sur-Mer' in object 'harbours'
+  'Cou<eb>ron' in object 'harbours'
+  'DAGEL<d8>KKE' in object 'harbours'
+  'Dahou<eb>t (Pl<e9>neuf-Val-Andr<e9>)' in object 'harbours'
+  'DALSG<c5>RD' in object 'harbours'
+  'Di<e9>lette (Flamanville)' in object 'harbours'
+  'Do<eb>lan (Clohars-Carno<eb>t)' in object 'harbours'
+  'DRAG<d8>R' in object 'harbours'
+  'DREJ<d8>' in object 'harbours'
+  'DYBS<d8>' in object 'harbours'
+  'Dziwn<f3>w' in object 'harbours'
+  'El<e4>visluoto' in object 'harbours'
+  'ESPERG<c6>RDE' in object 'harbours'
+  'ESRUM S<d8>' in object 'harbours'
+  'Etang du Pr<e9>vost (ens. de communes)' in object 'harbours'
+  '<c9>taples' in object 'harbours'
+  '<c9>tretat' in object 'harbours'
+  'F<c5>BORG' in object 'harbours'
+  'F<c6>N<d8>' in object 'harbours'
+  'F<e9>camp' in object 'harbours'
+  'FEJ<d8>' in object 'harbours'
+  'FEM<d8>' in object 'harbours'
+  'FISKERIHAVNEN/K<d8>BENHAVN' in object 'harbours'
+  'FJ<c6>LLEBROEN' in object 'harbours'
+  'FLADE S<d8>' in object 'harbours'
+  'FLYNDERS<d8>' in object 'harbours'
+  'F<d8>NSSKOV' in object 'harbours'
+  'F<d8>RBY S<d8>' in object 'harbours'
+  'FREDERIKSV<c6>RK' in object 'harbours'
+  'FURES<d8>' in object 'harbours'
+  'G<c5>BENSE' in object 'harbours'
+  'GAMMEL <c5>LBO' in object 'harbours'
+  'G<e2>vres' in object 'harbours'
+  'Gen<ea>ts' in object 'harbours'
+  'GERSH<d8>J' in object 'harbours'
+  'GERS<d8> HUSE' in object 'harbours'
+  'Giens / Porquerolles (Hy<e8>res)' in object 'harbours'
+  'GJ<d8>L' in object 'harbours'
+  'GL<c6>N<d8>' in object 'harbours'
+  'GLENSTRUP S<d8>' in object 'harbours'
+  'GLYNG<d8>RE' in object 'harbours'
+  'G<f3>rki Wschodnie' in object 'harbours'
+  'G<f3>rki Zachodnie' in object 'harbours'
+  'Grand Piquey (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'GR<c5>STEN' in object 'harbours'
+  'GREN<c5>' in object 'harbours'
+  'GR<d8>NSUND' in object 'harbours'
+  'GUDS<d8>' in object 'harbours'
+  'Gu<e9>thary / Bidart / Biarritz' in object 'harbours'
+  'GUNDS<d8>MAGLE S<d8>' in object 'harbours'
+  'GURRE S<d8>' in object 'harbours'
+  'GYRSTINGE S<d8>' in object 'harbours'
+  'H<c5>RB<d8>LLEBRO' in object 'harbours'
+  'HARBO<d8>RE' in object 'harbours'
+  'HARDESH<d8>J' in object 'harbours'
+  'HASSEL<d8>' in object 'harbours'
+  'HAVNS<d8>' in object 'harbours'
+  'HELN<c6>S' in object 'harbours'
+  'HELSING<d8>R' in object 'harbours'
+  'HESN<c6>S' in object 'harbours'
+  'HJARB<c6>K' in object 'harbours'
+  'H<d8>JER' in object 'harbours'
+  'HOLB<c6>K' in object 'harbours'
+  'H<d8>LKERUP' in object 'harbours'
+  'H<d8>RBY' in object 'harbours'
+  'HORNB<c6>K' in object 'harbours'
+  'H<d8>RUPHAV' in object 'harbours'
+  'HOV (<d8>STJYLLAND)' in object 'harbours'
+  'H<d8>V<c6>NGE' in object 'harbours'
+  'HOVS<d8>R' in object 'harbours'
+  'HUMLEB<c6>K' in object 'harbours'
+  'HVIDKILDE S<d8> (V. SVENDBORG)' in object 'harbours'
+  'Ile-de-Br<e9>hat' in object 'harbours'
+  'ILLEB<d8>LLE' in object 'harbours'
+  'Ing<e5> Fiskehamn' in object 'harbours'
+  'J<c6>GERSPRIS' in object 'harbours'
+  'JEGIND<d8>' in object 'harbours'
+  'JULS<d8>' in object 'harbours'
+  'K<e4>ldinge' in object 'harbours'
+  'KALV<d8>' in object 'harbours'
+  'KARREB<c6>KSMINDE' in object 'harbours'
+  'Kask<f6>' in object 'harbours'
+  'Kasn<e4>s' in object 'harbours'
+  'Keih<e4>ssalmi' in object 'harbours'
+  'K<e9>rascou<eb>t (H<f4>pital-Camfrout)' in object 'harbours'
+  'Kerdruc (N<e9>vez)' in object 'harbours'
+  'K<e9>rity (Penmarch)' in object 'harbours'
+  'KLITG<c5>RDS FISKERLEJE' in object 'harbours'
+  'KLITM<d8>LLER' in object 'harbours'
+  'KNUDS<d8>' in object 'harbours'
+  'K<d8>BENHAVN' in object 'harbours'
+  'K<d8>GE' in object 'harbours'
+  'K<d8>GE S<d8>NAKKE' in object 'harbours'
+  'KOLBY K<c5>S' in object 'harbours'
+  'KONGSG<c5>RDE' in object 'harbours'
+  'K<f5>rgessaare' in object 'harbours'
+  'KORSHAVN (V. AVERNAK<d8>)' in object 'harbours'
+  'KORS<d8>R' in object 'harbours'
+  'KRAGEN<c6>S' in object 'harbours'
+  'KV<c6>STHUSBROEN' in object 'harbours'
+  'L Arcou<eb>st / Cornec (Ploubazlanec)' in object 'harbours'
+  'L Herbaudi<e8>re (Noirmoutier-en-l <ce>le)' in object 'harbours'
+  'L Herbe (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'La Barboti<e8>re (Gujan-Mestras)' in object 'harbours'
+  'La Coru<f1>a' in object 'harbours'
+  'La Cotini<e8>re (Saint-Pierre-d Ol<e9>ron)' in object 'harbours'
+  'La Flotte-en-R<e9> (La Flotte)' in object 'harbours'
+  'La For<ea>t-Fouesnant' in object 'harbours'
+  'La Fosse (Barb<e2>tre)' in object 'harbours'
+  'La Martini<e8>re (Le Pellerin)' in object 'harbours'
+  'La Puebla Del Carami<f1>al' in object 'harbours'
+  'La Trinit<e9>-sur-Mer' in object 'harbours'
+  'La Vigne (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Lamarque (Saint-Yzans-de-M<e9>doc)' in object 'harbours'
+  'Land<e9>da' in object 'harbours'
+  'Land<e9>vennec' in object 'harbours'
+  'LANG<d8>' in object 'harbours'
+  'LANG<d8>R' in object 'harbours'
+  'Le Barcar<e8>s' in object 'harbours'
+  'Le Bonhomme (La Gu<e9>rini<e8>re)' in object 'harbours'
+  'Le Canon (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Le Ch<e2>teau-d Ol<e9>ron' in object 'harbours'
+  'Le Douhet (Saint-Denis-d Ol<e9>ron)' in object 'harbours'
+  'Le Fr<ea>t (Crozon)' in object 'harbours'
+  'Le Morin  (La Gu<e9>rini<e8>re)' in object 'harbours'
+  'Le Pouldu (Clohars-Carno<eb>t)' in object 'harbours'
+  'Le Tr<e9>port' in object 'harbours'
+  'L<e8>ge (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Les Boucholeurs (Ch<e2>telaillon-Plage)' in object 'harbours'
+  'Les Jacquets (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'L<e9>zardrieux' in object 'harbours'
+  'Locmiqu<e9>lic' in object 'harbours'
+  'Locqu<e9>meau (Tr<e9>drez-Locqu<e9>meau)' in object 'harbours'
+  'L<d8>GST<d8>R' in object 'harbours'
+  'L<d8>KKEN' in object 'harbours'
+  'L<d8>NSTRUP' in object 'harbours'
+  'LUMS<c5>S' in object 'harbours'
+  'LUNDEH<d8>JE' in object 'harbours'
+  'LUND<d8>' in object 'harbours'
+  'LYN<c6>S' in object 'harbours'
+  'LY<d8>' in object 'harbours'
+  'MADES<d8>' in object 'harbours'
+  'Malpica de Berganti<f1>os' in object 'harbours'
+  'MARB<c6>K' in object 'harbours'
+  'M<c5>RUP HAVN' in object 'harbours'
+  'MASNED<d8>' in object 'harbours'
+  'Merrien (Mo<eb>lan-sur-Mer)' in object 'harbours'
+  'M<e8>ze' in object 'harbours'
+  'MI<d1>O' in object 'harbours'
+  'Moa<f1>a' in object 'harbours'
+  'Mol<e8>ne (Ile-Mol<e8>ne)' in object 'harbours'
+  'M<f5>ntu' in object 'harbours'
+  'M<d8>RKHOLT' in object 'harbours'
+  'MOSS<d8>' in object 'harbours'
+  'N<c6>STVED' in object 'harbours'
+  'Narva-J<f5>esuu' in object 'harbours'
+  'NEDER DR<c5>BY' in object 'harbours'
+  'NEKSEL<d8>' in object 'harbours'
+  'NEX<d8>' in object 'harbours'
+  'NIV<c5>' in object 'harbours'
+  'Noirmoutier-en-l <ce>le' in object 'harbours'
+  'N<d8>RRE BORK (BORK HAVN)' in object 'harbours'
+  'N<d8>RRE LYNGBY' in object 'harbours'
+  'N<d8>RRE LYNGVIG' in object 'harbours'
+  'N<d8>RRE NISSUM (LIMFJORD)' in object 'harbours'
+  'N<d8>RRE VEDBY' in object 'harbours'
+  'N<d8>RRE VORUP<d8>R' in object 'harbours'
+  'N<d8>RREBY' in object 'harbours'
+  'N<d8>RRESUNDBY' in object 'harbours'
+  'NORS S<d8>' in object 'harbours'
+  'NYB<d8>L' in object 'harbours'
+  'NYK<d8>BING F' in object 'harbours'
+  'NYK<d8>BING M' in object 'harbours'
+  'NYK<d8>BING S' in object 'harbours'
+  '<d8>LSTED' in object 'harbours'
+  'OM<d8>' in object 'harbours'
+  '<d8>RBYHAGE' in object 'harbours'
+  'OR<d8> HAVN' in object 'harbours'
+  '<d8>RODDE' in object 'harbours'
+  '<d8>RSLEVKLOSTER S<d8>' in object 'harbours'
+  '<d8>RUM S<d8>' in object 'harbours'
+  '<d6>skata/N<e4>mpn<e4>s' in object 'harbours'
+  '<d8>STER HURUP' in object 'harbours'
+  '<d8>STERBY' in object 'harbours'
+  '<d8>STERHUSE (LANGELAND)' in object 'harbours'
+  '<d8>STERSKOV STRAND (SYDLANGELAND)' in object 'harbours'
+  '<d8>STSKOV' in object 'harbours'
+  'OVES<d8>' in object 'harbours'
+  'OVI<d1>ANA' in object 'harbours'
+  'Paldiski L<f5>unasadam' in object 'harbours'
+  'Paldiski P<f5>hjasadam' in object 'harbours'
+  'PAMHULE S<d8>' in object 'harbours'
+  'P<e4>rnu' in object 'harbours'
+  'Pempoul (Saint-Pol-de-L<e9>on)' in object 'harbours'
+  'PE<d1>ISCOLA' in object 'harbours'
+  'PETERV<c6>RFT' in object 'harbours'
+  'Petit Piquey (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Piraillan (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Port-Blanc (Tr<e9>vou-Tr<e9>guignec)' in object 'harbours'
+  'Port-Lazo (Plou<e9>zec)' in object 'harbours'
+  'Port-Saint-Louis-du-Rh<f4>ne' in object 'harbours'
+  'Port de Goul<e9>e (Valeyrac)' in object 'harbours'
+  'Port le Four (L<e8>ge-Cap-Ferret)' in object 'harbours'
+  'Port Manec h (N<e9>vez)' in object 'harbours'
+  'PR<c6>ST<d8>' in object 'harbours'
+  'Pr<e9>failles' in object 'harbours'
+  'PUERTITO DE G<dc>IMAR' in object 'harbours'
+  'Ragu<e9>n<e8>s (N<e9>vez)' in object 'harbours'
+  'REB<c6>K' in object 'harbours'
+  'REERS<d8>' in object 'harbours'
+  'REFS<d8>RE' in object 'harbours'
+  'Regn<e9>ville-sur-Mer' in object 'harbours'
+  'RINGK<d8>BING' in object 'harbours'
+  'R<d8>DBY HAVN' in object 'harbours'
+  'RODDENBJERG S<d8>' in object 'harbours'
+  'R<d8>DHUS' in object 'harbours'
+  'R<d8>DS<d8>' in object 'harbours'
+  'R<d8>DVIG' in object 'harbours'
+  'Rohuk<fc>la' in object 'harbours'
+  'R<d8>NBJERG' in object 'harbours'
+  'R<d8>NNE' in object 'harbours'
+  'R<d8>NNERHAVN' in object 'harbours'
+  'R<d8>RVIG' in object 'harbours'
+  'R<d8>SN<c6>S' in object 'harbours'
+  'RUDK<d8>BING' in object 'harbours'
+  'RYDSB<c6>K' in object 'harbours'
+  'S<c6>BY' in object 'harbours'
+  'S<c6>NE' in object 'harbours'
+  'Saint-Andr<e9>-de-Cubzac' in object 'harbours'
+  'Saint-Christoly-M<e9>doc' in object 'harbours'
+  'Saint-Est<e8>phe' in object 'harbours'
+  'Saint-Gu<e9>nol<e9> (Penmarch)' in object 'harbours'
+  'Saint-Martin-de-R<e9>' in object 'harbours'
+  'Saint-Rapha<eb>l' in object 'harbours'
+  'Saint-Vivien-de-M<e9>doc' in object 'harbours'
+  'SAKSK<d8>BING' in object 'harbours'
+  'Salins d Hy<e8>res (Hy<e8>res)' in object 'harbours'
+  'SALTB<c6>K VIG' in object 'harbours'
+  'SALTEN LANGS<d8>' in object 'harbours'
+  'SAN SEBASTI<c1>N DE LA GOMERA' in object 'harbours'
+  'SANDVIG (SYDSJ<c6>LLAND)' in object 'harbours'
+  'SANTA<d1>Y' in object 'harbours'
+  'SANTO<d1>A' in object 'harbours'
+  'Sein (<ce>le-de-Sein)' in object 'harbours'
+  'SEJER<d8>' in object 'harbours'
+  'S<e9>n<e9>' in object 'harbours'
+  'S<e8>te' in object 'harbours'
+  'SEVED<d8>' in object 'harbours'
+  'SILKEBORG LANGS<d8>' in object 'harbours'
+  'Sillam<e4>e' in object 'harbours'
+  'SJ<c6>LS<d8>' in object 'harbours'
+  'SK<c6>LSK<d8>R' in object 'harbours'
+  'SK<c6>RB<c6>K' in object 'harbours'
+  'SK<c6>RING' in object 'harbours'
+  'SKAL<d8>' in object 'harbours'
+  'SKANDERBORG S<d8>' in object 'harbours'
+  'SKAR<d8>' in object 'harbours'
+  'SKARRES<d8>' in object 'harbours'
+  'SK<c5>RUP<d8>RE' in object 'harbours'
+  'SK<d8>DSHOVED STRAND' in object 'harbours'
+  'SKUDEHAVNEN/K<d8>BENHAVN' in object 'harbours'
+  'SN<c6>BUM S<d8>' in object 'harbours'
+  'SN<d8>DE HESSELBJERG' in object 'harbours'
+  'SNOGEB<c6>K' in object 'harbours'
+  'SNOGH<d8>J' in object 'harbours'
+  'S<d8>BY' in object 'harbours'
+  'S<d8>LAGER' in object 'harbours'
+  'SOLR<d8>D' in object 'harbours'
+  'S<d8>MARKEN' in object 'harbours'
+  'S<d8>NDER <c5>BY' in object 'harbours'
+  'S<d8>NDER LYNGVIG' in object 'harbours'
+  'S<d8>NDER NISSUM (NISSUM FJORD)' in object 'harbours'
+  'S<d8>NDER THISE' in object 'harbours'
+  'S<d8>NDERBALLE STRAND' in object 'harbours'
+  'S<d8>NDERBORG' in object 'harbours'
+  'S<d8>NDERHAV' in object 'harbours'
+  'S<d8>NDERSKOV (<d8>ST FOR SK<c6>RB<c6>K)' in object 'harbours'
+  'S<d8>NDERSKOV HUSE' in object 'harbours'
+  'S<d8>NDERS<d8> (VED MARIBO)' in object 'harbours'
+  'S<d8>NDERVIG' in object 'harbours'
+  'SOR<d8> S<d8>' in object 'harbours'
+  'SORTS<d8>' in object 'harbours'
+  'S<f5>ru' in object 'harbours'
+  'STAVREBY (SYDSJ<c6>LLAND)' in object 'harbours'
+  'STIGSN<c6>S' in object 'harbours'
+  'STILLING SOLBJERG S<d8>' in object 'harbours'
+  'STORE KATTINGE S<d8>' in object 'harbours'
+  'STORE SN<d8>DE' in object 'harbours'
+  'STR<d8>BY LADEPLADS' in object 'harbours'
+  'STRYN<d8>' in object 'harbours'
+  'STUBBE S<d8>' in object 'harbours'
+  'STUBBEK<d8>BING' in object 'harbours'
+  'SUNDS<d8>RE' in object 'harbours'
+  'SVIN<d8>' in object 'harbours'
+  'SVOGERSLEV S<d8>' in object 'harbours'
+  'Swinoujscie-Karsib<f3>r' in object 'harbours'
+  'Swinoujscie-Przyt<f3>r' in object 'harbours'
+  'TANGE S<d8>' in object 'harbours'
+  'T<c5>RB<c6>K' in object 'harbours'
+  'T<c5>RS' in object 'harbours'
+  'TEGLK<c5>S' in object 'harbours'
+  'T<e9>renez (Plougasnou)' in object 'harbours'
+  'THUR<d8>' in object 'harbours'
+  'THYBOR<d8>N' in object 'harbours'
+  'TJELE LANGS<d8>' in object 'harbours'
+  'T<d8>MMERBY FJORD' in object 'harbours'
+  'TOR<d8> HUSE' in object 'harbours'
+  'Tr<e9>beurden' in object 'harbours'
+  'Tr<e9>boul (Douarnenez)' in object 'harbours'
+  'Tr<e9>gastel' in object 'harbours'
+  'Tr<e9>guier' in object 'harbours'
+  'Tr<e9>higuier-en-P<e9>nestin (P<e9>nestin)' in object 'harbours'
+  'Tr<e9>l<e9>vern' in object 'harbours'
+  'Tr<e9>mazan (Portsall)' in object 'harbours'
+  'Tr<e9>vignon (Tr<e9>gunc)' in object 'harbours'
+  'Tudy (<ce>le-Tudy)' in object 'harbours'
+  'TUN<d8>' in object 'harbours'
+  'TYSTRUP S<d8>' in object 'harbours'
+  'UDBYH<d8>J NORD' in object 'harbours'
+  'UDBYH<d8>J SYD' in object 'harbours'
+  'ULSE S<d8>' in object 'harbours'
+  'VANDET S<d8>' in object 'harbours'
+  'Varess<e4>ikk<e4>' in object 'harbours'
+  'VEDB<c6>K' in object 'harbours'
+  'VEDERS<d8>' in object 'harbours'
+  'VEMMEN<c6>S' in object 'harbours'
+  'VEN<d8>' in object 'harbours'
+  'VESTERBORG S<d8>' in object 'harbours'
+  'VESTER<d8>' in object 'harbours'
+  'VIBORG S<d8>' in object 'harbours'
+  'VILSUND <d8>ST' in object 'harbours'
+  'VOERS<c5>' in object 'harbours'
+  'VON<c5>' in object 'harbours'
+  'hav<f8>ysund' in object 'harbours'
+* checking data for ASCII and uncompressed saves ... WARNING
+  
+  Note: significantly better compression could be obtained
+        by using R CMD build --resave-data
+                       old_size new_size compress
+  correspLevel7to5.rda    293Kb    209Kb       xz
+  ICESareas.RData        18.2Mb   11.2Mb       xz
+  eflalo.RData            505Kb    416Kb       xz
+  europa.RData            1.1Mb    616Kb       xz
+  harbours.RData          104Kb     58Kb       xz
+  tacsat.RData            1.8Mb    1.3Mb       xz
+* checking examples ... ERROR
+Running examples in ‘vmstools-Ex.R’ failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: calc_mcp
+> ### Title: Computing the Minimum Convex Polygon (MCP)
+> ### Aliases: calc_mcp
+> 
+> ### ** Examples
+> 
+> data(tacsat)
+> calc_mcp(id=1, points = tacsat[1:10,c("SI_LONG","SI_LATI")], filename="MCP_Output.txt",
++ verbose = FALSE, pct = 100)
+Loading required package: adehabitat
+Warning in library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called ‘adehabitat’
+Error in mcp(temp[, 2:3], temp[, 1], percent = pct) : 
+  could not find function "mcp"
+Calls: calc_mcp
+Execution halted
+* DONE
+Status: 1 ERROR, 11 WARNINGs, 5 NOTEs

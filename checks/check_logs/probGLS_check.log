@@ -1,0 +1,15 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/probGLS.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘probGLS/DESCRIPTION’ ... OK
+* this is package ‘probGLS’ version ‘0.9.5’
+* checking package namespace information ... OK
+* checking package dependencies ... ERROR
+Namespace dependencies not required: 'maps', 'sp'
+
+See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’
+manual.
+* DONE
+Status: 1 ERROR

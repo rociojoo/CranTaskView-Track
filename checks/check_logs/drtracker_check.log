@@ -1,0 +1,303 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/drtracker.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘drtracker/DESCRIPTION’ ... OK
+* this is package ‘drtracker’ version ‘1.1.0’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘drtracker’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+Packages in Depends field not imported from:
+  ‘Cairo’ ‘ggplot2’ ‘plyr’
+  These packages need to be imported from (in the NAMESPACE file)
+  for when this namespace is loaded but not attached.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+assignWells: no visible global function definition for ‘read.delim’
+assignWells: no visible global function definition for ‘chull’
+assignWells: no visible global function definition for ‘write.table’
+assignWells: no visible global function definition for ‘ggplot’
+assignWells: no visible global function definition for ‘aes’
+assignWells: no visible binding for global variable ‘x’
+assignWells: no visible binding for global variable ‘y’
+assignWells: no visible global function definition for ‘geom_point’
+assignWells: no visible global function definition for ‘ggtitle’
+assignWells: no visible global function definition for
+  ‘scale_y_reverse’
+assignWells: no visible global function definition for ‘theme_bw’
+assignWells: no visible global function definition for ‘theme’
+assignWells: no visible global function definition for ‘element_text’
+assignWells: no visible global function definition for ‘element_blank’
+assignWells: no visible global function definition for ‘element_line’
+assignWells: no visible global function definition for ‘ggsave’
+assignWells: no visible global function definition for ‘txtProgressBar’
+assignWells: no visible global function definition for
+  ‘setTxtProgressBar’
+assignWells: no visible global function definition for ‘geom_blank’
+assignWells: no visible global function definition for ‘geom_rect’
+assignWells: no visible binding for global variable ‘well’
+assignWells: no visible global function definition for ‘geom_text’
+assignWells: no visible binding for global variable ‘labx’
+assignWells: no visible binding for global variable ‘laby’
+assignWells: no visible global function definition for
+  ‘scale_x_continuous’
+assignWells: no visible global function definition for ‘labs’
+assignWells: no visible global function definition for ‘coord_fixed’
+linkFrames: no visible global function definition for ‘read.delim’
+linkFrames: no visible global function definition for ‘txtProgressBar’
+linkFrames: no visible global function definition for
+  ‘setTxtProgressBar’
+linkFrames: no visible binding for global variable ‘well’
+linkFrames: no visible global function definition for ‘ggplot’
+linkFrames: no visible global function definition for ‘geom_point’
+linkFrames: no visible global function definition for ‘aes’
+linkFrames: no visible binding for global variable ‘x’
+linkFrames: no visible binding for global variable ‘y’
+linkFrames: no visible binding for global variable ‘frame’
+linkFrames: no visible global function definition for ‘geom_line’
+linkFrames: no visible binding for global variable ‘id’
+linkFrames: no visible global function definition for ‘geom_text’
+linkFrames: no visible global function definition for
+  ‘scale_shape_manual’
+linkFrames: no visible global function definition for
+  ‘scale_fill_manual’
+linkFrames: no visible global function definition for ‘ggtitle’
+linkFrames: no visible global function definition for ‘labs’
+linkFrames: no visible global function definition for ‘theme_bw’
+linkFrames: no visible global function definition for ‘theme’
+linkFrames: no visible global function definition for ‘element_text’
+linkFrames: no visible global function definition for ‘element_blank’
+linkFrames: no visible global function definition for ‘geom_path’
+linkFrames: no visible global function definition for ‘write.table’
+linkFrames: no visible global function definition for ‘geom_blank’
+linkFrames: no visible binding for global variable ‘linktype’
+linkFrames: no visible binding for global variable ‘labx’
+linkFrames: no visible binding for global variable ‘laby’
+linkFrames: no visible global function definition for
+  ‘scale_x_continuous’
+linkFrames: no visible global function definition for ‘scale_y_reverse’
+linkFrames: no visible global function definition for
+  ‘scale_colour_manual’
+linkFrames: no visible global function definition for ‘coord_fixed’
+linkFrames: no visible global function definition for ‘ggsave’
+ltrack: no visible global function definition for ‘read.delim’
+ltrack: no visible global function definition for ‘write.table’
+spotAlphahull: no visible global function definition for ‘read.delim’
+spotAlphahull: no visible global function definition for
+  ‘txtProgressBar’
+spotAlphahull: no visible global function definition for
+  ‘setTxtProgressBar’
+spotAlphahull: no visible global function definition for ‘write.table’
+spotAlphahull: no visible global function definition for ‘ggplot’
+spotAlphahull: no visible global function definition for ‘geom_blank’
+spotAlphahull: no visible global function definition for ‘aes’
+spotAlphahull: no visible binding for global variable ‘x’
+spotAlphahull: no visible binding for global variable ‘y’
+spotAlphahull: no visible global function definition for ‘geom_point’
+spotAlphahull: no visible global function definition for ‘geom_segment’
+spotAlphahull: no visible binding for global variable ‘x1’
+spotAlphahull: no visible binding for global variable ‘x2’
+spotAlphahull: no visible binding for global variable ‘y1’
+spotAlphahull: no visible binding for global variable ‘y2’
+spotAlphahull: no visible binding for global variable ‘well’
+spotAlphahull: no visible global function definition for ‘geom_text’
+spotAlphahull: no visible binding for global variable ‘labx’
+spotAlphahull: no visible binding for global variable ‘laby’
+spotAlphahull: no visible global function definition for
+  ‘scale_x_continuous’
+spotAlphahull: no visible global function definition for
+  ‘scale_y_reverse’
+spotAlphahull: no visible global function definition for ‘theme_bw’
+spotAlphahull: no visible global function definition for ‘labs’
+spotAlphahull: no visible global function definition for ‘coord_fixed’
+spotAlphahull: no visible global function definition for ‘theme’
+spotAlphahull: no visible global function definition for ‘element_text’
+spotAlphahull: no visible global function definition for
+  ‘element_blank’
+spotAlphahull: no visible global function definition for ‘ggsave’
+spotCoverage: no visible global function definition for ‘read.delim’
+spotCoverage: no visible global function definition for
+  ‘txtProgressBar’
+spotCoverage: no visible global function definition for
+  ‘setTxtProgressBar’
+spotCoverage: no visible global function definition for ‘chull’
+spotCoverage: no visible global function definition for ‘write.table’
+spotCoverage: no visible global function definition for ‘ggplot’
+spotCoverage: no visible global function definition for ‘geom_blank’
+spotCoverage: no visible global function definition for ‘aes’
+spotCoverage: no visible binding for global variable ‘x’
+spotCoverage: no visible binding for global variable ‘y’
+spotCoverage: no visible global function definition for ‘geom_rect’
+spotCoverage: no visible binding for global variable ‘h1’
+spotCoverage: no visible binding for global variable ‘h2’
+spotCoverage: no visible binding for global variable ‘v1’
+spotCoverage: no visible binding for global variable ‘v2’
+spotCoverage: no visible global function definition for ‘geom_point’
+spotCoverage: no visible global function definition for ‘geom_polygon’
+spotCoverage: no visible binding for global variable ‘well’
+spotCoverage: no visible global function definition for ‘geom_text’
+spotCoverage: no visible binding for global variable ‘labx’
+spotCoverage: no visible binding for global variable ‘laby’
+spotCoverage: no visible global function definition for ‘theme_bw’
+spotCoverage: no visible global function definition for
+  ‘scale_x_continuous’
+spotCoverage: no visible global function definition for
+  ‘scale_y_reverse’
+spotCoverage: no visible global function definition for ‘labs’
+spotCoverage: no visible global function definition for ‘coord_fixed’
+spotCoverage: no visible global function definition for ‘theme’
+spotCoverage: no visible global function definition for ‘element_blank’
+spotCoverage: no visible global function definition for ‘element_text’
+spotCoverage: no visible global function definition for ‘ggsave’
+spotDensity: no visible global function definition for ‘read.delim’
+spotDensity: no visible global function definition for ‘txtProgressBar’
+spotDensity: no visible global function definition for
+  ‘setTxtProgressBar’
+spotDensity: no visible global function definition for
+  ‘colorRampPalette’
+spotDensity: no visible global function definition for ‘ggplot’
+spotDensity: no visible global function definition for ‘geom_blank’
+spotDensity: no visible global function definition for ‘aes’
+spotDensity: no visible binding for global variable ‘x’
+spotDensity: no visible binding for global variable ‘y’
+spotDensity: no visible global function definition for ‘geom_point’
+spotDensity: no visible global function definition for
+  ‘scale_colour_manual’
+spotDensity: no visible global function definition for ‘geom_text’
+spotDensity: no visible binding for global variable ‘labx’
+spotDensity: no visible binding for global variable ‘laby’
+spotDensity: no visible binding for global variable ‘well’
+spotDensity: no visible global function definition for
+  ‘scale_x_continuous’
+spotDensity: no visible global function definition for
+  ‘scale_y_reverse’
+spotDensity: no visible global function definition for ‘theme_bw’
+spotDensity: no visible global function definition for ‘labs’
+spotDensity: no visible global function definition for ‘coord_fixed’
+spotDensity: no visible global function definition for ‘theme’
+spotDensity: no visible global function definition for ‘element_text’
+spotDensity: no visible global function definition for ‘element_blank’
+spotDensity: no visible global function definition for ‘ggsave’
+spotMsd: no visible global function definition for ‘read.delim’
+spotMsd: no visible global function definition for ‘txtProgressBar’
+spotMsd: no visible global function definition for ‘setTxtProgressBar’
+spotMsd: no visible global function definition for ‘write.table’
+spotMsd: no visible global function definition for ‘ggplot’
+spotMsd: no visible global function definition for ‘geom_blank’
+spotMsd: no visible global function definition for ‘aes’
+spotMsd: no visible binding for global variable ‘x’
+spotMsd: no visible binding for global variable ‘y’
+spotMsd: no visible global function definition for ‘geom_segment’
+spotMsd: no visible binding for global variable ‘x0’
+spotMsd: no visible binding for global variable ‘x1’
+spotMsd: no visible binding for global variable ‘y0’
+spotMsd: no visible binding for global variable ‘y1’
+spotMsd: no visible binding for global variable ‘well’
+spotMsd: no visible global function definition for ‘geom_text’
+spotMsd: no visible binding for global variable ‘labx’
+spotMsd: no visible binding for global variable ‘laby’
+spotMsd: no visible global function definition for ‘scale_x_continuous’
+spotMsd: no visible global function definition for ‘scale_y_reverse’
+spotMsd: no visible global function definition for ‘theme_bw’
+spotMsd: no visible global function definition for ‘labs’
+spotMsd: no visible global function definition for ‘coord_fixed’
+spotMsd: no visible global function definition for ‘theme’
+spotMsd: no visible global function definition for ‘element_text’
+spotMsd: no visible global function definition for ‘element_blank’
+spotMsd: no visible global function definition for ‘ggsave’
+spotRatio: no visible global function definition for ‘read.delim’
+spotRatio: no visible global function definition for ‘txtProgressBar’
+spotRatio: no visible global function definition for
+  ‘setTxtProgressBar’
+spotRatio: no visible global function definition for ‘write.table’
+spotRatio: no visible global function definition for ‘ggplot’
+spotRatio: no visible global function definition for ‘geom_blank’
+spotRatio: no visible global function definition for ‘aes’
+spotRatio: no visible binding for global variable ‘x’
+spotRatio: no visible binding for global variable ‘y’
+spotRatio: no visible global function definition for ‘geom_polygon’
+spotRatio: no visible binding for global variable ‘well’
+spotRatio: no visible global function definition for ‘geom_point’
+spotRatio: no visible binding for global variable ‘spots_ratio’
+spotRatio: no visible global function definition for ‘geom_text’
+spotRatio: no visible binding for global variable ‘labx’
+spotRatio: no visible binding for global variable ‘laby’
+spotRatio: no visible global function definition for
+  ‘scale_x_continuous’
+spotRatio: no visible global function definition for ‘scale_y_reverse’
+spotRatio: no visible global function definition for ‘theme_bw’
+spotRatio: no visible global function definition for ‘labs’
+spotRatio: no visible global function definition for ‘coord_fixed’
+spotRatio: no visible global function definition for ‘theme’
+spotRatio: no visible global function definition for ‘element_text’
+spotRatio: no visible global function definition for ‘element_blank’
+spotRatio: no visible global function definition for ‘ggsave’
+trackFeatures: no visible global function definition for ‘read.delim’
+trackFeatures: no visible global function definition for
+  ‘txtProgressBar’
+trackFeatures: no visible global function definition for
+  ‘setTxtProgressBar’
+trackFeatures: no visible binding for global variable ‘well’
+trackFeatures: no visible global function definition for ‘write.table’
+Undefined global functions or variables:
+  aes chull colorRampPalette coord_fixed element_blank element_line
+  element_text frame geom_blank geom_line geom_path geom_point
+  geom_polygon geom_rect geom_segment geom_text ggplot ggsave ggtitle
+  h1 h2 id labs labx laby linktype read.delim scale_colour_manual
+  scale_fill_manual scale_shape_manual scale_x_continuous
+  scale_y_reverse setTxtProgressBar spots_ratio theme theme_bw
+  txtProgressBar v1 v2 well write.table x x0 x1 x2 y y0 y1 y2
+Consider adding
+  importFrom("grDevices", "chull", "colorRampPalette")
+  importFrom("graphics", "frame")
+  importFrom("utils", "read.delim", "setTxtProgressBar",
+             "txtProgressBar", "write.table")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking files in ‘vignettes’ ... WARNING
+Files in the 'vignettes' directory but no files in 'inst/doc':
+  ‘features.png’, ‘fig1.jpg’, ‘fig2.jpg’, ‘fig3.jpg’, ‘fig4.jpg’,
+    ‘fig5.jpg’, ‘fig6.jpg’, ‘workflow.png’
+Package has no Sweave vignette sources and no VignetteBuilder field.
+* checking examples ... NONE
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... OK
+  Running ‘testthat.R’ [115s/115s]
+* DONE
+Status: 1 WARNING, 2 NOTEs

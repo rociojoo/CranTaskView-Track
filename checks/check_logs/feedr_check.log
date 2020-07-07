@@ -1,0 +1,134 @@
+* using log directory ‘/tmp/Rtmpr5qHpr/feedr.Rcheck’
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘feedr/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘feedr’ version ‘0.10.0’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘feedr’ can be installed ... OK
+* checking installed package size ... NOTE
+  installed size is  5.5Mb
+  sub-directories of 1Mb or more:
+    extdata   4.6Mb
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+dedupe: no visible binding for '<<-' assignment to ‘val’
+inout: no visible binding for global variable ‘inout_id’
+inout: no visible binding for global variable ‘inout_dir’
+inout: no visible binding for global variable ‘problem_next’
+inout: no visible binding for global variable ‘problem_prev’
+inout: no visible binding for global variable ‘problem’
+inout: no visible binding for global variable ‘trip_id’
+inout: no visible binding for global variable ‘exit’
+inout: no visible binding for global variable ‘enter’
+inout_single: no visible binding for global variable ‘first’
+inout_single: no visible binding for global variable ‘inout_id’
+inout_single: no visible binding for global variable ‘inout_dir’
+summarize_inout: no visible binding for global variable ‘inout_dir’
+summarize_inout: no visible binding for global variable ‘trip_id’
+summarize_inout: no visible binding for global variable ‘trip_idx’
+summarize_inout: no visible binding for global variable ‘trip_id2’
+Undefined global functions or variables:
+  enter exit first inout_dir inout_id problem problem_next problem_prev
+  trip_id trip_id2 trip_idx
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... WARNING
+Package unavailable to check Rd xrefs: ‘activity’
+Missing link or links in documentation object 'convert_anidom.Rd':
+  ‘aniDom’
+
+Missing link or links in documentation object 'convert_asnipe.Rd':
+  ‘asnipe’
+
+Missing link or links in documentation object 'convert_dominance.Rd':
+  ‘Dominance’
+
+Missing link or links in documentation object 'convert_perc.Rd':
+  ‘Perc’ ‘[Perc]{as.conflicmat}’
+
+Missing link or links in documentation object 'disp.Rd':
+  ‘Perc’ ‘aniDom’ ‘Dominance’
+
+Missing link or links in documentation object 'load_format.Rd':
+  ‘[lubridate]{parse_date_time()}’
+
+Missing link or links in documentation object 'load_raw.Rd':
+  ‘[lubridate]{parse_date_time()}’
+
+Missing link or links in documentation object 'load_raw_all.Rd':
+  ‘[lubridate]{parse_date_time()}’
+
+See section 'Cross-references' in the 'Writing R Extensions' manual.
+
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object '.onLoad'
+  ‘libname’ ‘pkgname’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... ERROR
+Running examples in ‘feedr-Ex.R’ failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: map_ggmap
+> ### Title: Map data using ggmap
+> ### Aliases: map_ggmap
+> 
+> ### ** Examples
+> 
+> 
+> v <- visits(finches)
+Warning: Factor `animal_id` contains implicit NA, consider using `forcats::fct_explicit_na`
+Warning: Factor `animal_id` contains implicit NA, consider using `forcats::fct_explicit_na`
+> p <- presence(v, bw = 15)
+> m <- move(v)
+> 
+> # Built in summaries
+> map_ggmap(p = p, m = m, summary = "sum")
+Error: Google now requires an API key.
+       See ?register_google for details.
+Execution halted
+* DONE
+Status: 1 ERROR, 2 WARNINGs, 2 NOTEs
