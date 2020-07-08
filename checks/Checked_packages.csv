@@ -1,6 +1,4 @@
 package_name,source,skip,recent_commit,cran_check,warnings,errors,vignette_error,imports,suggests,recent_publish_data
-SGAT,github,NA,FALSE,TRUE,FALSE,FALSE,FALSE,"R, stats, utils, MASS, maptools, raster, sp, coda","GeoLight, geosphere, rgdal",NA
-argosTrack,github,NA,FALSE,TRUE,FALSE,FALSE,FALSE,"R , RcppEigen","knitr, rmarkdown, inline",NA
 SwimR,bioc,NA,NA,TRUE,FALSE,FALSE,FALSE,"R , heatmap.plus (>=, methods",NA,NA
 acc,cran,NA,NA,TRUE,NA,NA,NA,"R , mhsmm zoo, PhysicalActivity, nleqslv, plyr, methods, DBI, RSQLite, circlize, ggplot2, R.utils, iterators, Rcpp",,2016-12-16
 animalTrack,cran,NA,NA,TRUE,NA,NA,NA,"R , rgl",,2013-09-23
@@ -52,9 +50,13 @@ trip,cran,NA,NA,TRUE,NA,NA,NA,"R  geodist, maptools, MASS, methods, raster, repr
 VTrack,cran,NA,NA,TRUE,NA,NA,NA,"R  plotKML, sp, spacetime, doParallel, XML, intervals, gstat, Hmisc, checkmate, gdistance, raster, plyr, lubridate testthat",testthat,2018-02-22
 wildlifeDI,cran,NA,NA,TRUE,NA,NA,NA,"R  sp, rgeos, adehabitatLT, stats, graphics knitr, adehabitatHR","knitr, adehabitatHR",2019-04-13
 rerddapXtracto,cran,NA,NA,TRUE,NA,NA,NA,"R, sf, sp, stats, utils cmocean, gganimate, knitr, mapdata, maptools, rgdal, rmarkdown","cmocean, gganimate, knitr, mapdata, maptools, rgdal, rmarkdown",2020-06-12
-Rhabit,github,NA,TRUE,TRUE,FALSE,FALSE,FALSE,"R , abind, dplyr, fields, formula.tools, ggplot2, nloptr, purrr","knitr, gridExtra, testthat, rmarkdown",NA
 foieGras,cran,NA,NA,TRUE,NA,NA,NA,"R , trip, assertthat testthat, covr, knitr, rmarkdown, rgeos","testthat, covr, knitr, rmarkdown, rgeos",2020-06-18
 tripEstimation,cran,NA,NA,TRUE,NA,NA,NA,"lattice, mgcv, rgdal, sp, zoo",,2016-01-31
+SGAT,github,NA,FALSE,TRUE,FALSE,FALSE,FALSE,"R, stats, utils, MASS, maptools, raster, sp, coda","GeoLight, geosphere, rgdal",NA
+argosTrack,github,NA,FALSE,TRUE,FALSE,FALSE,FALSE,"R , RcppEigen","knitr, rmarkdown, inline",NA
+Rhabit,github,NA,TRUE,TRUE,FALSE,FALSE,FALSE,"R , abind, dplyr, fields, formula.tools, ggplot2, nloptr, purrr","knitr, gridExtra, testthat, rmarkdown",NA
+overlap,cran,TRUE,NA,NA,NA,NA,NA,NA,NA,NA
+HMMoce,cran,NA,NA,FALSE,NA,TRUE,NA,NA,NA,NA
 drtracker,github,NA,FALSE,FALSE,TRUE,FALSE,FALSE,"R, Cairo, ggplot2, plyr, alphahull, fossil, KernSmooth, RANN, reshape2, SDMTools",NA,NA
 hab,github,NA,FALSE,FALSE,TRUE,FALSE,FALSE,"adehabitatLT, adehabitatHR, adehabitatMA","survival, tkrplot",NA
 movement,github,NA,TRUE,FALSE,TRUE,FALSE,FALSE,"R , raster, rgdal, tools, sp, methods, gdistance, viridis",testthat,NA
@@ -71,10 +73,8 @@ pathtrackr,github,NA,FALSE,FALSE,TRUE,FALSE,FALSE,"ggplot2, plyr, pbapply, abind
 trackit,github,NA,TRUE,FALSE,TRUE,TRUE,FALSE,"R , MASS, date",NA,NA
 TwilightFree,github,NA,FALSE,FALSE,FALSE,TRUE,FALSE,"SGAT, maptools, polyclip, viridisLite, raster, sp",NA,NA
 ukfsst,github,NA,TRUE,FALSE,TRUE,TRUE,FALSE,"R , date, kftrack, ncdf4",NA,NA
-movementAnalysis,other,NA,NA,FALSE,FALSE,TRUE,FALSE,"R , adehabitat, adehabitatLT, sp, maptools, lmomco",OpenCL ,NA
-tlocoh,rforge,NA,NA,FALSE,FALSE,TRUE,TRUE,NA,NA,NA
-HMMoce,cran,NA,NA,FALSE,NA,TRUE,NA,NA,NA,NA
 ctmmweb,github,NA,TRUE,FALSE,TRUE,FALSE,FALSE,"shiny , shinydashboard, shinyWidgets, DT, crayon",NA,NA
 stmove,github,NA,NA,FALSE,FALSE,TRUE,TRUE,NA,NA,NA
 vmstools,github,NA,FALSE,FALSE,TRUE,TRUE,FALSE,"R , cluster, data.table, doBy, maps, mapdata, maptools","adehabitat, amap, animation, aspace, FactoMineR, lattice",NA
-overlap,cran,TRUE,NA,NA,NA,NA,NA,NA,NA,NA
+movementAnalysis,other,NA,NA,FALSE,FALSE,TRUE,FALSE,"R , adehabitat, adehabitatLT, sp, maptools, lmomco",OpenCL ,NA
+tlocoh,rforge,NA,NA,FALSE,FALSE,TRUE,TRUE,NA,NA,NA
