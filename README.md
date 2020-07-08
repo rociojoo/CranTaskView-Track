@@ -12,5 +12,5 @@ If you are a developer or simply have a tracking package you'd like to be consid
 
 We update the CranTaskView **twice** as year, roughly January and July. At that moment we discuss if a package fits the definition of a tracking package, run checks on all packages, and update the TaskView.
 
-Our current suite of potential packages can be found in `checks/Tracking_table.csv` and the outputs from cran checks can be found at `checks/Tracking_table_checked.csv`.
+Our current suite of potential packages can be found in `checks/Tracking_table.csv` and the outputs from cran checks can be found at `checks/Checked_packages.csv`.
  

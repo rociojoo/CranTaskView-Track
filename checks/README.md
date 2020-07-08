@@ -14,12 +14,12 @@ _**Please note: All checks are being run on Ubuntu 18.04 using RStudio as of 202
   |-- check_logs (all check logs from the last run)  
   |-- Check_Packages.R (R code used to run checks on packages)  
   |-- Tracking_tbl.csv (Table for candidate packages and their info)  
-  |-- Tracking_tbl_checked.csv (Output table from Check_Packages.R)  
+  |-- Checked_packages.csv (Output table from Check_Packages.R)  
   |-- README.md  
 
 ## Table requirements and column explanations
 
-All packages to be checked regularly are in the `Tracking_tbl.csv` table (hereafter refered to as the `Packages Table`. This table is a continuous list of packages to be considered and info for each package. This table is editable by the CranTaskView Maintainers and has different pieces of information required depending on the `source` of the package. These packages are run using `CheckPackages.R` and the output of the cheks is the `Tracking_tbl_checked.csv` (hereafter refered to as the `Checked Packages Table`). This table soley exist as an output for updating the CranTaskView and should not be edited as it gets overwritten during every run.
+All packages to be checked regularly are in the `Tracking_tbl.csv` table (hereafter refered to as the `Packages Table`. This table is a continuous list of packages to be considered and info for each package. This table is editable by the CranTaskView Maintainers and has different pieces of information required depending on the `source` of the package. These packages are run using `CheckPackages.R` and the output of the cheks is the `Checked_packages.csv` (hereafter refered to as the `Checked Packages Table`). This table soley exist as an output for updating the CranTaskView and should not be edited as it gets overwritten during every run.
 
 Because packages on version controlled repositories like github change quickly and cran packages occasionally become archived if maintainers are unresponsive, we run checks on **ALL** packages everytime. This means packages may occasionally be taken off the list during one period and then placed back on the list later if the new version passes checks.
 

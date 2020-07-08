@@ -3,7 +3,7 @@
 library(lubridate)
 library(readr)
 data <-
-  read.csv('checks/Tracking_pkg_tbl.csv')
+  read.csv('checks/Tracking_tbl.csv')
 data$source <- tolower(data$source)
 # working directory to download and run checks in.
 download_local <- '/home/matt/Downloads'
@@ -27,7 +27,7 @@ error_list <- list()
 
 # sub$package_name
 for (i in seq_len(nrow(sub))[]) {
-  # i = 21
+  # i = 72
   #  for(i in c(7,17,19)){
   # If packages has a github page, uses that to get download information
   data$imports <- as.character(data$imports)
@@ -266,6 +266,7 @@ for (i in seq_len(nrow(sub))[]) {
   
 }
 data <- data[order(data$cran_check, decreasing = T),]
+data <- data[,c('package_name','source','recent_commit','cran_check','warnings','errors','vignette_error','imports','suggests','recent_publish_data')]
 write.csv(data,
-  'checks/Tracking_pkg_tbl_checked.csv',
+  'checks/Checked_packages.csv',
   row.names = F)
