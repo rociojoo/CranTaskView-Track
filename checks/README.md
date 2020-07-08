@@ -4,42 +4,49 @@ output: html_document
 ---
 *This readme describes the protocols for checking packages to be included on the Tracking CranTaskView. It's written for the CranTaskView-Tracking Maintainers as well as developers who would like to understand our checking process.*
 
-In order to be added to the CranTaskView packages must pass `R CMD check`. This process is required by default for packages on cran, but may not be required for other repositories (like github). Therefore we check every potential package for its ability to pass R CMD checks. As each repository has its own standards for package storage and format, and in order to automate this process, we treat each repository slightly different in how we run a check.
+In order to be added to the CranTaskView packages must pass `R CMD check`. This process is required by default for packages on cran, but may not be required for other repositories (like github). Therefore we check every potential package for its ability to pass `R CMD checks`. As each repository has its own standards for package storage and format, and in order to automate this process, we treat each repository slightly different in how we run a check.
 
 _**Please note: All checks are being run on Ubuntu 18.04 using RStudio as of 2020-07--07**_
 
 ## Folder contents
 
--Checks  
---check_logs (all check logs from the last run)  
---Check_Packages.R (R code used to run checks on packages)  
---Tracking_tbl.csv (Table for candidate packages and their info)  
---Tracking_tbl_checked.csv (Output table from Check_Packages.R)  
---README.md  
+|-Checks  
+  |-- check_logs (all check logs from the last run)  
+  |-- Check_Packages.R (R code used to run checks on packages)  
+  |-- Tracking_tbl.csv (Table for candidate packages and their info)  
+  |-- Tracking_tbl_checked.csv (Output table from Check_Packages.R)  
+  |-- README.md  
 
 ## Table requirements and column explanations
 
-All packages to be checked regularly are in the `Tracking_tbl.csv` table (hereafter refered to as the `Packages Table`. This table is a continuous list of packages to be considered and info for each package. This table is editable by the CranTaskView Maintainers and has different pieces of information required depending on the `source` of the package. These packages are run using `CheckPackages.R` and the output of the cheks is the Tracking_tbl_checked.csv (hereafter refered to as the `Checked Packages Table`). This table soley exist as an output for updating the CranTaskView and should not be edited as it gets overwritten during every run.
+All packages to be checked regularly are in the `Tracking_tbl.csv` table (hereafter refered to as the `Packages Table`. This table is a continuous list of packages to be considered and info for each package. This table is editable by the CranTaskView Maintainers and has different pieces of information required depending on the `source` of the package. These packages are run using `CheckPackages.R` and the output of the cheks is the `Tracking_tbl_checked.csv` (hereafter refered to as the `Checked Packages Table`). This table soley exist as an output for updating the CranTaskView and should not be edited as it gets overwritten during every run.
 
 Because packages on version controlled repositories like github change quickly and cran packages occasionally become archived if maintainers are unresponsive, we run checks on **ALL** packages everytime. This means packages may occasionally be taken off the list during one period and then placed back on the list later if the new version passes checks.
 
 The following is the required information for filling out the `Packages Table` and is only intended for the CranTaskView Maintainers:
 
 **package_name** - the correctly cased official package name as you would find on in the `Package:` section of the `DESCRIPTION` page.  
+
 **source** - the repository where the package is actively maintained and updated. We default to CRAN if available. The current options are : `cran`, `github`, `bioc` (bioconductor), `rforge`, and `other`. The use of `other` is a catch all with general requirements.   
+
 **download_link** - (If **source** = `other`). The url for the most up to date tar.gz. Please only use if the package does not exist on the 4 other repositories. _(note that the download links normally are refered to be the packages version name, because of this the link will need to be periodically checked to make sure its referencing the current version of the package)_  
+
 **owner**  - (If **source** = `github`). The owner (github username) of the repository.  
+
 **repository** - (If **source** = `github`). The repository name on github.  
+
 **sub** - (optional. And only if **source** = `github`). The sub folder name of the package. Some developers will insert their package into a subfolder of the repository with the same name as the repository (ex migrateR package is at github address `dbspitz/migrateR/migrateR`). Or the repository is not just for the package but instead the package exists within a sub folder of the repository. (ex. packages `trackit` and `ukfsst` are in separate sub folders at github address `positioning/kalmanfilter`). We do not currently have any protocols in place for where packages exist on non-master branches. If this is the case, please provide a detailed response for why it is not on master and we'll consider its addition.  
 
 **date_added_to_list** - The yyyy-mm-dd of when the entry was added to the table.  
+
 **skip** - T/F/NA. Whether to skip checks on the package. This is for packages which are still being debated whether they fill the requirements as a tracking package, and may be added to later. Checks are skipped and rows are filled with NA in the Checked Packages Table.
+
 **comments** - Any comments on the package, mainly related to why its being skipped or being reconsidered.  
 
 
 ## Describing the checks required for each repository type. 
 
-For each package we wanted to make sure that the cran checks were performed in the same way regardless of the source. CRAN checks run from a tarball, despite not all repositories requiring a built tarball of the package. Because of this some of the required checks are that the tarball must be built correctly. Therfore if a tarball doesnt exist we have to make one from scratch.
+For each package we wanted to make sure that the cran checks were performed in the same way regardless of the source. The CRAN checks we run require a tarball despite not all repositories requiring a built tarball of the package. Some of the required checks include details about how the tarball is built, so if one does not exist we must create it. From there we use various functions from the `devtools` package to help run checks.
 
 The general flow of checks is as follows:  
 
@@ -60,7 +67,7 @@ As CRAN checks are required to pass to be allowed on cran, we do not run checks 
 
 ### Github
 
-We wanted to make a concentrated effort to allow github packages on the TaskView. However, github is generally not the endpoint for packages at the end of their project life cycle, but stead is a collaborative tool for the ongoing creating and sharing of software as it develops. This means that build quality and reliability of packages on github can not be gauranteed at any particular moment. 
+We wanted to make a concentrated effort to allow github packages on the TaskView. However, github is generally not the endpoint for packages at the end of their project life cycle. Instead github is used as a collaborative tool for the ongoing creating and sharing of software as it develops. This means that build quality and reliability of packages on github can not be gauranteed at any particular moment. 
 
 We understand that attempting to run cran checks on packages inwhich the developer never expected it to pass stringent cran checks nor be included on this list is a bit unfair. 
 
@@ -78,7 +85,7 @@ After the tarball is created the package is run through steps 3 - 6 as normal.
 
 ### Bioconductor 
 
-Packages included in the Bioconductor suite are generally of high build quality, however, they require the use of the bioconductor package manager to install from the repository. This is bulky and unnecessary for the purpose of running cran checks. Luckily, every bioconductor package posts a link to the tarball on the packages webpage at bioconductor.com. These packages may change versions rapidly, making it unreliable to keep copying the new tarball link. To get around this we trawl the bioconductor web page for the specific package and grab the tarball link, then download it automatically. After this the tarball is run through steps 3 - 6 same as normal. In the future I expect to find a more elegant solution around this.
+Packages included in the [Bioconductor suite](https://www.bioconductor.org/) are generally of high build quality, however, they require the use of the bioconductor package manager to install from the repository. This is bulky and unnecessary for the purpose of running cran checks. Luckily, every bioconductor package posts a link to the tarball on the packages webpage. These packages may change versions rapidly, making it unreliable to keep copying the new tarball link. To get around this we trawl the bioconductor web page for the specific package and grab the tarball link, then download it automatically. After this the tarball is run through steps 3 - 6 same as normal. In the future I expect to find a more elegant solution around this.
 
 ### Rforge
 
@@ -110,7 +117,7 @@ We understand that this may be problematic as `devtools::install_github` by defa
 
 #### Check logs
 
-As long as the package has built correctly (step 5), then a check log was created for the package. All check logs from the previous run are stored in the `check_logs` folder. These are standard outputs written during check_package() and we do not alter these in anyway. 
+As long as the package has built correctly (step 5), then a check log was created for the package. All check logs from the previous run are stored in the `checks/check_logs` folder. These are standard outputs written during check_package() and we do not alter these in anyway. 
 
 Should you have any question on these logs and what errors may mean you can generally refer to the much maligned  [Writing R Extensions Manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) as well as [Hadley Wickhams ebook on packages](http://r-pkgs.had.co.nz/intro.html). 
 
