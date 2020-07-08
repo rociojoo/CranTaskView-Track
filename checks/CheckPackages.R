@@ -265,7 +265,7 @@ for (i in seq_len(nrow(sub))[]) {
   suppressWarnings(rm(download_file, build_file,checks,warnings, errors,vignette,temp_files))
   
 }
-data <- data[order(data$cran_check, decreasing = T),]
+data <- data[order(data$source,data$cran_check, decreasing = T),]
 data <- data[,c('package_name','source','recent_commit','cran_check','warnings','errors','vignette_error','imports','suggests','recent_publish_data')]
 write.csv(data,
   'checks/Checked_packages.csv',
