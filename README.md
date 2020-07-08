@@ -1,4 +1,4 @@
-# Cran task view project for tracking data
+# Cran Task View project for tracking data
 
 This repository acts as the main project page for the [Tracking CranTaskView](https://cran.r-project.org/web/views/Tracking.html), as well as main communication point for the project. If you have any questions feel free to open up an issue.
 
