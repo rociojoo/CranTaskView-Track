@@ -10,7 +10,7 @@ _**Please note: All checks are being run on Ubuntu 18.04 using RStudio as of 202
 
 ## Folder contents
 
-|-Checks  
+Checks  
   |-- check_logs (all check logs from the last run)  
   |-- Check_Packages.R (R code used to run checks on packages)  
   |-- Tracking_tbl.csv (Table for candidate packages and their info)  
