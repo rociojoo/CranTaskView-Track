@@ -10,6 +10,8 @@ ctv2html(track, file = "Tracking.html")
 ## Check if everything's OK
 ctv::check_ctv_packages("Tracking.ctv")
 
+##########################################
+
 ## Checking imports and suggest networks
 info_pkgs <- read.csv("checks/RmovementPackagesInformation_checked.csv")
 info_pkgs_cran <- info_pkgs[!is.na(info_pkgs$recent_publish_data), c("Package","recent_publish_data")]
