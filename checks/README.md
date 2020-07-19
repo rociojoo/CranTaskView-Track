@@ -9,8 +9,7 @@ In order to be added to the CranTaskView packages must pass `R CMD check`. This 
 _**Please note: All checks are being run on Ubuntu 18.04 using RStudio as of 2020-07--07**_
 
 ## Folder contents
-
-|-Checks  
+**Checks**  
   |-- check_logs (all check logs from the last run)  
   |-- Check_Packages.R (R code used to run checks on packages)  
   |-- Tracking_tbl.csv (Table for candidate packages and their info)  
