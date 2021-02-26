@@ -6,7 +6,7 @@ data <-
   read.csv('checks/Tracking_tbl.csv')
 data$source <- tolower(data$source)
 # working directory to download and run checks in.
-download_local <- '/home/matt/Downloads'
+download_local <- 'C:/Users/birde/Downloads'
 test <- F
 pkg_db <- tools::CRAN_package_db()
 #######################################################
@@ -27,7 +27,7 @@ error_list <- list()
 
 # sub$package_name
 for (i in seq_len(nrow(sub))[]) {
-  # i = 72
+  # i = 19
   #  for(i in c(7,17,19)){
   # If packages has a github page, uses that to get download information
   data$imports <- as.character(data$imports)
@@ -111,8 +111,13 @@ for (i in seq_len(nrow(sub))[]) {
   # '\" href=\"../src/contrib/SwimR_1.26.0.tar.gz\"'
   match <- regexec('(?:href=\\"\\.\\.)(.*)(?:\\">)',phrase)
   download_file <- paste0(bioconductor_url,regmatches(phrase,match)[[1]][2])
+  if(!is.na(sub$subfolder[i])){
+    working_folder <-
+      paste0(download_local, '/', sub$package_name[i],'/',sub$subfolder[i]) 
+  } else{
     working_folder <-
       paste0(download_local, '/', sub$package_name[i])
+  }
     download_folder <-
       paste0(download_local, "/", sub$package_name[i], ".tar.gz")
   }
@@ -120,16 +125,26 @@ for (i in seq_len(nrow(sub))[]) {
   if(sub$source[i] == 'rforge'){
    out <- download.packages(sub$package_name[i],destdir = download_local,repos= "http://R-Forge.R-project.org")
    download_folder <- out[2]
-   working_folder <-
-   paste0(download_local, '/', sub$package_name[i])
+   if(!is.na(sub$subfolder[i])){
+     working_folder <-
+       paste0(download_local, '/', sub$package_name[i],'/',sub$subfolder[i]) 
+   } else{
+     working_folder <-
+       paste0(download_local, '/', sub$package_name[i])
+   }
    untar(tarfile = download_folder, exdir = download_local)
     }
     # if package is not from github we assume that we provide the download URL to the .tar.gz file.
   if (sub$source[i] == 'other' &
       nchar(as.character(sub$download_link[i])) > 2) {
     download_file <- as.character(sub$download_link[i])
+    if(!is.na(sub$subfolder[i])){
+      working_folder <-
+        paste0(download_local, '/', sub$package_name[i],'/',sub$subfolder[i]) 
+    } else{
     working_folder <-
       paste0(download_local, '/', sub$package_name[i])
+    }
     download_folder <-
       paste0(download_local, "/", sub$package_name[i], ".tar.gz")
     
@@ -168,7 +183,7 @@ for (i in seq_len(nrow(sub))[]) {
   here <- NA
   here <-
     tryCatch(
-      devtools::install_deps(
+     remotes::install_deps(
         working_folder,
         dependencies = TRUE,
         upgrade = 'never'
