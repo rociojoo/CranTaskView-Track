@@ -79,7 +79,7 @@ diveMove,cran,NA,FALSE,NA,TRUE,NA,NA,NA,NA
 HMMoce,cran,NA,FALSE,NA,TRUE,NA,NA,NA,NA
 rpostgisLT,cran,NA,FALSE,NA,TRUE,NA,NA,NA,NA
 rsMove,cran,NA,FALSE,NA,TRUE,NA,NA,NA,NA
-rncep,cran,NA,FALSE,NA,TRUE,NA,NA,NA,NA
+RNCEP,cran,NA,TRUE,NA,NA,NA,NA,NA,NA
 overlap,cran,NA,NA,NA,NA,NA,NA,NA,NA
 geoviz,cran,NA,NA,NA,NA,NA,NA,NA,NA
 SwimR,bioc,NA,FALSE,TRUE,FALSE,FALSE,"R (>= 3.0.0), methods, gplots (>= 2.10.1), heatmap.plus (>=1.3), signal (>= 0.7), R2HTML (>= 2.2.1),methods   ",NA,NA
