@@ -1,5 +1,5 @@
 package_name,source,download_link,subfolder,owner,repository,sub,date_added_to_list,skip,comments,Pre-processing-GLS-threshold,Pre-processing-GLS-curve-fitting,Pre-processing-Twilight-free,Pre-processing-Triang,Pre-processing-GLS-DR,Post-processing-cleaning,Post-processing-compression,Post-processing-metrics,Visualization,Track-description,Path-reconstruction,Behav-clustering,Behav-segment,Behav-HMM,Space-HR,Space-HU,Space-non-convent,Simulation,Interactions,Similarity,Population-size,Environm,DB,Biologg,Non-biologg
-drtracker,github,,,royfrancis,drtracker,,2020-01-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
+drtracker,github,,,royfrancis,drtracker,,2020-01-01,,"SDMTools (dependency) is now archived on CRAN. Last version can be installed with : remotes::install_version(""SDMTools"", ""1.1-221.2"")",,,,,,,,,,,,,,,,,,,,,,,,,
 hab,github,,,basille,hab,,2020-01-01,,,,,,,,,,,,,,,,,,T,,,,,,,,,
 movement,github,,,SEEG-Oxford,movement,,2020-01-01,,,,,,,,,,,,,,,,,,,,,,,,,,,
 probGLS,github,,,Benjamin-merkel,probGLS,,2020-01-01,,,T,,,,,,,,,,,,,,,,,,,,,,,,
