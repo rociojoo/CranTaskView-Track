@@ -21,10 +21,13 @@ using RStudio or Emacs**_
 
 ## Folder contents
 
-  <!-- * check_logs (all check logs from the last run) -->
-  * `CheckPackages.R`: R code used to run checks on packages
-  * `Checked_packages.csv`: Output table from `CheckPackages.R`
-  * `README.md`: This document
+  * `check_logs/`: All check logs from the last run.
+  * `Changes.csv`: A summary of changes (new packages and modifications) from
+    the last run.
+  * `CheckPackages.R`: R code used to run checks on packages.
+  * `Checked_packages.csv`: Output table from `CheckPackages.R`.
+  * `LAST_RUN`: Gives the date of the last run of `CheckPackages.R`.
+  * `README.md`: This document.
   * `Tracking_tbl.csv`: Table for candidate packages and their info.
 
 
@@ -202,28 +205,49 @@ themselves. Because of this we have attempted to be transparent about what tests
 need to be worked on to allow inclusion on the Tracking CTV list.
 
 
-*********************************************************
+### Checked Packages Table
+
+The first step in troubleshooting what went wrong with a package is to check the
+*Checked Packages Table*. This table has columns relative to the type of error
+that lead to the failed check:
+
+  * **cran_check**: `TRUE`/`FALSE` describes whether the package passed CRAN
+    tests (CRAN packages are set `TRUE` by default). This is the final
+    determining column if a package is included on the Tracking CTV. All `TRUE`
+    packages are sent to the CTV, and all `FALSES` are saved and run at the next
+    date.
+  * **warnings**: `TRUE`/`FALSE` describes whether the package received warnings
+    on the CRAN tests. A build must pass with 0 warnings.
+  * **error**: `TRUE`/`FALSE` describes whether the package received errors on
+    the CRAN tests. A build must pass with 0 errors. If a vignette did not build
+    this is set automatically to TRUE as checks can not pass unless the vignette
+    can also be built.
+  * **vignette_error**: `TRUE`/`FALSE` describes whether there was an error
+    while building the vignette. As this comes first in the process CRAN checks
+    are not run on the package if there is a vignette error. In this scenario no
+    `check.log` will be created either. If you would like to see these errors
+    the best way is to run `devtools::build_vignette()` and check the error
+    there.
+
+We understand that this may be problematic as `devtools::install_github()` by
+default does not build vignettes. It can also be common practice to place a
+knitted pdf in the vignettes folder, however, a buildable vignette is still
+required for a CRAN check and any PDFs are deleted in the vignette folder during
+building. You may want to put these files elsewhere, as in `extdoc`.
 
 
-#### Checked Packages Table
+### Check logs
 
-The first step in troubleshooting what went wrong with a package is to check the *Checked Packages Table*. This table has columns relative to the type of error that lead to the failed check:
+As long as the package has built correctly (step 5), then a check log was
+created for the package. All check logs from the previous run are stored in the
+`checks/check_logs` folder. These are standard outputs written during
+`check_package()` and we do not alter these in any way.
 
-**cran_check** - TRUE/FALSE describes whether the package passed cran tests (cran packages are set TRUE by default). This is the final determining column if a package is included on the TaskView. All TRUE packages are sent to the CranTaskView, and all FALSES are saved and run at the next date.
+Should you have any question on these logs and what errors may mean you can
+generally refer to the much maligned [Writing R Extensions
+Manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) as well as
+[Hadley Wickham's book on R packages](https://r-pkgs.org/).
 
-**warnings** - TRUE/FALSE describes whether the package received warnings on the cran tests. A build must pass with 0 warnings.
-
-**error** - TRUE/FALSE describes whether the package received warnings on the cran tests. A build must pass with 0 warnings. If a vignette did not build this is set automatically to TRUE as checks can not pass unless the vignette can also be built. 
-
-**vignette_error** - TRUE/FALSE describes whether there was an error while building the vignette. As this comes first in the process cran checks are not run on the package if there is a vignette error. In this scenario no check.log will be created either. If you would like to see these errors the best way is to run `devtools::build_vignette()` and check the error there.
-
-We understand that this may be problematic as `devtools::install_github` by default does not build vignettes. It can also be common practice to place a knitted pdf in the vignettes folder, however, a buildable vignette is still required for a cran check and any pdfs are deleted in the vignette folder during building. You may want to put these files elsewhere, as in extdoc. 
-
-#### Check logs
-
-As long as the package has built correctly (step 5), then a check log was created for the package. All check logs from the previous run are stored in the `checks/check_logs` folder. These are standard outputs written during check_package() and we do not alter these in anyway. 
-
-Should you have any question on these logs and what errors may mean you can generally refer to the much maligned  [Writing R Extensions Manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) as well as [Hadley Wickhams ebook on packages](http://r-pkgs.had.co.nz/intro.html). 
-
-If something just isnt adding up, and you believe the code is incorrectly kicking out your package (entirely possible), please let us know with some extra details so we can look into it. 
-
+If something just isn't adding up, and you believe the code is incorrectly
+kicking out your package (entirely possible), please let us know in an issue
+with some extra details so we can look into it.
