@@ -4,13 +4,25 @@
 ## /!\ Start with an up-to-date system /!\
 unlink("packrat", recursive = TRUE)
 packrat::init(infer.dependencies = FALSE)
-install.packages(c("devtools", "remotes", "desc"))
+install.packages(c("devtools", "remotes", "desc", "dplyr"))
 
 
-## Working directory to download and run checks in.
+## Directories to download and run checks in.
 download_local <- "downloads"
-test <- FALSE
+unlink(download_local, recursive = TRUE)
+dir.create(download_local)
+check_logs <- "check_logs"
+unlink(check_logs, recursive = TRUE)
+dir.create(check_logs)
+## List of CRAN packages
 pkg_db <- tools::CRAN_package_db()
+## update the root Bioconductor URL as versions are released (3.13 on
+## 2021-09-29); check on https://bioconductor.org/
+bioconductor_url <- "https://bioconductor.org/packages/3.13/bioc/"
+
+
+## Previous status
+track_old <- read.csv("Checked_packages.csv")
 
 
 ## Import packages list, and create columns if not exist
@@ -24,61 +36,92 @@ track$vignette_error <- NA
 track$imports <- NA_character_
 track$suggests <- NA_character_
 track$recent_publish_track <- NA
+track$version <- NA
 ## set up an error list to check later if installs failed because of
-## dependencies the computer doesn't have aaaaaaa whhhhataaaaaaa whhhhataaaaaaa
-## whhhhataaaaaaa whhhhat
+## dependencies the computer doesn't have
 error_list <- list()
-sub <- track # unecessary now
 
 
-## sub$package_name
-i <- 2
+## Loop over all packages (looooong process)
 for (i in 1:nrow(track)) {
-    if(isTRUE(sub$skip[i])) { next }
+    if (isTRUE(track$skip[i])) { next }
 
-    ## Check if package even has a repository
-    if (!sub$source[i] %in% c("cran", "github", "bioc", "rforge") &
-        nchar(as.character(sub$download_link[i])) == 0) {
+    ## Check that source is properly filled out
+    if (!track$source[i] %in% c("cran", "github", "bioc", "rforge", "other")) {
         message(paste0(
-            sub$package_name[i],
-            " does not have a selected repository, skipping..."
+            track$package_name[i],
+            " source is not valid, skipping..."
         ))
         next
     }
 
-    if (sub$source[i] == "cran") {
-        sub_pkg <- pkg_db[pkg_db$Package == sub$package_name[i], ]
-        if (nrow(sub_pkg) == 0) {
-            warning(paste0(sub$package_name[i], " is not on CRAN"))
+    ## Specific CRAN
+    if (track$source[i] == "cran") {
+        track_pkg <- pkg_db[pkg_db$Package == track$package_name[i], ]
+        if (nrow(track_pkg) == 0) {
+            warning(paste0(track$package_name[i], " is not on CRAN"))
             track$errors[i] <- TRUE
             track$cran_check[i] <- FALSE
             next
         }
         string <-
             paste(
-                ifelse(is.na(sub_pkg$Depends), "", sub_pkg$Depends),
-                ifelse(is.na(sub_pkg$Imports), "", sub_pkg$Imports),
-                ifelse(is.na(sub_pkg$Suggests), "", sub_pkg$Suggests)
+                ifelse(is.na(track_pkg$Depends), "", track_pkg$Depends),
+                ifelse(is.na(track_pkg$Imports), "", track_pkg$Imports),
+                ifelse(is.na(track_pkg$LinkingTo), "", track_pkg$LinkingTo),
+                sep = ", "
             )
+        string <- gsub(" \\(.*\\)|,$", "" , string)
+        string <- gsub("^R,", "" , string)
         string <- trimws(gsub("\n" , " ", string), "both")
+        track$imports[i] <- as.character(string)
+        string <- ifelse(is.na(track_pkg$Suggests), "", track_pkg$Suggests)
         string <- gsub("\\(.*\\)|,$", "" , string)
-        track$imports[track$package_name == sub$package_name[i]] <- as.character(string)
-        string <- ifelse(is.na(sub_pkg$Suggests), "", sub_pkg$Suggests)
         string <- trimws(gsub("\n" , " ", string), "both")
-        string <- gsub("\\(.*\\)|,$", "" , string)
-        track$suggests[track$package_name == sub$package_name[i]] <-
-            ifelse(length(string) == 0, NA, as.character(string))
+        track$suggests[i] <- as.character(string)
         ## recent track
-        track$recent_publish_track[track$package_name == sub$package_name[i]] <-
-            sub_pkg$Published
+        track$recent_publish_track[i] <- track_pkg$Published
         track$cran_check[i] <- TRUE
+        track$version[i] <- track_pkg$Version
+        ## House cleaning
+        suppressWarnings(rm(string, track_pkg))
         next
     }
 
-    if (sub$source[i] == "github") {
-        branch <- sub$sub[i]
-        owner <- sub$owner[i]
-        repo <- sub$repository[i]
+    ## Specific Bioconductor: we trawl the website for the correct link, as
+    ## versions may change rapidly
+    if (track$source[i] == "bioc") {
+        track_url <- paste0(bioconductor_url, "html/", track$package_name[i], ".html")
+        track_page <- readLines(as.character(track_url))
+        grep("<h3 id=\"archives\">Package Archives</h3>", track_page, value = TRUE)
+        phrase <- track_page[grep("Source Package", track_page) + 1]
+        phrase
+        ## '\" href=\"../src/contrib/SwimR_1.26.0.tar.gz\"'
+        match <- regexec("(?:href=\\\"\\.\\./)(.*)(?:\\\">)", phrase)
+        download_file <- paste0(bioconductor_url, regmatches(phrase, match)[[1]][2])
+        working_folder <- paste0(download_local, "/", track$package_name[i])
+        download_folder <- paste0(download_local, "/",
+            track$package_name[i], ".tar.gz")
+        ## download and unzip folder so we can install dependencies
+        download.file(url = download_file, destfile = download_folder,
+            method = "libcurl")
+        untar(tarfile = download_folder, exdir = download_local)
+    }
+
+    ## Specific R-Forge (includes download + untar)
+    if (track$source[i] == "rforge") {
+        out <- download.packages(track$package_name[i],
+            destdir = download_local, repos = "http://download.R-Forge.R-project.org")
+        download_folder <- out[2]
+        working_folder <- paste0(download_local, "/", track$package_name[i])
+        untar(tarfile = download_folder, exdir = download_local)
+    }
+
+    ## Specific GitHub
+    if (track$source[i] == "github") {
+        branch <- track$sub[i]
+        owner <- track$owner[i]
+        repo <- track$repository[i]
         download_file <-
             paste0("https://github.com/",
                 owner,
@@ -87,104 +130,75 @@ for (i in 1:nrow(track)) {
                 "/archive/master.zip")
         if (branch == "") {
             working_folder <- paste0(download_local, "/", repo, "-master")
-        } else{
-            working_folder <-
-                paste0(download_local, "/", repo, "-master/", branch)
+        } else {
+            working_folder <- paste0(download_local, "/", repo,
+                "-master/", branch)
         }
-        download_folder <-
-            paste0(download_local, "/", sub$repository[i], ".zip")
+        download_folder <- paste0(download_local, "/",
+            track$repository[i], ".zip")
+        ## Download and unzip folder so we can install dependencies
+        download.file(url = download_file, destfile = download_folder,
+            method = "libcurl")
+        unzip(zipfile = download_folder, exdir = download_local)
+        ## For now we'll query the GitHub API for last commit, though this isn't
+        ## being used currently
+        commit_list <-
+            gh::gh(
+                "/repos/:owner/:repo/commits",
+                owner = owner,
+                repo = repo,
+                state = "all",
+                .limit = 1
+            )
+        commit <- (Sys.time() - as.POSIXct(strptime(commit_list[[1]]$commit$author$date,
+            format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"))) < 365
+        track$recent_commit[i] <- commit
     }
 
-    ## For Bioconductor sites, we trawl the website for the correct link, as
-    ## versions may change rapidly
-    if (sub$source[i] == "bioc" &
-        nchar(as.character(sub$download_link[i])) > 2){
-        ## update the root Bioconductor URL as versions are released
-        bioconductor_url <- "https://bioconductor.org/packages/3.11/bioc/"
-        url <-  sub$download_link[i]
-        url <- paste0(bioconductor_url, "html/", sub$package_name[i], ".html")
-        page <- readLines(as.character(url))
-        page[grepl("<h3 id=\"archives\">Package Archives</h3>", page)]
-        sub_page <- page[]
-        phrase <- sub_page[grep("Source Package",sub_page) + 1]
-        phrase
-        ## '\" href=\"../src/contrib/SwimR_1.26.0.tar.gz\"'
-        match <- regexec("(?:href=\\"\\.\\.)(.*)(?:\\">)", phrase)
-        download_file <- paste0(bioconductor_url,regmatches(phrase,match)[[1]][2])
-        if(!is.na(sub$subfolder[i])) {
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i], "/", sub$subfolder[i])
-        } else{
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i])
-        }
-        download_folder <-
-            paste0(download_local, "/", sub$package_name[i], ".tar.gz")
-    }
-
-    ## R-Forge
-    if(sub$source[i] == "rforge") {
-        out <- download.packages(sub$package_name[i],
-            destdir = download_local, repos = "http://R-Forge.R-project.org")
-        download_folder <- out[2]
-        if(!is.na(sub$subfolder[i])) {
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i], "/", sub$subfolder[i])
-        } else{
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i])
-        }
-        untar(tarfile = download_folder, exdir = download_local)
-    }
-
-    # if package is not from GitHub we assume that we provide the download URL
-    # to the .tar.gz file.
-    if (sub$source[i] == "other" &
-        nchar(as.character(sub$download_link[i])) > 2) {
-        download_file <- as.character(sub$download_link[i])
-        if(!is.na(sub$subfolder[i])) {
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i], "/", sub$subfolder[i])
-        } else{
-            working_folder <-
-                paste0(download_local, "/", sub$package_name[i])
-        }
-        download_folder <-
-            paste0(download_local, "/", sub$package_name[i], ".tar.gz")
-    }
-
-    if(sub$source[i] != "rforge") {
-        if (!exists("download_file")) {
+    # Specific Other: we assume that we provide the download URL to the .tar.gz
+    # file.
+    if (track$source[i] == "other") {
+        ## Check if package even has a repository
+        if (nchar(as.character(track$download_link[i])) == 0) {
             message(paste0(
-                sub$package_name[i],
-                " does not have a downloadable link, skipping..."
+                track$package_name[i],
+                " does not have a selected repository, skipping..."
             ))
             next
         }
-        ## download and unzip folder so we can install dependencies
+        download_file <- as.character(track$download_link[i])
+        working_folder <- paste0(download_local, "/", track$package_name[i])
+        download_folder <- paste0(download_local, "/",
+            track$package_name[i], ".tar.gz")
+        ## Download and unzip folder so we can install dependencies
         download.file(url = download_file, destfile = download_folder,
             method = "libcurl")
         if (grepl("\\.zip", download_folder)) {
-            unzip(zipfile = download_folder, exdir = download_local)
+            if (unzip(zipfile = download_folder, list = TRUE)[1] ==
+                paste0(track$package_name[i], "/")) {
+                unzip(zipfile = download_folder, exdir = download_local)
+            } else {
+                unzip(zipfile = download_folder, exdir = working_folder)
+            }
         }
         if (grepl("\\.tar\\.gz", download_folder)) {
-            untar(tarfile = download_folder, exdir = working_folder)
+            if (untar(tarfile = download_folder, list = TRUE)[1] ==
+                paste0(track$package_name[i], "/")) {
+                untar(tarfile = download_folder, exdir = download_local)
+            } else {
+                untar(tarfile = download_folder, exdir = working_folder)
+            }
         }
     }
 
-    ## delete some folders that may exist that may interfere with building
+    ## Delete some folders that may exist that may interfere with building
     ## process. For now these are not strictly 'wrong' but bad form. In some
     ## cases the packages pass CRAN after these are installed.
-    if (dir.exists(paste0(working_folder, "/inst/doc"))) {
-        unlink(paste0(working_folder, "/inst/doc"), recursive = TRUE)
-    }
-    if (file.exists(paste0(working_folder, "/build/vignette.rds"))) {
-        unlink(paste0(working_folder, "/build/vignette.rds"),
-            recursive = TRUE)
-    }
+    unlink(paste0(working_folder, "/inst/doc"), recursive = TRUE)
+    unlink(paste0(working_folder, "/build/vignette.rds"), recursive = TRUE)
 
-    ## install all dependencies. We have to install suggestions as well, as one
-    ## of the CRAN checks is that suggested packages are installable. Also
+    ## CRAN checks and dependencies. We have to install suggestions as well, as
+    ## one of the CRAN checks is that suggested packages are installable. Also
     ## sometimes these packages are used in the vignette
     here <- tryCatch(
         remotes::install_deps(
@@ -207,7 +221,7 @@ for (i in 1:nrow(track)) {
         error = function(e) "vignette_error"
     )
     ## In the build stage vignette errors can halt building, and this implies a
-    ## failure of cran check.
+    ## failure of CRAN check.
     if (there == "vignette_error") {
         checks <- FALSE
         warnings <- FALSE
@@ -215,71 +229,96 @@ for (i in 1:nrow(track)) {
         vignette <- TRUE
     }
     if (there != "vignette_error") {
+        ## Actual CRAN check
         ll <- tryCatch(
             devtools::check_built(build_file),
-            error = function(e) track.frame(errors = as.character(e))
+            error = function(e) data.frame(errors = as.character(e))
         )
-
-        ## For now we'll query the GitHub API for last commit, though this isn't
-        ## being used currently
-        if (sub$source[i] == "github") {
-            commit_list <-
-                gh::gh(
-                    "/repos/:owner/:repo/commits",
-                    owner = owner,
-                    repo = repo,
-                    state = "all",
-                    .limit = 1
-                )
-            commit <- (Sys.time() - as.POSIXct(strptime(commit_list[[1]]$commit$author$date,
-                format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"))) < 365
-            track$recent_commit[track$package_name == sub$package_name[i]] <-
-                commit
-        }
-
-        ## log errors
+        ## Results of CRAN check
         checks <- (length(ll$errors)  + length(ll$warnings)) == 0
         warnings <- length(ll$warnings) > 0
         errors <- length(ll$errors) > 0
         vignette <- FALSE
     }
-
-    track$cran_check[track$package_name == sub$package_name[i]] <- checks
-    track$warnings[track$package_name == sub$package_name[i]] <- warnings
-    track$errors[track$package_name == sub$package_name[i]] <- errors
-    track$vignette_error[track$package_name == sub$package_name[i]] <- vignette
+    track$cran_check[i] <- checks
+    track$warnings[i] <- warnings
+    track$errors[i] <- errors
+    track$vignette_error[i] <- vignette
 
     ## Create dependency tree
     if (exists("build_file")) {
-        test_folder <- paste0(download_local, "/test")
-        untar(tarfile = build_file, exdir = test_folder)
-        textz <- desc::desc(file =  paste0(test_folder, "/", sub$package_name[i],
-            "/DESCRIPTION"))$get_deps()
-        string <- paste(textz$package[textz$type %in%
-            c("Depends", "Imports", "LinkingTo")], collapse = ", ")
-        string <- trimws(gsub("\n" , " ", string), "both")
-        string <- gsub("\\(.*\\)|,$", "" , string)
-        track$imports[track$package_name == sub$package_name[i]] <- as.character(string)
-        string <- paste(textz$package[textz$type == "Suggests"], collapse = ", ")
-        string <- trimws(gsub("\n" , " ", string), "both")
-        string <- gsub("\\(.*\\)|,$", "" , string)
-        track$suggests[track$package_name == sub$package_name[i]] <-
-            ifelse(nchar(string) == 0, NA, as.character(string))
+        desc_folder <- paste0(download_local, "/DESCRIPTION")
+        untar(tarfile = build_file, file = paste0(track$package_name[i],
+            "/DESCRIPTION"), exdir = desc_folder)
+        track_desc <- desc::desc(file =  paste0(desc_folder, "/",
+            track$package_name[i], "/DESCRIPTION"))
+        track_dep <- track_desc$get_deps()
+        track_dep <- track_dep[track_dep$package != "R", ]
+        string <- paste(unique(track_dep$package[track_dep$type %in%
+            c("Depends", "Imports", "LinkingTo")]), collapse = ", ")
+        track$imports[i] <- as.character(string)
+        string <- paste(track_dep$package[track_dep$type == "Suggests"],
+            collapse = ", ")
+        track$suggests[i] <- as.character(string)
+        track$version[i] <- gsub("‘", "", track_desc$get_version())
+    } else {
+        tryCatch(
+        {
+            track_desc <- desc::desc(file =  paste0(working_folder, "/",
+                "/DESCRIPTION"))
+            track_dep <- track_desc$get_deps()
+            track_dep <- track_dep[track_dep$package != "R", ]
+            string <- paste(unique(track_dep$package[track_dep$type %in%
+                c("Depends", "Imports", "LinkingTo")]), collapse = ", ")
+            track$imports[i] <- as.character(string)
+            string <- paste(track_dep$package[track_dep$type == "Suggests"],
+                collapse = ", ")
+            track$suggests[i] <- as.character(string)
+            track$version[i] <- gsub("‘", "", track_desc$get_version())
+        },
+        error = function(e) "cannot retrieve DESCRIPTION"
+        )
     }
 
     ## Look for check log
-    temp_files <- list.files(paste0(tempdir(), "/", sub$package_name[i], ".Rcheck"),
+    temp_files <- list.files(paste0(tempdir(), "/", track$package_name[i], ".Rcheck"),
         "check.log", full.names = TRUE)
-    file.copy(temp_files, paste0("check_logs/", sub$package_name[i], "_check.log",
-        overwrite = TRUE))
+    file.copy(temp_files, paste0(check_logs, "/", track$package_name[i], "_check.log"),
+        overwrite = TRUE)
 
-    ## clean house
-    suppressWarnings(rm(download_file, build_file, checks, warnings,
-        errors, vignette, temp_files))
+    ## House cleaning
+    suppressWarnings(rm(bioconductor_url, branch, build_file, checks, commit,
+        commit_list, download_file, download_folder, errors, here, ll, match,
+        out, owner, phrase, repo, string, temp_files, desc_folder, there,
+        track_dep, track_desc, track_page, track_pkg, track_url, vignette,
+        warnings, working_folder))
+
 }
 
-track <- track[order(track$source,track$cran_check, decreasing = TRUE), ]
-track <- track[, c("package_name", "source", "recent_commit", "cran_check",
-    "warnings", "errors", "vignette_error", "imports", "suggests",
-    "recent_publish_track")]
-write.csv(track, 'checks/Checked_packages.csv', row.names = FALSE)
+
+## Final file for export to `Checked_packages.csv`
+track <- track[order(track$cran_check, track$package_name,
+    decreasing = c(TRUE, FALSE)), ]
+track <- track[, c("package_name", "version", "source", "recent_publish_track",
+    "recent_commit", "cran_check", "warnings", "errors", "vignette_error",
+    "imports", "suggests", "comments")]
+write.csv(track, "Checked_packages.csv", row.names = FALSE)
+
+
+## Differences with previous state
+library("dplyr")
+## 1) CRAN check difference
+left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
+    filter(cran_check != cran_check_old) %>%
+    mutate(news = "mod") %>%
+    select(news, package_name, version, source, date_added_to_list, cran_check,
+        warnings, errors, vignette_error, comments) -> track_mod
+## 2) new packages
+track %>%
+    filter(!(package_name %in% track_old$package_name)) %>%
+    mutate(news = "new") %>%
+    select(news, package_name, version, source, date_added_to_list, cran_check,
+        warnings, errors, vignette_error, comments) -> track_new
+## 3) Together and export
+(changes <- bind_rows(track_mod, track_new))
+write.csv(changes, file = "Changes.csv", row.names = FALSE)
