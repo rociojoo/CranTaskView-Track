@@ -4,8 +4,7 @@
 ## /!\ Start with an up-to-date system /!\
 unlink("packrat", recursive = TRUE)
 packrat::init(infer.dependencies = FALSE)
-install.packages(c("devtools", "remotes", "desc", "dplyr"))
-
+install.packages(c("devtools", "remotes", "desc", "dplyr", "coin"))
 
 ## Directories to download and run checks in.
 download_local <- "downloads"
@@ -21,9 +20,9 @@ pkg_db <- tools::CRAN_package_db()
 bioconductor_url <- "https://bioconductor.org/packages/3.13/bioc/"
 
 
-## Previous status
+## Previous state
 track_old <- read.csv("Checked_packages.csv")
-
+sort(track_old$package_name[track_old$cran_check])
 
 ## Import packages list, and create columns if not exist
 track <- read.csv("Tracking_tbl.csv")
@@ -42,6 +41,7 @@ track$version <- NA
 error_list <- list()
 
 
+######################################################################
 ## Loop over all packages (looooong process)
 for (i in 1:nrow(track)) {
     if (isTRUE(track$skip[i])) { next }
@@ -55,6 +55,15 @@ for (i in 1:nrow(track)) {
         next
     }
 
+    ## Check if package has been published to CRAN
+    if (track$source[i] != "cran") {
+        track_pkg <- pkg_db[pkg_db$Package == track$package_name[i], ]
+        if (nrow(track_pkg) == 1) {
+            track$source[i] <- "cran"
+            message(paste0(track$package_name[i], " is now on CRAN"))
+        }
+    }
+
     ## Specific CRAN
     if (track$source[i] == "cran") {
         track_pkg <- pkg_db[pkg_db$Package == track$package_name[i], ]
@@ -64,15 +73,10 @@ for (i in 1:nrow(track)) {
             track$cran_check[i] <- FALSE
             next
         }
-        string <-
-            paste(
-                ifelse(is.na(track_pkg$Depends), "", track_pkg$Depends),
-                ifelse(is.na(track_pkg$Imports), "", track_pkg$Imports),
-                ifelse(is.na(track_pkg$LinkingTo), "", track_pkg$LinkingTo),
-                sep = ", "
-            )
-        string <- gsub(" \\(.*\\)|,$", "" , string)
-        string <- gsub("^R,", "" , string)
+        string <- paste(na.omit(c(track_pkg$Depends, track_pkg$Imports,
+            track_pkg$LinkingTo)), collapse = ", ")
+        string <- gsub("\\s*\\(.*\\)|,$", "" , string)
+        string <- gsub("^R$|^R,", "" , string)
         string <- trimws(gsub("\n" , " ", string), "both")
         track$imports[i] <- as.character(string)
         string <- ifelse(is.na(track_pkg$Suggests), "", track_pkg$Suggests)
@@ -294,6 +298,7 @@ for (i in 1:nrow(track)) {
         warnings, working_folder))
 
 }
+######################################################################
 
 
 ## Final file for export to `Checked_packages.csv`
@@ -302,7 +307,65 @@ track <- track[order(track$cran_check, track$package_name,
 track <- track[, c("package_name", "version", "source", "recent_publish_track",
     "recent_commit", "cran_check", "warnings", "errors", "vignette_error",
     "imports", "suggests", "comments")]
+
+
+## Imports and suggests network
+
+## we work on packages that check
+pkg_check <- subset(track, cran_check)
+
+## remove spaces, separate imported packages by commas
+pkg_import <- strsplit(gsub("\\s*", "", pkg_check$imports), split = ",")
+## remove duplicates
+pkg_import <- lapply(pkg_import, FUN = unique)
+## number of dependencies
+pkg_import_length <- sapply(pkg_import, FUN = length)
+## create empty data.frame with that number of elements
+pkg_import_gather <- data.frame(
+    package = rep.int(pkg_check$package_name, times = pkg_import_length),
+    network = unlist(pkg_import), role = rep("import", sum(pkg_import_length)))
+
+## now same thing for suggest
+pkg_suggest <- strsplit(gsub("\\s*", "", pkg_check$suggests), split = ",")
+pkg_suggest <- lapply(pkg_suggest, FUN = unique)
+pkg_suggest_length <- sapply(pkg_suggest, FUN = length)
+pkg_suggest_gather <- data.frame(
+    package = rep.int(pkg_check$package_name, times = pkg_suggest_length),
+    network = unlist(pkg_suggest), role = rep("suggest", sum(pkg_suggest_length)))
+
+## one data frame to rule them all
+pkg_net <- rbind.data.frame(pkg_import_gather, pkg_suggest_gather)
+# filtering out non movement packages
+pkg_net <- subset(pkg_net, network %in% pkg_check$package_name)
+
+## counting how much is package is needed or suggested
+pkg_net_tb <- data.frame(table(pkg_net$network))
+names(pkg_net_tb) <- c("package_name", "mention")
+pkg_net_tb <- pkg_net_tb[order(pkg_net_tb$mention, decreasing = TRUE), ]
+pkg_net_tb$t <- 1:nrow(pkg_net_tb)
+pkg_net_tb
+
+## actual test
+library("coin")
+maxstat_test(mention ~ t, dist = "approx", data = pkg_net_tb)
+## 	Approximative Generalized Maximally Selected Statistics
+##
+## data:  mention by t
+## maxT = 3.5677, p-value = 0.0199
+## alternative hypothesis: two.sided
+## sample estimates:
+##   “best” cutpoint: <= 2
+
+## Merge to global table
+track <- left_join(track, pkg_net_tb[, -3], by = "package_name")
+track$mention <- ifelse(is.na(track$mention), 0, track$mention)
+
+
+## Save old/current state, and last run
+write.csv(track_old, "Checked_packages_old.csv", row.names = FALSE) # Not under version
+                                        # control, only for internal needs
 write.csv(track, "Checked_packages.csv", row.names = FALSE)
+writeLines(paste("LAST_RUN:", Sys.Date()), "LAST_RUN")
 
 
 ## Differences with previous state
@@ -322,3 +385,13 @@ track %>%
 ## 3) Together and export
 (changes <- bind_rows(track_mod, track_new))
 write.csv(changes, file = "Changes.csv", row.names = FALSE)
+
+
+## Full list of packages for the CTV (by alphabetical order)
+sort(track$package_name[track$cran_check])
+cat(
+    "  <packagelist>\n    <pkg>",
+    paste(sort(track$package_name[track$cran_check]), collapse = "</pkg>\n    <pkg>"),
+    "</pkg>\n  </packagelist>\n",
+    sep =  ""
+)
