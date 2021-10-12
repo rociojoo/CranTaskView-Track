@@ -1,7 +1,7 @@
-name: Package removed from the CTV
-about: Issue with details for packages removed from the Tracking CTV
-title: "[removed] Name of the package: description of the package (change this title)"
-labels: removed
+name: Submit a package
+about: Suggest the inclusion of a package in the CRAN Task View
+title: "[submission] Name of the package: description of the package (change this title)"
+labels: add-pkg
 body:
   - type: dropdown
     id: author
@@ -30,8 +30,7 @@ body:
     id: url
     attributes:
       label: Please provide the URL of the package repository
-      description: This can be the canonical URL for a package on CRAN, the URL
-      of the repository, or a direct URL to a personal webpage. 
+      description: This can be the canonical URL for a package on CRAN, the URL of the repository, or a direct URL to a personal webpage. 
     validations:
       required: true
   - type: dropdown
