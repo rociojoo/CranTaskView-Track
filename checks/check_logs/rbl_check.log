@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/rbl.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/rbl.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -38,9 +38,9 @@ Invalid citation information in ‘inst/CITATION’:
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... WARNING
 'library' or 'require' calls not declared from:
-  ‘RcppRoll’ ‘data.table’ ‘fields’ ‘signal’ ‘sqldf’
+  ‘data.table’ ‘fields’ ‘RcppRoll’ ‘signal’ ‘sqldf’
 'library' or 'require' calls in package code:
-  ‘RcppRoll’ ‘data.table’ ‘fields’ ‘signal’ ‘sqldf’
+  ‘data.table’ ‘fields’ ‘RcppRoll’ ‘signal’ ‘sqldf’
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 * checking S3 generic/method consistency ... OK
@@ -67,7 +67,6 @@ brokenstick.default: no visible global function definition for
   ‘xy.coords’
 check_nomtch: no visible global function definition for ‘na.omit’
 correct_depth: no visible global function definition for ‘loess’
-correct_depth: no visible global function definition for ‘plot’
 correct_depth: no visible global function definition for ‘lines’
 correct_depth: no visible global function definition for ‘na.omit’
 correct_depth: no visible global function definition for ‘fitted’
@@ -94,9 +93,9 @@ eco.mem: no visible global function definition for ‘setNames’
 front: no visible global function definition for ‘data’
 front: no visible global function definition for ‘par’
 front: no visible global function definition for ‘lines’
-is.POSIXct: no visible global function definition for ‘is’
 is.bsm: no visible global function definition for ‘is’
 is.injective: no visible global function definition for ‘xy.coords’
+is.POSIXct: no visible global function definition for ‘is’
 isobath: no visible global function definition for ‘data’
 isobath: no visible global function definition for ‘lines’
 lighter: no visible global function definition for ‘col2rgb’
@@ -112,16 +111,13 @@ overall_DBA: no visible binding for global variable ‘ayD’
 overall_DBA: no visible binding for global variable ‘azD’
 plot.bsm: no visible global function definition for ‘predict’
 plot.bsm: no visible global function definition for ‘xy.coords’
-plot.bsm: no visible global function definition for ‘plot’
 plot.bsm: no visible binding for global variable ‘points’
 plot.bsm: no visible global function definition for ‘lines’
 plot.bsm: no visible global function definition for ‘text’
-plot.dzi: no visible global function definition for ‘plot’
 plot.dzi: no visible global function definition for ‘polygon’
 plot.dzi: no visible global function definition for ‘lines’
 plot.dzi: no visible global function definition for ‘title’
 plot.tdr: no visible global function definition for ‘grey’
-plot.tdr: no visible binding for global variable ‘plot’
 predict.bsm: no visible global function definition for ‘fitted’
 prey_catch_attempts : .f: no visible global function definition for
   ‘kmeans’
@@ -154,7 +150,6 @@ wiggles: no visible global function definition for ‘xy.coords’
 wiggles: no visible global function definition for ‘coef’
 wiggles: no visible global function definition for ‘setNames’
 wiggles: no visible global function definition for ‘na.omit’
-wiggles: no visible global function definition for ‘plot’
 wiggles: no visible global function definition for ‘points’
 wiggles: no visible global function definition for ‘abline’
 wiggles: no visible global function definition for ‘legend’
@@ -162,13 +157,13 @@ wiggles: no visible global function definition for ‘rnorm’
 wiggles: no visible global function definition for ‘segments’
 Undefined global functions or variables:
   abline as ave axD axis ayD azD coef col2rgb data fitted getParseData
-  grey is kmeans legend lines lm loess median na.omit par plot points
+  grey is kmeans legend lines lm loess median na.omit par points
   polygon predict quantile read.table resid residuals rgb rnorm sd
   segments setNames str text time title tot update value var xy.coords
 Consider adding
-  importFrom("grDevices", "col2rgb", "grey", "rgb", "xy.coords")
   importFrom("graphics", "abline", "axis", "legend", "lines", "par",
-             "plot", "points", "polygon", "segments", "text", "title")
+             "points", "polygon", "segments", "text", "title")
+  importFrom("grDevices", "col2rgb", "grey", "rgb", "xy.coords")
   importFrom("methods", "as", "is")
   importFrom("stats", "ave", "coef", "fitted", "kmeans", "lm", "loess",
              "median", "na.omit", "predict", "quantile", "resid",
@@ -213,5 +208,7 @@ Error in ty[order(token_priority, ty$parent), ] :
   incorrect number of dimensions
 Calls: tdrply -> ty_delim
 Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
 Status: 1 ERROR, 3 WARNINGs, 2 NOTEs

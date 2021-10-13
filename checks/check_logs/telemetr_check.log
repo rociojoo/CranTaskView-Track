@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/telemetr.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/telemetr.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -15,7 +15,10 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package ‘telemetr’ can be installed ... OK
+* checking whether package ‘telemetr’ can be installed ... WARNING
+Found the following significant warnings:
+  Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+See ‘/tmp/RtmpAoUN5D/telemetr.Rcheck/00install.out’ for details.
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -126,6 +129,27 @@ See ‘Writing portable packages’ in the ‘Writing R Extensions’ manual.
 * checking for unstated dependencies in vignettes ... NOTE
 'library' or 'require' call not declared from: ‘ggplot2’
 * checking package vignettes in ‘inst/doc’ ... OK
-* checking re-building of vignette outputs ... OK
+* checking re-building of vignette outputs ... WARNING
+Error(s) in re-building vignettes:
+  ...
+--- re-building ‘telemetry.Rnw’ using Sweave
+Loading required package: lattice
+Loading required package: sp
+Loading required package: plyr
+
+Error: processing vignette 'telemetry.Rnw' failed with diagnostics:
+ chunk 1 
+Error in library(ggplot2) : there is no package called ‘ggplot2’
+
+--- failed re-building ‘telemetry.Rnw’
+
+SUMMARY: processing the following file failed:
+  ‘telemetry.Rnw’
+
+Error: Vignette re-building failed.
+Execution halted
+
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 3 WARNINGs, 4 NOTEs
+Status: 5 WARNINGs, 4 NOTEs

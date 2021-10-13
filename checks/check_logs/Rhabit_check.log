@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/Rhabit.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/Rhabit.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -58,7 +58,11 @@
 * checking tests ... OK
   Running ‘testthat.R’
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in ‘inst/doc’ ... OK
+* checking package vignettes in ‘inst/doc’ ... NOTE
+Package vignette with placeholder title ‘Vignette Title’:
+  ‘Rhabit_vignette.Rmd’
 * checking re-building of vignette outputs ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: OK
+Status: 1 NOTE

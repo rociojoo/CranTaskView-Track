@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/feedr.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/feedr.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -7,7 +7,11 @@
 * checking extension type ... Package
 * this is package ‘feedr’ version ‘0.10.0’
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+Imports includes 22 non-default packages.
+Importing from so many packages makes the package vulnerable to any of
+them becoming unavailable.  Move as many as possible to Suggests and
+use conditionally.
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -82,25 +86,17 @@ Missing link or links in documentation object 'disp.Rd':
 Missing link or links in documentation object 'load_format.Rd':
   ‘[lubridate]{parse_date_time()}’
 
-Missing link or links in documentation object 'load_raw.Rd':
+Missing link or links in documentation object 'load_raw_all.Rd':
   ‘[lubridate]{parse_date_time()}’
 
-Missing link or links in documentation object 'load_raw_all.Rd':
+Missing link or links in documentation object 'load_raw.Rd':
   ‘[lubridate]{parse_date_time()}’
 
 See section 'Cross-references' in the 'Writing R Extensions' manual.
 
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... WARNING
-Undocumented arguments in documentation object '.onLoad'
-  ‘libname’ ‘pkgname’
-
-Functions with \usage entries need to have the appropriate \alias
-entries, and all their arguments documented.
-The \usage entries must correspond to syntactically valid R code.
-See chapter ‘Writing R documentation files’ in the ‘Writing R
-Extensions’ manual.
+* checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
 * checking contents of ‘data’ directory ... OK
@@ -112,23 +108,37 @@ Running examples in ‘feedr-Ex.R’ failed
 The error most likely occurred in:
 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: map_ggmap
-> ### Title: Map data using ggmap
-> ### Aliases: map_ggmap
+> ### Name: convert_anidom
+> ### Title: Convert displacements for use by functions from the aniDom
+> ###   package
+> ### Aliases: convert_anidom
 > 
 > ### ** Examples
 > 
 > 
-> v <- visits(finches)
-Warning: Factor `animal_id` contains implicit NA, consider using `forcats::fct_explicit_na`
-Warning: Factor `animal_id` contains implicit NA, consider using `forcats::fct_explicit_na`
-> p <- presence(v, bw = 15)
-> m <- move(v)
-> 
-> # Built in summaries
-> map_ggmap(p = p, m = m, summary = "sum")
-Error: Google now requires an API key.
-       See ?register_google for details.
+> # Calculate displacements
+> d <- disp(visits(finches_lg))
+Error: Assigned data `c("displacee", "displacer")` must be compatible with existing data.
+✖ Existing data has 14 rows.
+✖ Assigned data has 2 rows.
+ℹ Only vectors of size 1 are recycled.
+Backtrace:
+     █
+  1. ├─feedr::disp(visits(finches_lg))
+  2. │ ├─base::`$<-`(...)
+  3. │ └─tibble:::`$<-.tbl_df`(...)
+  4. │   └─tibble:::tbl_subassign(...)
+  5. │     └─tibble:::vectbl_recycle_rhs_rows(...)
+  6. │       ├─base::withCallingHandlers(...)
+  7. │       └─vctrs::vec_recycle(value[[j]], nrow)
+  8. ├─vctrs:::stop_recycle_incompatible_size(...)
+  9. │ └─vctrs:::stop_vctrs(...)
+ 10. │   └─rlang::abort(message, class = c(class, "vctrs_error"), ...)
+ 11. │     └─rlang:::signal_abort(cnd)
+ 12. │       └─base::signalCondition(cnd)
+ 13. └─(function (cnd) ...
 Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 2 WARNINGs, 2 NOTEs
+Status: 1 ERROR, 1 WARNING, 3 NOTEs

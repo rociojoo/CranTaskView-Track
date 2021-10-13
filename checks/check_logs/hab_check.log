@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/hab.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/hab.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -57,6 +57,11 @@ manual.
 acf.test : <anonymous>: no visible global function definition for ‘acf’
 acf.test : <anonymous>: no visible global function definition for
   ‘qnorm’
+kerneloverlap: no visible global function definition for ‘slot’
+kerneloverlap : <anonymous>: no visible global function definition for
+  ‘coordinates’
+kerneloverlap: no visible global function definition for
+  ‘gridparameters’
 kernelUD: no visible global function definition for ‘coordinates’
 kernelUD: no visible global function definition for ‘proj4string’
 kernelUD : <anonymous>: no visible global function definition for
@@ -72,11 +77,6 @@ kernelUD : <anonymous>: no visible global function definition for
   ‘gridparameters’
 kernelUD : <anonymous>: no visible global function definition for
   ‘proj4string<-’
-kerneloverlap: no visible global function definition for ‘slot’
-kerneloverlap : <anonymous>: no visible global function definition for
-  ‘coordinates’
-kerneloverlap: no visible global function definition for
-  ‘gridparameters’
 kfold.coxph: no visible global function definition for ‘model.frame’
 kfold.coxph: no visible global function definition for ‘terms’
 kfold.coxph: no visible global function definition for ‘update’
@@ -104,22 +104,17 @@ plot.ltraj: no visible global function definition for ‘gray’
 plot.ltraj: no visible global function definition for ‘par’
 plot.ltraj: no visible global function definition for ‘n2mfrow’
 plot.ltraj: no visible binding for global variable ‘image’
-plot.ltraj: no visible global function definition for ‘plot’
-plot.ltraj: no visible binding for global variable ‘plot’
 plot.ltraj: no visible binding for global variable ‘points’
 plot.ltraj: no visible binding for global variable ‘segments’
 plot.ltraj: no visible global function definition for ‘points’
 plot.ltraj: no visible global function definition for ‘title’
+plotltr: no visible global function definition for ‘n2mfrow’
+plotltr: no visible global function definition for ‘par’
+plotltr : <anonymous>: no visible binding for global variable ‘lines’
 plotNAltraj: no visible global function definition for ‘n2mfrow’
 plotNAltraj: no visible global function definition for ‘par’
 plotNAltraj : <anonymous>: no visible binding for global variable
-  ‘plot’
-plotNAltraj : <anonymous>: no visible binding for global variable
   ‘lines’
-plotltr: no visible global function definition for ‘n2mfrow’
-plotltr: no visible global function definition for ‘par’
-plotltr : <anonymous>: no visible binding for global variable ‘plot’
-plotltr : <anonymous>: no visible binding for global variable ‘lines’
 print.summarySeq: no visible global function definition for ‘sd’
 rdSteps: no visible binding for global variable ‘dx’
 rdSteps: no visible binding for global variable ‘rel.angle’
@@ -136,7 +131,6 @@ trajdyn : <anonymous>: no visible global function definition for
   ‘setNames’
 trajdyn : replot: no visible global function definition for ‘par’
 trajdyn : replot: no visible global function definition for ‘tail’
-trajdyn : replot: no visible global function definition for ‘plot’
 trajdyn : replot: no visible global function definition for
   ‘scatterutil.sub’
 trajdyn : replot : <anonymous>: no visible global function definition
@@ -153,16 +147,16 @@ trajdyn : mm.w: no visible global function definition for ‘points’
 trajdyn : kb: no visible global function definition for ‘select.list’
 trajdyn: no visible global function definition for ‘getGraphicsEvent’
 Undefined global functions or variables:
-  %over% CRS Line Lines SpatialLines SpatialLinesDataFrame
-  SpatialPoints SpatialPointsDataFrame acf arrows combn coordinates cor
-  dist dx getGraphicsEvent gray gridparameters image lines model.frame
-  n2mfrow par pf plot points predict proj4string proj4string<- qnorm
-  rel.angle scatterutil.sub sd segments select.list setNames sets slot
-  slot<- tail terms title update x y
+  %over% acf arrows combn coordinates cor CRS dist dx getGraphicsEvent
+  gray gridparameters image Line lines Lines model.frame n2mfrow par pf
+  points predict proj4string proj4string<- qnorm rel.angle
+  scatterutil.sub sd segments select.list setNames sets slot slot<-
+  SpatialLines SpatialLinesDataFrame SpatialPoints
+  SpatialPointsDataFrame tail terms title update x y
 Consider adding
+  importFrom("graphics", "arrows", "image", "lines", "par", "points",
+             "segments", "title")
   importFrom("grDevices", "getGraphicsEvent", "gray", "n2mfrow")
-  importFrom("graphics", "arrows", "image", "lines", "par", "plot",
-             "points", "segments", "title")
   importFrom("methods", "slot", "slot<-")
   importFrom("stats", "acf", "cor", "dist", "model.frame", "pf",
              "predict", "qnorm", "sd", "setNames", "terms", "update")
@@ -236,5 +230,7 @@ Extensions’ manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
 * checking examples ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
 Status: 1 WARNING, 4 NOTEs

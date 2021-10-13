@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/moveNT.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/moveNT.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -26,9 +26,8 @@ See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... NOTE
 Non-standard files/directories found at top level:
-  ‘moveNT.pdf’ ‘vignette-moveNT.Rmd’ ‘vignette-moveNT.pdf’
-  ‘vignette-movescape.Rmd’ ‘vignette-movescape.pdf’ ‘vignette.Rmd’
-  ‘vignette.html’ ‘vignette.pdf’
+  ‘moveNT.pdf’ ‘vignette-moveNT.pdf’ ‘vignette-moveNT.Rmd’
+  ‘vignette-movescape.pdf’ ‘vignette-movescape.Rmd’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -58,7 +57,6 @@ Packages in Depends field not imported from:
 adj2stack: no visible global function definition for ‘stack’
 adj2stack: no visible global function definition for ‘values’
 adj2stack: no visible global function definition for ‘setValues’
-adj2stack: no visible global function definition for ‘plot’
 clust_stack: no visible global function definition for ‘values’
 clust_stack: no visible global function definition for ‘values<-’
 clust_stack: no visible global function definition for ‘stack’
@@ -67,7 +65,6 @@ clust_stack: no visible global function definition for ‘mosaic’
 clustnet: no visible global function definition for ‘install.packages’
 clustnet: no visible global function definition for ‘values’
 clustnet: no visible global function definition for ‘values<-’
-clustnet: no visible global function definition for ‘plot’
 graphmet: no visible global function definition for ‘values’
 ind_clust: no visible global function definition for ‘install.packages’
 ind_clust: no visible global function definition for ‘Mclust’
@@ -80,7 +77,6 @@ interpolation: no visible global function definition for ‘na.omit’
 interpolation: no visible global function definition for ‘SpatialLines’
 interpolation : <anonymous>: no visible global function definition for
   ‘Lines’
-interpolation: no visible global function definition for ‘extract’
 interpolation: no visible global function definition for ‘rasterize’
 interpolation: no visible global function definition for ‘stack’
 loop: no visible global function definition for ‘SpatialPoints’
@@ -100,7 +96,6 @@ quant: no visible global function definition for ‘quantile’
 sim_mov: no visible global function definition for ‘ld’
 sim_mov: no visible global function definition for ‘tail’
 sim_mov: no visible global function definition for ‘rnorm’
-sim_mov: no visible global function definition for ‘plot’
 table_cluster: no visible global function definition for ‘values’
 table_cluster: no visible global function definition for ‘na.omit’
 traj2adj: no visible global function definition for ‘coordinates’
@@ -109,15 +104,12 @@ traj2adj: no visible global function definition for ‘crop’
 traj2adj: no visible global function definition for ‘values<-’
 traj2adj: no visible global function definition for ‘ncell’
 traj2adj: no visible global function definition for ‘rasterize’
-traj2adj: no visible global function definition for ‘extract’
 traj2adj: no visible global function definition for ‘values’
 Undefined global functions or variables:
-  Lines Mclust SpatialLines SpatialPoints coordinates crop extract
-  install.packages ld mosaic na.omit ncell plot quantile raster
-  rasterize rnorm setTxtProgressBar setValues stack tail txtProgressBar
-  values values<-
+  coordinates crop install.packages ld Lines Mclust mosaic na.omit
+  ncell quantile raster rasterize rnorm setTxtProgressBar setValues
+  SpatialLines SpatialPoints stack tail txtProgressBar values values<-
 Consider adding
-  importFrom("graphics", "plot")
   importFrom("stats", "na.omit", "quantile", "rnorm")
   importFrom("utils", "install.packages", "setTxtProgressBar", "stack",
              "tail", "txtProgressBar")
@@ -127,7 +119,19 @@ to your NAMESPACE file.
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
+* checking for code/documentation mismatches ... WARNING
+Codoc mismatches from documentation object 'adj2stack':
+adj2stack
+  Code: function(adjmov, mode = "directed", weighted = T, ...)
+  Docs: function(adjmov, grph = T, mode = "directed", weighted = T,
+                 ...)
+  Argument names in docs not in code:
+    grph
+  Mismatches in argument names:
+    Position: 2 Code: mode Docs: grph
+    Position: 3 Code: weighted Docs: mode
+    Position: 4 Code: ... Docs: weighted
+
 * checking Rd \usage sections ... WARNING
 Undocumented arguments in documentation object 'adj2stack'
   ‘...’
@@ -166,5 +170,7 @@ The error most likely occurred in:
 Error in sim_mov(type = "OU", npatches = 3, grph = T) : 
   T used instead of TRUE
 Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 3 WARNINGs, 2 NOTEs
+Status: 1 ERROR, 4 WARNINGs, 2 NOTEs

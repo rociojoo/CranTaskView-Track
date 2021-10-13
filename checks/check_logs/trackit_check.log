@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/trackit.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/trackit.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -77,10 +77,8 @@ print.trackit: warning in formatC(abs(x$max.grad.comp), dig = 4, wid =
 .First.lib: no visible global function definition for ‘data’
 .First.lib: no visible binding for global variable ‘angle2light’
 .First.lib: no visible binding for global variable ‘gmt3’
-.trimit: no visible global function definition for ‘plot’
 .trimit: no visible global function definition for ‘locator’
 .trimit: no visible global function definition for ‘points’
-JD: no visible binding for global variable ‘deltat’
 approxDeltaT: no visible global function definition for ‘approx’
 fitmap: no visible global function definition for ‘par’
 fitmap : .CI.reg: no visible global function definition for ‘par’
@@ -117,6 +115,7 @@ get.sst.from.server: no visible global function definition for
   ‘write.table’
 get.sst.from.server: no visible binding for '<<-' assignment to
   ‘.sstFileVector’
+JD: no visible binding for global variable ‘deltat’
 light.simulator: no visible binding for global variable ‘angle2light’
 light.simulator : addCorrNoise: no visible global function definition
   for ‘write.table’
@@ -128,6 +127,8 @@ light.simulator: no visible binding for global variable
 light.simulator: no visible global function definition for ‘approx’
 light.simulator: no visible global function definition for
   ‘write.table’
+light.simulator: no visible global function definition for
+  ‘.path.package’
 light.simulator: no visible global function definition for ‘read.table’
 light.simulator: no visible global function definition for ‘approxfun’
 plot.trackit: no visible global function definition for ‘par’
@@ -139,21 +140,18 @@ plotbasemap: no visible global function definition for ‘axis’
 plotbasemap: no visible global function definition for ‘polygon’
 plotbasemap: no visible global function definition for ‘mtext’
 plotbasemap: no visible global function definition for ‘locator’
-plotlat: no visible global function definition for ‘plot’
 plotlat: no visible global function definition for ‘axis’
 plotlat: no visible global function definition for ‘mtext’
 plotlat: no visible global function definition for ‘box’
 plotlat: no visible global function definition for ‘polygon’
 plotlat: no visible global function definition for ‘lines’
 plotlat: no visible global function definition for ‘points’
-plotlon: no visible global function definition for ‘plot’
 plotlon: no visible global function definition for ‘axis’
 plotlon: no visible global function definition for ‘mtext’
 plotlon: no visible global function definition for ‘box’
 plotlon: no visible global function definition for ‘polygon’
 plotlon: no visible global function definition for ‘lines’
 plotlon: no visible global function definition for ‘points’
-plotsst: no visible global function definition for ‘plot’
 plotsst: no visible global function definition for ‘axis’
 plotsst: no visible global function definition for ‘mtext’
 plotsst: no visible global function definition for ‘box’
@@ -166,20 +164,19 @@ prepit: no visible global function definition for ‘filepath’
 print.trackit: no visible global function definition for
   ‘packageDescription’
 scroll: no visible global function definition for ‘par’
-scroll: no visible global function definition for ‘plot’
 trackit: no visible global function definition for ‘write.table’
 trackit: no visible global function definition for ‘read.table’
 two.layer.depth.corr: no visible global function definition for
   ‘complete.cases’
 Undefined global functions or variables:
-  .sstFileVector angle2light approx approxfun axis box complete.cases
-  data deltat download.file filepath gmt3 lines locator mtext na.omit
-  nc_close nc_open nc_sync ncvar_add ncvar_def ncvar_get ncvar_put
-  packageDescription par plot plot.new points polygon qchisq read.table
-  rect rnorm write.table
+  .path.package .sstFileVector angle2light approx approxfun axis box
+  complete.cases data deltat download.file filepath gmt3 lines locator
+  mtext na.omit nc_close nc_open nc_sync ncvar_add ncvar_def ncvar_get
+  ncvar_put packageDescription par plot.new points polygon qchisq
+  read.table rect rnorm write.table
 Consider adding
   importFrom("graphics", "axis", "box", "lines", "locator", "mtext",
-             "par", "plot", "plot.new", "points", "polygon", "rect")
+             "par", "plot.new", "points", "polygon", "rect")
   importFrom("stats", "approx", "approxfun", "complete.cases", "deltat",
              "na.omit", "qchisq", "rnorm")
   importFrom("utils", "data", "download.file", "packageDescription",
@@ -210,11 +207,12 @@ Codoc mismatches from documentation object 'get.sst.from.server':
 get.sst.from.server
   Code: function(track, lonlow, lonhigh, latlow, lathigh, folder =
                  tempdir(), removeland = TRUE, minus180 = FALSE,
-                 offsetx = 0, offset.cutoff = 360)
+                 offsetx = 0, offset.cutoff = 360, ftpurl =
+                 "downloads.psl.noaa.gov")
   Docs: function(track, folder = tempdir(), removeland = TRUE, save =
                  F)
   Argument names in code not in docs:
-    lonlow lonhigh latlow lathigh minus180 offsetx offset.cutoff
+    lonlow lonhigh latlow lathigh minus180 offsetx offset.cutoff ftpurl
   Argument names in docs not in code:
     save
   Mismatches in argument names:
@@ -224,8 +222,8 @@ get.sst.from.server
 
 Data codoc mismatches from documentation object 'deltat':
 Variables in data frame 'deltat'
-  Code: DTminusUT day month year
-  Docs: DTminusUT JDE day month year
+  Code: day DTminusUT month year
+  Docs: day DTminusUT JDE month year
 
 * checking Rd \usage sections ... WARNING
 Undocumented arguments in documentation object 'get.sst.from.server'
@@ -248,7 +246,13 @@ See chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of ‘data’ directory ... OK
+* checking contents of ‘data’ directory ... NOTE
+File 'data/datalist' is out-of-date:
+  Data files in 'data' directory not in 'datalist':
+    driftergps driftersst
+  Data objects in 'data' directory not in 'datalist':
+    driftergps driftersst
+Please re-create using tools::add_datalist(force = TRUE).
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... WARNING
   
@@ -283,5 +287,9 @@ Warning in file(con, "r") :
 Error in file(con, "r") : cannot open the connection
 Calls: prepit -> readLines -> file
 Execution halted
+* checking for non-standard things in the check directory ... NOTE
+Found the following files/directories:
+  ‘input.dat’
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 5 WARNINGs, 4 NOTEs
+Status: 1 ERROR, 5 WARNINGs, 6 NOTEs

@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/argosTrack.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/argosTrack.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -17,9 +17,9 @@
 * checking serialization versions ... OK
 * checking whether package ‘argosTrack’ can be installed ... OK
 * checking installed package size ... NOTE
-  installed size is 57.7Mb
+  installed size is 73.4Mb
   sub-directories of 1Mb or more:
-    libs  56.6Mb
+    libs  72.3Mb
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking ‘build’ directory ... OK
@@ -66,5 +66,7 @@
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking re-building of vignette outputs ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
 Status: 1 NOTE

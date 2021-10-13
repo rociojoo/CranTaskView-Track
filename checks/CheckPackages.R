@@ -13,6 +13,7 @@ dir.create(download_local)
 check_logs <- "check_logs"
 unlink(check_logs, recursive = TRUE)
 dir.create(check_logs)
+
 ## List of CRAN packages
 pkg_db <- tools::CRAN_package_db()
 ## update the root Bioconductor URL as versions are released (3.13 on
@@ -27,6 +28,7 @@ sort(track_old$package_name[track_old$cran_check])
 ## Import packages list, and create columns if not exist
 track <- read.csv("Tracking_tbl.csv")
 track$source <- tolower(track$source)
+track$skip <- ifelse(is.na(track$skip), FALSE, track$skip)
 track$recent_commit <- NA
 track$cran_check <- NA
 track$warnings <- NA
@@ -69,6 +71,7 @@ for (i in 1:nrow(track)) {
         track_pkg <- pkg_db[pkg_db$Package == track$package_name[i], ]
         if (nrow(track_pkg) == 0) {
             warning(paste0(track$package_name[i], " is not on CRAN"))
+            track$source[i] <- "cran-archived"
             track$errors[i] <- TRUE
             track$cran_check[i] <- FALSE
             next
@@ -291,9 +294,9 @@ for (i in 1:nrow(track)) {
         overwrite = TRUE)
 
     ## House cleaning
-    suppressWarnings(rm(bioconductor_url, branch, build_file, checks, commit,
-        commit_list, download_file, download_folder, errors, here, ll, match,
-        out, owner, phrase, repo, string, temp_files, desc_folder, there,
+    suppressWarnings(rm(branch, build_file, checks, commit, commit_list,
+        download_file, download_folder, errors, here, ll, match, out,
+        owner, phrase, repo, string, temp_files, desc_folder, there,
         track_dep, track_desc, track_page, track_pkg, track_url, vignette,
         warnings, working_folder))
 
@@ -301,12 +304,17 @@ for (i in 1:nrow(track)) {
 ######################################################################
 
 
+
 ## Final file for export to `Checked_packages.csv`
-track <- track[order(track$cran_check, track$package_name,
-    decreasing = c(TRUE, FALSE)), ]
-track <- track[, c("package_name", "version", "source", "recent_publish_track",
-    "recent_commit", "cran_check", "warnings", "errors", "vignette_error",
-    "imports", "suggests", "comments")]
+library("dplyr")
+sum(!is.na(track$cran_check)) == nrow(track[!track$skip, ]) # Must be TRUE
+subset(track, is.na(cran_check))
+track <- track %>%
+    arrange(desc(track$cran_check), track$package_name) %>%
+    select(package_name, version, source, date_added_to_list, skip,
+        recent_publish_track, recent_commit, cran_check, warnings,
+        errors, vignette_error, imports, suggests, comments)
+
 
 
 ## Imports and suggests network
@@ -369,25 +377,28 @@ writeLines(paste("LAST_RUN:", Sys.Date()), "LAST_RUN")
 
 
 ## Differences with previous state
-library("dplyr")
-## 1) CRAN check difference
-left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
-    filter(cran_check != cran_check_old) %>%
-    mutate(news = "mod") %>%
-    select(news, package_name, version, source, date_added_to_list, cran_check,
-        warnings, errors, vignette_error, comments) -> track_mod
-## 2) new packages
+## 1) new packages
 track %>%
+    filter(!skip) %>%
     filter(!(package_name %in% track_old$package_name)) %>%
     mutate(news = "new") %>%
-    select(news, package_name, version, source, date_added_to_list, cran_check,
-        warnings, errors, vignette_error, comments) -> track_new
+    select(news, package_name, version, source, date_added_to_list,
+        cran_check, warnings, errors, vignette_error, comments) -> track_new
+## 2) CRAN check difference
+left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
+    filter(!skip) %>%
+    filter(cran_check != cran_check_old) %>%
+    mutate(news = "mod") %>%
+    select(news, package_name, version, source, date_added_to_list,
+        cran_check, warnings, errors, vignette_error, comments) -> track_mod
 ## 3) Together and export
-(changes <- bind_rows(track_mod, track_new))
+(changes <- bind_rows(track_new, track_mod))
+
 write.csv(changes, file = "Changes.csv", row.names = FALSE)
 
 
 ## Full list of packages for the CTV (by alphabetical order)
+## Add CORE packages as "(core)"
 sort(track$package_name[track$cran_check])
 cat(
     "  <packagelist>\n    <pkg>",

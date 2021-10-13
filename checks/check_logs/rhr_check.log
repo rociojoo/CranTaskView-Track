@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/rhr.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/rhr.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -137,10 +137,10 @@ rhrMapFields: no visible global function definition for ‘is’
 rhrMapFields : <anonymous>: no visible global function definition for
   ‘complete.cases’
 rhrOU: no visible global function definition for ‘rnorm’
-rhrPRW: no visible global function definition for ‘runif’
 rhrPoints.RhrTrackST: no visible global function definition for ‘as’
-rhrRW: no visible global function definition for ‘rnorm’
+rhrPRW: no visible global function definition for ‘runif’
 rhrReadData: no visible global function definition for ‘read.table’
+rhrRW: no visible global function definition for ‘rnorm’
 rhrSchoener: no visible global function definition for ‘complete.cases’
 rhrSchoener: no visible global function definition for ‘cov’
 rhrSchoener: no visible global function definition for ‘qnorm’
@@ -148,11 +148,11 @@ rhrSplit.RhrTrackST : <anonymous>: no visible global function
   definition for ‘as’
 rhrSplit.RhrTrackST : <anonymous>: no visible global function
   definition for ‘time’
-rhrTTSI: no visible global function definition for ‘complete.cases’
 rhrTimes.RhrTrackST: no visible global function definition for ‘time’
 rhrTrack: no visible global function definition for ‘is’
 rhrTrack: no visible global function definition for ‘as’
 rhrTracks: no visible global function definition for ‘is’
+rhrTTSI: no visible global function definition for ‘complete.cases’
 rhrUniCirc: no visible global function definition for ‘optim’
 rhrUniNorm: no visible global function definition for ‘optim’
 rhrWithin.RhrTracks: no visible binding for global variable ‘is’
@@ -163,9 +163,9 @@ Undefined global functions or variables:
   points qnorm rainbow read.table rgamma rnorm runif sd slot
   terrain.colors time var
 Consider adding
+  importFrom("graphics", "legend", "points")
   importFrom("grDevices", "dev.off", "extendrange", "heat.colors", "pdf",
              "png", "rainbow", "terrain.colors")
-  importFrom("graphics", "legend", "points")
   importFrom("methods", "as", "is", "slot")
   importFrom("stats", "approx", "coef", "complete.cases", "cov", "dist",
              "kmeans", "optim", "qnorm", "rgamma", "rnorm", "runif",
@@ -178,7 +178,19 @@ contains 'methods').
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
+* checking for code/documentation mismatches ... WARNING
+Variables with usage in documentation object 'datSH' but not in code:
+  ‘datSH’
+
+Variables with usage in documentation object 'trackS' but not in code:
+  ‘trackS’
+
+Variables with usage in documentation object 'trackST' but not in code:
+  ‘trackST’
+
+Variables with usage in documentation object 'trackSTR' but not in code:
+  ‘trackSTR’
+
 * checking Rd \usage sections ... WARNING
 Documented arguments not in \usage in documentation object 'overlaps':
   ‘y’
@@ -218,23 +230,25 @@ Execution halted
 * checking for unstated dependencies in ‘tests’ ... WARNING
 'library' or 'require' call not declared from: ‘magrittr’
 * checking tests ... ERROR
-  Running ‘testthat.R’ [17s/17s]
+  Running ‘testthat.R’ [21s/21s]
 Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
-  7: `[.RhrTrackS`(x, wp, )
-  8: rhrTrack(rhrPoints(x)[i, ])
-  9: directions_ll(cc)
-  10: atan2(dd[, 2], dd[, 1])
+    2. ├─rhr:::rhrWithin.RhrTracks(b0, bbx)
+    3. │ └─base::lapply(x, rhrWithin, y)
+    4. │   ├─rhr:::FUN(X[[i]], ...)
+    5. │   └─rhr:::rhrWithin.RhrTrack(X[[i]], ...)
+    6. │     ├─x[wp, ]
+    7. │     └─rhr:::`[.RhrTrackS`(x, wp, )
+    8. │       └─rhr::rhrTrack(rhrPoints(x)[i, ])
+    9. │         └─rhr:::directions_ll(cc)
+   10. │           └─base::atan2(dd[, 2], dd[, 1])
+   11. └─base::.handleSimpleError(...)
+   12.   └─base:::h(simpleError(msg, call))
   
-  ══ testthat results  ════════════════════════════════════════════════════════════════════════════════
-  [ OK: 194 | SKIPPED: 2 | WARNINGS: 34 | FAILED: 5 ]
-  1. Error: Dimensions of results are correct (@test-rhrBase.R#16) 
-  2. Error: Dimensions of results are correct (@test-rhrBase.R#27) 
-  3. Error: Dimensions of results are correct (@test-rhrBase.R#38) 
-  4. Error: Dimensions of results are correct (@test-rhrBase.R#51) 
-  5. Error: (unknown) (@test-rhrTracks.R#44) 
-  
-  Error: testthat unit tests failed
+  [ FAIL 5 | WARN 174 | SKIP 2 | PASS 194 ]
+  Error: Test failures
   Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 2 ERRORs, 4 WARNINGs, 1 NOTE
+Status: 2 ERRORs, 5 WARNINGs, 1 NOTE

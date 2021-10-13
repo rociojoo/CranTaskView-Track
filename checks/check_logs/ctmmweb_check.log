@@ -1,14 +1,18 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/ctmmweb.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/ctmmweb.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
 * checking for file ‘ctmmweb/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘ctmmweb’ version ‘0.2.10’
+* this is package ‘ctmmweb’ version ‘0.2.11’
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+Imports includes 29 non-default packages.
+Importing from so many packages makes the package vulnerable to any of
+them becoming unavailable.  Move as many as possible to Suggests and
+use conditionally.
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -17,13 +21,9 @@
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
 * checking whether package ‘ctmmweb’ can be installed ... OK
-* checking installed package size ... NOTE
-  installed size is  5.0Mb
-  sub-directories of 1Mb or more:
-    doc   4.1Mb
+* checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
-* checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
@@ -45,37 +45,22 @@
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
-* checking Rd cross-references ... OK
+* checking Rd cross-references ... WARNING
+Missing link or links in documentation object 'par_lapply.Rd':
+  ‘[parallel:mcdummies]{parallel::mclapply()}’
+
+See section 'Cross-references' in the 'Writing R Extensions' manual.
+
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking installed files from ‘inst/doc’ ... OK
-* checking files in ‘vignettes’ ... OK
+* checking files in ‘vignettes’ ... WARNING
+Files in the 'vignettes' directory but no files in 'inst/doc':
+  ‘demo.Rmd’, ‘installation.Rmd’, ‘package_usage.Rmd’
 * checking examples ... OK
-* checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in ‘inst/doc’ ... OK
-* checking re-building of vignette outputs ... WARNING
-Error(s) in re-building vignettes:
-  ...
---- re-building ‘demo.Rmd’ using rmarkdown
---- finished re-building ‘demo.Rmd’
-
---- re-building ‘installation.Rmd’ using rmarkdown
---- finished re-building ‘installation.Rmd’
-
---- re-building ‘package_usage.Rmd’ using rmarkdown
-Quitting from lines 178-182 (package_usage.Rmd) 
-Error: processing vignette 'package_usage.Rmd' failed with diagnostics:
-All items in j=list(...) should be atomic vectors or lists. If you are trying something like j=list(.SD,newcol=mean(colA)) then use := by group instead (much quicker), or cbind or merge afterwards.
---- failed re-building ‘package_usage.Rmd’
-
-SUMMARY: processing the following file failed:
-  ‘package_usage.Rmd’
-
-Error: Vignette re-building failed.
-Execution halted
-
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 WARNING, 1 NOTE
+Status: 2 WARNINGs, 1 NOTE

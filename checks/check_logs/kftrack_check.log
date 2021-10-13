@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/kftrack.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/kftrack.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -63,34 +63,32 @@ File ‘kftrack/R/kftrack.R’:
 Package startup functions should not change the search path.
 See section ‘Good practice’ in '?.onAttach'.
 
+.add.fit.to.server.list: no visible binding for global variable
+  ‘.tagListFile’
 .CI.reg: no visible global function definition for ‘par’
 .CI.reg: no visible global function definition for ‘qchisq’
 .CI.reg: no visible global function definition for ‘polygon’
 .First.lib: no visible binding for global variable ‘.serverGlobalWD’
 .First.lib: no visible binding for global variable ‘.tagListFile’
 .First.lib: no visible binding for global variable ‘.tagList’
-.add.fit.to.server.list: no visible binding for global variable
-  ‘.tagListFile’
 .generate.dat.file: no visible global function definition for
   ‘write.table’
 .generate.twoseg.dat.file: no visible global function definition for
   ‘write.table’
 .getCI: no visible global function definition for ‘qchisq’
 .init.scan: no visible global function definition for ‘mdy.date’
+.init.scan: no visible global function definition for ‘.path.package’
 .init.scan: no visible binding for global variable ‘admb.string’
 .make.flags: no visible binding for global variable ‘theta.active’
 .make.flags: no visible binding for global variable ‘var.struct’
 .make.flags: no visible binding for global variable ‘fix.last’
 .middate: no visible global function definition for ‘mdy.date’
-.plot1: no visible global function definition for ‘plot’
 .plot1: no visible global function definition for ‘gray’
 .plot1: no visible global function definition for ‘lines’
-.plot2: no visible global function definition for ‘plot’
 .plot2: no visible global function definition for ‘gray’
 .plot2: no visible global function definition for ‘lines’
 .plot3 : gmt: no visible binding for '<<-' assignment to ‘cmd’
 .plot3 : gmt: no visible binding for global variable ‘cmd’
-.plot3: no visible global function definition for ‘plot’
 .plot3: no visible global function definition for ‘par’
 .plot3: no visible global function definition for ‘rect’
 .plot3: no visible global function definition for ‘polygon’
@@ -115,6 +113,7 @@ addmap: no visible global function definition for ‘axis’
 addmap: no visible global function definition for ‘box’
 addmap: no visible global function definition for ‘mtext’
 addmap: no visible global function definition for ‘title’
+kftrack: no visible global function definition for ‘.path.package’
 plot.kftrack: no visible global function definition for ‘par’
 plot.kftrack: no visible global function definition for ‘layout’
 plot.kftrack: no visible global function definition for ‘mdy.date’
@@ -132,7 +131,6 @@ plot.kftrack.scan: no visible binding for global variable
 plot.kftrack.scan: no visible binding for global variable ‘pred.track’
 plot.kftrack.scan: no visible binding for global variable
   ‘most.prob.track’
-plot.kftrack.scan: no visible global function definition for ‘plot’
 plot.kftrack.scan: no visible binding for global variable
   ‘days.at.liberty’
 plot.kftrack.scan: no visible global function definition for ‘gray’
@@ -154,17 +152,16 @@ plot.kftrack.scan: no visible binding for global variable ‘nlogL’
 plot.kftrack.scan: no visible global function definition for ‘title’
 upload.track: no visible global function definition for ‘browseURL’
 Undefined global functions or variables:
-  .serverGlobalWD .tagList .tagListFile abline admb.string axis box
-  browseURL cmd days.at.liberty dt estimates fix.first fix.last gray
-  layout lines mdy.date most.prob.track mtext nlogL nobs nominal.track
-  npar one.seg.nlogL one.seg.npar ox oy par plot points polygon
-  pred.track px py qchisq read.table rect smoothX smoothY theta.active
-  title var.struct write.table
+  .path.package .serverGlobalWD .tagList .tagListFile abline
+  admb.string axis box browseURL cmd days.at.liberty dt estimates
+  fix.first fix.last gray layout lines mdy.date most.prob.track mtext
+  nlogL nobs nominal.track npar one.seg.nlogL one.seg.npar ox oy par
+  points polygon pred.track px py qchisq read.table rect smoothX
+  smoothY theta.active title var.struct write.table
 Consider adding
-  importFrom("grDevices", "gray")
   importFrom("graphics", "abline", "axis", "box", "layout", "lines",
-             "mtext", "par", "plot", "points", "polygon", "rect",
-             "title")
+             "mtext", "par", "points", "polygon", "rect", "title")
+  importFrom("grDevices", "gray")
   importFrom("stats", "dt", "nobs", "qchisq")
   importFrom("utils", "browseURL", "read.table", "write.table")
 to your NAMESPACE file.
@@ -227,9 +224,13 @@ The error most likely occurred in:
 > 
 >   data(big.241)
 >   fit<-kftrack(big.241, fix.last=FALSE)
-Error: '.path.package' is defunct.
-Use 'path.package' instead.
-See help("Defunct")
+Error in .path.package("kftrack") : 
+  could not find function ".path.package"
+Calls: kftrack -> dir -> paste
 Execution halted
+* checking for non-standard things in the check directory ... NOTE
+Found the following files/directories:
+  ‘_kftrack_temp_’
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 3 WARNINGs, 5 NOTEs
+Status: 1 ERROR, 3 WARNINGs, 6 NOTEs

@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/TwilightFree.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/TwilightFree.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -8,11 +8,118 @@
 * this is package ‘TwilightFree’ version ‘0.1.1’
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... ERROR
-Namespace dependencies not required:
-  'BAStag', 'lubridate', 'magrittr', 'mclust'
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘TwilightFree’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  What license is it under?
+Standardizable: FALSE
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Invalid citation information in ‘inst/CITATION’:
+  Error in parse(con): 14:12: unexpected symbol
+  13: pages = "1190-1198',
+  14: journal = "Methods
+                 ^
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+calibrate: no visible global function definition for ‘lines’
+drawTracks: no visible global function definition for ‘lines’
+eraseMoon: no visible global function definition for ‘predict’
+find_moon: no visible binding for global variable ‘Day_num’
+find_moon: no visible global function definition for ‘quantile’
+find_moon: no visible binding for global variable ‘Light’
+find_moon: no visible binding for global variable ‘ml’
+findColony: no visible binding for global variable ‘Day_num’
+findColony: no visible global function definition for ‘quantile’
+findColony: no visible binding for global variable ‘Light’
+interpolate_max_light: no visible global function definition for
+  ‘max_light’
+interpolate_max_light: no visible global function definition for
+  ‘quantile’
+latentClass: no visible binding for global variable ‘Light’
+latentClass: no visible binding for global variable ‘m’
+logp0: no visible binding for global variable ‘sst’
+logp0: no visible binding for global variable ‘indices’
+makeGrid: no visible global function definition for ‘subs’
+max_light_delta: no visible binding for global variable ‘Depth’
+max_light_delta: no visible global function definition for ‘mutate’
+max_light_delta: no visible binding for global variable ‘Date’
+max_light_delta: no visible binding for global variable ‘m’
+max_light_delta: no visible binding for global variable ‘Light’
+max_light_delta: no visible binding for global variable ‘Light0’
+Undefined global functions or variables:
+  Date Day_num Depth indices Light Light0 lines m max_light ml mutate
+  predict quantile sst subs
+Consider adding
+  importFrom("graphics", "lines")
+  importFrom("stats", "predict", "quantile")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'drawTracks'
+  ‘line.col’
+Documented arguments not in \usage in documentation object 'drawTracks':
+  ‘gps.col’
 
-See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’
-manual.
+Documented arguments not in \usage in documentation object 'eraseLight':
+  ‘zlim’
+
+Undocumented arguments in documentation object 'findZenith'
+  ‘day’ ‘lon’ ‘lat’ ‘offset’ ‘threshold’
+
+Undocumented arguments in documentation object 'interpolate_max_light'
+  ‘d’ ‘depth1’ ‘depth2’ ‘period1’ ‘period2’
+
+Undocumented arguments in documentation object 'latentClass'
+  ‘nstates’ ‘verbose’
+
+Undocumented arguments in documentation object 'logp0'
+  ‘k’ ‘x’ ‘slices’
+
+Undocumented arguments in documentation object 'missingPlot'
+  ‘offset’
+
+Undocumented arguments in documentation object 'zenithPlot'
+  ‘offset’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... NONE
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR
+Status: 3 WARNINGs, 1 NOTE

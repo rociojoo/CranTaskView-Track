@@ -1,29 +1,27 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/vmstools.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/vmstools.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
 * checking for file ‘vmstools/DESCRIPTION’ ... OK
-* this is package ‘vmstools’ version ‘0.75’
+* this is package ‘vmstools’ version ‘0.76’
 * checking package namespace information ... OK
-* checking package dependencies ... NOTE
-Package suggested but not available for checking: ‘adehabitat’
+* checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking serialization versions ... OK
 * checking whether package ‘vmstools’ can be installed ... WARNING
 Found the following significant warnings:
   Note: possible error in 'savePlot(filename = file.path(general$output.path, ': unused argument (restoreConsole = TRUE) 
-See ‘/tmp/Rtmpr5qHpr/vmstools.Rcheck/00install.out’ for details.
+See ‘/tmp/RtmpAoUN5D/vmstools.Rcheck/00install.out’ for details.
 Information on the location(s) of code generating the ‘Note’s can be
 obtained by re-running with environment variable R_KEEP_PKG_SOURCE set
 to ‘yes’.
 * checking installed package size ... NOTE
-  installed size is 23.3Mb
+  installed size is 23.4Mb
   sub-directories of 1Mb or more:
     data  22.1Mb
 * checking package directory ... OK
@@ -43,13 +41,14 @@ to ‘yes’.
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... WARNING
 'library' or 'require' calls not declared from:
-  ‘PBSmapping’ ‘cluster’ ‘data.table’ ‘doBy’ ‘mapdata’ ‘maps’
-  ‘maptools’ ‘sp’
+  ‘ade4’ ‘adehabitat’ ‘amap’ ‘animation’ ‘aspace’ ‘cluster’
+  ‘data.table’ ‘doBy’ ‘FactoMineR’ ‘mapdata’ ‘maps’ ‘maptools’ ‘MASS’
+  ‘mda’ ‘mixtools’ ‘PBSmapping’ ‘segmented’ ‘SOAR’ ‘sp’
 'library' or 'require' calls in package code:
-  ‘FactoMineR’ ‘MASS’ ‘PBSmapping’ ‘SOAR’ ‘ade4’ ‘adehabitat’ ‘amap’
-  ‘animation’ ‘aspace’ ‘cluster’ ‘data.table’ ‘doBy’ ‘lattice’
-  ‘mapdata’ ‘maps’ ‘maptools’ ‘mda’ ‘mixtools’ ‘segmented’ ‘shapefiles’
-  ‘sp’ ‘tcltk’
+  ‘ade4’ ‘adehabitat’ ‘amap’ ‘animation’ ‘aspace’ ‘cluster’
+  ‘data.table’ ‘doBy’ ‘FactoMineR’ ‘lattice’ ‘mapdata’ ‘maps’
+  ‘maptools’ ‘MASS’ ‘mda’ ‘mixtools’ ‘PBSmapping’ ‘segmented’
+  ‘shapefiles’ ‘SOAR’ ‘sp’ ‘tcltk’
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 package 'methods' is used but not declared
@@ -75,18 +74,11 @@ Found an obsolete/platform-specific call in the following functions:
 Found the deprecated function:
   ‘plclust’
 Found the platform-specific devices:
-  ‘X11’ ‘windows’ ‘x11’
+  ‘windows’ ‘x11’ ‘X11’
 dev.new() is the preferred way to open a new device, in the unlikely
 event one is needed.
-ICESarea: no visible global function definition for ‘as’
-ICESrectangle2CSquare: no visible global function definition for ‘data’
-ICESrectangle2CSquare: no visible binding for global variable
-  ‘ICESareas’
-ICESrectangle2CSquare : <anonymous>: no visible binding for global
-  variable ‘ICESareas’
 activityTacsat: no visible global function definition for ‘x11’
 activityTacsat: no visible binding for global variable ‘LE_GEAR’
-activityTacsat: no visible global function definition for ‘normalmixEM’
 activityTacsat: no visible global function definition for ‘na.omit’
 activityTacsat: no visible binding for global variable ‘VE_REF’
 activityTacsat: no visible global function definition for ‘dnorm’
@@ -95,10 +87,7 @@ activityTacsatAnalyse: no visible global function definition for
 activityTacsatAnalyse: no visible global function definition for ‘hist’
 activityTacsatAnalyse: no visible global function definition for ‘axis’
 calc_mcp : mcp.area : <anonymous>: no visible global function
-  definition for ‘mcp’
-calc_mcp : mcp.area : <anonymous>: no visible global function
   definition for ‘as’
-calc_mcp: no visible global function definition for ‘mcp’
 calc_mcp: no visible global function definition for ‘write.table’
 calculateCI: no visible global function definition for ‘par’
 calculateCI: no visible global function definition for ‘lines’
@@ -232,6 +221,12 @@ getTableAfterPCA: no visible global function definition for ‘text’
 getTableAfterPCA: no visible global function definition for ‘mtext’
 getTableAfterPCA: no visible global function definition for ‘title’
 getTableAfterPCA: no visible global function definition for ‘Store’
+ICESarea: no visible global function definition for ‘as’
+ICESrectangle2CSquare: no visible global function definition for ‘data’
+ICESrectangle2CSquare: no visible binding for global variable
+  ‘ICESareas’
+ICESrectangle2CSquare : <anonymous>: no visible binding for global
+  variable ‘ICESareas’
 indicators: no visible global function definition for ‘complete.cases’
 indicators: no visible global function definition for ‘read.shapefile’
 indicators: no visible global function definition for ‘clipPolygons’
@@ -239,8 +234,11 @@ indicators: no visible binding for global variable ‘europa’
 indicators: no visible binding for global variable ‘pointInOut’
 indicators: no visible global function definition for ‘x11’
 indicators: no visible global function definition for ‘write.csv’
+interpolation2Tacsat: no visible global function definition for
+  ‘aggregate’
 landingsMaps2GIFanim: no visible global function definition for
   ‘im.convert’
+makeStackINLA: no visible global function definition for ‘inla.stack’
 mapGrid: no visible global function definition for ‘par’
 mapGrid: no visible global function definition for ‘image’
 mapGrid: no visible global function definition for ‘abline’
@@ -252,7 +250,9 @@ mapGrid: no visible global function definition for ‘points’
 mapGrid: no visible global function definition for ‘legend’
 matchAIS2Tacsat: no visible binding for global variable ‘VE_REF’
 matchAIS2Tacsat: no visible binding for global variable ‘jul’
-mcp.area : <anonymous>: no visible global function definition for ‘mcp’
+mcp: no visible global function definition for ‘quantile’
+mcp: no visible global function definition for ‘chull’
+mcp: no visible global function definition for ‘as.area’
 mcp.area : <anonymous>: no visible global function definition for ‘as’
 mergeEflalo2Pings: missing arguments not allowed in calls to ‘list’
 mergeEflalo2Pings: no visible global function definition for
@@ -323,6 +323,11 @@ pings2LandingsMaps: no visible global function definition for ‘title’
 pings2LandingsMaps: no visible global function definition for
   ‘savePlot’
 pings2LandingsMaps: no visible global function definition for ‘dev.off’
+plot_mcp: no visible global function definition for ‘par’
+plot_mcp: no visible binding for global variable ‘r.MCP’
+plot_mcp: no visible global function definition for ‘title’
+plot_mcp: no visible global function definition for ‘points’
+plot_mcp: no visible global function definition for ‘dev.off’
 plotTools: no visible global function definition for ‘heat.colors’
 plotTools: no visible global function definition for ‘as’
 plotTools: no visible global function definition for ‘axis’
@@ -337,11 +342,6 @@ plotTreeMap: no visible global function definition for ‘box’
 plotTreeMap: no visible global function definition for ‘abline’
 plotTreeMap: no visible global function definition for ‘grey’
 plotTreeMap: no visible global function definition for ‘legend’
-plot_mcp: no visible global function definition for ‘par’
-plot_mcp: no visible binding for global variable ‘r.MCP’
-plot_mcp: no visible global function definition for ‘title’
-plot_mcp: no visible global function definition for ‘points’
-plot_mcp: no visible global function definition for ‘dev.off’
 pointInHarbour: no visible global function definition for ‘write.table’
 predictAggDistri: no visible global function definition for ‘dnbinom’
 predictMetier: no visible binding for global variable ‘Step1’
@@ -355,6 +355,17 @@ raiseTacsat: no visible global function definition for ‘aggregate’
 read.polyfile: no visible global function definition for ‘as’
 readEflalo: no visible global function definition for ‘read.table’
 readTacsat: no visible global function definition for ‘read.table’
+segmentedTacsatSpeed: no visible binding for global variable ‘VE_REF’
+segmentedTacsatSpeed: no visible binding for global variable ‘LE_GEAR’
+segmentedTacsatSpeed: no visible binding for global variable
+  ‘VE_REF_LE_GEAR’
+segmentedTacsatSpeed: no visible global function definition for ‘hist’
+segmentedTacsatSpeed: no visible global function definition for ‘lm’
+segmentedTacsatSpeed: no visible global function definition for ‘runif’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘confint’
+segmentedTacsatSpeed: no visible global function definition for
+  ‘write.csv’
 segmentTacsatSpeed: missing arguments not allowed in calls to ‘list’
 segmentTacsatSpeed : segmented: no visible global function definition
   for ‘update’
@@ -392,21 +403,6 @@ segmentTacsatSpeed: no visible global function definition for ‘dev.off’
 segmentTacsatSpeed: no visible global function definition for ‘boxplot’
 segmentTacsatSpeed: no visible global function definition for
   ‘write.table’
-segmentedTacsatSpeed: no visible binding for global variable ‘VE_REF’
-segmentedTacsatSpeed: no visible binding for global variable ‘LE_GEAR’
-segmentedTacsatSpeed: no visible binding for global variable
-  ‘VE_REF_LE_GEAR’
-segmentedTacsatSpeed: no visible global function definition for ‘hist’
-segmentedTacsatSpeed: no visible global function definition for
-  ‘segmented’
-segmentedTacsatSpeed: no visible global function definition for ‘lm’
-segmentedTacsatSpeed: no visible global function definition for
-  ‘seg.control’
-segmentedTacsatSpeed: no visible global function definition for ‘runif’
-segmentedTacsatSpeed: no visible global function definition for
-  ‘confint’
-segmentedTacsatSpeed: no visible global function definition for
-  ‘write.csv’
 selectMainSpecies: no visible global function definition for ‘hcluster’
 selectMainSpecies: no visible global function definition for ‘Store’
 selectMainSpecies: no visible global function definition for ‘cutree’
@@ -473,32 +469,31 @@ union,gpc.poly-gpc.poly: no visible global function definition for ‘as’
 union,gpc.poly-gpc.poly: no visible global function definition for
   ‘new’
 Undefined global functions or variables:
-  FT_REF FT_REF_SQ FT_REF_SQ_DAY ICES_area ICESareas ID ID.x LE_GEAR
-  LE_MET_level6 PCA SI_DATIM SI_LATI SI_LONG SI_STATE SUM Step1 Store
-  VE_FLT VE_KW VE_REF VE_REF_LE_GEAR X11 abline aggregate arrows as
-  as.formula axis axis.POSIXct barplot box boxplot c_square
-  clipPolygons clust2007 coef colorRampPalette colors complete.cases
-  confint correspLevel7to5 correspMixedMetier cutree datPred data
-  dev.cur dev.off dist dnbinom dnorm eflalo2 er europa fda formula grey
-  hcluster heat.colors hist im.convert image is jul kmeans labptx
-  labpty lda legend levelplot lines lm lm.wfit mcp median
+  abline aggregate arrows as as.area as.formula axis axis.POSIXct
+  barplot box boxplot c_square chull clipPolygons clust2007 coef
+  colorRampPalette colors complete.cases confint correspLevel7to5
+  correspMixedMetier cutree data datPred dev.cur dev.off dist dnbinom
+  dnorm eflalo2 er europa fda formula FT_REF FT_REF_SQ FT_REF_SQ_DAY
+  grey hcluster heat.colors hist ICES_area ICESareas ID ID.x im.convert
+  image inla.stack is jul kmeans labptx labpty lda LE_GEAR
+  LE_MET_level6 legend levelplot lines lm lm.wfit median
   merged.this.vessel model.matrix model.offset model.weights mtext
-  na.omit new normalmixEM optim par plclust plot.PCA png pointInOut
-  points polygon predict quantile r.MCP rainbow read.shapefile
-  read.table rect rect.hclust reshape runif savePlot sd seg.control
-  segmented segments species speciesLatinNames tclVar tclvalue
-  tclvalue<- text title tkbind tkbutton tkdestroy tkentry tkframe
-  tkgrid tklabel tkpack tktoplevel tkwait.variable tkwait.window
-  tkwm.title update update.formula value var vcov weight write.csv
-  write.table x11 xx
+  na.omit new optim par PCA plclust plot.PCA png pointInOut points
+  polygon predict quantile r.MCP rainbow read.shapefile read.table rect
+  rect.hclust reshape runif savePlot sd segments SI_DATIM SI_LATI
+  SI_LONG SI_STATE species speciesLatinNames Step1 Store SUM tclvalue
+  tclvalue<- tclVar text title tkbind tkbutton tkdestroy tkentry
+  tkframe tkgrid tklabel tkpack tktoplevel tkwait.variable
+  tkwait.window tkwm.title update update.formula value var vcov VE_FLT
+  VE_KW VE_REF VE_REF_LE_GEAR weight write.csv write.table x11 X11 xx
 Consider adding
-  importFrom("grDevices", "X11", "colorRampPalette", "colors", "dev.cur",
-             "dev.off", "grey", "heat.colors", "png", "rainbow",
-             "savePlot", "x11")
   importFrom("graphics", "abline", "arrows", "axis", "axis.POSIXct",
              "barplot", "box", "boxplot", "hist", "image", "legend",
              "lines", "mtext", "par", "points", "polygon", "rect",
              "segments", "text", "title")
+  importFrom("grDevices", "chull", "colorRampPalette", "colors",
+             "dev.cur", "dev.off", "grey", "heat.colors", "png",
+             "rainbow", "savePlot", "x11", "X11")
   importFrom("methods", "as", "is", "new")
   importFrom("stats", "aggregate", "as.formula", "coef",
              "complete.cases", "confint", "cutree", "dist", "dnbinom",
@@ -518,8 +513,6 @@ File ‘vmstools/R/segmentTacsatSpeed.r’:
   assign("dati", dati, envir = .GlobalEnv)
 
 Found the following calls to data() loading into the global environment:
-File ‘vmstools/R/ICESrectangle2CSquare.r’:
-  data(ICESareas)
 File ‘vmstools/R/compareToOrdination.r’:
   data(correspLevel7to5)
   data(correspMixedMetier)
@@ -532,6 +525,8 @@ File ‘vmstools/R/getEflaloMetierLevel7.r’:
   data(correspMixedMetier)
 File ‘vmstools/R/getMetierClusters.r’:
   data(correspLevel7to5)
+File ‘vmstools/R/ICESrectangle2CSquare.r’:
+  data(ICESareas)
 File ‘vmstools/R/mergeEflalo2Pings.r’:
   data(eflalo)
   data(tacsat)
@@ -657,6 +652,15 @@ calc_mcp
                  "MCP_Output.txt", verbose = FALSE, pct = 100)
   Mismatches in argument default values:
     Name: 'points' Code: NULL Docs: activities
+
+Codoc mismatches from documentation object 'calculateCI':
+calculateCI
+  Code: function(int, tacint, params, grid, spatialGrid, plot = FALSE)
+  Docs: function(int, tacint, params, grid, plot = FALSE)
+  Argument names in code not in docs:
+    spatialGrid
+  Mismatches in argument names:
+    Position: 5 Code: spatialGrid Docs: plot
 
 Codoc mismatches from documentation object 'countPings':
 countPings
@@ -900,7 +904,9 @@ their full name.
 See chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
 * checking Rd contents ... OK
-* checking for unstated dependencies in examples ... OK
+* checking for unstated dependencies in examples ... WARNING
+'library' or 'require' calls not declared from:
+  ‘ade4’ ‘adehabitat’
 * checking contents of ‘data’ directory ... WARNING
 Output for data("euharbours", package = "vmstools"):
   --------------------------------------------------------------------------------
@@ -2978,11 +2984,11 @@ Output for data("euharbours", package = "vmstools"):
   Note: significantly better compression could be obtained
         by using R CMD build --resave-data
                        old_size new_size compress
-  correspLevel7to5.rda    293Kb    209Kb       xz
-  ICESareas.RData        18.2Mb   11.2Mb       xz
+  correspLevel7to5.rda    293Kb    208Kb       xz
   eflalo.RData            505Kb    416Kb       xz
-  europa.RData            1.1Mb    616Kb       xz
+  europa.RData            1.1Mb    617Kb       xz
   harbours.RData          104Kb     58Kb       xz
+  ICESareas.RData        18.2Mb   11.2Mb       xz
   tacsat.RData            1.8Mb    1.3Mb       xz
 * checking examples ... ERROR
 Running examples in ‘vmstools-Ex.R’ failed
@@ -3001,9 +3007,10 @@ The error most likely occurred in:
 Loading required package: adehabitat
 Warning in library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
   there is no package called ‘adehabitat’
-Error in mcp(temp[, 2:3], temp[, 1], percent = pct) : 
-  could not find function "mcp"
-Calls: calc_mcp
+Error in as.area(res) : could not find function "as.area"
+Calls: calc_mcp -> mcp
 Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 11 WARNINGs, 5 NOTEs
+Status: 1 ERROR, 12 WARNINGs, 4 NOTEs

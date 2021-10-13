@@ -1,5 +1,5 @@
-* using log directory ‘/tmp/Rtmpr5qHpr/movement.Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using log directory ‘/tmp/RtmpAoUN5D/movement.Rcheck’
+* using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -52,7 +52,26 @@
 * checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... WARNING
 'library' or 'require' call not declared from: ‘snow’
-* checking tests ... OK
+* checking tests ... ERROR
   Running ‘testthat.R’
+Running the tests in ‘tests/testthat.R’ failed.
+Last 13 lines of output:
+  
+  ══ Failed tests ════════════════════════════════════════════════════════════════
+  ── Failure (test_utility.R:100:2): correlate regions works for small test case ──
+  actual$locations not equivalent to `expectedlocations`.
+  Component "name": 'current' is not a factor
+  ── Failure (test_utility.R:111:2): correlate regions removes locations from dataframe when not present as movement data ──
+  actual$locations not equivalent to `expectedlocations`.
+  Component "name": 'current' is not a factor
+  ── Failure (test_utility.R:122:2): correlate regions removes locations from movement data when not present in dataframe ──
+  actual$locations not equivalent to `expectedlocations`.
+  Component "name": 'current' is not a factor
+  
+  [ FAIL 3 | WARN 24 | SKIP 4 | PASS 203 ]
+  Error: Test failures
+  Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 WARNING
+Status: 1 ERROR, 1 WARNING

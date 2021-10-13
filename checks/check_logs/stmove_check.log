@@ -1,23 +1,25 @@
-* using log directory 'C:/Users/birde/AppData/Local/Temp/RtmpOETymF/stmove.Rcheck'
-* using R version 4.0.3 (2020-10-10)
-* using platform: x86_64-w64-mingw32 (64-bit)
-* using session charset: ISO8859-1
-* using options '--no-manual --as-cran'
-* checking for file 'stmove/DESCRIPTION' ... OK
-* this is package 'stmove' version '0.0.9000'
+* using log directory ‘/tmp/RtmpAoUN5D/stmove.Rcheck’
+* using R version 4.0.4 (2021-02-15)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘stmove/DESCRIPTION’ ... OK
+* this is package ‘stmove’ version ‘0.0.9000’
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
-* checking for .dll and .exe files ... OK
+* checking for executable files ... OK
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package 'stmove' can be installed ... OK
+* checking whether package ‘stmove’ can be installed ... OK
+* checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
-* checking 'build' directory ... OK
+* checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
@@ -45,16 +47,14 @@
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of 'data' directory ... OK
+* checking contents of ‘data’ directory ... OK
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking R/sysdata.rda ... OK
- WARNING
-'qpdf' is needed for checks on size reduction of PDFs
-* checking installed files from 'inst/doc' ... OK
-* checking files in 'vignettes' ... OK
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
 * checking examples ... ERROR
-Running examples in 'stmove-Ex.R' failed
+Running examples in ‘stmove-Ex.R’ failed
 The error most likely occurred in:
 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
@@ -66,65 +66,66 @@ The error most likely occurred in:
 > 
 > # diurnal is default
 > interval_stats(AG195)
-[90m# A tibble: 730 x 9[39m
-[90m# Groups:   interval_start [730][39m
-   interval_start      TOD   mean_dist sd_dist acf_dist mean_ang sd_ang acf_ang
-   [3m[90m<dttm>[39m[23m              [3m[90m<chr>[39m[23m     [3m[90m<dbl>[39m[23m   [3m[90m<dbl>[39m[23m    [3m[90m<dbl>[39m[23m    [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m   [3m[90m<dbl>[39m[23m
-[90m 1[39m 2010-01-01 [90m00:00:00[39m 0:00~      88.0   114.    0.515   -[31m0[39m[31m.[39m[31m0[39m[31m45[4m7[24m[39m  1.37  -[31m0[39m[31m.[39m[31m399[39m 
-[90m 2[39m 2010-01-01 [90m12:00:00[39m 12:0~     146.    181.    0.570   -[31m0[39m[31m.[39m[31m290[39m   1.19   0.029[4m8[24m
-[90m 3[39m 2010-01-02 [90m00:00:00[39m 0:00~     147.    177.    0.591    0.493   1.31  -[31m0[39m[31m.[39m[31m201[39m 
-[90m 4[39m 2010-01-02 [90m12:00:00[39m 12:0~     157.    154.    0.612   -[31m0[39m[31m.[39m[31m0[39m[31m94[4m2[24m[39m  0.923 -[31m0[39m[31m.[39m[31m412[39m 
-[90m 5[39m 2010-01-03 [90m00:00:00[39m 0:00~      87.2   125.    0.436    0.013[4m0[24m  0.902  0.081[4m5[24m
-[90m 6[39m 2010-01-03 [90m12:00:00[39m 12:0~      43.5    64.3   0.452    0.257   1.33   0.026[4m9[24m
-[90m 7[39m 2010-01-04 [90m00:00:00[39m 0:00~      70.6    96.2   0.595   -[31m0[39m[31m.[39m[31m314[39m   1.54   0.123 
-[90m 8[39m 2010-01-04 [90m12:00:00[39m 12:0~      42.5    33.8   0.143   -[31m0[39m[31m.[39m[31m0[39m[31m76[4m4[24m[39m  1.45  -[31m0[39m[31m.[39m[31m0[39m[31m20[4m2[24m[39m
-[90m 9[39m 2010-01-05 [90m00:00:00[39m 0:00~      95.2   111.    0.473   -[31m0[39m[31m.[39m[31m0[39m[31m78[4m2[24m[39m  1.37  -[31m0[39m[31m.[39m[31m102[39m 
-[90m10[39m 2010-01-05 [90m12:00:00[39m 12:0~      63.3    42.6   0.069[4m5[24m   0.061[4m9[24m  1.02   0.065[4m8[24m
-[90m# ... with 720 more rows, and 1 more variable: ccf [3m[90m<dbl>[90m[23m[39m
+# A tibble: 730 × 9
+# Groups:   interval_start [730]
+   interval_start      TOD    mean_dist sd_dist acf_dist mean_ang sd_ang acf_ang
+   <dttm>              <chr>      <dbl>   <dbl>    <dbl>    <dbl>  <dbl>   <dbl>
+ 1 2010-01-01 00:00:00 0:00-…      88.0   114.    0.515   -0.0457  1.37  -0.399 
+ 2 2010-01-01 12:00:00 12:00…     146.    181.    0.570   -0.290   1.19   0.0298
+ 3 2010-01-02 00:00:00 0:00-…     147.    177.    0.591    0.493   1.31  -0.201 
+ 4 2010-01-02 12:00:00 12:00…     157.    154.    0.612   -0.0942  0.923 -0.412 
+ 5 2010-01-03 00:00:00 0:00-…      87.2   125.    0.436    0.0130  0.902  0.0815
+ 6 2010-01-03 12:00:00 12:00…      43.5    64.3   0.452    0.257   1.33   0.0269
+ 7 2010-01-04 00:00:00 0:00-…      70.6    96.2   0.595   -0.314   1.54   0.123 
+ 8 2010-01-04 12:00:00 12:00…      42.5    33.8   0.143   -0.0764  1.45  -0.0202
+ 9 2010-01-05 00:00:00 0:00-…      95.2   111.    0.473   -0.0782  1.37  -0.102 
+10 2010-01-05 12:00:00 12:00…      63.3    42.6   0.0695   0.0619  1.02   0.0658
+# … with 720 more rows, and 1 more variable: ccf <dbl>
 > interval_stats(AG195, type = "lunar")
-[90m# A tibble: 25 x 9[39m
-[90m# Groups:   interval_start [25][39m
-   interval_start phase mean_dist sd_dist acf_dist mean_ang sd_ang  acf_ang
-   [3m[90m<fct>[39m[23m          [3m[90m<chr>[39m[23m     [3m[90m<dbl>[39m[23m   [3m[90m<dbl>[39m[23m    [3m[90m<dbl>[39m[23m    [3m[90m<dbl>[39m[23m  [3m[90m<dbl>[39m[23m    [3m[90m<dbl>[39m[23m
-[90m 1[39m 2010-01-01     Full~      99.8    126.    0.571 -[31m5[39m[31m.[39m[31m92[39m[90me[39m[31m-4[39m   1.31 -[31m0[39m[31m.[39m[31m0[39m[31m35[4m1[24m[39m 
-[90m 2[39m 2010-01-12     New-~     118.     122.    0.517  1.52[90me[39m[31m-2[39m   1.22 -[31m0[39m[31m.[39m[31m0[39m[31m61[4m1[24m[39m 
-[90m 3[39m 2010-01-26     Full~     181.     239.    0.686 -[31m3[39m[31m.[39m[31m61[39m[90me[39m[31m-2[39m   1.32  0.019[4m9[24m 
-[90m 4[39m 2010-02-10     New-~     244.     284.    0.710  6.39[90me[39m[31m-2[39m   1.30  0.023[4m5[24m 
-[90m 5[39m 2010-02-25     Full~     210.     254.    0.674  6.49[90me[39m[31m-2[39m   1.37  0.043[4m4[24m 
-[90m 6[39m 2010-03-12     New-~     192.     261.    0.700  1.24[90me[39m[31m-2[39m   1.37 -[31m0[39m[31m.[39m[31m0[39m[31m12[4m6[24m[39m 
-[90m 7[39m 2010-03-27     Full~     105.     152.    0.709  5.35[90me[39m[31m-2[39m   1.28 -[31m0[39m[31m.[39m[31m00[39m[31m1[4m5[24m[4m4[24m[39m
-[90m 8[39m 2010-04-10     New-~     184.     246.    0.751 -[31m2[39m[31m.[39m[31m38[39m[90me[39m[31m-2[39m   1.21 -[31m0[39m[31m.[39m[31m00[39m[31m6[4m3[24m[4m2[24m[39m
-[90m 9[39m 2010-04-25     Full~     119.     161.    0.539  4.81[90me[39m[31m-2[39m   1.23 -[31m0[39m[31m.[39m[31m119[39m  
-[90m10[39m 2010-05-10     New-~     115.     169.    0.612  4.37[90me[39m[31m-2[39m   1.19 -[31m0[39m[31m.[39m[31m0[39m[31m61[4m7[24m[39m 
-[90m# ... with 15 more rows, and 1 more variable: ccf [3m[90m<dbl>[90m[23m[39m
+# A tibble: 25 × 9
+# Groups:   interval_start [25]
+   interval_start phase       mean_dist sd_dist acf_dist  mean_ang sd_ang  acf_ang
+   <fct>          <chr>           <dbl>   <dbl>    <dbl>     <dbl>  <dbl>    <dbl>
+ 1 2010-01-01     Full-Waning      99.8    126.    0.571 -0.000592   1.31 -0.0351 
+ 2 2010-01-12     New-Waxing      118.     122.    0.517  0.0152     1.22 -0.0611 
+ 3 2010-01-26     Full-Waning     181.     239.    0.686 -0.0361     1.32  0.0199 
+ 4 2010-02-10     New-Waxing      244.     284.    0.710  0.0639     1.30  0.0235 
+ 5 2010-02-25     Full-Waning     210.     254.    0.674  0.0649     1.37  0.0434 
+ 6 2010-03-12     New-Waxing      192.     261.    0.700  0.0124     1.37 -0.0126 
+ 7 2010-03-27     Full-Waning     105.     152.    0.709  0.0535     1.28 -0.00154
+ 8 2010-04-10     New-Waxing      184.     246.    0.751 -0.0238     1.21 -0.00632
+ 9 2010-04-25     Full-Waning     119.     161.    0.539  0.0481     1.23 -0.119  
+10 2010-05-10     New-Waxing      115.     169.    0.612  0.0437     1.19 -0.0617 
+# … with 15 more rows, and 1 more variable: ccf <dbl>
 > # for seasonal, include y-m-d formatted `seas` vector
 > interval_stats(AG195, type = "seasonal", seas = c("2010-03-01", "2010-06-01", "2010-9-01"))
 Error: Column name `interval_start` must not be duplicated.
+Use .name_repair to specify repair.
 Backtrace:
-[90m     [39mx
-[90m  1. [39m+-stmove::interval_stats(...)
-[90m  2. [39m| \-`%>%`(...)
-[90m  3. [39m+-dplyr::summarise(...)
-[90m  4. [39m+-dplyr::group_by(., .data$interval_start, !!quocol)
-[90m  5. [39m\-dplyr:::group_by.data.frame(., .data$interval_start, !!quocol)
-[90m  6. [39m  \-dplyr::grouped_df(groups$data, groups$group_names, .drop)
-[90m  7. [39m    \-dplyr:::compute_groups(data, vars, drop = drop)
-[90m  8. [39m      \-tibble::tibble(!!!old_keys, `:=`(".rows", old_rows))
-[90m  9. [39m        \-tibble:::tibble_quos(xs[!is.null], .rows, .name_repair)
-[90m 10. [39m          \-tibble:::set_repaired_names(output, .name_repair = .name_repair)
-[90m 11. [39m            +-rlang::set_names(...)
-[90m 12. [39m            \-tibble:::repaired_names(...)
-[90m 13. [39m              +-tibble:::subclass_name_repair_errors(...)
-[90m 14. [39m              | \-base::withCallingHandlers(...)
-[90m 15. [39m              \-vctrs::vec_as_names(...)
-[90m 16. [39m                \-(function () ...
-[90m 17. [39m                  \-vctrs:::validate_unique(names = names, arg = arg)
-[90m 18. [39m                    \-vctrs:::stop_names_must_be_unique(names, arg)
-[90m 19. [39m                      \-vctrs:::stop_names(...)
-[90m 20. [39m                        \-vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
+     █
+  1. ├─stmove::interval_stats(...)
+  2. │ └─`%>%`(...)
+  3. ├─dplyr::summarise(...)
+  4. ├─dplyr::group_by(., .data$interval_start, !!quocol)
+  5. └─dplyr:::group_by.data.frame(., .data$interval_start, !!quocol)
+  6.   └─dplyr::grouped_df(groups$data, groups$group_names, .drop)
+  7.     └─dplyr:::compute_groups(data, vars, drop = drop)
+  8.       └─tibble::tibble(!!!old_keys, `:=`(".rows", old_rows))
+  9.         └─tibble:::tibble_quos(xs, .rows, .name_repair)
+ 10.           └─tibble:::set_repaired_names(output, repair_hint = TRUE, .name_repair = .name_repair)
+ 11.             ├─rlang::set_names(...)
+ 12.             └─tibble:::repaired_names(...)
+ 13.               ├─tibble:::subclass_name_repair_errors(...)
+ 14.               │ └─base::withCallingHandlers(...)
+ 15.               └─vctrs::vec_as_names(...)
+ 16.                 └─(function () ...
+ 17.                   └─vctrs:::validate_unique(names = names, arg = arg)
+ 18.                     └─vctrs:::stop_names_must_be_unique(names, arg)
+ 19.                       └─vctrs:::stop_names(...)
+ 20.                         └─vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
 Execution halted
 * checking examples with --run-donttest ... ERROR
-Running examples in 'stmove-Ex.R' failed
+Running examples in ‘stmove-Ex.R’ failed
 The error most likely occurred in:
 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
@@ -136,10 +137,6 @@ The error most likely occurred in:
 > 
 > ## No test: 
 > build_report(AG195, proj4 = "+proj=utm +zone=33 +south +datum=WGS84 +units=m +no_defs")
-Warning in has_crop_tools() :
-  
-Tool(s) not installed or not in PATH: pdfcrop, ghostcript
--> As a result, figure cropping will be disabled.
 
 
 processing file: report.Rmd
@@ -149,32 +146,32 @@ Quitting from lines 17-35 (report.Rmd)
 Error in eval(x, envir = envir) : F used instead of FALSE
 Calls: build_report ... process_group.block -> call_block -> eval_lang -> eval -> eval
 Execution halted
-* checking for unstated dependencies in 'tests' ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... ERROR
-  Running 'testthat.R' [17s]
-Running the tests in 'tests/testthat.R' failed.
+  Running ‘testthat.R’
+Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
-  [90m 18. [39m|             | \-base::withCallingHandlers(...)
-  [90m 19. [39m|             \-vctrs::vec_as_names(...)
-  [90m 20. [39m|               \-(function () ...
-  [90m 21. [39m|                 \-vctrs:::validate_unique(names = names, arg = arg)
-  [90m 22. [39m|                   \-vctrs:::stop_names_must_be_unique(names, arg)
-  [90m 23. [39m|                     \-vctrs:::stop_names(...)
-  [90m 24. [39m|                       \-vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
-  [90m 25. [39m|                         \-rlang::abort(message, class = c(class, "vctrs_error"), ...)
-  [90m 26. [39m|                           \-rlang:::signal_abort(cnd)
-  [90m 27. [39m|                             \-base::signalCondition(cnd)
-  [90m 28. [39m\-(function (cnd) ...
+   18. │             │ └─base::withCallingHandlers(...)
+   19. │             └─vctrs::vec_as_names(...)
+   20. │               └─(function () ...
+   21. │                 └─vctrs:::validate_unique(names = names, arg = arg)
+   22. │                   └─vctrs:::stop_names_must_be_unique(names, arg)
+   23. │                     └─vctrs:::stop_names(...)
+   24. │                       └─vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
+   25. │                         └─rlang::abort(message, class = c(class, "vctrs_error"), ...)
+   26. │                           └─rlang:::signal_abort(cnd)
+   27. │                             └─base::signalCondition(cnd)
+   28. └─(function (cnd) ...
   
-  [ [33mFAIL[39m 1 | [35mWARN[39m 2 | [34mSKIP[39m 8 | [32mPASS[39m 28 ]
+  [ FAIL 1 | WARN 1 | SKIP 7 | PASS 25 ]
   Error: Test failures
   Execution halted
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in 'inst/doc' ... NOTE
-Package vignette with placeholder title 'Vignette Title':
-  'stmove_vignette.Rmd'
+* checking package vignettes in ‘inst/doc’ ... NOTE
+Package vignette with placeholder title ‘Vignette Title’:
+  ‘stmove_vignette.Rmd’
 * checking re-building of vignette outputs ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 3 ERRORs, 1 WARNING, 1 NOTE
+Status: 3 ERRORs, 1 NOTE
