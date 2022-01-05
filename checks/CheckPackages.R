@@ -16,9 +16,9 @@ dir.create(check_logs)
 
 ## List of CRAN packages
 pkg_db <- tools::CRAN_package_db()
-## update the root Bioconductor URL as versions are released (3.13 on
-## 2021-09-29); check on https://bioconductor.org/
-bioconductor_url <- "https://bioconductor.org/packages/3.13/bioc/"
+## update the root Bioconductor URL as versions are released (3.14 on
+## 2021-10-27); check on https://bioconductor.org/
+bioconductor_url <- "https://bioconductor.org/packages/3.14/bioc/"
 
 
 ## Previous state

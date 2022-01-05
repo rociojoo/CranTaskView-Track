@@ -3,7 +3,7 @@ name: Tracking
 topic: Processing and Analysis of Tracking Data
 maintainer: Rocío Joo, Matthew E. Boone, Michael Sumner and Mathieu Basille
 email: rocio.joo@globalfishingwatch.org
-version: 2021-12-20
+version: 2022-01-02
 ---
 
 
