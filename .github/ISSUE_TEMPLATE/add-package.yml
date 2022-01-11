@@ -1,5 +1,5 @@
 name: Submit a package
-about: Suggest the inclusion of a package in the CRAN Task View
+description: Suggest the inclusion of a package in the CRAN Task View
 title: "[submission] Name of the package: description of the package (change this title)"
 labels: add-pkg
 body:
@@ -9,8 +9,8 @@ body:
       label: Are you the author of the package?
       multiple: true
       options:
-        - Yes
-        - No
+        - 'Yes'
+        - 'No'
     validations:
       required: true
   - type: dropdown
@@ -39,9 +39,9 @@ body:
       label: If you are the author of the package, does it pass CRAN check tests?
       multiple: true
       options:
-        - Yes
-        - No
-        - I don't know
+        - "Yes"
+        - "No"
+        - "I don't know"
     validations:
       required: true
   - type: textarea
