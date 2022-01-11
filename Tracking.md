@@ -51,10 +51,11 @@ assessment on the non-CRAN packages here and remove the non-CRAN
 packages that do not pass the check test. Bioconductor packages are
 automatically accepted here as they are required to pass by a similar
 scrutiny than CRAN packages. We are also open to include more packages
-every time we update the CTV. We welcome and encourage contributions to
-add packages at any time. You can contact the maintainers by opening an
-issue on the [GitHub
-repository](https://github.com/rociojoo/CranTaskView-Track/issues) .
+every time we update the CTV. We welcome and encourage 
+[contributions](https://github.com/cran-task-views/ctv/blob/main/Contributing.md) 
+to add packages at any time. To opening an issue on the GitHub
+repository, please use this 
+[template](https://github.com/rociojoo/CranTaskView-Track/issues) .
 
 Besides these packages, many other packages contain functions for data
 processing and analysis that could eventually be used for tracking data
