@@ -1,9 +1,9 @@
 ---
 name: Tracking
 topic: Processing and Analysis of Tracking Data
-maintainer: Rocío Joo, Matthew E. Boone, Michael Sumner and Mathieu Basille
+maintainer: Rocío Joo and Mathieu Basille
 email: rocio.joo@globalfishingwatch.org
-version: 2022-01-02
+version: 2022-01-10
 ---
 
 
@@ -11,7 +11,8 @@ version: 2022-01-02
 **This CRAN Task View (CTV) contains a list of packages useful for the
 processing and analysis of tracking data.** Besides the maintainers, the
 following people contributed to the creation of this task view: Achim
-Zeileis, Edzer Pebesma.
+Zeileis, Edzer Pebesma, Michael Sumner, Matthew E. Boone 
+(former CTV maintainer).
 
 Movement of an object (both living organisms and inanimate objects) is
 defined as a change in its geographic location in time, so movement data
@@ -76,26 +77,26 @@ Workflow
 Pre-processing is required when raw data are not in a tracking data
 format. The methods used for pre-processing depend heavily on the type
 of biologging device used. Among the tracking packages, some of them are
-focused on GLS (global location sensor), others on radio telemetry, and
-others use accelerometry and magnetometry data.
+focused on GLS (global location sensor), others on radio telemetry, 
+accelerometry, magnetometry, or GTFS (General Transit Feed Specification)
+data.
 
 -   **GLS data pre-processing:** Several methodologies have been
     developed to reduce errors in geographic locations generated from
     the light data, which is reflected by the large number of packages
     for pre-processing GLS data. We classified these methods in three
     categories: threshold, curve-fitting and twilight-free.
--   **Threshold methods:** Threshold levels of solar irradiance, which
+    -   **Threshold methods:** Threshold levels of solar irradiance, which
     are arbritrarily chosen, are used to identify the timing of sunrise
-    and sunset. The package that uses threshold methods are
-    `r pkg("GeoLight")` and
+    and sunset. The package that uses threshold methods is
     `r github("SWotherspoon/SGAT")`.
--   **Curve-fitting methods:** The observed light irradiance levels for
+    -   **Curve-fitting methods:** The observed light irradiance levels for
     each twilight are modeled as a function of theoretical light levels
     (i.e. the template). Then, parameters from the model (e.g. a slope
     in a linear regression) are used to estimate the locations. The
     formulation of the model and the parameters used for location
     estimation vary from method to method. The packages that use
-    curve-fitting methods are `r pkg("FLightR")`,
+    curve-fitting methods are 
     `r pkg("tripEstimation")` and
     `r github("SWotherspoon/SGAT")`.
 -   **Dead-reckoning using accelerometry and magnetometry data:** The
@@ -105,6 +106,9 @@ others use accelerometry and magnetometry data.
     `r pkg("animalTrack")` and
     `r pkg("TrackReconstruction")` implement DR to obtain
     tracks, based on different methods.
+-   **GTFS data pre-processing:** Public transportation data in GTFS format 
+    per trip and vehicle can be interpolated in space-time to obtain GPS-like
+    records with `r pkg("gtfs2gps")`. 
 
 ### Post-processing
 
@@ -139,11 +143,11 @@ metrics based on tracking data, which are useful for posterior analyses.
     `r pkg("bcpa")` has a function to compute speeds, step
     lengths, orientations and other attributes from a track.
     `r pkg("amt")`, `r pkg("move", priority = "core")`,
-    `r pkg("segclust2d")`, `r pkg("trajr")` and
+    `r pkg("segclust2d")`, `r pkg("sftrack")`, `r pkg("trajr")` and
     `r pkg("trip")` also contain functions for computing those
     metrics, but the user needs to specify which ones they need to
-    compute. `r pkg("VTrack")` is specifically for acoustic
-    telemetry data, and compute statistics from those data.
+    compute. `r pkg("feedr")` is specifically for radio-frequency 
+    identification data and compute statistics from this type of data.
 
 ### Visualization
 
@@ -159,6 +163,10 @@ and sinuosity. `r pkg("trackeR")` was created to analyze
 running, cycling and swimming data from GPS-tracking devices for humans.
 `r pkg("trackeR")` computes metrics summarizing movement
 effort during each track (or workout effort per session).
+`r pkg("sftrack")` defines two classes of objects from tracking data,
+tracks (`sf` points in a time sequence) and trajectories (`sf` linestrings in 
+a time sequence) and provides functions to summarize both showing starting and
+ending time, number of points, and total distance covered.
 
 ### Path reconstruction
 
@@ -166,7 +174,6 @@ Whether it is for the purposes of correcting for sampling errors, or
 obtaining finer data resolutions or regular time steps, path
 reconstruction is a common goal in movement analysis. Packages available
 for path reconstruction are
-`r github("calbertsen/argosTrack")`,
 `r pkg("BayesianAnimalTracker")`, `r pkg("bsam")`,
 `r pkg("crawl")`, `r pkg("ctmcmove")`,
 `r pkg("ctmm")`, `r pkg("foieGras")` and
@@ -193,7 +200,7 @@ hidden Markov models.
 -   **Segmentation methods:** They identify change in behavior in time
     series of movement patterns to cut them into several segments. The
     packages implementing these techniques are
-    `r pkg("adehabitatLT")`, `r pkg("bcpa")`,
+    `r pkg("adehabitatLT")`, `r pkg("bcpa")`, `r pkg("bayesmove")`,
     `r pkg("segclust2d")` and `r pkg("marcher")`.
 -   **Hidden Markov models:** They are centered upon a hidden state
     Markovian process (representing the sequence of non-observed
@@ -218,14 +225,13 @@ split into two categories: home range calculation and habitat selection.
     autocorrelation in tracking data.
 -   **Habitat use:** The role of habitat features on animal space use,
     or habitat selection, can be investigated with
-    `r pkg("amt")`, `r pkg("ctmcmove")` and
-    `r github("papayoun/Rhabit")`, using step selection
-    functions, functional movement modeling and a Langevin model,
+    `r pkg("amt")` and `r pkg("ctmcmove")`, using step selection
+    functions and functional movement modeling,
     respectively.
 -   **Non-conventional approaches for space use:** Other
     non-conventional approaches for investigating space use from
-    tracking data can be found in `r pkg("recurse")` and
-    `r pkg("VTrack")`.
+    tracking data can be found in `r pkg("feedr")` and
+    `r pkg("recurse")`.
 
 ### Trajectory simulation
 
@@ -235,7 +241,6 @@ walks or Ornstein-Uhlenbeck processes:
 `r pkg("adehabitatLT")`, `r pkg("moveHMM")`,
 `r pkg("momentuHMM")`, `r pkg("bsam")`,
 `r pkg("crawl")`,
-`r github("calbertsen/argosTrack")`,
 `r pkg("ctmm")`, `r pkg("smam")`,
 `r pkg("SiMRiv")` and `r pkg("trajr")`.
 
@@ -260,9 +265,6 @@ walks or Ornstein-Uhlenbeck processes:
     uses tracking data to infer wind speed.
     `r pkg("rerddapXtracto")` allows extracting environmental
     data served on any ERDDAP server along a given track.
--   **Database management:** `r pkg("rpostgisLT")` handles
-    database management for trajectory data by integrating R and the
-    "PostgreSQL/PostGIS"" database system.
 
 ### Dealing with movement but not tracking data
 
@@ -277,9 +279,8 @@ walks or Ornstein-Uhlenbeck processes:
     `r pkg("PhysicalActivity")`.
 -   **Non-biologging video and images:** When a camera can encompass an
     area large enough for an individual to move in, video and images can
-    be used to record movement. Packages related to these data are
-    `r bioc("SwimR")` (for individuals moving in assay plates)
-    and `r pkg("trackdem")` (processing frame-by-frame
+    be used to record movement. A package related to these data is
+    `r pkg("trackdem")` (for processing frame-by-frame
     images).
 
 

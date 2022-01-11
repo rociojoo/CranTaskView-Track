@@ -22,11 +22,11 @@ bioconductor_url <- "https://bioconductor.org/packages/3.14/bioc/"
 
 
 ## Previous state
-track_old <- read.csv("Checked_packages.csv")
+track_old <- read.csv("./checks/Checked_packages.csv")
 sort(track_old$package_name[track_old$cran_check])
 
 ## Import packages list, and create columns if not exist
-track <- read.csv("Tracking_tbl.csv")
+track <- read.csv("./checks/Tracking_tbl.csv")
 track$source <- tolower(track$source)
 track$skip <- ifelse(is.na(track$skip), FALSE, track$skip)
 track$recent_commit <- NA
@@ -370,10 +370,10 @@ track$mention <- ifelse(is.na(track$mention), 0, track$mention)
 
 
 ## Save old/current state, and last run
-write.csv(track_old, "Checked_packages_old.csv", row.names = FALSE) # Not under version
+write.csv(track_old, "./checks/Checked_packages_old.csv", row.names = FALSE) # Not under version
                                         # control, only for internal needs
-write.csv(track, "Checked_packages.csv", row.names = FALSE)
-writeLines(paste("LAST_RUN:", Sys.Date()), "LAST_RUN")
+write.csv(track, "./checks/Checked_packages.csv", row.names = FALSE)
+writeLines(paste("LAST_RUN:", Sys.Date()), "./checks/LAST_RUN")
 
 
 ## Differences with previous state
@@ -394,15 +394,16 @@ left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
 ## 3) Together and export
 (changes <- bind_rows(track_new, track_mod))
 
-write.csv(changes, file = "Changes.csv", row.names = FALSE)
+write.csv(changes, file = "./checks/Changes.csv", row.names = FALSE)
 
 
 ## Full list of packages for the CTV (by alphabetical order)
 ## Add CORE packages as "(core)"
-sort(track$package_name[track$cran_check])
-cat(
-    "  <packagelist>\n    <pkg>",
-    paste(sort(track$package_name[track$cran_check]), collapse = "</pkg>\n    <pkg>"),
-    "</pkg>\n  </packagelist>\n",
-    sep =  ""
-)
+## Don't need this anymore for the new .md format of the ctv
+# sort(track$package_name[track$cran_check])
+# cat(
+#     "  <packagelist>\n    <pkg>",
+#     paste(sort(track$package_name[track$cran_check]), collapse = "</pkg>\n    <pkg>"),
+#     "</pkg>\n  </packagelist>\n",
+#     sep =  ""
+# )
