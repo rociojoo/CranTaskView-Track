@@ -285,6 +285,14 @@ walks or Ornstein-Uhlenbeck processes:
     images).
 
 
+### Citing
+
+If you would like to cite this CTV, we suggest mentioning: maintainers, year,
+title of the CTV, version, and URL. For instance:
+
+Joo and Basille (2022) CRAN Task View: Processing and Analysis of Tracking Data. 
+Version 2022-01. URL: https://cran.r-project.org/web/views/Tracking.html 
+
 
 ### Links
 -   [Article at the base of this Task View](https://doi.org/dcnf)
