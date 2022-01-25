@@ -1,0 +1,33 @@
+2020-01-27
+CTV us: 52 packages listed
++
+argosTrack (present but not listed properly — checks)
+SGAT (present but not listed properly — checks)
+SwimR (present but not listed properly — checks)
+*
+spatsoc (listed on both but not present in package table)
+= 55 packages really
+
+2020-07-15
+
++
+rerddapXtracto added (20.07 addition)
+-
+rsMove removed (only CRAN)
+
+CTV CRAN: 48 packages listed
+-
+diveMove (present on us, but not CRAN — checks)
+FLightR (present on us, but not CRAN — checks)
+rpostgisLT (present on us, but not CRAN — checked for 20.07 but no longer on CRAN)
+VTrack (present on us, but not CRAN — checked for 20.07 but no longer on CRAN)
+
+CTV us: 52 packages listed
++
+argosTrack (described but not listed properly — checks)
+Rhabit (described but not listed properly — checks ; 20.07 addition)
+SGAT (described but not listed properly — checks)
+SwimR (described but not listed properly — checks)
+*
+spatsoc (described and listed on both but not present in package table)
+= 56 packages really

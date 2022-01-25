@@ -1,32 +1,40 @@
-## Set up private library (delete it first) and install necessary utility
-## packages (devtools, remotes and desc)
-##
-## /!\ Start with an up-to-date system /!\
+## ------------------------------------------------------ ##
+##                                                        ##
+## /!\ Make sure to start with a fully updated system /!\ ##
+##                                                        ##
+## ------------------------------------------------------ ##
+
+## Install packrat if not available
+if (!require("packrat")) install.packages("packrat")
+
+## Set up private library (delete it first)
 unlink("packrat", recursive = TRUE)
 packrat::init(infer.dependencies = FALSE)
+
+## Install necessary utility packages for this script (devtools, remotes, desc,
+## dplyr, coin)
 install.packages(c("devtools", "remotes", "desc", "dplyr", "coin"))
 
-## Directories to download and run checks in.
-download_local <- "downloads"
+## Directories to download and run checks in
+download_local <- "checks/downloads"
 unlink(download_local, recursive = TRUE)
 dir.create(download_local)
-check_logs <- "check_logs"
+check_logs <- "checks/check_logs"
 unlink(check_logs, recursive = TRUE)
 dir.create(check_logs)
 
+
 ## List of CRAN packages
 pkg_db <- tools::CRAN_package_db()
-## update the root Bioconductor URL as versions are released (3.14 on
-## 2021-10-27); check on https://bioconductor.org/
-bioconductor_url <- "https://bioconductor.org/packages/3.14/bioc/"
 
-
-## Previous state
-track_old <- read.csv("./checks/Checked_packages.csv")
+## Previous state (print date of last run for the record)
+track_old <- read.csv("checks/Checked_packages.csv")
+readLines("LAST_RUN")
+track_old_date <- gsub("LAST_RUN: ", "", readLines("LAST_RUN"))
 sort(track_old$package_name[track_old$cran_check])
 
 ## Import packages list, and create columns if not exist
-track <- read.csv("./checks/Tracking_tbl.csv")
+track <- read.csv("checks/Tracking_tbl.csv")
 track$source <- tolower(track$source)
 track$skip <- ifelse(is.na(track$skip), FALSE, track$skip)
 track$recent_commit <- NA
@@ -44,6 +52,7 @@ error_list <- list()
 
 
 ######################################################################
+## START LOOP
 ## Loop over all packages (looooong process)
 for (i in 1:nrow(track)) {
     if (isTRUE(track$skip[i])) { next }
@@ -86,7 +95,7 @@ for (i in 1:nrow(track)) {
         string <- gsub("\\(.*\\)|,$", "" , string)
         string <- trimws(gsub("\n" , " ", string), "both")
         track$suggests[i] <- as.character(string)
-        ## recent track
+        ## Recent track
         track$recent_publish_track[i] <- track_pkg$Published
         track$cran_check[i] <- TRUE
         track$version[i] <- track_pkg$Version
@@ -98,14 +107,25 @@ for (i in 1:nrow(track)) {
     ## Specific Bioconductor: we trawl the website for the correct link, as
     ## versions may change rapidly
     if (track$source[i] == "bioc") {
-        track_url <- paste0(bioconductor_url, "html/", track$package_name[i], ".html")
+        ## Bioconductor actually uses a "https://bioconductor.org/packages/name"
+        ## short URL scheme
+        track_url <- paste0("https://bioconductor.org/packages/", track$package_name[i])
         track_page <- readLines(as.character(track_url))
         grep("<h3 id=\"archives\">Package Archives</h3>", track_page, value = TRUE)
         phrase <- track_page[grep("Source Package", track_page) + 1]
         phrase
         ## '\" href=\"../src/contrib/SwimR_1.26.0.tar.gz\"'
         match <- regexec("(?:href=\\\"\\.\\./)(.*)(?:\\\">)", phrase)
-        download_file <- paste0(bioconductor_url, regmatches(phrase, match)[[1]][2])
+        if (regmatches(phrase, match)[[1]][2] == "") {
+            message("No source available. Package probably removed from Bioconductor.")
+            track$errors[i] <- TRUE
+            track$cran_check[i] <- FALSE
+            next
+        }
+        ## Actual repository can be found in 'release/' (one fewer things to
+        ## check)
+        download_file <- paste0("https://bioconductor.org/packages/release/bioc/",
+            regmatches(phrase, match)[[1]][2])
         working_folder <- paste0(download_local, "/", track$package_name[i])
         download_folder <- paste0(download_local, "/",
             track$package_name[i], ".tar.gz")
@@ -301,6 +321,7 @@ for (i in 1:nrow(track)) {
         warnings, working_folder))
 
 }
+## END LOOP
 ######################################################################
 
 
@@ -317,23 +338,23 @@ track <- track %>%
 
 
 
-## Imports and suggests network
+## Imports/suggests network and core packages
 
-## we work on packages that check
+## We work on packages that check
 pkg_check <- subset(track, cran_check)
 
-## remove spaces, separate imported packages by commas
+## Remove spaces, separate imported packages by commas
 pkg_import <- strsplit(gsub("\\s*", "", pkg_check$imports), split = ",")
-## remove duplicates
+## Remove duplicates
 pkg_import <- lapply(pkg_import, FUN = unique)
-## number of dependencies
+## Number of dependencies
 pkg_import_length <- sapply(pkg_import, FUN = length)
-## create empty data.frame with that number of elements
+## Create empty data.frame with that number of elements
 pkg_import_gather <- data.frame(
     package = rep.int(pkg_check$package_name, times = pkg_import_length),
     network = unlist(pkg_import), role = rep("import", sum(pkg_import_length)))
 
-## now same thing for suggest
+## Now same thing for suggest
 pkg_suggest <- strsplit(gsub("\\s*", "", pkg_check$suggests), split = ",")
 pkg_suggest <- lapply(pkg_suggest, FUN = unique)
 pkg_suggest_length <- sapply(pkg_suggest, FUN = length)
@@ -341,19 +362,19 @@ pkg_suggest_gather <- data.frame(
     package = rep.int(pkg_check$package_name, times = pkg_suggest_length),
     network = unlist(pkg_suggest), role = rep("suggest", sum(pkg_suggest_length)))
 
-## one data frame to rule them all
+## One data frame to rule them all
 pkg_net <- rbind.data.frame(pkg_import_gather, pkg_suggest_gather)
-# filtering out non movement packages
+# Filtering out non movement packages
 pkg_net <- subset(pkg_net, network %in% pkg_check$package_name)
 
-## counting how much is package is needed or suggested
+## Counting how much is package is needed or suggested
 pkg_net_tb <- data.frame(table(pkg_net$network))
 names(pkg_net_tb) <- c("package_name", "mention")
 pkg_net_tb <- pkg_net_tb[order(pkg_net_tb$mention, decreasing = TRUE), ]
 pkg_net_tb$t <- 1:nrow(pkg_net_tb)
 pkg_net_tb
 
-## actual test
+## Actual test
 library("coin")
 maxstat_test(mention ~ t, dist = "approx", data = pkg_net_tb)
 ## 	Approximative Generalized Maximally Selected Statistics
@@ -369,10 +390,9 @@ track <- left_join(track, pkg_net_tb[, -3], by = "package_name")
 track$mention <- ifelse(is.na(track$mention), 0, track$mention)
 
 
-## Save old/current state, and last run
-write.csv(track_old, "./checks/Checked_packages_old.csv", row.names = FALSE) # Not under version
-                                        # control, only for internal needs
-write.csv(track, "./checks/Checked_packages.csv", row.names = FALSE)
+## Save previous state, current state, and last run
+write.csv(track_old, paste0("checks/Checked_packages_", track_old_date, ".csv"), row.names = FALSE) # Now under version control (don't forget to add it)
+write.csv(track, "checks/Checked_packages.csv", row.names = FALSE)
 writeLines(paste("LAST_RUN:", Sys.Date()), "./checks/LAST_RUN")
 
 
@@ -393,17 +413,4 @@ left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
         cran_check, warnings, errors, vignette_error, comments) -> track_mod
 ## 3) Together and export
 (changes <- bind_rows(track_new, track_mod))
-
-write.csv(changes, file = "./checks/Changes.csv", row.names = FALSE)
-
-
-## Full list of packages for the CTV (by alphabetical order)
-## Add CORE packages as "(core)"
-## Don't need this anymore for the new .md format of the ctv
-# sort(track$package_name[track$cran_check])
-# cat(
-#     "  <packagelist>\n    <pkg>",
-#     paste(sort(track$package_name[track$cran_check]), collapse = "</pkg>\n    <pkg>"),
-#     "</pkg>\n  </packagelist>\n",
-#     sep =  ""
-# )
+write.csv(changes, file = "checks/Changes.csv", row.names = FALSE)
