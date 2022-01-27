@@ -1,4 +1,4 @@
-* using log directory ‘/tmp/RtmpAoUN5D/probGLS.Rcheck’
+* using log directory ‘/tmp/RtmpcbTqXs/probGLS.Rcheck’
 * using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -7,6 +7,8 @@
 * this is package ‘probGLS’ version ‘0.9.5’
 * checking package namespace information ... OK
 * checking package dependencies ... ERROR
+Package required but not available: ‘GeoLight’
+
 Namespace dependencies not required: 'maps', 'sp'
 
 See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’

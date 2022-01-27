@@ -1,8 +1,9 @@
 .Rproj.user
 .Rhistory
+.Rprofile
 .RData
 .Ruserdata
 .httr-oauth
-packrat/lib*/
+packrat/
 check_logs/
 downloads/

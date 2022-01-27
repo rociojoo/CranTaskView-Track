@@ -3,9 +3,8 @@ name: Tracking
 topic: Processing and Analysis of Tracking Data
 maintainer: Rocío Joo and Mathieu Basille
 email: rocio.joo@globalfishingwatch.org
-version: 2022-01-10
+version: 22.01
 ---
-
 
 
 **This CRAN Task View (CTV) contains a list of packages useful for the
@@ -290,8 +289,8 @@ walks or Ornstein-Uhlenbeck processes:
 If you would like to cite this CTV, we suggest mentioning: maintainers, year,
 title of the CTV, version, and URL. For instance:
 
-Joo and Basille (2022) CRAN Task View: Processing and Analysis of Tracking Data. 
-Version 2022-01. URL: https://cran.r-project.org/web/views/Tracking.html 
+Joo and Basille (2022) CRAN Task View: Processing and Analysis of Tracking Data.
+Version 22.01. URL: https://cran.r-project.org/view=Tracking
 
 
 ### Links

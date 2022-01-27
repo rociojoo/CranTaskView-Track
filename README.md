@@ -5,7 +5,7 @@
 **Source file for the html:** [Tracking.md](https://github.com/rociojoo/CranTaskView-Track/blob/master/Tracking.md)
 
 This repository acts as the main project page for the [Tracking CRAN Task View
-(CTV)](https://cran.r-project.org/web/views/Tracking.html). 
+(CTV)](https://cran.r-project.org/view=Tracking). 
 
 **Contributions:** Suggestions and improvements for this task view are very
 welcome and can be made through 

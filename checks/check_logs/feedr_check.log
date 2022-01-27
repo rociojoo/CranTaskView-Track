@@ -1,17 +1,14 @@
-* using log directory ‘/tmp/RtmpAoUN5D/feedr.Rcheck’
+* using log directory ‘/tmp/RtmpcbTqXs/feedr.Rcheck’
 * using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
 * checking for file ‘feedr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘feedr’ version ‘0.10.0’
+* this is package ‘feedr’ version ‘0.11.0’
+* package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... NOTE
-Imports includes 22 non-default packages.
-Importing from so many packages makes the package vulnerable to any of
-them becoming unavailable.  Move as many as possible to Suggests and
-use conditionally.
+* checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -20,10 +17,7 @@ use conditionally.
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
 * checking whether package ‘feedr’ can be installed ... OK
-* checking installed package size ... NOTE
-  installed size is  5.5Mb
-  sub-directories of 1Mb or more:
-    extdata   4.6Mb
+* checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... OK
@@ -44,56 +38,69 @@ use conditionally.
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
-dedupe: no visible binding for '<<-' assignment to ‘val’
-inout: no visible binding for global variable ‘inout_id’
-inout: no visible binding for global variable ‘inout_dir’
-inout: no visible binding for global variable ‘problem_next’
-inout: no visible binding for global variable ‘problem_prev’
-inout: no visible binding for global variable ‘problem’
-inout: no visible binding for global variable ‘trip_id’
-inout: no visible binding for global variable ‘exit’
-inout: no visible binding for global variable ‘enter’
-inout_single: no visible binding for global variable ‘first’
-inout_single: no visible binding for global variable ‘inout_id’
-inout_single: no visible binding for global variable ‘inout_dir’
-summarize_inout: no visible binding for global variable ‘inout_dir’
-summarize_inout: no visible binding for global variable ‘trip_id’
-summarize_inout: no visible binding for global variable ‘trip_idx’
-summarize_inout: no visible binding for global variable ‘trip_id2’
+activity: no visible binding for global variable ‘time’
+activity: no visible binding for global variable ‘logger_id’
+activity_single: no visible global function definition for ‘median’
+activity_single: no visible binding for global variable ‘rise’
+activity_single: no visible binding for global variable ‘set’
+check.ids: no visible binding for global variable ‘animals_ids’
+convert_asnipe: no visible binding for global variable ‘time’
+convert_dominance: no visible binding for global variable ‘left’
+convert_perc: no visible binding for global variable ‘n’
+daily: no visible binding for global variable ‘animal_id’
+daily_single: no visible binding for global variable ‘animal_id’
+daily_single: no visible binding for global variable ‘logger_id’
+daily_single: no visible binding for global variable ‘time_c’
+daily_single: no visible binding for global variable ‘activity_c’
+daily_single: no visible binding for global variable ‘p_unknown’
+daily_single: no visible binding for global variable ‘rise’
+daily_single: no visible binding for global variable ‘set’
+daily_single: no visible binding for global variable ‘time’
+disp: no visible binding for global variable ‘role’
+disp: no visible binding for global variable ‘n’
+disp: no visible binding for global variable ‘displacer’
+disp: no visible binding for global variable ‘displacee’
+disp: no visible global function definition for ‘desc’
+disp: no visible binding for global variable ‘p_win’
+disp: no visible binding for global variable ‘left’
+get_locs: no visible binding for global variable ‘logger_id’
+inout: no visible binding for global variable ‘data’
+load_raw: no visible binding for global variable ‘time’
+load_raw: no visible binding for global variable ‘animal_id’
+move: no visible binding for global variable ‘time’
+move: no visible binding for global variable ‘direction’
+move: no visible binding for global variable ‘move_id’
+move: no visible binding for global variable ‘strength’
+move_single: no visible binding for global variable ‘left’
+move_single: no visible binding for global variable ‘arrived’
+move_single: no visible binding for global variable ‘direction’
+move_single: no visible binding for global variable ‘value’
+move_single: no visible binding for global variable ‘type’
+move_single: no visible binding for global variable ‘time’
+move_single: no visible binding for global variable ‘start’
+move_single: no visible binding for global variable ‘end’
+move_single: no visible binding for global variable ‘animal_id’
+move_single: no visible binding for global variable ‘move_id’
+move_single: no visible binding for global variable ‘logger_id’
+path_layer: no visible binding for global variable ‘path_use’
+summaries: no visible global function definition for ‘:=’
+summaries: no visible binding for global variable ‘s’
+visits: no visible binding for global variable ‘time’
+visits: no visible binding for global variable ‘new’
 Undefined global functions or variables:
-  enter exit first inout_dir inout_id problem problem_next problem_prev
-  trip_id trip_id2 trip_idx
+  := activity_c animal_id animals_ids arrived data desc direction
+  displacee displacer end left logger_id median move_id n new p_unknown
+  p_win path_use rise role s set start strength time time_c type value
+Consider adding
+  importFrom("methods", "new")
+  importFrom("stats", "end", "median", "start", "time")
+  importFrom("utils", "data")
+to your NAMESPACE file (and ensure that your DESCRIPTION Imports field
+contains 'methods').
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
-* checking Rd cross-references ... WARNING
-Package unavailable to check Rd xrefs: ‘activity’
-Missing link or links in documentation object 'convert_anidom.Rd':
-  ‘aniDom’
-
-Missing link or links in documentation object 'convert_asnipe.Rd':
-  ‘asnipe’
-
-Missing link or links in documentation object 'convert_dominance.Rd':
-  ‘Dominance’
-
-Missing link or links in documentation object 'convert_perc.Rd':
-  ‘Perc’ ‘[Perc]{as.conflicmat}’
-
-Missing link or links in documentation object 'disp.Rd':
-  ‘Perc’ ‘aniDom’ ‘Dominance’
-
-Missing link or links in documentation object 'load_format.Rd':
-  ‘[lubridate]{parse_date_time()}’
-
-Missing link or links in documentation object 'load_raw_all.Rd':
-  ‘[lubridate]{parse_date_time()}’
-
-Missing link or links in documentation object 'load_raw.Rd':
-  ‘[lubridate]{parse_date_time()}’
-
-See section 'Cross-references' in the 'Writing R Extensions' manual.
-
+* checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
@@ -103,42 +110,31 @@ See section 'Cross-references' in the 'Writing R Extensions' manual.
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking R/sysdata.rda ... OK
-* checking examples ... ERROR
-Running examples in ‘feedr-Ex.R’ failed
-The error most likely occurred in:
-
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: convert_anidom
-> ### Title: Convert displacements for use by functions from the aniDom
-> ###   package
-> ### Aliases: convert_anidom
-> 
-> ### ** Examples
-> 
-> 
-> # Calculate displacements
-> d <- disp(visits(finches_lg))
-Error: Assigned data `c("displacee", "displacer")` must be compatible with existing data.
-✖ Existing data has 14 rows.
-✖ Assigned data has 2 rows.
-ℹ Only vectors of size 1 are recycled.
-Backtrace:
-     █
-  1. ├─feedr::disp(visits(finches_lg))
-  2. │ ├─base::`$<-`(...)
-  3. │ └─tibble:::`$<-.tbl_df`(...)
-  4. │   └─tibble:::tbl_subassign(...)
-  5. │     └─tibble:::vectbl_recycle_rhs_rows(...)
-  6. │       ├─base::withCallingHandlers(...)
-  7. │       └─vctrs::vec_recycle(value[[j]], nrow)
-  8. ├─vctrs:::stop_recycle_incompatible_size(...)
-  9. │ └─vctrs:::stop_vctrs(...)
- 10. │   └─rlang::abort(message, class = c(class, "vctrs_error"), ...)
- 11. │     └─rlang:::signal_abort(cnd)
- 12. │       └─base::signalCondition(cnd)
- 13. └─(function (cnd) ...
-Execution halted
+* checking examples ... OK
+Examples with CPU (user + system) or elapsed time > 5s
+          user system elapsed
+activity 4.931  0.092   5.051
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... ERROR
+  Running ‘testthat.R’ [69s/69s]
+Running the tests in ‘tests/testthat.R’ failed.
+Last 13 lines of output:
+  `actual[[14]]` is a double vector (-120.3612389, -120.3631833, -120.3631833, -120.3612389, -120.3612389, ...)
+  `expected[[14]]` is a character vector ('House Finch', 'House Finch', 'House Finch', 'House Finch', 'House Finch', ...)
+  
+  `actual[[15]]` is a double vector (50.66778333, 50.66909444, 50.66909444, 50.66778333, 50.66778333, ...)
+  `expected[[15]]` is a character vector ('Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', ...)
+  
+  `actual[[16]]` is a character vector ('House Finch', 'House Finch', 'House Finch', 'House Finch', 'House Finch', ...)
+  `expected[[16]]` is a double vector (-120.3612389, -120.3631833, -120.3631833, -120.3612389, -120.3612389, ...)
+  
+  `actual[[17]]` is a character vector ('Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', 'Kamloops, BC', ...)
+  `expected[[17]]` is a double vector (50.66778333, 50.66909444, 50.66909444, 50.66778333, 50.66778333, ...)
+  
+  [ FAIL 17 | WARN 0 | SKIP 8 | PASS 788 ]
+  Error: Test failures
+  Execution halted
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 1 WARNING, 3 NOTEs
+Status: 1 ERROR, 1 NOTE

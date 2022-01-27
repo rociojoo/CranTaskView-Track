@@ -1,4 +1,4 @@
-* using log directory ‘/tmp/RtmpAoUN5D/telemetr.Rcheck’
+* using log directory ‘/tmp/RtmpcbTqXs/telemetr.Rcheck’
 * using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -18,7 +18,7 @@
 * checking whether package ‘telemetr’ can be installed ... WARNING
 Found the following significant warnings:
   Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
-See ‘/tmp/RtmpAoUN5D/telemetr.Rcheck/00install.out’ for details.
+See ‘/tmp/RtmpcbTqXs/telemetr.Rcheck/00install.out’ for details.
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK

@@ -27,10 +27,11 @@ dir.create(check_logs)
 ## List of CRAN packages
 pkg_db <- tools::CRAN_package_db()
 
-## Previous state (print date of last run for the record)
+## Previous state
 track_old <- read.csv("checks/Checked_packages.csv")
+## Date of last run
 readLines("LAST_RUN")
-track_old_date <- gsub("LAST_RUN: ", "", readLines("LAST_RUN"))
+## Packages that did check then, by alphabetical order
 sort(track_old$package_name[track_old$cran_check])
 
 ## Import packages list, and create columns if not exist
@@ -118,6 +119,7 @@ for (i in 1:nrow(track)) {
         match <- regexec("(?:href=\\\"\\.\\./)(.*)(?:\\\">)", phrase)
         if (regmatches(phrase, match)[[1]][2] == "") {
             message("No source available. Package probably removed from Bioconductor.")
+            track$source[i] <- "bioc-deprecated"
             track$errors[i] <- TRUE
             track$cran_check[i] <- FALSE
             next
@@ -329,6 +331,8 @@ for (i in 1:nrow(track)) {
 ## Final file for export to `Checked_packages.csv`
 library("dplyr")
 sum(!is.na(track$cran_check)) == nrow(track[!track$skip, ]) # Must be TRUE
+## Number of packages in the CTV
+sum(track$cran_check, na.rm = TRUE)
 subset(track, is.na(cran_check))
 track <- track %>%
     arrange(desc(track$cran_check), track$package_name) %>%
@@ -372,28 +376,25 @@ pkg_net_tb <- data.frame(table(pkg_net$network))
 names(pkg_net_tb) <- c("package_name", "mention")
 pkg_net_tb <- pkg_net_tb[order(pkg_net_tb$mention, decreasing = TRUE), ]
 pkg_net_tb$t <- 1:nrow(pkg_net_tb)
-pkg_net_tb
 
 ## Actual test
 library("coin")
-maxstat_test(mention ~ t, dist = "approx", data = pkg_net_tb)
-## 	Approximative Generalized Maximally Selected Statistics
-##
-## data:  mention by t
-## maxT = 3.5677, p-value = 0.0199
-## alternative hypothesis: two.sided
-## sample estimates:
-##   “best” cutpoint: <= 2
+(cointest <- maxstat_test(mention ~ t, dist = "approx", data = pkg_net_tb))
+
+## Add 'core' variable
+pkg_net_tb$core <- (pkg_net_tb$mention > cointest@estimates$estimate$cutpoint)
+pkg_net_tb
 
 ## Merge to global table
 track <- left_join(track, pkg_net_tb[, -3], by = "package_name")
 track$mention <- ifelse(is.na(track$mention), 0, track$mention)
+track$core <- ifelse(is.na(track$core), FALSE, track$core)
 
 
 ## Save previous state, current state, and last run
-write.csv(track_old, paste0("checks/Checked_packages_", track_old_date, ".csv"), row.names = FALSE) # Now under version control (don't forget to add it)
+write.csv(track_old, "checks/Checked_packages_previous.csv", row.names = FALSE)
 write.csv(track, "checks/Checked_packages.csv", row.names = FALSE)
-writeLines(paste("LAST_RUN:", Sys.Date()), "./checks/LAST_RUN")
+writeLines(paste("LAST_RUN:", Sys.Date()), "LAST_RUN")
 
 
 ## Differences with previous state
@@ -406,11 +407,18 @@ track %>%
         cran_check, warnings, errors, vignette_error, comments) -> track_new
 ## 2) CRAN check difference
 left_join(track, track_old, by = "package_name", suffix = c("", "_old")) %>%
-    filter(!skip) %>%
+    ## filter(!skip) %>%
     filter(cran_check != cran_check_old) %>%
     mutate(news = "mod") %>%
     select(news, package_name, version, source, date_added_to_list,
         cran_check, warnings, errors, vignette_error, comments) -> track_mod
-## 3) Together and export
-(changes <- bind_rows(track_new, track_mod))
-write.csv(changes, file = "checks/Changes.csv", row.names = FALSE)
+## 3) New skipped packages
+track %>%
+    filter(skip) %>%
+    filter(!(package_name %in% track_old$package_name)) %>%
+    mutate(news = "skipped") %>%
+    select(news, package_name, version, source, date_added_to_list,
+        cran_check, warnings, errors, vignette_error, comments) -> track_skipped
+## 4) Together and export
+(changes <- bind_rows(track_new, track_skipped, track_mod))
+write.csv(changes, file = "checks/CHANGES.csv", row.names = FALSE)

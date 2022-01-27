@@ -1,4 +1,4 @@
-* using log directory ‘/tmp/RtmpAoUN5D/SGAT.Rcheck’
+* using log directory ‘/tmp/RtmpcbTqXs/SGAT.Rcheck’
 * using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -8,7 +8,8 @@
 * this is package ‘SGAT’ version ‘0.1.3’
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+Package suggested but not available for checking: ‘GeoLight’
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -54,4 +55,4 @@
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: OK
+Status: 1 NOTE

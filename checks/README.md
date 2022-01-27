@@ -157,7 +157,7 @@ the `inst/doc` folder as well as the `vignette.rds` file if created. These files
 will lead to checks failing. We do not believe these files/folders should lead
 to a failed CRAN check status, as they would be deleted if a proper tarball was
 created, and the majority of users install GitHub packages via
-`devtools::install_github()` or `devtools::install_local()`.
+`remotes::install_github()` or `remotes::install_local()`.
 
 After the tarball is created the package is run through steps 3–6 as normal.
 
@@ -179,7 +179,7 @@ find a more elegant solution around this.
 ### R-Forge
 
 As R-Forge has a dedicated repository, we use `download.packages(., repos =
-"http://R-Forge.R-project.org")` function. We then run through steps 3–6 as
+"http://download.R-Forge.R-project.org")` function. We then run through steps 3–6 as
 normal.
 
 

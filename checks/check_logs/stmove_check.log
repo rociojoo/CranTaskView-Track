@@ -1,4 +1,4 @@
-* using log directory ‘/tmp/RtmpAoUN5D/stmove.Rcheck’
+* using log directory ‘/tmp/RtmpcbTqXs/stmove.Rcheck’
 * using R version 4.0.4 (2021-02-15)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -84,27 +84,32 @@ The error most likely occurred in:
 > interval_stats(AG195, type = "lunar")
 # A tibble: 25 × 9
 # Groups:   interval_start [25]
-   interval_start phase       mean_dist sd_dist acf_dist  mean_ang sd_ang  acf_ang
-   <fct>          <chr>           <dbl>   <dbl>    <dbl>     <dbl>  <dbl>    <dbl>
- 1 2010-01-01     Full-Waning      99.8    126.    0.571 -0.000592   1.31 -0.0351 
- 2 2010-01-12     New-Waxing      118.     122.    0.517  0.0152     1.22 -0.0611 
- 3 2010-01-26     Full-Waning     181.     239.    0.686 -0.0361     1.32  0.0199 
- 4 2010-02-10     New-Waxing      244.     284.    0.710  0.0639     1.30  0.0235 
- 5 2010-02-25     Full-Waning     210.     254.    0.674  0.0649     1.37  0.0434 
- 6 2010-03-12     New-Waxing      192.     261.    0.700  0.0124     1.37 -0.0126 
- 7 2010-03-27     Full-Waning     105.     152.    0.709  0.0535     1.28 -0.00154
- 8 2010-04-10     New-Waxing      184.     246.    0.751 -0.0238     1.21 -0.00632
- 9 2010-04-25     Full-Waning     119.     161.    0.539  0.0481     1.23 -0.119  
-10 2010-05-10     New-Waxing      115.     169.    0.612  0.0437     1.19 -0.0617 
+   interval_start phase      mean_dist sd_dist acf_dist mean_ang sd_ang  acf_ang
+   <fct>          <chr>          <dbl>   <dbl>    <dbl>    <dbl>  <dbl>    <dbl>
+ 1 2010-01-01     Full-Wani…      99.8    126.    0.571 -5.92e-4   1.31 -0.0351 
+ 2 2010-01-12     New-Waxing     118.     122.    0.517  1.52e-2   1.22 -0.0611 
+ 3 2010-01-26     Full-Wani…     181.     239.    0.686 -3.61e-2   1.32  0.0199 
+ 4 2010-02-10     New-Waxing     244.     284.    0.710  6.39e-2   1.30  0.0235 
+ 5 2010-02-25     Full-Wani…     210.     254.    0.674  6.49e-2   1.37  0.0434 
+ 6 2010-03-12     New-Waxing     192.     261.    0.700  1.24e-2   1.37 -0.0126 
+ 7 2010-03-27     Full-Wani…     105.     152.    0.709  5.35e-2   1.28 -0.00154
+ 8 2010-04-10     New-Waxing     184.     246.    0.751 -2.38e-2   1.21 -0.00632
+ 9 2010-04-25     Full-Wani…     119.     161.    0.539  4.81e-2   1.23 -0.119  
+10 2010-05-10     New-Waxing     115.     169.    0.612  4.37e-2   1.19 -0.0617 
 # … with 15 more rows, and 1 more variable: ccf <dbl>
 > # for seasonal, include y-m-d formatted `seas` vector
 > interval_stats(AG195, type = "seasonal", seas = c("2010-03-01", "2010-06-01", "2010-9-01"))
-Error: Column name `interval_start` must not be duplicated.
+Error:
+! Column name `interval_start` must not be duplicated.
 Use .name_repair to specify repair.
+Caused by error in `stop_vctrs()`:
+! Names must be unique.
+✖ These names are duplicated:
+  * "interval_start" at locations 1 and 2.
 Backtrace:
-     █
+     ▆
   1. ├─stmove::interval_stats(...)
-  2. │ └─`%>%`(...)
+  2. │ └─traj %>% group_by(.data$interval_start, !!quocol) %>% ...
   3. ├─dplyr::summarise(...)
   4. ├─dplyr::group_by(., .data$interval_start, !!quocol)
   5. └─dplyr:::group_by.data.frame(., .data$interval_start, !!quocol)
@@ -118,11 +123,12 @@ Backtrace:
  13.               ├─tibble:::subclass_name_repair_errors(...)
  14.               │ └─base::withCallingHandlers(...)
  15.               └─vctrs::vec_as_names(...)
- 16.                 └─(function () ...
+ 16.                 └─vctrs `<fn>`()
  17.                   └─vctrs:::validate_unique(names = names, arg = arg)
  18.                     └─vctrs:::stop_names_must_be_unique(names, arg)
  19.                       └─vctrs:::stop_names(...)
  20.                         └─vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
+ 21.                           └─rlang::abort(message, class = c(class, "vctrs_error"), ...)
 Execution halted
 * checking examples with --run-donttest ... ERROR
 Running examples in ‘stmove-Ex.R’ failed
@@ -148,20 +154,20 @@ Calls: build_report ... process_group.block -> call_block -> eval_lang -> eval -
 Execution halted
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... ERROR
-  Running ‘testthat.R’
+  Running ‘testthat.R’ [12s/12s]
 Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
-   18. │             │ └─base::withCallingHandlers(...)
    19. │             └─vctrs::vec_as_names(...)
-   20. │               └─(function () ...
+   20. │               └─vctrs `<fn>`()
    21. │                 └─vctrs:::validate_unique(names = names, arg = arg)
    22. │                   └─vctrs:::stop_names_must_be_unique(names, arg)
    23. │                     └─vctrs:::stop_names(...)
    24. │                       └─vctrs:::stop_vctrs(class = c(class, "vctrs_error_names"), ...)
    25. │                         └─rlang::abort(message, class = c(class, "vctrs_error"), ...)
-   26. │                           └─rlang:::signal_abort(cnd)
+   26. │                           └─rlang:::signal_abort(cnd, .file)
    27. │                             └─base::signalCondition(cnd)
-   28. └─(function (cnd) ...
+   28. └─tibble `<fn>`(`<vct_____>`)
+   29.   └─rlang::cnd_signal(cnd)
   
   [ FAIL 1 | WARN 1 | SKIP 7 | PASS 25 ]
   Error: Test failures
