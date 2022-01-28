@@ -4,6 +4,9 @@
 .RData
 .Ruserdata
 .httr-oauth
+CranTaskView-Track.Rproj
+Tracking.html
+README.html
 packrat/
 check_logs/
 downloads/

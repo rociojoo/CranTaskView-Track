@@ -3,7 +3,7 @@ name: Tracking
 topic: Processing and Analysis of Tracking Data
 maintainer: Rocío Joo and Mathieu Basille
 email: rocio.joo@globalfishingwatch.org
-version: 22.01
+version: 22.01 (2022-01-27)
 ---
 
 
@@ -139,7 +139,7 @@ metrics based on tracking data, which are useful for posterior analyses.
     between consecutive fixes) when transforming the tracking data into
     the package's data class. These packages are
     `r pkg("adehabitatLT")`, `r pkg("momentuHMM")`,
-    `r pkg("moveHMM")` and `r pkg("trajectories")`.
+    `r pkg("moveHMM", priority = "core")` and `r pkg("trajectories")`.
     `r pkg("bcpa")` has a function to compute speeds, step
     lengths, orientations and other attributes from a track.
     `r pkg("amt")`, `r pkg("move", priority = "core")`,
@@ -216,7 +216,7 @@ conditions play in movement or space-use decisions, which are typically
 split into two categories: home range calculation and habitat selection.
 
 -   **Home ranges:** Several packages allow the estimation of home
-    ranges, such as `r pkg("adehabitatHR")`,
+    ranges, such as `r pkg("adehabitatHR", priority = "core")`,
     `r pkg("amt")`, `r pkg("BBMM")`,
     `r pkg("ctmm")`, `r pkg("mkde")` and
     `r pkg("move")`. They provide a variety of methods, from
@@ -290,7 +290,7 @@ If you would like to cite this CTV, we suggest mentioning: maintainers, year,
 title of the CTV, version, and URL. For instance:
 
 Joo and Basille (2022) CRAN Task View: Processing and Analysis of Tracking Data.
-Version 22.01. URL: https://cran.r-project.org/view=Tracking
+Version 22.01 (2022-01-27). URL: https://cran.r-project.org/view=Tracking
 
 
 ### Links
